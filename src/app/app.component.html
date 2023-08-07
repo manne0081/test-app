@@ -1,39 +1,123 @@
+<!-- HEADER -->
+<!-- ****** -->
 <div class="header-background">
-  <div class="header-wrapper">
-      <span>
-          Header
-      </span>
-  </div>
+    <div class="header-wrapper">
+        <span>
+            Header
+        </span>
+    </div>
 </div>
 
+<!-- MAIN-AREA -> Navigation / Quicklinks / Content / Additional-Info -->
+<!-- **************************************************************** -->
 <div class="main-wrapper">
-  <div class="navigation">
 
-      <div class="navigation-item pre-active">
+    <!-- Navigation -->
+    <!-- ---------- -->
+    <div class="navigation">
 
-      </div>
-      <div class="navigation-item active">
+        <div class="navigation-item pre-active">
 
-      </div>
-      <div class="navigation-item post-active">
+        </div>
+        <div class="navigation-item active">
 
-      </div>
-      <div class="navigation-item">
+        </div>
+        <div class="navigation-item post-active">
 
-      </div>
-      <div class="navigation-item">
+        </div>
+        <div class="navigation-item">
 
-      </div>
-      <div class="navigation-item">
+        </div>
+        <div class="navigation-item">
 
-      </div>
-      <div class="navigation-item spacer">
+        </div>
+        <div class="navigation-item">
 
-      </div>
+        </div>
+        <div class="navigation-item spacer">
 
-  </div>
-  <div class="quicklinks">
-      <h1>Meine Quicklinks</h1>
-      Suche...
-  </div>
+        </div>
+    </div>
+
+    <!-- Quicklinks -->
+    <!-- ---------- -->
+    <div class="quicklinks-wrapper">
+        <div class="quicklink-headline-background">
+            <div class="quicklink-headline">
+                <h1>
+                    My Quicklinks
+                </h1>
+            </div>
+
+            <div class="quicklink-searching">
+                Searching...
+            </div>
+        </div>
+
+        <div class="quicklink-item-wrapper">
+
+            <div class="quicklink-item" *ngFor="let quicklink of quicklinks">
+                {{quicklink.name}}
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content-wrapper">
+        <div class="content-header-background">
+            Header
+        </div>
+
+        <div class="content-tiles">
+            <div class="tile-item">
+                TEST
+            </div>
+            <div class="tile-item">
+                TEST
+            </div>
+            <div class="tile-item">
+                TEST
+            </div>
+            <div class="tile-item">
+                TEST
+            </div>
+            <div class="tile-item">
+                TEST
+            </div>
+            <div class="tile-item">
+                TEST
+            </div>
+            <div class="tile-item">
+                TEST
+            </div>
+            <div class="tile-item">
+                TEST
+            </div>
+            <div class="tile-item">
+                TEST
+            </div>
+            <div class="tile-item">
+                TEST
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional-Infos -->
+    <div class="additional-info-wrapper">
+        <div class="additional-info-headline-background">
+            <div class="additional-info-headline">
+                <h1>
+                    Additional Infos
+                </h1>
+            </div>
+        </div>
+
+        <div class="additional-info-item-wrapper">
+            <div class="additional-info-item" *ngFor="let additionalInfo of additionalInfos">
+                {{additionalInfo.name}}
+            </div>
+        </div>
+    </div>
+
 </div>

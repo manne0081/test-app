@@ -22,18 +22,20 @@
   --navigation-width: var(--primary-sizing-factor);
   --quicklinks-width: calc(188px + var(--navigation-width));
 
+  --additional-info-width: calc(var(--quicklinks-width) - var(--navigation-width));
+
 }
 
 // GLOBAL-STYLING
 // **************
 * {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   color: var(--primary-font-color);
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 body {
