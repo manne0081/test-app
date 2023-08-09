@@ -1,3 +1,5 @@
+// HEADER
+// ######
 .header-background {
 	background-color: white;
 	width: var(--header-width);
@@ -12,14 +14,17 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+        justify-content: space-between;
+        padding: 0px 12px;
 
 		span {
-			margin-left: 12px;
 			color: var(--font-color-locked);
 		}
 	}
 }
 
+// MAIN-AREA / Navigation -> Quicklinks -> Content -> Action-Menu -> Additional Infos
+// ##################################################################################
 .main-wrapper {
     width: var(--width-100);
     height: var(--main-height);
@@ -29,6 +34,8 @@
     display: flex;
     flex-direction: row;
 
+    // NAVIGATION
+    // ----------
     .navigation {
         background-color: white;
         width: var(--navigation-width);
@@ -37,15 +44,24 @@
         z-index: 99;
 
         .navigation-item {
-            background-color: var(--primary-highlight-color);
+            background-color: var(--navigation-item-background);
             width: var(--primary-sizing-factor);
             height: var(--primary-sizing-factor);
             display: flex;
             align-items: center;
+            justify-content: center;
+
+            img {
+                height: 20px;
+            }
 
             span {
                 text-align: center;
             }
+        }
+
+        .navigation-item:not(:last-child, .navigation-item.active):hover {
+            background-color: var(--navigation-item-hover);
         }
 
         .navigation-item.active {
@@ -65,6 +81,8 @@
         }
     }
 
+    // QUICKLINKS
+    // ----------
     .quicklinks-wrapper {
         background-color: white;
         width: var(--quicklinks-width);
@@ -76,7 +94,7 @@
 
         .quicklink-headline-background {
             background-color: white;
-            width: calc(var(--quicklinks-width) - var(--navigation-width) - 24px);
+            width: calc(var(--quicklinks-width) - var(--navigation-width) - 32px);
             height: 68px;
             margin: 0px 12px;
             padding: 12px 4px;
@@ -103,7 +121,7 @@
         }
 
         .quicklink-item-wrapper {
-            width: calc(var(--quicklinks-width) - var(--navigation-width) - 32px);
+            width: calc(var(--quicklinks-width) - var(--navigation-width) - 40px);
             margin: 0px 16px;
             position: absolute;
             top: 80px;
@@ -126,14 +144,18 @@
         }
     }
 
+    // CONTENT / Header & Filter -> Tiles -> Version -> Actions
+    // --------------------------------------------------------
     .content-wrapper {
         margin-left: calc(var(--quicklinks-width));
         width: 100%;
 
+        // Content-Header & Filter
+        // -----------------------
         .content-header-background {
             background-color: var(--background-color);
-            width: calc(var(--width-100) - var(--quicklinks-width) - var(--additional-info-width) - 34px);
-            height: 88px;
+            width: calc(var(--width-100) - var(--quicklinks-width) - var(--additional-info-width) - 36px);
+            height: 90px;
             box-shadow: 0px 6px 4px -4px rgba(0,0,0,0.2);
             margin: 0px 12px;
             position: fixed;
@@ -143,13 +165,47 @@
 
             .content-header-title {
                 width: calc(var(--width-100) - var(--quicklinks-width) - var(--additional-info-width) - 32px);
-                height: 32px;
+                height: 34px;
                 margin-bottom: 8px;
-                padding: 10px 6px;
+                padding: 6px 6px;
+                display: flex;
+
+                .object-name {
+                    font-weight: bold;
+                    font-size: 1.3em;
+                    color: var(--primary-highlight-color);
+                    height: 24px;
+                    margin-top: 3px;
+                    margin-right: 16px;
+                }
+
+                .object-menu {
+                    background-color: white;
+                    height: 28px;
+                    border: 1px solid rgba(0,0,0,0.1);
+                    border-radius: 6px;
+                    padding: 5px 12px;
+                    margin-right: 6px;
+                }
+
+                .object-menu:hover {
+                    background-color: rgba(255, 255, 255, 0.35);
+                    cursor: pointer;
+                }
+
+                .object-menu.active {
+                    background-color: var(--primary-highlight-color);
+                    color: white;
+                }
+
+                .object-menu.active:hover {
+                    background-color: #4b6d83;
+                }
             }
 
             .content-header-filter {
                 background-color: rgba(44, 80, 103, 0.14);
+                background-color: #C4CED4;
                 width: calc(var(--width-100) - var(--quicklinks-width) - var(--additional-info-width) - 44px);
                 height: 32px;
                 padding: 4px 6px;
@@ -158,8 +214,10 @@
             }
         }
 
+        // Content-Tiles
+        // -------------
         .content-tiles {
-            padding: 100px 16px;
+            padding: 102px 16px;
             height: calc(100% + 62px);
             position: absolute;
             overflow-y: scroll;
@@ -179,6 +237,8 @@
             }
         }
 
+        // Content-Version
+        // ---------------
         .content-version {
             position: fixed;
             bottom: 46px;
@@ -204,27 +264,63 @@
                     font-weight: bold;
                     color:rgb(95, 95, 95);
                 }
-
             }
-
         }
 
+        // Action-Menu
+        // -----------
         .content-action-menu {
             background-color: var(--background-color);
-            background-color: #c3cbd6;
+            background-color: #a2adbd;
+            background-color: #C4CED4;
             position: fixed;
             bottom: 0px;
             width: calc(var(--width-100) - var(--quicklinks-width) - var(--additional-info-width) - 12px);
             height: 42px;
-            box-shadow: 0px -8px 4px -4px rgba(0,0,0,0.2);
+            box-shadow: 0px -8px 4px -6px rgba(0,0,0,0.2);
             z-index: 100;
             padding: 4px 16px;
             display: flex;
             flex-direction: row;
             align-items: center;
+            justify-content: space-between;
+
+            .action-menu-left {
+                display: flex;
+            }
+
+            .action-menu-right {
+                display: flex;
+                margin-right: -6px;
+
+                .action-button:last-child {
+                    background-color: rgb(243, 102, 102);
+                    color: white;
+                }
+
+                .action-button:last-child:hover {
+                    background-color: rgba(241, 69, 69, 0.95);
+                }
+            }
+
+            .action-button {
+                background-color: white;
+                height: 24px;
+                border-radius: 4px;
+                padding: 4px 6px;
+                border: 1px solid rgba(0,0,0,0.14);
+                margin-right: 6px;
+            }
+
+            .action-button:hover {
+                background-color: rgba(255, 255, 255, 0.7);
+                cursor: pointer;
+            }
         }
     }
 
+    // ADDITIONAL INFOS
+    // ----------------
     .additional-info-wrapper {
         background-color: white;
         width: var(--additional-info-width);
@@ -236,7 +332,7 @@
 
         .additional-info-headline-background {
             background-color: white;
-            width: calc(var(--quicklinks-width) - var(--navigation-width) - 24px);
+            width: calc(var(--quicklinks-width) - var(--navigation-width) - 32px);
             height: 36px;
             margin: 0px 12px;
             padding: 12px 4px;
@@ -254,7 +350,7 @@
         }
 
         .additional-info-item-wrapper {
-            width: calc(var(--quicklinks-width) - var(--navigation-width) - 32px);
+            width: calc(var(--quicklinks-width) - var(--navigation-width) - 40px);
             margin: 0px 16px;
             position: absolute;
             top: 48px;

@@ -2,9 +2,15 @@
 <!-- ****** -->
 <div class="header-background">
     <div class="header-wrapper">
-        <span>
-            Header
-        </span>
+        <div class="header-left">
+            <span>HEADER - Left</span>
+        </div>
+        <div class="header-center">
+            <span>HEADER - Middle</span>
+        </div>
+        <div class="header-right">
+            <span>HEADER - Right</span>
+        </div>
     </div>
 </div>
 
@@ -17,26 +23,25 @@
     <div class="navigation">
 
         <div class="navigation-item pre-active">
-
+            <img src="../assets/person-icon-weiss.png" alt="">
         </div>
         <div class="navigation-item active">
-
+            <img src="../assets/person-icon.png" alt="">
         </div>
         <div class="navigation-item post-active">
-
+            <img src="../assets/person-icon-weiss.png" alt="">
         </div>
         <div class="navigation-item">
-
+            <img src="../assets/person-icon-weiss.png" alt="">
         </div>
         <div class="navigation-item">
-
+            <img src="../assets/person-icon-weiss.png" alt="">
         </div>
         <div class="navigation-item">
-
+            <img src="../assets/person-icon-weiss.png" alt="">
         </div>
-        <div class="navigation-item spacer">
 
-        </div>
+        <div class="navigation-item spacer"></div>
     </div>
 
     <!-- Quicklinks -->
@@ -55,32 +60,44 @@
         </div>
 
         <div class="quicklink-item-wrapper">
-
-            <div class="quicklink-item" *ngFor="let quicklink of quicklinks">
-                {{quicklink.name}} {{quicklink.id}}
+            <div class="quicklink-item" *ngFor="let quicklink of quicklinks; let i = index">
+                {{quicklink.name}} {{i + 1}}
             </div>
-
         </div>
     </div>
 
     <!-- Content -->
     <div class="content-wrapper">
 
+        <!-- Content-Header & Filter -->
         <div class="content-header-background">
             <div class="content-header-title">
-                Partner > Lieferanten / Kunden
+                <div class="object-name">
+                    Partner
+                </div>
+                <div class="object-menu active">
+                    Alle
+                </div>
+                <div class="object-menu">
+                    Kunden
+                </div>
+                <div class="object-menu">
+                    Lieferanten
+                </div>
             </div>
             <div class="content-header-filter">
                 Filter
             </div>
         </div>
 
+        <!-- Content-Tiles -->
         <div class="content-tiles">
-            <div class="tile-item" *ngFor="let overviewTile of overviewTiles">
-                {{overviewTile.name}} {{overviewTile.id}}
+            <div class="tile-item" *ngFor="let object of objects; let i = index">
+                {{object.name}} {{i + 1}}
             </div>
         </div>
 
+        <!-- Content-Version -->
         <div class="content-version">
             <div>
                 <p class="version">Project 0.0.0</p>
@@ -89,10 +106,34 @@
             </div>
         </div>
 
+        <!-- Action-Menu -->
         <div class="content-action-menu">
-            <span>Actions</span>
-        </div>
 
+            <div class="action-menu-left">
+                <div class="action-button">
+                    Action left 1
+                </div>
+                <div class="action-button">
+                    Action left  2
+                </div>
+                <div class="action-button">
+                    Action left  3
+                </div>
+            </div>
+
+            <div class="action-menu-right">
+                <div class="action-button">
+                    Action right 1
+                </div>
+                <div class="action-button">
+                    Action right 2
+                </div>
+                <div class="action-button">
+                    Auswahl löschen
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <!-- Additional-Infos -->
@@ -106,8 +147,8 @@
         </div>
 
         <div class="additional-info-item-wrapper">
-            <div class="additional-info-item" *ngFor="let additionalInfo of additionalInfos">
-                {{additionalInfo.name}} {{additionalInfo.id}}
+            <div class="additional-info-item" *ngFor="let additionalInfo of additionalInfos; let i = index">
+                {{additionalInfo.name}} {{i + 1}}
             </div>
         </div>
     </div>
