@@ -62,6 +62,8 @@ export class AppComponent {
         {name:'object'},
         {name:'object'},
         {name:'object'},
+        {name:'object'},
+        {name:'object'},
     ];
 
     additionalInfos = [
