@@ -1,0 +1,109 @@
+<app-page-header></app-page-header>
+
+<!-- MAIN-AREA -> Navigation / Quicklinks / Content / Additional-Info -->
+<!-- **************************************************************** -->
+<div class="main-wrapper">
+
+    <!-- Navigation -->
+    <!-- ---------- -->
+    <app-main-navigation></app-main-navigation>
+
+    <!-- Quicklinks -->
+    <!-- ---------- -->
+    <app-quicklinks></app-quicklinks>
+
+    <!-- Content -->
+    <div class="content-wrapper">
+
+        <!-- Content-Header & Filter -->
+        <div class="content-header-background">
+            <div class="content-header-title">
+                <div class="object-name">
+                    Partner
+                </div>
+                <div class="object-menu active">
+                    Alle
+                </div>
+                <div class="object-menu">
+                    Kunden
+                </div>
+                <div class="object-menu">
+                    Lieferanten
+                </div>
+            </div>
+            <div class="content-header-filter">
+                Filter
+            </div>
+        </div>
+
+        <!-- Content-Tiles -->
+        <div class="content-tiles">
+            <div class="tile-item" *ngFor="let object of objects; let i = index">
+                {{object.name}} {{i + 1}}
+            </div>
+        </div>
+
+        <!-- Content-Version -->
+        <div class="content-version">
+            <div>
+                <p class="version">Project 0.0.0</p>
+                <p>2020 - 2023</p>
+                <p>terms and conditions</p>
+            </div>
+        </div>
+
+        <!-- Action-Menu -->
+        <div class="content-action-menu">
+
+            <div class="action-menu-left">
+                <div class="action-button primary">
+                    <img src="../../assets/disc.png" alt="">
+                </div>
+                <div class="action-button">
+                    Action left 1
+                </div>
+                <div class="action-button">
+                    Action left  2
+                </div>
+                <div class="action-button">
+                    Action left  3
+                </div>
+            </div>
+
+            <div class="action-menu-right">
+                <div class="action-button">
+                    Action right 1
+                </div>
+                <div class="action-button">
+                    Action right 2
+                </div>
+                <div class="action-button danger">
+                    <img src="../../assets/delete.svg" alt=""
+                        style="height: 16px; margin: -2px 0px 0px -1px;">
+                </div>
+                <div class="action-button">
+                    <img src="../../assets/chevron.svg" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Additional-Infos -->
+    <div class="additional-info-wrapper">
+        <div class="additional-info-headline-background">
+            <div class="additional-info-headline">
+                <h1>
+                    Additional Infos
+                </h1>
+            </div>
+        </div>
+
+        <div class="additional-info-item-wrapper">
+            <div class="additional-info-item" *ngFor="let additionalInfo of additionalInfos; let i = index">
+                {{additionalInfo.name}} {{i + 1}}
+            </div>
+        </div>
+    </div>
+
+</div>

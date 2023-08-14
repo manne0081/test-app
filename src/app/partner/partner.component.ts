@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-test-first',
-  templateUrl: './test-first.component.html',
-  styleUrls: ['./test-first.component.scss']
+    selector: 'app-partner',
+    templateUrl: './partner.component.html',
+    styleUrls: ['./partner.component.scss']
 })
-export class TestFirstComponent {
+
+export class PartnerComponent {
     objects = [
         {name:'object'},
         {name:'object'},

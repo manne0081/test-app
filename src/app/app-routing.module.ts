@@ -5,13 +5,17 @@ import { TestFirstComponent } from './test-first/test-first.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PartnerComponent } from './partner/partner.component';
 
 const routes: Routes = [
-    { path: '',   redirectTo: 'home', pathMatch: 'full' },
-    { path: 'test-first', component: TestFirstComponent },
+    { path: '',   redirectTo: 'dashboard', pathMatch: 'full' },
+
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'dashboard', component: DashboardComponent },
+    { path: 'partner', component: PartnerComponent },
+
+    { path: 'test', component: TestFirstComponent },
     { path: '**', component: AppComponent },
 ];
 

@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { QuicklinksComponent } from './quicklinks/quicklinks.component';
+import { MainNavigationComponent } from './main-navigation/main-navigation.component';
+import { PartnerComponent } from './partner/partner.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +20,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
         HomeComponent,
         PageHeaderComponent,
         LoginComponent,
-        DashboardComponent
+        DashboardComponent,
+        QuicklinksComponent,
+        MainNavigationComponent,
+        PartnerComponent
     ],
     imports: [
         BrowserModule,
