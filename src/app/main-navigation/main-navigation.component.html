@@ -4,21 +4,21 @@
 
     <!-- Real Navigation-Items -->
     <!-- --------------------- -->
-    <div class="navigation-item" routerLink="/dashboard" [ngClass]="classItemDashboard">
+    <div routerLink="/dashboard" [ngClass]="classItemDashboard">
         <img src="../assets/person-icon.png" alt="" *ngIf="activeUrl=='/dashboard'">
         <img src="../assets/person-icon-weiss.png" alt="" *ngIf="activeUrl!='/dashboard'">
     </div>
-    <div class="navigation-item" routerLink="/partner" [ngClass]="classItemPartner">
+    <div routerLink="/partner" [ngClass]="classItemPartner">
         <img src="../assets/person-icon.png" alt="" *ngIf="activeUrl=='/partner'">
         <img src="../assets/person-icon-weiss.png" alt="" *ngIf="activeUrl!='/partner'">
     </div>
-    <div class="navigation-item" routerLink="/test" [ngClass]="classItemTest">
+    <div routerLink="/test" [ngClass]="classItemTest">
         <img src="../assets/person-icon.png" alt="" *ngIf="activeUrl=='/test'">
         <img src="../assets/person-icon-weiss.png" alt="" *ngIf="activeUrl!='/test'">
     </div>
 
     <!-- Placeholder-Item -->
     <!-- ---------------- -->
-    <div class="navigation-item spacer" [ngClass]="classItemSpacer"></div>
+    <div [ngClass]="classItemSpacer"></div>
 
 </div>

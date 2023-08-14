@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 
 export class MainNavigationComponent implements OnInit{
     activeUrl: string = '';
-    classItemDashboard: string = '';
-	classItemPartner: string = '';
-	classItemTest: string = '';
+    classItemDashboard: string = 'navigation-item';
+	classItemPartner: string = 'navigation-item';
+	classItemTest: string = 'navigation-item';
 
-	classItemSpacer: string = '';
+	classItemSpacer: string = 'navigation-item spacer';
 
     constructor(private route: Router) {
     }
@@ -41,7 +41,7 @@ export class MainNavigationComponent implements OnInit{
             this.activeUrl = "/test";
 			this.classItemPartner = "navigation-item pre-active";
 			this.classItemTest = "navigation-item active";
-			this.classItemSpacer = "navigation-item post-active";
+			this.classItemSpacer = "navigation-item spacer post-active";
 		}
 	}
 }
