@@ -13,29 +13,6 @@ import { PartnerService } from './partner.service';
 export class PartnerComponent implements OnInit{
     partners: Partner[] = [];
 
-    objects = [
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-    ];
-
     additionalInfos = [
         {name:'additionalInfo'},
         {name:'additionalInfo'},

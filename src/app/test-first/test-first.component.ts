@@ -17,22 +17,12 @@ export class TestFirstComponent {
         {name:'object'},
         {name:'object'},
         {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
     ];
 
-    additionalInfos = [
-        {name:'additionalInfo'},
-        {name:'additionalInfo'},
-        {name:'additionalInfo'},
-        {name:'additionalInfo'},
-    ];
+    // additionalInfos = [
+    //     {name:'additionalInfo'},
+    //     {name:'additionalInfo'},
+    //     {name:'additionalInfo'},
+    //     {name:'additionalInfo'},
+    // ];
 }
