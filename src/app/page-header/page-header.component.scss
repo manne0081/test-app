@@ -108,9 +108,9 @@
                 top: 36px;
                 right: 4px;
                 background-color: #f9f9f9;
-                border: 1px solid rgba(0, 0, 0, 0.12);
+                border: 1px solid rgb(201, 201, 201);
                 border-radius: 6px;
-                min-width: 160px;
+                min-width: 180px;
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                 z-index: 200;
             }
@@ -118,12 +118,14 @@
                 display: block;
             }
             .profile-dropdown:hover .dropbtn {
-                background-color:  rgba(255, 255, 255, 0.5);
+                // background-color:  rgba(255, 255, 255, 0.5);
                 border-radius: 4px 4px 0px 0px;
+                cursor: pointer;
             }
             .profile-dropdown .dropdown-content a {
+                background-color: var(--secondary-highlight-color);
                 color: black;
-                padding: 4px 6px;
+                padding: 10px 12px;
                 text-decoration: none;
                 display: block;
             }
