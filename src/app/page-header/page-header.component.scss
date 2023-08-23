@@ -1,5 +1,5 @@
 // HEADER
-// ######
+// ******
 .page-header-background {
 	background-color: white;
 	width: var(--header-width);
@@ -16,9 +16,13 @@
 		align-items: center;
         justify-content: space-between;
 
+        // Header-Left
+        // -----------
         .page-header-left {
             width: 33%;
 
+            // Burger-Button
+            // -------------
             .burger-button-wrapper {
                 width: var(--primary-sizing-factor);
                 height: var(--primary-sizing-factor);
@@ -49,11 +53,15 @@
             }
         }
 
+        // Header-Middle
+        // -------------
         .page-header-center {
             width: 34%;
             display: flex;
             justify-content: center;
 
+            // LOGO
+            // ----
             .page-header-logo {
 
                 span {
@@ -63,14 +71,17 @@
             }
         }
 
+        // Header-Right
+        // ------------
         .page-header-right {
-            // background-color: lightblue;
             width: 33%;
             display: flex;
             align-items: center;
             justify-content: flex-end;
             padding-right: 4px;
 
+            // Functions
+            // ------------
             .header-function-button {
                 background-color: rgba(0, 0, 0, 0.1);
                 height: 32px;
