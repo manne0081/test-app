@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 
 import { Partner } from './partners';
@@ -11,6 +12,7 @@ import { PartnerService } from './partner.service';
 })
 
 export class PartnerComponent implements OnInit{
+    cookieValue: string = "";
     partners: Partner[] = [];
 
     additionalInfos = [
@@ -21,6 +23,7 @@ export class PartnerComponent implements OnInit{
     ];
 
     constructor(
+        private cookieService: CookieService,
         private router: Router,
 		// private headerService: HeaderService,
 		private partnerService: PartnerService,

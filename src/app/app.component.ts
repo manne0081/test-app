@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 import { PageHeaderService } from './page-header/page-header.service';
 
@@ -13,24 +14,23 @@ export class AppComponent implements OnInit{
     title = 'test-app';
     cookieValue: string = "";
 
-    constructor(
-        private cookieService: CookieService,
-        private pageHeaderService: PageHeaderService,
-        )
-    {
-        this.cookieService.set('pm-tool', 'stay-logged-in', 7);
-        this.cookieValue = this.cookieService.get('pm-tool');
-    }
+    constructor(private cookieService: CookieService,
+                private router: Router,
+                private pageHeaderService: PageHeaderService,)
+    {}
 
-    // note => https://tagmanager.google.com/#/home
-    // Google Tag Manager - Configuration from Cookies out of the code...
-    // ------------------------------------------------------------------
+    // note =>
+    // tagmanager.google - Configuration from Cookies out of the code...
+    // -----------------------------------------------------------------
     ngOnInit(): void {
-        this.cookieValue = this.cookieService.get('pm-tool');
-        if(this.cookieValue == "stay-logged-in") {
-            this.pageHeaderService.setHeaderIsPrivate(true);
-            // this.router.navigate(['dashboard']);
+        this.cookieValue = this.cookieService.get('pmTool-login');
+        if (this.cookieValue == "login") {
+            console.log("cookie-value ist login");
+            // this.pageHeaderService.setHeaderIsPrivate(true);
+            this.router.navigate(['dashboard']);
+        } else {
+            console.log("es gibt keinen cookie-value");
+            this.router.navigate(['home']);
         }
     }
-
 }
