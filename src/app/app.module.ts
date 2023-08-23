@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CookieService } from 'ngx-cookie-service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,14 +24,18 @@ import { PartnerComponent } from './partner/partner.component';
         DashboardComponent,
         QuicklinksComponent,
         MainNavigationComponent,
-        PartnerComponent
+        PartnerComponent,
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
     ],
-    providers: [],
-    bootstrap: [AppComponent]
+    providers: [
+        CookieService,
+    ],
+    bootstrap: [
+        AppComponent,
+    ]
 })
 
 export class AppModule { }
