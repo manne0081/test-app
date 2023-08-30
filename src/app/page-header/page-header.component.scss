@@ -81,7 +81,7 @@
             padding-right: 4px;
 
             // Functions
-            // ------------
+            // ---------
             .header-function-button {
                 background-color: rgba(0, 0, 0, 0.1);
                 height: 32px;
@@ -94,6 +94,72 @@
                 margin-left: 6px;
             }
 
+
+            // TimeTracking-Button
+            // -------------------
+            .time-tracking-dropdown {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                overflow-y: visible;
+            }
+            .time-tracking-dropdown .dropdown-button {
+                background-color: rgba(255, 255, 255, 0.2);
+                border-radius: 4px 4px 4px 4px;
+                padding: 4px 8px;
+                font-size: 14px;
+                border: none;
+            }
+            // TimeTracking-Content
+            // --------------------
+            .time-tracking-dropdown .dropdown-content {
+                border-radius: 4px 0px 4px 4px;
+                display: none;
+                position: absolute;
+                top: 36px;
+                right: 4px;
+                background-color: #f9f9f9;
+                border: 1px solid rgb(201, 201, 201);
+                border-radius: 6px;
+                min-width: 180px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 200;
+            }
+            .time-tracking-dropdown:hover .dropdown-content {
+                display: block;
+            }
+            .time-tracking-dropdown:hover .dropdown-button {
+                // background-color:  rgba(255, 255, 255, 0.5);
+                border-radius: 4px 4px 0px 0px;
+                cursor: pointer;
+            }
+            .time-tracking-dropdown .dropdown-content a {
+                background-color: var(--secondary-highlight-color);
+                background-color: lime;
+                color: black;
+                padding: 10px 12px;
+                text-decoration: none;
+                display: block;
+            }
+            .time-tracking-dropdown .dropdown-content a:hover {
+                background-color: #f1f1f1;
+                border-radius: 4px 0px 4px 4px;
+                cursor: pointer;
+            }
+            .time-tracking-dropdown .dropdown-content a.logout{
+                border-top: 1px solid #c6c6c6;
+            }
+            .time-tracking-dropdown .dropdown-content a.logout:hover{
+                border-top: 1px solid #c6c6c6;
+                border-radius: 0px 0px 4px 4px;
+            }
+
+
+
+
+
+
             // Profile-Dropdown-Button
             // -----------------------
             .profile-dropdown {
@@ -103,7 +169,7 @@
                 align-items: center;
                 overflow-y: visible;
             }
-            .profile-dropdown .dropbtn {
+            .profile-dropdown .dropdown-button {
                 background-color: rgba(255, 255, 255, 0.2);
                 border-radius: 4px 4px 4px 4px;
                 padding: 4px 8px;
@@ -128,7 +194,7 @@
             .profile-dropdown:hover .dropdown-content {
                 display: block;
             }
-            .profile-dropdown:hover .dropbtn {
+            .profile-dropdown:hover .dropdown-button {
                 // background-color:  rgba(255, 255, 255, 0.5);
                 border-radius: 4px 4px 0px 0px;
                 cursor: pointer;
