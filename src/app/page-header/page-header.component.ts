@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
 export class PageHeaderComponent {
 
     constructor(private cookieService: CookieService,
-                private router: Router, ) {}
+                private router: Router,)
+    {}
 
     logout() {
         this.cookieService.delete('pmTool-login');

@@ -24,8 +24,11 @@ export class AppComponent implements OnInit{
     // -----------------------------------------------------------------
     ngOnInit(): void {
         this.cookieValue = this.cookieService.get('pmTool-login');
+        this.cookieValue = this.cookieService.get('pmTool-login-7');
+        console.log("app-component > ngOnInit");
+
         if (this.cookieValue == "login") {
-            console.log("cookie-value ist login");
+            console.log("cookie-value ist: " + this.cookieValue);
             // this.pageHeaderService.setHeaderIsPrivate(true);
             this.router.navigate(['dashboard']);
         } else {
