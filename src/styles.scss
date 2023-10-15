@@ -53,18 +53,3 @@ body {
     background-color: var(--background-color);
 }
 
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-    width: 10px;
-}
-
-*::-webkit-scrollbar-track {
-    background: var(--scrolbar-bg-color);
-}
-
-*::-webkit-scrollbar-thumb {
-    background-color: var(--scrolbar-color);
-    border-radius: 20px;
-    border: 3px solid white;
-}
-

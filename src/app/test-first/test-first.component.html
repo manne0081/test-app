@@ -1,110 +1,159 @@
-<app-page-header></app-page-header>
+<div class="grid-page-structure">
 
-<!-- MAIN-AREA -> Navigation / Quicklinks / Content / Additional-Info -->
-<!-- **************************************************************** -->
-<div class="main-wrapper">
 
-    <!-- Navigation -->
-    <!-- ---------- -->
-    <app-main-navigation></app-main-navigation>
+    <!-- HEADER -->
+    <!-- ****** -->
+    <div class="header-structure">
+        <div class="searching">
+            Searching
+        </div>
+        <div class="logo">
+            Logo
+        </div>
+        <div class="function-wrapper">
+            Funktions
+        </div>
+    </div>
 
-    <!-- Quicklinks -->
-    <!-- ---------- -->
-    <app-quicklinks></app-quicklinks>
+    
+    <!-- MENU-STRUCTURE -->
+    <!-- ************** -->
+    <div class="menu-structure">
 
-    <!-- Content -->
-    <div class="content-wrapper">
-
-        <!-- Content-Header & Filter -->
-        <div class="content-header-background">
-            <div class="content-header-title">
-                <div class="object-name">
-                    Test
+        <!-- MENU-ITEM 1 -->
+        <!-- *********** -->
+        <div class="menu-item" routerLink="/partner">
+            <div class="triangle-left"></div>
+                <div class="menu-background">
+                    Menüpunkt 1
                 </div>
-                <div class="object-menu active">
-                    Alle
+            <div class="triangle-right"></div>
+
+            <!-- MENU-OPTIONS -->
+            <div class="submenu-wrapper">
+                
+                <div class="submenu-item">
+                    Menüpunkt 1 - Unterpunkt 1
                 </div>
-                <div class="object-menu">
-                    Kunden
-                </div>
-                <div class="object-menu">
-                    Lieferanten
-                </div>
-            </div>
-            <div class="content-header-filter">
-                Filter
+
             </div>
         </div>
 
-        <!-- Content-Tiles -->
-        <div class="content-tiles">
-            <div class="tile-item" *ngFor="let partner of objects; let i = index">
-                {{partner.name}} {{i}}
+        <!-- MENU-ITEM 2 -->
+        <!-- *********** -->
+        <div class="menu-item active">
+            <div class="triangle-left active"></div>
+            <div class="menu-background active">
+                Menüpunkt 2
+                </div>
+            <div class="triangle-right active"></div>
+
+            <!-- MENU-OPTIONS -->
+            <div class="submenu-wrapper active">
+                
+                <div class="submenu-item active">
+                    Menüpunkt 2 - Unterpunkt 1
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- MENU-ITEM 3 -->
+        <!-- *********** -->
+        <div class="menu-item">
+            <div class="triangle-left"></div>
+                <div class="menu-background">
+                    Menüpunkt 3
+                </div>
+            <div class="triangle-right"></div>
+
+            <!-- MENU-OPTIONS -->
+            <div class="submenu-wrapper">
+                
+                <div class="submenu-item">
+                    Menüpunkt 3 - Unterpunkt 1
+                </div>
+
             </div>
         </div>
 
-        <!-- Content-Version -->
-        <div class="content-version">
-            <div>
-                <p class="version">Project 0.0.0</p>
-                <p>2020 - 2023</p>
-                <p>terms and conditions</p>
+        <!-- MENU-ITEM 4 -->
+        <!-- *********** -->
+        <div class="menu-item">
+            <div class="triangle-left"></div>
+            <div class="menu-background">
+                    Menüpunkt 4
+                </div>
+            <div class="triangle-right"></div>
+
+            <!-- MENU-OPTIONS -->
+            <div class="submenu-wrapper">
+
+                <div class="submenu-item">
+                    Menüpunkt 4 - Unterpunkt 1
+                </div>
+                <div class="submenu-item">
+                    Menüpunkt 4 - Unterpunkt 2
+                </div>
+
             </div>
-        </div>
-
-        <!-- Action-Menu -->
-        <div class="content-action-menu">
-
-            <div class="action-menu-left">
-                <div class="action-button primary">
-                    <img src="../../assets/disc.png" alt="">
-                </div>
-                <div class="action-button">
-                    Action left 1
-                </div>
-                <div class="action-button">
-                    Action left  2
-                </div>
-                <div class="action-button">
-                    Action left  3
-                </div>
-            </div>
-
-            <div class="action-menu-right">
-                <div class="action-button">
-                    Action right 1
-                </div>
-                <div class="action-button">
-                    Action right 2
-                </div>
-                <div class="action-button danger">
-                    <img src="../../assets/delete.svg" alt=""
-                        style="height: 16px; margin: -2px 0px 0px -1px;">
-                </div>
-                <div class="action-button">
-                    <img src="../../assets/chevron.svg" alt="">
-                </div>
-            </div>
-
         </div>
 
     </div>
+    
 
-    <!-- Additional-Infos -->
-    <div class="additional-info-wrapper">
-        <div class="additional-info-headline-background">
-            <div class="additional-info-headline">
-                <h1>
-                    Additional Infos
-                </h1>
+    <!-- CONTENT -->
+    <!-- ******* -->
+    <div class="content-structure">
+        <div class="content-background">
+
+            <div class="quicklink-wrapper">
+
+                <div class="quicklink-headline-wrapper">
+                    <span>MY QUICKLINKS</span>
+                    <div class="threepoint-box">3P</div>
+                </div>
+
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+                <div class="quicklist-item">Test</div>
+
             </div>
+
+            <div class="content-wrapper">
+                <div style="margin: 16px;">
+                    Content
+                </div>
+            </div>
+
+            <div class="addinfo-wrapper">
+                <div style="margin: 16px;">
+                    Additional-Infos
+                    <br>
+                    <br>
+                    <img src="../../assets/calendar2.svg" alt="">
+                </div>
+            </div>
+
         </div>
-
-        <!-- <div class="additional-info-item-wrapper">
-            <div class="additional-info-item" *ngFor="let additionalInfo of additionalInfos; let i = index">
-                {{additionalInfo.name}} {{i + 1}}
-            </div>
-        </div> -->
     </div>
 
 </div>
