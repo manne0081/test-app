@@ -20,7 +20,7 @@
 
         .logo {
             flex: 34%;
-            text-align: center;            
+            text-align: center;
         }
 
         .function-wrapper {
@@ -29,7 +29,7 @@
             text-align: right;
         }
     }
-    
+
     .menu-structure {
         background-color: transparent;
         box-shadow: 0px 4px 4px 0px rgba(44, 80, 103, 0.6);
@@ -38,7 +38,7 @@
         z-index: 10;
 
         .menu-item {
-            height: 100%;            
+            height: 100%;
             display: flex;
             align-items: center;
             margin: 0 16px;
@@ -57,7 +57,7 @@
             }
 
             .menu-background:hover:not(.active) {
-                // background-color: rgba(44, 80, 103, .2);
+                background-color: rgba(44, 80, 103, .2);
                 border-radius: 8px;
                 color: #395464;
             }
@@ -94,17 +94,17 @@
             cursor: pointer;
             color: #2c2c2c;
         }
-        
+
         .menu-item.active:hover {
             cursor: pointer;
         }
 
         .menu-item:hover:not(.active) .menu-background {
-            // background-color: rgba(44, 80, 103, .2);
+            background-color: rgba(44, 80, 103, .2);
             border-radius: 8px;
             color: #395464;
         }
-        
+
         .submenu-wrapper {
             display: none;
             background-color: #d6d6d6;
@@ -140,13 +140,13 @@
                 border: 1px solid rgba(87, 115, 132, .3);
             }
         }
-        
+
         .submenu-wrapper.active {
             background-color: #577384;
             color: white;
             border-top: 1px solid #8096A4;
 
-            
+
             .submenu-item {
                 background-color: rgba(255, 255, 255, .2);
                 width: 300px;
@@ -174,7 +174,7 @@
             animation: example;
             animation-duration: 0.3s;
         }
-        
+
         /* The animation code */
         @keyframes example {
             from {
@@ -191,7 +191,7 @@
             }
         }
     }
-    
+
     .content-structure {
         background-color: rgba(44, 80, 103, 0.6);
         padding: 10px;
@@ -253,7 +253,7 @@
             }
 
             .content-wrapper {
-                
+
             }
 
             .addinfo-wrapper {
@@ -276,17 +276,17 @@
 	// height: 10px;
 	// border-radius: 6px;
   }
- 
+
  ::-webkit-scrollbar-track {
 	background: #d3d3d3;
 	// border-radius: 0 5px 5px 0;
  }
- 
+
  ::-webkit-scrollbar-thumb {
 	background: #70889b;
 	// border-radius: 5px;
  }
- 
+
  ::-webkit-scrollbar-thumb:hover {
    	background: #4d687e;
  }
