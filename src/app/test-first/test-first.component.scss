@@ -221,8 +221,9 @@
                     font-weight: bold;
                     color: rgb(130, 130, 130);
                     display: flex;
-                    position: relative;
                     overflow: visible;
+                    position: fixed;
+                    width: 200px;
 
                     .threepoint-box {
                         // background-color: yellow;
@@ -244,6 +245,10 @@
                     align-items: center;
                     padding-left: 8px;
                     position: relative;
+                }
+
+                .quicklist-item:first-child {
+                    margin-top: 48px;
                 }
 
                 .quicklist-item:last-child {
