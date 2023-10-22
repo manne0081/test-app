@@ -183,7 +183,8 @@
         overflow: hidden;
 
         .content-background {
-            background-color: #e6e6e6;
+            background-color: #d3d3d3;
+            background-color: #d6d6d6;
             height: 100%;
             border-radius: 8px;
             display: grid;
@@ -263,11 +264,11 @@
                     margin: 116px 16px 16px 16px;
 
                     .content-tile-container {
-                        background-color: rgba(255, 255, 255, .80);
+                        background-color: rgba(255, 255, 255, .84);
                         min-height: 60px;
                         border-radius: 8px;
                         padding: 6px 12px;
-                        border: 1px solid rgba(0, 0, 0, .12);
+                        border: 1px solid rgba(0, 0, 0, .2);
                         margin-bottom: 8px;
                         color: rgb(120, 120, 120);
                     }
@@ -281,7 +282,7 @@
                         box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.14);
                         cursor: pointer;
                         color: rgb(80, 80, 80);
-                        border: 1px solid rgba(0, 0, 0, .16);
+                        border: 1px solid rgba(0, 0, 0, .2);
                         font-weight: bold;
                     }
                 }
