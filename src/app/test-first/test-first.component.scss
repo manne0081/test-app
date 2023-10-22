@@ -38,11 +38,13 @@
         z-index: 10;
 
         .menu-item {
+            // background-color: lime;
             height: 100%;            
             display: flex;
             align-items: center;
             margin: 0 16px;
             position: relative;
+            overflow: visible;  //Nur nötig, weil im sylte.scss * > "overflow" auf hidden steht...
 
             .menu-background {
                 padding: 4px 10px;
@@ -335,6 +337,11 @@
 
                 .action-button-container.save {
                     background-color: rgba(93, 204, 117, 0.6);
+                }
+
+                .action-button-container:hover {
+                    background-color: rgba(0, 0, 0, .2);
+                    cursor: pointer;
                 }
 
                 .action-button-container.save:hover {

@@ -8,7 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PartnerComponent } from './partner/partner.component';
 
 const routes: Routes = [
-    { path: '',   redirectTo: 'test', pathMatch: 'full' },
+    { path: '',   redirectTo: 'home', pathMatch: 'full' },
 
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
