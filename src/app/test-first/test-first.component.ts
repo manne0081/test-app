@@ -6,19 +6,44 @@ import { Component } from '@angular/core';
   styleUrls: ['./test-first.component.scss']
 })
 export class TestFirstComponent {
-    objects = [
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-        {name:'object'},
-    ];
+	quicklinks: String[] = [
+		'Quicklink',
+		'Quicklink',
+		'Quicklink',
+		'Quicklink',		
+		'Quicklink',		
+		'Quicklink',		
+		'Quicklink',		
+		'Quicklink',		
+		'Quicklink',		
+		'Quicklink',		
+		'Quicklink',		
+		'Quicklink',		
+		'Quicklink',		
+		'Quicklink',		
+		'Quicklink',		
+		'Quicklink',		
+		// 'Quicklink',		
+		// 'Quicklink',		
+		// 'Quicklink',		
+		// 'Quicklink',		
+		// 'Quicklink',		
+		'Last-Quicklink',		
+	];
 
-    // additionalInfos = [
-    //     {name:'additionalInfo'},
-    //     {name:'additionalInfo'},
-    //     {name:'additionalInfo'},
-    //     {name:'additionalInfo'},
-    // ];
+	tiles: String[] = [
+		'Tile',
+		'Tile',
+		'Tile',
+		'Tile',
+		'Tile',
+		'Tile',
+		'Tile',
+		'Tile',
+		'Tile',
+		'Tile',
+		'Tile',
+		'Tile',
+		'Last-Tile',
+	]
 }

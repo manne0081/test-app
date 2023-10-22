@@ -11,7 +11,7 @@
             Logo
         </div>
         <div class="function-wrapper">
-            Funktions
+            Functions
         </div>
     </div>
 
@@ -22,18 +22,18 @@
 
         <!-- MENU-ITEM 1 -->
         <!-- *********** -->
-        <div class="menu-item" routerLink="/partner">
+        <div class="menu-item">
             <div class="triangle-left"></div>
                 <div class="menu-background">
-                    Menüpunkt 1
+                    {{'hr'|uppercase}}
                 </div>
             <div class="triangle-right"></div>
 
-            <!-- MENU-OPTIONS -->
+            <!-- MENU-OPTIONS > NO MORE OPTIONS -->
             <div class="submenu-wrapper">
                 
                 <div class="submenu-item">
-                    Menüpunkt 1 - Unterpunkt 1
+                    Employee
                 </div>
 
             </div>
@@ -44,7 +44,7 @@
         <div class="menu-item active">
             <div class="triangle-left active"></div>
             <div class="menu-background active">
-                Menüpunkt 2
+                {{'sales'|uppercase}}
                 </div>
             <div class="triangle-right active"></div>
 
@@ -52,7 +52,11 @@
             <div class="submenu-wrapper active">
                 
                 <div class="submenu-item active">
-                    Menüpunkt 2 - Unterpunkt 1
+                    Offers
+                </div>
+                
+                <div class="submenu-item active">
+                    Invoices
                 </div>
 
             </div>
@@ -61,9 +65,9 @@
         <!-- MENU-ITEM 3 -->
         <!-- *********** -->
         <div class="menu-item">
-            <div class="triangle-left"></div>
+            <div class="triangle-lefte"></div>
                 <div class="menu-background">
-                    Menüpunkt 3
+                    {{'partners'|uppercase}}
                 </div>
             <div class="triangle-right"></div>
 
@@ -71,7 +75,11 @@
             <div class="submenu-wrapper">
                 
                 <div class="submenu-item">
-                    Menüpunkt 3 - Unterpunkt 1
+                    Customers
+                </div>
+
+                <div class="submenu-item">
+                    Suppliers
                 </div>
 
             </div>
@@ -82,7 +90,7 @@
         <div class="menu-item">
             <div class="triangle-left"></div>
             <div class="menu-background">
-                    Menüpunkt 4
+                {{'administration'|uppercase}}
                 </div>
             <div class="triangle-right"></div>
 
@@ -90,10 +98,10 @@
             <div class="submenu-wrapper">
 
                 <div class="submenu-item">
-                    Menüpunkt 4 - Unterpunkt 1
+                    Administration
                 </div>
                 <div class="submenu-item">
-                    Menüpunkt 4 - Unterpunkt 2
+                    Administration
                 </div>
 
             </div>
@@ -105,52 +113,64 @@
     <!-- CONTENT -->
     <!-- ******* -->
     <div class="content-structure">
-        <div class="content-background">
+        <div class="content-background">   
 
-            <div class="quicklink-wrapper">
+            <div class="quicklink-container">
 
-                <div class="quicklink-headline-wrapper">
-                    <span>MY QUICKLINKS</span>
-                    <div class="threepoint-box">3P</div>
+                <div class="headline-wrapper">
+                    <div class="headline">
+                        My Quicklinks
+                    </div>                    
+                </div>               
+
+                <div class="quicklink-wrapper">
+
+                    <div class="quicklink-item" *ngFor="let quicklink of quicklinks; index as i">
+                        {{quicklink}} {{i+1}}
+                    </div>
+
                 </div>
-
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-                <div class="quicklist-item">Test</div>
-
             </div>
 
-            <div class="content-wrapper">
-                <div style="margin: 16px;">
-                    Content
+
+            <div class="main-content-wrapper">
+
+                <div class="main-content-header-container">
+                    Content-Header
                 </div>
+
+                <div class="content-tile-wrapper">
+                    <div class="content-tile-container" *ngFor="let tile of tiles; index as i">
+                        {{tile}} {{i+1}}
+                    </div>
+                </div>
+
+                <div class="main-content-actions-container">
+
+                    <div class="action-button-container save">
+                        <div class="action-button-icon">
+                            <img src="../../assets/calendar2.svg" alt="">
+                        </div>
+                        <div class="action-button-label">
+                            Save
+                        </div>
+                    </div>
+
+                    <div class="action-button-container">
+                        <div class="action-button-icon">
+                            <img src="../../assets/calendar2.svg" alt="">
+                        </div>
+                        <div class="action-button-label">
+                            Action
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
             <div class="addinfo-wrapper">
-                <div style="margin: 16px;">
-                    Additional-Infos
-                    <br>
-                    <br>
-                    <img src="../../assets/calendar2.svg" alt="">
-                </div>
+                Additional-Infos
             </div>
 
         </div>
