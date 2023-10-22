@@ -80,6 +80,7 @@
             justify-content: flex-end;
             padding-right: 4px;
 
+
             // Functions
             // ---------
             .header-function-button {
@@ -103,6 +104,7 @@
                 display: flex;
                 align-items: center;
                 overflow-y: visible;
+                // z-index: 200;
             }
             .time-tracking-dropdown .dropdown-button {
                 background-color: rgba(255, 255, 255, 0.2);
@@ -110,15 +112,20 @@
                 padding: 4px 8px;
                 font-size: 14px;
                 border: none;
+                // z-index: 200;
             }
             // TimeTracking-Content
             // --------------------
             .time-tracking-dropdown .dropdown-content {
                 border-radius: 4px 0px 4px 4px;
                 display: none;
+                // display: block;
                 position: absolute;
+                position: fixed;
+                top: 36px;
                 top: 36px;
                 right: 4px;
+                right: 135px;
                 background-color: #f9f9f9;
                 border: 1px solid rgb(201, 201, 201);
                 border-radius: 6px;
