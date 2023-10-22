@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-test-first',
   templateUrl: './test-first.component.html',
   styleUrls: ['./test-first.component.scss']
 })
-export class TestFirstComponent {
+
+export class TestFirstComponent implements OnInit {
 	quicklinks: String[] = [
 		'Quicklink',
 		'Quicklink',
@@ -46,4 +47,9 @@ export class TestFirstComponent {
 		'Tile',
 		'Last-Tile',
 	]
+
+	constructor() { }
+
+    ngOnInit(): void {
+    }
 }
