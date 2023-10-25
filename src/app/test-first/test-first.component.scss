@@ -19,7 +19,7 @@
                         
             .searching-background {
                 background-color: rgb(240, 240, 240);
-                width: 300px;
+                max-width: 350px;
                 height: 28px;
                 border-radius: 6px;
                 display: flex;
@@ -285,7 +285,7 @@
                 }
 
                 .content-tile-wrapper {
-                    margin: 116px 16px 16px 16px;
+                    margin: 118px 16px 16px 16px;
 
                     .content-tile-container {
                         background-color: rgba(255, 255, 255, .84);
@@ -298,7 +298,7 @@
                     }
                     
                     .content-tile-container:last-child {
-                        margin-bottom: 72px;
+                        margin-bottom: 250px;
                     }
 
                     .content-tile-container:hover {
@@ -309,6 +309,21 @@
                         border: 1px solid rgba(0, 0, 0, .2);
                         font-weight: bold;
                     }
+                }
+
+                .main-content-pagination {
+                    background-color: lime;
+                    position: -webkit-sticky;
+                    position: sticky;
+                    bottom: 150px;
+                    
+                }
+
+                .main-content-version {
+                    background-color: orange;
+                    position: -webkit-sticky;
+                    position: sticky;
+                    top: 200px;
                 }
 
                 .main-content-actions-container {
@@ -370,8 +385,16 @@
                     }
                 }
 
+                .action-button-container:last-child {
+                    margin-right: 0px;
+                }
+
                 .action-button-container.save {
                     background-color: rgba(93, 204, 117, 0.6);
+                }
+
+                .action-button-container.delete {
+                    background-color: rgba(235, 140, 140, 0.6);
                 }
 
                 .action-button-container:hover {
@@ -381,6 +404,11 @@
 
                 .action-button-container.save:hover {
                     background-color: rgba(93, 204, 117, 1);
+                    cursor: pointer;
+                }
+
+                .action-button-container.delete:hover {
+                    background-color: rgb(238, 129, 129);
                     cursor: pointer;
                 }
 

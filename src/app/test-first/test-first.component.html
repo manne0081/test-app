@@ -118,14 +118,20 @@
     <div class="content-structure">
         <div class="content-background">   
 
+            <!-- Quicklinks -->
+            <!-- ---------- -->
             <div class="quicklink-container">
 
+                <!-- Quicklink-Header -->
+                <!-- ---------------- -->
                 <div class="headline-wrapper">
                     <div class="headline">
                         My Quicklinks
                     </div>                    
                 </div>               
 
+                <!-- Quicklink-Items -->
+                <!-- --------------- -->
                 <div class="quicklink-wrapper">
 
                     <div class="quicklink-item" *ngFor="let quicklink of quicklinks; index as i">
@@ -135,22 +141,42 @@
                 </div>
             </div>
 
-
+            <!-- Main-Content -->
+            <!-- ------------ -->
             <div class="main-content-wrapper">
 
+                <!-- Main-Content-Header -->
+                <!-- ------------------- -->
                 <div class="main-content-header-container">
                     Content-Header
-                </div>
+                </div>                
 
+                <!-- Main-Content-Tiles -->
+                <!-- ------------------ -->
                 <div class="content-tile-wrapper">
                     <div class="content-tile-container" *ngFor="let tile of tiles; index as i">
                         {{tile}} {{i+1}}
                     </div>
-                </div>
+                </div>                
 
+                <!-- Main-Content-Pagination -->
+                <!-- ----------------------- -->
+                <!-- todo -->
+                <!-- <div class="main-content-pagination">Pagination</div> -->
+                <div>Pagination</div>
+                
+                <!-- Main-Content-Version -->
+                <!-- -------------------- -->
+                <!-- todo -->
+                <!-- <div class="main-content-version">Version</div> -->
+                <div>Version</div>
+
+                <!-- Main-Content-Actions -->
+                <!-- -------------------- -->
                 <div class="main-content-actions-container">
 
                     <div class="actions-wrapper-left">
+
                         <div class="action-button-container save">
                             <div class="action-button-icon">
                                 <img src="../../assets/calendar2.svg" alt="">
@@ -200,6 +226,7 @@
                     </div>
 
                     <div class="actions-wrapper-right">
+
                         <div class="action-button-container">
                             <div class="action-button-icon">
                                 <img src="../../assets/calendar2.svg" alt="">
@@ -208,12 +235,25 @@
                                 Action
                             </div>
                         </div>
+
+                        <div class="action-button-container delete">
+                            <div class="action-button-icon">
+                                <img src="../../assets/calendar2.svg" alt="">
+                            </div>
+                            <div class="action-button-label">
+                                Delete
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
+                
 
             </div>
 
+            <!-- Additional Informations -->
+            <!-- ----------------------- -->
             <div class="addinfo-wrapper">
                 Additional-Infos
             </div>
