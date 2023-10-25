@@ -24,15 +24,17 @@ export class TestFirstComponent implements OnInit {
 		'Quicklink',		
 		'Quicklink',		
 		'Quicklink',		
-		// 'Quicklink',		
-		// 'Quicklink',		
-		// 'Quicklink',		
-		// 'Quicklink',		
-		// 'Quicklink',		
+		'Quicklink',		
+		'Quicklink',		
+		'Quicklink',		
+		'Quicklink',		
+		'Quicklink',		
 		'Last-Quicklink',		
 	];
 
 	tiles: String[] = [
+		'Tile',
+		'Tile',
 		'Tile',
 		'Tile',
 		'Tile',
