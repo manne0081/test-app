@@ -312,18 +312,56 @@
                 }
 
                 .main-content-pagination {
-                    background-color: lime;
-                    position: -webkit-sticky;
-                    position: sticky;
-                    bottom: 150px;
+                    margin: 20px 0px 12px 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     
+                    .center {
+                        text-align: center;
+                    }
+                      
+                    .pagination {
+                        display: inline-block;
+                    }
+                      
+                    .pagination a {
+                        color: black;
+                        float: left;
+                        padding: 6px 12px;
+                        text-decoration: none;
+                        transition: background-color .3s;
+                        border: 1px solid #b4b4b4;
+                        border-radius: 4px;
+                        margin: 0 4px;
+                    }
+                      
+                    .pagination a.active {
+                        background-color: #6f879b;
+                        color: white;
+                        border: 1px solid #6f879b;
+                    }
+                      
+                    .pagination a:hover:not(.active) {
+                        background-color: #ececec;
+                        border: 1px solid #949494;
+                    }
+
                 }
 
                 .main-content-version {
-                    background-color: orange;
-                    position: -webkit-sticky;
-                    position: sticky;
-                    top: 200px;
+                    // background-color: orange;
+                    margin: 12px 0px 60px 0px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    p{
+                        font-size: .8em;
+                        margin-top: 2px;
+                        color: rgb(129, 129, 129);
+                    }
                 }
 
                 .main-content-actions-container {
