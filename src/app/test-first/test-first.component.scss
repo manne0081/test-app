@@ -67,47 +67,76 @@
                 border-radius: 6px;
                 margin-left: 6px;
             }
-
-            .dropbtn {
-                background-color: #04AA6D;
-                background-color: #6f879b;
-                color: white;
-                padding: 6px 12px;
-                font-size: 16px;
-                border: none;
-                cursor: pointer;
-                border-radius: 4px;
-                margin-left: 8px;
-                overflow: visible;
-            }
-              
+            
+            // DropDowns
+            // ---------
             .dropdown {
                 position: relative;
                 display: inline-block;
                 overflow: visible;
-            }
-              
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                right: 0px;
-                background-color: #f9f9f9;
-                min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 100;
-            }
-              
-            .dropdown-content a {
-                color: black;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-            }
-              
-            .dropdown-content a:hover {background-color: #e6e6e6;}
-            .dropdown:hover .dropdown-content {display: block;}
-            .dropdown:hover .dropbtn {background-color: #3e8e41;}
-            .dropdown:hover .dropbtn {background-color: #5f768a;}
+                margin-left: 8px;
+
+                .drop-button {
+                    background-color: #dfdfdf;
+                    color: white;
+                    height: 32px;
+                    padding: 6px 12px;
+                    font-size: 16px;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    overflow: visible;
+                    border: 1px solid rgba(0, 0, 0, .14);
+                    
+                    img {
+                        height: 20px;
+                    }
+                }
+                
+                .drop-content {
+                    display: none;
+                    position: absolute;
+                    right: 0px;
+                    background-color: #f9f9f9;
+                    min-width: 160px;
+                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                    z-index: 100;
+                    border-radius: 4px;
+                    min-width: 200px;
+                }
+
+                .drop-content a {
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                }
+
+                // Special for time tracking
+                // -------------------------
+                .drop-content.time-tracking {
+                    // background-color: lime;
+                    padding: 12px 16px;
+                    min-width: 400px;
+                    min-height: 600px;
+                    text-align: center;
+                }
+                
+                // Special for Profile-Button
+                // --------------------------
+                .drop-button.profile {
+                    background-color: #6f879b;
+                }
+            }            
+            
+            .drop-content a:hover {background-color: #e6e6e6;}
+            .dropdown:hover .drop-button {background-color: #c5c5c5;}
+            .dropdown:hover .drop-content {display: block;}
+
+            // Special für Profile-Button
+            // --------------------------
+            .dropdown:hover .drop-button.profile {background-color: #5f768a;}
+
             
 
         }
@@ -331,7 +360,7 @@
 
                 .main-content-header-container {
                     background-color: white;
-                    padding: 12px 28px;
+                    padding: 12px 27px;
                     height: 100px;
                     position: fixed;
                     width: calc(100% - 500px - 8px);
@@ -393,6 +422,7 @@
                         border: 1px solid #b4b4b4;
                         border-radius: 4px;
                         margin: 0 4px;
+                        cursor: pointer;
                     }
                       
                     .pagination a.active {
@@ -480,6 +510,15 @@
                     .action-button-label {
                         padding-top: 3px;
                     }
+
+                    .action-button-icon-only {
+
+                        img {
+                            margin-top: 2px;
+                            height: 20px;
+                        }
+                    }
+
                 }
 
                 .action-button-container:last-child {

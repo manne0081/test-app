@@ -47,6 +47,11 @@ export class TestFirstComponent implements OnInit {
 		'Tile',
 		'Tile',
 		'Tile',
+		'Tile',
+		'Tile',
+		'Tile',
+		'Tile',
+		'Tile',
 		'Last-Tile',
 	]
 

@@ -15,26 +15,27 @@
         </div>
         <div class="function-wrapper">
             
-            <!-- Test-Button -->
-            <!-- -------------- -->
-            <!-- <div class="dropdown" style="float:right;"> -->
+            <!-- TimeTracking -->
+            <!-- ------------ -->
             <div class="dropdown">
-                <button class="dropbtn">Test</button>
-                <div class="dropdown-content">
-                  <a>Link 1</a>
-                  <a>Link 2</a>
-                  <a>Link 3</a>
+                <button class="drop-button">
+                    <img src="../../assets/bell.svg" alt="">
+                </button>
+                <div class="drop-content time-tracking">
+                    <!-- todo -->
+                    TimeTracking (Todo ähnlich Toggl)
                 </div>
             </div>
 
             <!-- Profile-Button -->
             <!-- -------------- -->
             <div class="dropdown" style="float:right;">
-                <button class="dropbtn">Maximilian Mustermann</button>
-                <div class="dropdown-content">
-                  <a>Link 1</a>
-                  <a>Link 2</a>
-                  <a>Logout</a>
+                <button class="drop-button profile">
+                    Maximilian Mustermann
+                </button>
+                <div class="drop-content">
+                  <a>Settings</a>
+                  <a routerLink="/partner">Logout</a>
                 </div>
             </div>
 
@@ -46,8 +47,19 @@
     <!-- ************** -->
     <div class="menu-structure">
 
-        <!-- MENU-ITEM 1 -->
-        <!-- *********** -->
+
+        <!-- MENU-ITEM-DASHBOARD -->
+        <!-- ******************* -->
+        <div class="menu-item">
+            <div class="triangle-left"></div>
+                <div class="menu-background">
+                    {{'dashboard'|uppercase}}
+                </div>
+            <div class="triangle-right"></div>
+        </div>
+
+        <!-- MENU-ITEM-HR -->
+        <!-- ************ -->
         <div class="menu-item">
             <div class="triangle-left"></div>
                 <div class="menu-background">
@@ -65,8 +77,8 @@
             </div>
         </div>
 
-        <!-- MENU-ITEM 2 -->
-        <!-- *********** -->
+        <!-- MENU-ITEM-SALES -->
+        <!-- *************** -->
         <div class="menu-item active">
             <div class="triangle-left active"></div>
             <div class="menu-background active">
@@ -88,8 +100,8 @@
             </div>
         </div>
         
-        <!-- MENU-ITEM 3 -->
-        <!-- *********** -->
+        <!-- MENU-ITEM-PARTNERS -->
+        <!-- ****************** -->
         <div class="menu-item">
             <div class="triangle-lefte"></div>
                 <div class="menu-background">
@@ -111,8 +123,8 @@
             </div>
         </div>
 
-        <!-- MENU-ITEM 4 -->
-        <!-- *********** -->
+        <!-- MENU-ITEM-ADMINISTRATION -->
+        <!-- ************************ -->
         <div class="menu-item">
             <div class="triangle-left"></div>
             <div class="menu-background">
@@ -123,8 +135,8 @@
             <!-- MENU-OPTIONS -->
             <div class="submenu-wrapper">
 
-                <div class="submenu-item" routerLink="/partner">
-                    Altes Design
+                <div class="submenu-item">
+                    Administration
                 </div>
                 <div class="submenu-item">
                     Administration
@@ -187,8 +199,8 @@
                         <div class="center">
                             <div class="pagination">
                             <a>&laquo;</a>
-                            <a>1</a>
-                            <a class="active">2</a>
+                            <a class="active">1</a>
+                            <a>2</a>
                             <a>3</a>
                             <a>4</a>
                             <a>5</a>
@@ -297,6 +309,15 @@
                             <div class="action-button-label">
                                 Delete
                             </div>
+                        </div>
+
+                        <div class="action-button-container">
+                            <div class="action-button-icon-only">
+                                <img src="../../assets/compass.png" alt="">
+                            </div>
+                            <!-- <div class="action-button-label">
+                                
+                            </div> -->
                         </div>
 
                     </div>
