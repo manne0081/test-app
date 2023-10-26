@@ -55,12 +55,20 @@ export class TestFirstComponent implements OnInit {
 		'Last-Tile',
 	]
 
+	isExpanded = false;
+
 	constructor() { }
 
     ngOnInit(): void {
     }
 
-	logout() {
-		
+	logout() {		
 	}
+
+	setIsExpanded(isExpanded: boolean) {
+		this.isExpanded = isExpanded;
+	}
+
+
+
 }

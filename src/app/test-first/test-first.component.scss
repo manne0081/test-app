@@ -154,7 +154,7 @@
             height: 100%;            
             display: flex;
             align-items: center;
-            margin: 0 16px;
+            margin: 0px 16px;
             position: relative;
             overflow: visible;  //Nur nötig, weil im sylte.scss * > "overflow" auf hidden steht...
 
@@ -257,7 +257,6 @@
             background-color: #577384;
             color: white;
             border-top: 1px solid #8096A4;
-
             
             .submenu-item {
                 background-color: rgba(255, 255, 255, .2);
@@ -283,7 +282,7 @@
 
         .menu-item:hover .submenu-wrapper {
             display: block;
-            animation: example;
+            animation: expand-menu;
             animation-duration: 0.3s;
         }
         
@@ -455,7 +454,6 @@
 
                 .main-content-actions-container {
                     background-color: white;
-                    // background-color: #d6d6d6;
                     padding: 12px 16px;
                     height: 56px;
                     position: fixed;
@@ -472,21 +470,35 @@
                     justify-content: space-between;
 
                     .actions-wrapper-left {
-                        // background-color: lime;
                         display: flex;           
                     }
 
                     .actions-wrapper-center {
-                        // background-color: orange;
                         display: flex; 
                     }
 
                     .actions-wrapper-right {
-                        // background-color: lime;
                         display: flex;
                     }
 
+                }
 
+                .main-content-actions-container-expanded {
+                    background-color: white;
+                    padding: 12px 16px;
+                    height: 156px;
+                    position: fixed;
+                    bottom: 10px;
+                    width: calc(100% - 500px - 8px);
+                    box-shadow: 0px -2px 6px 2px rgba(0, 0, 0, 0.08);
+                    border-radius: 8px 8px 0 0;
+                    z-index: 4;
+                    border-top: 1px solid #bec8cf;
+                    border-left: 1px solid #bec8cf;
+                    border-right: 1px solid #bec8cf;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
                 }
 
                 .action-button-container {
@@ -548,6 +560,7 @@
                     cursor: pointer;
                 }
 
+                
 
             }
 
@@ -590,17 +603,11 @@
 
 // The animation code
 // ******************
- @keyframes example {
+ @keyframes expand-menu {
     from {
-        // background-color: #d6d6d6;
-        // display: none;
-        // top: 48px;
         opacity: 0;
     }
     to {
-        // background-color: red;
-        // display: block;
-        // top: 96px;
         opacity: 1;
     }
 }

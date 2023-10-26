@@ -220,10 +220,14 @@
                 
                 </div> 
                 
+                <!-- todo -->
+                <!-- was ich noch zu machen habe... -->
 
                 <!-- Main-Content-Actions -->
                 <!-- -------------------- -->
-                <div class="main-content-actions-container">
+                <!-- <div class="main-content-actions-container"> -->
+                <div [ngClass]="{'main-content-actions-container-expanded': isExpanded, 'main-content-actions-container': !isExpanded}"
+                        (mouseleave)="setIsExpanded(false)">
 
                     <div class="actions-wrapper-left">
 
@@ -311,7 +315,7 @@
                             </div>
                         </div>
 
-                        <div class="action-button-container">
+                        <div class="action-button-container more" (click)="setIsExpanded(true)">
                             <div class="action-button-icon-only">
                                 <img src="../../assets/compass.png" alt="">
                             </div>
