@@ -220,109 +220,137 @@
                 
                 </div> 
                 
-                <!-- todo -->
-                <!-- was ich noch zu machen habe... -->
 
                 <!-- Main-Content-Actions -->
-                <!-- -------------------- -->
-                <!-- <div class="main-content-actions-container"> -->
+                <!-- -------------------- -->                    
                 <div [ngClass]="{'main-content-actions-container-expanded': isExpanded, 'main-content-actions-container': !isExpanded}"
                         (mouseleave)="setIsExpanded(false)">
 
-                    <div class="actions-wrapper-left">
+                    <!-- Main-Actions -->
+                    <!-- ------------ -->
+                    <div class="main-actions">
+                        <div class="actions-wrapper-left">
 
-                        <div class="action-button-container save">
-                            <div class="action-button-icon">
-                                <img src="../../assets/calendar2.svg" alt="">
+                            <div class="action-button-container save">
+                                <div class="action-button-icon">
+                                    <img src="../../assets/calendar2.svg" alt="">
+                                </div>
+                                <div class="action-button-label">
+                                    Save
+                                </div>
                             </div>
-                            <div class="action-button-label">
-                                Save
+
+                            <div class="action-button-container">
+                                <div class="action-button-icon">
+                                    <img src="../../assets/calendar2.svg" alt="">
+                                </div>
+                                <div class="action-button-label">
+                                    Action
+                                </div>
+                            </div>
+
+                            <div class="action-button-container">
+                                <div class="action-button-icon">
+                                    <img src="../../assets/calendar2.svg" alt="">
+                                </div>
+                                <div class="action-button-label">
+                                    Action
+                                </div>
+                            </div>
+
+                            <div class="action-button-container">
+                                <div class="action-button-icon">
+                                    <img src="../../assets/calendar2.svg" alt="">
+                                </div>
+                                <div class="action-button-label">
+                                    Action
+                                </div>
                             </div>
                         </div>
 
-                        <div class="action-button-container">
-                            <div class="action-button-icon">
-                                <img src="../../assets/calendar2.svg" alt="">
+                        <div class="actions-wrapper-center">
+                            <div class="action-button-container">
+                                <div class="action-button-icon">
+                                    <img src="../../assets/calendar2.svg" alt="">
+                                </div>
+                                <div class="action-button-label">
+                                    Action
+                                </div>
                             </div>
-                            <div class="action-button-label">
-                                Action
+                            <div class="action-button-container">
+                                <div class="action-button-icon">
+                                    <img src="../../assets/calendar2.svg" alt="">
+                                </div>
+                                <div class="action-button-label">
+                                    Action
+                                </div>
+                            </div>
+                            <div class="action-button-container">
+                                <div class="action-button-icon">
+                                    <img src="../../assets/calendar2.svg" alt="">
+                                </div>
+                                <div class="action-button-label">
+                                    Action
+                                </div>
                             </div>
                         </div>
 
-                        <div class="action-button-container">
-                            <div class="action-button-icon">
-                                <img src="../../assets/calendar2.svg" alt="">
-                            </div>
-                            <div class="action-button-label">
-                                Action
-                            </div>
-                        </div>
+                        <div class="actions-wrapper-right">
 
-                        <div class="action-button-container">
-                            <div class="action-button-icon">
-                                <img src="../../assets/calendar2.svg" alt="">
+                            <div class="action-button-container">
+                                <div class="action-button-icon">
+                                    <img src="../../assets/calendar2.svg" alt="">
+                                </div>
+                                <div class="action-button-label">
+                                    Action
+                                </div>
                             </div>
-                            <div class="action-button-label">
-                                Action
+
+                            <div class="action-button-container delete">
+                                <div class="action-button-icon">
+                                    <img src="../../assets/calendar2.svg" alt="">
+                                </div>
+                                <div class="action-button-label">
+                                    Delete
+                                </div>
                             </div>
+
+                            <div class="action-button-container more" (click)="setIsExpanded(true)">
+                                <div class="action-button-icon-only">
+                                    <img src="../../assets/compass.png" alt="">
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-                    <div class="actions-wrapper-center">
-                        <div class="action-button-container">
-                            <div class="action-button-icon">
-                                <img src="../../assets/calendar2.svg" alt="">
+                    <!-- Additional-Actions -->
+                    <!-- ------------------ -->
+                    <div [ngClass]="{'additional-actions-expanded': isExpanded, 'additional-actions': !isExpanded}">
+                        <div class="additional-actions-container">
+                            <div class="additional-actions-button">
+                                Additional Action 1
                             </div>
-                            <div class="action-button-label">
-                                Action
+                            <div class="additional-actions-button">
+                                Additional Action 2
                             </div>
-                        </div>
-                        <div class="action-button-container">
-                            <div class="action-button-icon">
-                                <img src="../../assets/calendar2.svg" alt="">
+                            <div class="additional-actions-button">
+                                Additional Action 3
                             </div>
-                            <div class="action-button-label">
-                                Action
+                            <div class="additional-actions-button">
+                                Additional Action 4
                             </div>
-                        </div>
-                        <div class="action-button-container">
-                            <div class="action-button-icon">
-                                <img src="../../assets/calendar2.svg" alt="">
+                            <div class="additional-actions-button">
+                                Additional Action 5
                             </div>
-                            <div class="action-button-label">
-                                Action
+                            <div class="additional-actions-button">
+                                Additional Action 6
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="actions-wrapper-right">
-
-                        <div class="action-button-container">
-                            <div class="action-button-icon">
-                                <img src="../../assets/calendar2.svg" alt="">
-                            </div>
-                            <div class="action-button-label">
-                                Action
+                            <div class="additional-actions-button">
+                                Additional Action 7
                             </div>
                         </div>
-
-                        <div class="action-button-container delete">
-                            <div class="action-button-icon">
-                                <img src="../../assets/calendar2.svg" alt="">
-                            </div>
-                            <div class="action-button-label">
-                                Delete
-                            </div>
-                        </div>
-
-                        <div class="action-button-container more" (click)="setIsExpanded(true)">
-                            <div class="action-button-icon-only">
-                                <img src="../../assets/compass.png" alt="">
-                            </div>
-                            <!-- <div class="action-button-label">
-                                
-                            </div> -->
-                        </div>
+                        <hr style="margin-top: 12px">
 
                     </div>
 
