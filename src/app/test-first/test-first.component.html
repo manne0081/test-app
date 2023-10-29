@@ -23,7 +23,7 @@
                 </button>
                 <div class="drop-content time-tracking">
                     <!-- todo -->
-                    TimeTracking (Todo ähnlich Toggl)
+                    Time-Tracking
                 </div>
             </div>
 
@@ -182,14 +182,26 @@
                 <!-- Main-Content-Header -->
                 <!-- ------------------- -->
                 <div class="main-content-header-container">
-                    <h1>Invoices</h1>
+                    <h1>Invoices</h1>                    
                 </div>                
 
                 <!-- Main-Content-Tiles -->
                 <!-- ------------------ -->
                 <div class="content-tile-wrapper">
                     <div class="content-tile-container" *ngFor="let tile of tiles; index as i">
-                        {{tile}} {{i+1}}
+
+                        <div class="tile-container-selector">
+                            <input type="checkbox">
+                        </div>
+
+                        <div class="tile-container-content">
+                            {{tile}} {{i+1}}
+                        </div>
+
+                        <div class="tile-container-opener">
+                            <img src="../../assets/chevron.svg" alt="">
+                        </div>
+
                     </div>
 
                     <!-- Main-Content-Pagination -->
@@ -327,25 +339,25 @@
                     <!-- ------------------ -->
                     <div [ngClass]="{'additional-actions-expanded': isExpanded, 'additional-actions': !isExpanded}">
                         <div class="additional-actions-container">
-                            <div class="additional-actions-button">
+                            <div class="additional-actions-button" (click)="setIsExpanded(false)">
                                 Additional Action 1
                             </div>
-                            <div class="additional-actions-button">
+                            <div class="additional-actions-button" (click)="setIsExpanded(false)">
                                 Additional Action 2
                             </div>
-                            <div class="additional-actions-button">
+                            <div class="additional-actions-button" (click)="setIsExpanded(false)">
                                 Additional Action 3
                             </div>
-                            <div class="additional-actions-button">
+                            <div class="additional-actions-button" (click)="setIsExpanded(false)">
                                 Additional Action 4
                             </div>
-                            <div class="additional-actions-button">
+                            <div class="additional-actions-button" (click)="setIsExpanded(false)">
                                 Additional Action 5
                             </div>
-                            <div class="additional-actions-button">
+                            <div class="additional-actions-button" (click)="setIsExpanded(false)">
                                 Additional Action 6
                             </div>
-                            <div class="additional-actions-button">
+                            <div class="additional-actions-button" (click)="setIsExpanded(false)">
                                 Additional Action 7
                             </div>
                         </div>
