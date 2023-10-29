@@ -47,7 +47,11 @@
 
         .logo {
             flex: 34%;
-            text-align: center;            
+            text-align: center;
+            
+            img {
+                height: 36px;
+            }
         }
 
         .function-wrapper {
@@ -96,10 +100,11 @@
                 }
                 
                 .drop-content {
+                    background-color: #ececec;
+                    border:1px solid rgba(0, 0, 0, .14);
                     display: none;
                     position: absolute;
                     right: 0px;
-                    background-color: #f9f9f9;
                     min-width: 160px;
                     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
                     z-index: 100;
@@ -117,7 +122,6 @@
                 // Special for time tracking
                 // -------------------------
                 .drop-content.time-tracking {
-                    // background-color: lime;
                     padding: 12px 16px;
                     min-width: 400px;
                     min-height: 600px;
@@ -540,11 +544,14 @@
 
                         .action-button-icon-only {
 
-                            img {
-                                margin-top: 2px;
+                            img.button-more {
+                                margin-top: 1px;
                                 height: 20px;
+
                             }
                         }
+
+                        
 
                     }
 
@@ -597,11 +604,9 @@
                 // --------------------------
                 .additional-actions {
                     display: none;
-
                 }
 
                 .additional-actions-expanded {
-                    // background-color: rgb(223, 223, 223);
                     margin-top: 4px;
                     margin-bottom: 44px;
 
@@ -616,7 +621,12 @@
                             border: 1px solid rgba(0, 0, 0, .14);
                             height: 32px;
                             padding: 6px 8px;
-                            // margin-bottom: 8px;
+                        }
+                        
+                        .additional-actions-button:hover {
+                            background-color: rgba(0, 0, 0, .14);
+                            border: 1px solid rgba(0, 0, 0, .18);
+                            cursor: pointer;
                         }
                     }
                 }
