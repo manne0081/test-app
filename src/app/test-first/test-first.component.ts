@@ -57,6 +57,8 @@ export class TestFirstComponent implements OnInit {
 
 	isExpanded = false;
 
+	addInfo: String = "";
+
 	constructor() { }
 
     ngOnInit(): void {
@@ -69,6 +71,8 @@ export class TestFirstComponent implements OnInit {
 		this.isExpanded = isExpanded;
 	}
 
-
+	setAddInfo(test: String) {
+		this.addInfo = test;
+	}
 
 }

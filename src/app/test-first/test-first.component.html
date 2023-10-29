@@ -188,7 +188,9 @@
                 <!-- Main-Content-Tiles -->
                 <!-- ------------------ -->
                 <div class="content-tile-wrapper">
-                    <div class="content-tile-container" *ngFor="let tile of tiles; index as i">
+                    <div class="content-tile-container"
+                        *ngFor="let tile of tiles; index as i"
+                        (click)="setAddInfo(tile + ' ' + (i + 1))">
 
                         <div class="tile-container-selector">
                             <input type="checkbox">
@@ -373,7 +375,11 @@
             <!-- Additional Informations -->
             <!-- ----------------------- -->
             <div class="addinfo-wrapper">
-                Additional-Infos
+                <div style="background-color: rgba(0, 0, 0, .08); border-radius: 4px; padding: 4px 12px;
+                            font-weight: bold; border: 1px solid rgba(0, 0, 0, .12);"
+                *ngIf="addInfo">
+                    {{addInfo}}
+                </div>
             </div>
 
         </div>
