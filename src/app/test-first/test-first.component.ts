@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class TestFirstComponent implements OnInit {
+	// arrays
+	// ******
 	quicklinks: String[] = [
 		'Quicklink',
 		'Quicklink',
@@ -55,9 +57,13 @@ export class TestFirstComponent implements OnInit {
 		'Last-Tile',
 	]
 
-	isExpanded = false;
-
+	// variables
+	// *********
 	addInfo: String = "";
+
+	additionalActionsExpanded = false;
+	myQuicklinksVisible = true;
+	additionalInformationVisible = true;
 
 	constructor() { }
 
@@ -67,8 +73,12 @@ export class TestFirstComponent implements OnInit {
 	logout() {		
 	}
 
-	setIsExpanded(isExpanded: boolean) {
-		this.isExpanded = isExpanded;
+	setAdditionalActionsExpanded(isExpanded: boolean) {
+		this.additionalActionsExpanded = isExpanded;
+	}
+
+	setMyQuicklinksVisible(visible: boolean) {
+		this.myQuicklinksVisible = visible;
 	}
 
 	setAddInfo(test: String) {

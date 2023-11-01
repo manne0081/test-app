@@ -150,11 +150,12 @@
     <!-- CONTENT -->
     <!-- ******* -->
     <div class="content-structure">
-        <div class="content-background">   
+        <!-- <div class="content-background"> -->
+        <div [ngClass]="{'content-background': myQuicklinksVisible, 'content-background-tiles-only': !myQuicklinksVisible}">
 
             <!-- Quicklinks -->
             <!-- ---------- -->
-            <div class="quicklink-container">
+            <div class="quicklink-container" *ngIf="myQuicklinksVisible">
 
                 <!-- Quicklink-Header -->
                 <!-- ---------------- -->
@@ -236,15 +237,15 @@
 
                 <!-- Main-Content-Actions -->
                 <!-- -------------------- -->                    
-                <div [ngClass]="{'main-content-actions-container-expanded': isExpanded, 'main-content-actions-container': !isExpanded}"
-                        (mouseleave)="setIsExpanded(false)">
+                <div [ngClass]="{'main-content-actions-container-expanded': additionalActionsExpanded, 'main-content-actions-container': !additionalActionsExpanded}"
+                        (mouseleave)="setAdditionalActionsExpanded(false)">
 
                     <!-- Main-Actions -->
                     <!-- ------------ -->
                     <div class="main-actions">
                         <div class="actions-wrapper-left">
 
-                            <div class="action-button-container save">
+                            <div class="action-button-container save" (click)="setMyQuicklinksVisible(true)">
                                 <div class="action-button-icon">
                                     <img src="../../assets/calendar2.svg" alt="">
                                 </div>
@@ -319,7 +320,7 @@
                                 </div>
                             </div>
 
-                            <div class="action-button-container delete">
+                            <div class="action-button-container delete" (click)="setMyQuicklinksVisible(false)">
                                 <div class="action-button-icon">
                                     <img src="../../assets/calendar2.svg" alt="">
                                 </div>
@@ -328,7 +329,7 @@
                                 </div>
                             </div>
 
-                            <div class="action-button-container more" (click)="setIsExpanded(true)">
+                            <div class="action-button-container more" (click)="setAdditionalActionsExpanded(true)">
                                 <div class="action-button-icon-only">
                                     <img class="button-more" src="../../assets/more.svg" alt="">
                                 </div>
@@ -339,27 +340,27 @@
 
                     <!-- Additional-Actions -->
                     <!-- ------------------ -->
-                    <div [ngClass]="{'additional-actions-expanded': isExpanded, 'additional-actions': !isExpanded}">
+                    <div [ngClass]="{'additional-actions-expanded': additionalActionsExpanded, 'additional-actions': !additionalActionsExpanded}">
                         <div class="additional-actions-container">
-                            <div class="additional-actions-button" (click)="setIsExpanded(false)">
+                            <div class="additional-actions-button" (click)="setAdditionalActionsExpanded(false)">
                                 Additional Action 1
                             </div>
-                            <div class="additional-actions-button" (click)="setIsExpanded(false)">
+                            <div class="additional-actions-button" (click)="setAdditionalActionsExpanded(false)">
                                 Additional Action 2
                             </div>
-                            <div class="additional-actions-button" (click)="setIsExpanded(false)">
+                            <div class="additional-actions-button" (click)="setAdditionalActionsExpanded(false)">
                                 Additional Action 3
                             </div>
-                            <div class="additional-actions-button" (click)="setIsExpanded(false)">
+                            <div class="additional-actions-button" (click)="setAdditionalActionsExpanded(false)">
                                 Additional Action 4
                             </div>
-                            <div class="additional-actions-button" (click)="setIsExpanded(false)">
+                            <div class="additional-actions-button" (click)="setAdditionalActionsExpanded(false)">
                                 Additional Action 5
                             </div>
-                            <div class="additional-actions-button" (click)="setIsExpanded(false)">
+                            <div class="additional-actions-button" (click)="setAdditionalActionsExpanded(false)">
                                 Additional Action 6
                             </div>
-                            <div class="additional-actions-button" (click)="setIsExpanded(false)">
+                            <div class="additional-actions-button" (click)="setAdditionalActionsExpanded(false)">
                                 Additional Action 7
                             </div>
                         </div>
@@ -374,7 +375,7 @@
 
             <!-- Additional Informations -->
             <!-- ----------------------- -->
-            <div class="addinfo-wrapper">
+            <div class="addinfo-wrapper" *ngIf="additionalInformationVisible">
                 <div style="background-color: rgba(0, 0, 0, .08); border-radius: 4px; padding: 4px 12px;
                             font-weight: bold; border: 1px solid rgba(0, 0, 0, .12);"
                 *ngIf="addInfo">
