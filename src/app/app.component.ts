@@ -35,5 +35,10 @@ export class AppComponent implements OnInit{
             console.log("es gibt keinen cookie-value");
             this.router.navigate(['home']);
         }
+
+        // Solange die cookies nicht funktionieren
+        // todo
+        this.router.navigate(['test']);
+
     }
 }
