@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { QuicklinksComponent } from './quicklinks/quicklinks.component';
 import { MainNavigationComponent } from './main-navigation/main-navigation.component';
 import { PartnerComponent } from './partner/partner.component';
+import { TestSecondComponent } from './test-second/test-second.component';
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import { PartnerComponent } from './partner/partner.component';
         QuicklinksComponent,
         MainNavigationComponent,
         PartnerComponent,
+        TestSecondComponent,
     ],
     imports: [
         BrowserModule,

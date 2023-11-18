@@ -1,0 +1,156 @@
+<div class="page-structure">
+
+    <!-- HEADER -->
+    <!-- ****** -->
+    <div class="header-container">
+        <div class="searching-container">
+            <div class="searching-background">
+                <img src="../../assets/calendar2.svg" alt="">
+                <span>Searching...</span>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="../../assets/logo-design-49570.png" alt="">
+        </div>
+        <div class="function-wrapper">
+            
+            <!-- TimeTracking -->
+            <!-- ------------ -->
+            <div class="dropdown">
+                <button class="drop-button">
+                    <img src="../../assets/bell.svg" alt="">
+                </button>
+                <div class="drop-content time-tracking">
+                    <!-- todo -->
+                    Time-Tracking
+                </div>
+            </div>
+
+            <!-- Profile-Button -->
+            <!-- -------------- -->
+            <div class="dropdown" style="float:right;">
+                <button class="drop-button profile">
+                    Maximilian Mustermann
+                </button>
+                <div class="drop-content">
+                  <a>Settings</a>
+                  <a routerLink="/partner">Logout</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+    <!-- MENU-STRUCTURE -->
+    <!-- ************** -->
+    <div class="menu-container">
+
+        <div class="menu-item-container" style="padding-right: 8px; border-right: 1px solid #c0c0c0">            
+            <div class="menu-item-icon">
+                <img class="menu-item" src="../../assets/grid.svg" alt="">
+            </div>
+        </div>
+
+        <div class="menu-item-container">
+            <div class="menu-item-icon">
+                <img class="menu-item" src="../../assets/compass.png" alt="">
+            </div>
+            <div class="menu-item-text">
+                Favorites
+            </div>
+        </div>
+
+        <div class="menu-item-container active">
+            <div class="menu-item-icon">
+                <img class="menu-item" src="../../assets/compass.png" alt="">
+            </div>
+            <div class="menu-item-text">
+                Menuname 1
+            </div>
+        </div>
+
+        <div class="menu-item-container">
+            <div class="menu-item-icon">
+                <img class="menu-item" src="../../assets/compass.png" alt="">
+            </div>
+            <div class="menu-item-text">
+                Menuname 2
+            </div>
+        </div>
+
+        <div class="menu-item-container">
+            <div class="menu-item-icon">
+                <img class="menu-item" src="../../assets/compass.png" alt="">
+            </div>
+            <div class="menu-item-text">
+                Menuname 3
+            </div>
+        </div>
+
+    </div>
+    
+
+    <!-- CONTENT -->
+    <!-- ******* -->
+    <div class="content-container">
+        <div class="content-background">
+            <div class="content-header-container">
+
+                <div [ngClass]="{'content-header-button': myQuicklinksVisible, 'content-header-button-inactive': !myQuicklinksVisible}" 
+                    style="margin-right: 8px;" (click)="setMyQuicklinksVisible()">
+                <!-- <div class="content-header-button" style="margin-right: 8px;" (click)="setMyQuicklinksVisible()"> -->
+                    Quicklinks
+                </div>
+                <div class="content-header-title">
+                    Menuname 1
+                </div>
+                <div [ngClass]="{'content-header-button': additionalInformationVisible, 'content-header-button-inactive': !additionalInformationVisible}"
+                    style="margin-right: 8px;" (click)="setAdditionalInformationVisible()">
+                    Additional Information
+                </div>
+
+            </div>
+
+            <div [ngClass]="{'content-wrapper-full': myQuicklinksVisible && additionalInformationVisible,
+                             'content-wrapper-quicklinks-hidden': !myQuicklinksVisible && additionalInformationVisible,
+                             'content-wrapper-add-info-hidden': myQuicklinksVisible && !additionalInformationVisible,
+                             'content-wrapper-content-only': !myQuicklinksVisible && !additionalInformationVisible}">
+            <!-- <div class="content-wrapper-full"> -->
+                <div class="quicklink-container">
+                    <h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1>
+                    <h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1>
+                    <h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1>
+                    <h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1>
+                    <h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1>
+                    <h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1>
+                    <h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1>
+                </div>
+                <div class="main-content-container">
+                    <h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1>
+                    <h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1>
+                    <h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1>
+                    <h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1>
+                    <h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1>
+                    <h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1>
+                    <h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1>
+                </div>
+                <div class="add-info-container">
+                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
+                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
+                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
+                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
+                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
+                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
+                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
+                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
+                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
+                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
+                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

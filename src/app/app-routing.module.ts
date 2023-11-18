@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { TestFirstComponent } from './test-first/test-first.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PartnerComponent } from './partner/partner.component';
+import { TestFirstComponent } from './test-first/test-first.component';
+import { TestSecondComponent } from './test-second/test-second.component';
 
 const routes: Routes = [
     { path: '',   redirectTo: 'home', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: 'partner', component: PartnerComponent },
 
     { path: 'test', component: TestFirstComponent },
+    { path: 'test2', component: TestSecondComponent },
     { path: '**', component: AppComponent },
 ];
 
