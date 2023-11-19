@@ -268,6 +268,12 @@
                 }
             }
 
+
+            // todo
+            // I need a solution that i dont have to copy the css-code for example from the quicklinks (full) to the quicklinks (add-info-hidden)
+            // ----------------------------------------------------------------------------------------------------------------------------------
+            
+
             // Content-Wrapper (incl. quicklinks and additional information
             // ************************************************************
             .content-wrapper-full {
@@ -424,6 +430,7 @@
                 }
             }
 
+
             .content-wrapper-quicklinks-hidden {
                 display: grid;
                 grid-template-columns: auto 240px;
@@ -454,6 +461,7 @@
                 }
             }
 
+
             .content-wrapper-add-info-hidden {
                 display: grid;
                 grid-template-columns: 240px auto;
@@ -483,6 +491,7 @@
                     display: none;
                 }
             }
+
 
             .content-wrapper-content-only {
                 display: grid;
