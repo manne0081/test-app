@@ -95,16 +95,26 @@
     <!-- ******* -->
     <div class="content-container">
         <div class="content-background">
+
+            <!-- Content-Header -->
+            <!-- ************** -->
             <div class="content-header-container">
 
+                <!-- Content-Header > Button to toggle the Quicklink visibility -->
+                <!-- ********************************************************** -->
                 <div [ngClass]="{'content-header-button': myQuicklinksVisible, 'content-header-button-inactive': !myQuicklinksVisible}" 
                     style="margin-right: 8px;" (click)="setMyQuicklinksVisible()">
-                <!-- <div class="content-header-button" style="margin-right: 8px;" (click)="setMyQuicklinksVisible()"> -->
                     Quicklinks
                 </div>
+
+                <!-- Content-Header > Title -->
+                <!-- ********************** -->
                 <div class="content-header-title">
                     Menuname 1
                 </div>
+
+                <!-- Content-Header > Button to toggle the ADD-Info visibility -->
+                <!-- ********************************************************* -->
                 <div [ngClass]="{'content-header-button': additionalInformationVisible, 'content-header-button-inactive': !additionalInformationVisible}"
                     style="margin-right: 8px;" (click)="setAdditionalInformationVisible()">
                     Additional Information
@@ -112,45 +122,85 @@
 
             </div>
 
+            <!-- Content-Wrapper > Quicklinks / Main-Menu / Additional Informations -->
+            <!-- There are different CSS-Classes for the Variants (full / without Quicklinks / without AddInfos / Tiles only) -->
+            <!-- ************************************************************************************************************ -->
             <div [ngClass]="{'content-wrapper-full': myQuicklinksVisible && additionalInformationVisible,
                              'content-wrapper-quicklinks-hidden': !myQuicklinksVisible && additionalInformationVisible,
                              'content-wrapper-add-info-hidden': myQuicklinksVisible && !additionalInformationVisible,
                              'content-wrapper-content-only': !myQuicklinksVisible && !additionalInformationVisible}">
-            <!-- <div class="content-wrapper-full"> -->
+
+                <!-- Quicklinks-Area -->
+                <!-- *************** -->
                 <div class="quicklink-container">
-                    <h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1>
-                    <h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1>
-                    <h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1>
-                    <h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1>
-                    <h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1>
-                    <h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1>
-                    <h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1><h1>Quicklink</h1>
+
+                    <div class="quicklink-header-container">
+                        <span class="quicklink-header-title">My Quicklinks</span>
+                        
+                        <input class="quicklink-header-searching" type="text" placeholder="Searching...">
+                    </div>
+
+                    <div class="quicklink-items-wrapper">
+
+                        <div class="quicklink-item-container" *ngFor="let quicklink of quicklinks, index as i">
+                            <div class="quicklink-drag-icon">
+                                <img src="../../assets/menu.svg" alt="">
+                            </div>
+
+                            <div class="quicklink-item-title">    
+                                {{quicklink}} {{i+1}}
+                            </div>
+
+                            <div class="quicklink-actions-icon">
+                                <img src="../../assets/more.svg" alt="">
+                            </div>
+                        </div>
+                        
+                    </div>
+
                 </div>
+
+                <!-- MainContent-Area -->
+                <!-- **************** -->
                 <div class="main-content-container">
-                    <h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1>
-                    <h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1>
-                    <h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1>
-                    <h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1>
-                    <h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1>
-                    <h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1>
-                    <h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1><h1>Content</h1>
+
+                    <!-- MainContent-Header -->
+                    <!-- ****************** -->
+                    <div class="main-content-header-wrapper">Main-Content-Header</div>
+
+                    <!-- MainContent-Tiles -->
+                    <!-- ***************** -->
+                    <div class="main-content-tiles-wrapper">
+                        <div class="main-content-tile-background" *ngFor="let tile of tiles, index as i" (click)="setAddInfo(tile + ' ' + (i + 1))">
+                            <h1>{{tile}} {{i+1}}</h1>
+                        </div>
+                    </div>
+
+                    <!-- MainContent-ActionMenu -->
+                    <!-- ********************** -->
+                    <div class="main-content-bottom-actions">Bottom-Action-Menu</div>
+
                 </div>
+
+                <!-- Additional-Info-Area -->
+                <!-- ******************** -->
                 <div class="add-info-container">
-                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
-                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
-                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
-                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
-                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
-                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
-                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
-                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
-                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
-                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
-                    <h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1><h1>Additional Information</h1>
+
+                    <!-- AddInfo-Header -->
+                    <!-- ************** -->
+                    <div class="add-info-header">
+                        AddInfo-Header
+                    </div>
+
+                    <!-- AddInfo-Content -->
+                    <div class="add-info-wrapper">
+
+                        <div class="add-info-item" *ngIf="addInfo">
+                            {{addInfo}}
+                        </div>
+                    </div>                    
                 </div>
             </div>
-
         </div>
     </div>
-
 </div>

@@ -133,7 +133,7 @@
                 // Special for Profile-Button
                 // --------------------------
                 .drop-button.profile {
-                    background-color: #6f879b;
+                    background-color: rgba(44, 81, 104, .8);
                 }
             }            
             
@@ -143,7 +143,7 @@
 
             // Special für Profile-Button
             // --------------------------
-            .dropdown:hover .drop-button.profile {background-color: #5f768a;}
+            .dropdown:hover .drop-button.profile {background-color: rgba(44, 81, 104, .7)}
 
         }
     }
@@ -174,7 +174,8 @@
             }
 
             .menu-item-text {
-                // background-color: orange;
+                font-size: 1.2em;
+                font-weight: bold;
             }
             
         }
@@ -210,8 +211,6 @@
         background-color: rgba(44, 80, 103, .8);
         z-index: -1;
         padding: 12px;
-        overflow: hidden;
-
         overflow-y: hidden;
         
         .content-background {
@@ -220,7 +219,9 @@
             height: 100%;
             border-radius: 8px;
             overflow-y: hidden;
-            
+
+            // Content-Header
+            // **************
             .content-header-container {
                 height: 44px;
                 position: fixed;
@@ -228,13 +229,12 @@
                 border-radius: 8px 0 0 0;
                 border-bottom: 1px solid rgba(44, 80, 103, .4);
                 padding-left: 8px;
-
                 display: grid;
                 grid-template-columns: 101px auto 185px;
                 align-items: center;
 
                 .content-header-button {
-                    background-color: #2c5067;
+                    background-color: rgba(44, 80, 103, .8);
                     padding: 5px 10px;
                     border-radius: 6px;
                     height: 28px;
@@ -242,7 +242,7 @@
                 }
 
                 .content-header-button:hover {
-                    background-color: rgba(44, 80, 103, .8);
+                    background-color: rgba(44, 80, 103, .6);
                     cursor: pointer;
                 }
 
@@ -268,6 +268,8 @@
                 }
             }
 
+            // Content-Wrapper (incl. quicklinks and additional information
+            // ************************************************************
             .content-wrapper-full {
                 display: grid;
                 grid-template-columns: 240px auto 240px;
@@ -275,17 +277,148 @@
                 overflow: hidden;
                 height: 100%;
 
+                // Quicklinks
+                // ----------
                 .quicklink-container {
                     overflow-y: scroll;
+
+                    .quicklink-header-container {
+                        background-color: white;
+                        padding: 12px 12px;
+                        position: fixed;
+                        width: calc(240px - 8px);
+                        box-shadow: 0px 6px 4px -2px rgba(0, 0, 0, .20);
+                        z-index: 1;
+
+                        .quicklink-header-title {
+                            font-size: 1.1em;
+                            color: rgba(43, 81, 105, .6);
+                            padding-left: 2px;
+                        }
+                        
+                        .quicklink-header-searching {
+                            background-color: #fafafc;
+                            margin-top: 6px;
+                            padding: 4px 6px;
+                            border-radius: 4px;
+                            border: 1px solid #d6d6d6;
+                            
+                        }
+                    }
+                    
+                    .quicklink-items-wrapper {
+                        margin-top: 80px;
+                        margin-bottom: 46px;
+                        padding: 8px 12px;
+
+                        .quicklink-item-container {
+                            border-bottom: 1px solid rgba(0, 0, 0, .06);
+                            height: 32px;
+                            display: flex;
+                            align-items: center;
+                            position: relative;
+
+                            .quicklink-drag-icon {
+                                height: 100%;
+                                width: 32px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-around;
+
+                                img {
+                                    // background-color: lime;
+                                }
+                            }
+                            
+                            .quicklink-item-title {
+                                // background-color: orange;
+                                padding-left: 8px;
+                                
+                            }
+                            
+                            .quicklink-actions-icon {
+                                // background-color: lime;
+                                height: 100%;
+                                width: 32px;
+                                position: absolute;
+                                right: 0px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-around;
+                            }
+
+                        }
+                    }
                 }
 
+                // Main-Content
+                // ------------
                 .main-content-container {
                     background-color: rgba(44, 80, 103, .3);
                     overflow-y: scroll;
+                    margin-bottom: 44px;
+
+                    .main-content-header-wrapper {
+                        background-color: white;
+                        border-radius: 0px 0px 8px 8px;
+                        padding: 10px 16px;
+                        box-shadow: 0px 6px 4px -2px rgba(0, 0, 0, .20);
+                        position: fixed;
+                        width: calc(100% - 512px);
+                    }
+
+                    .main-content-tiles-wrapper {
+                        padding: 8px 16px;
+                        margin-top: 46px;
+                        margin-bottom: 42px;
+
+                        .main-content-tile-background {
+                            background-color: #fdfeff;
+                            margin-bottom: 8px;
+                            border-radius: 6px;
+                            padding: 8px 12px;
+                            border: 1px solid #e9e9e9;
+                            
+                        }
+                    }
+
+                    .main-content-bottom-actions {
+                        background-color: white;
+                        position: fixed;
+                        bottom: 12px;
+                        padding: 10px 16px;
+                        border-radius: 8px 8px 0px 0px;
+                        box-shadow: 0px -6px 4px -2px rgba(0, 0, 0, .20);
+                        width: calc(100% - 512px);
+                    }
                 }
                 
+                // Additional Information
+                // ----------------------
                 .add-info-container {
                     overflow-y: scroll;
+
+                    .add-info-header {
+                        background-color: white;
+                        padding: 12px 12px;
+                        position: fixed;
+                        width: calc(240px - 8px);
+                        box-shadow: 0px 6px 4px -2px rgba(0, 0, 0, .20);
+                        z-index: 1;
+                    }
+
+                    .add-info-wrapper {
+                        margin-top: 48px;
+                        margin-bottom: 46px;
+                        padding: 10px 16px;
+
+                        .add-info-item {
+                            background-color: rgba(0, 0, 0, .04);
+                            border: 1px solid rgba(0, 0, 0, .06);
+                            border-radius: 4px;
+                            padding: 6px 10px;
+                        }
+                    }
                 }
             }
 
@@ -299,15 +432,21 @@
                 // animation: hideQuicklinks;
                 // animation-duration: 0.4s;
 
+                // Quicklinks
+                // ----------
                 .quicklink-container {
-                    display: none;                    
+                    display: none;
                 }
 
+                // Main-Content
+                // ------------
                 .main-content-container {
                     background-color: rgba(44, 80, 103, .3);
                     overflow-y: scroll;
                 }
                 
+                // Additional Information
+                // ----------------------
                 .add-info-container {
                     overflow-y: scroll;
                 }
@@ -323,15 +462,21 @@
                 // animation: hideQuicklinks;
                 // animation-duration: 0.4s;
 
+                // Quicklinks
+                // ----------
                 .quicklink-container {
                     overflow-y: scroll;                  
                 }
 
+                // Main-Content
+                // ------------
                 .main-content-container {
                     background-color: rgba(44, 80, 103, .3);
                     overflow-y: scroll;
                 }
                 
+                // Additional Information
+                // ----------------------
                 .add-info-container {
                     display: none;
                 }
@@ -347,15 +492,21 @@
                 // animation: hideQuicklinks;
                 // animation-duration: 0.4s;
 
+                // Quicklinks
+                // ----------
                 .quicklink-container {
                     display: none;
                 }
 
+                // Main-Content
+                // ------------
                 .main-content-container {
                     background-color: rgba(44, 80, 103, .3);
                     overflow-y: scroll;
                 }
                 
+                // Additional Information
+                // ----------------------
                 .add-info-container {
                     display: none;
                 }
@@ -408,15 +559,11 @@
 
 // The animation code
 // ******************
-@keyframes hideQuicklinks {
+@keyframes opacityShowElement {
     from {
-        grid-template-columns: 240px auto 240px;
+        opacity: 0;
     }
     to {
-        grid-template-columns: auto 240px;
+        opacity: 1;
     }
 }
-
-
-
-

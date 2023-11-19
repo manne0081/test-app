@@ -7,7 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class TestSecondComponent {
-	myQuicklinksVisible:boolean = true;
+	quicklinks: String[] = [
+		'First-Quicklink',	
+		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',		
+		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',		
+		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',		
+		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',		
+		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',		
+		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',		
+		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',
+		'Last-Quicklink',		
+	];
+
+	tiles: String[] = [
+		'First-Tile',
+		'Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile',
+		'Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile',
+		'Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile',
+		'Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile',		
+		'Last-Tile',
+	];
+
+	addInfo: String = "";
+
+	myQuicklinksVisible:boolean = true;	
 	additionalInformationVisible:boolean = true;
 
 	constructor() { }
@@ -48,6 +71,10 @@ export class TestSecondComponent {
 			console.log(this.additionalInformationVisible);
 			console.log(this.myQuicklinksVisible);
 		}
+	}
+
+	setAddInfo(test: String) {
+		this.addInfo = test;
 	}
 
 }
