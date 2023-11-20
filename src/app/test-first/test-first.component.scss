@@ -301,7 +301,7 @@
     .content-structure {
         background-color: rgba(44, 80, 103, 0.6);
         padding: 10px;
-        overflow: hidden;
+        //overflow: hidden;
 
         .content-background {
             background-color: #d3d3d3;
@@ -310,7 +310,7 @@
             border-radius: 8px;
             display: grid;
             grid-template-columns: 240px auto 240px;
-            overflow: hidden;
+            //overflow: hidden;
 
             // Qicklinks
             // ---------
