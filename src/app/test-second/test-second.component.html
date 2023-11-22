@@ -13,7 +13,7 @@
             <img src="../../assets/logo-design-49570.png" alt="">
         </div>
         <div class="function-wrapper">
-            
+
             <!-- TimeTracking -->
             <!-- ------------ -->
             <div class="dropdown">
@@ -41,12 +41,12 @@
         </div>
     </div>
 
-    
+
     <!-- MENU-STRUCTURE -->
     <!-- ************** -->
     <div class="menu-container">
 
-        <div class="menu-item-container" style="padding-right: 8px; border-right: 1px solid #c0c0c0">            
+        <div class="menu-item-container" style="padding-right: 8px; border-right: 1px solid #c0c0c0">
             <div class="menu-item-icon">
                 <img class="menu-item" src="../../assets/grid.svg" alt="">
             </div>
@@ -89,7 +89,7 @@
         </div>
 
     </div>
-    
+
 
     <!-- CONTENT -->
     <!-- ******* -->
@@ -102,7 +102,7 @@
 
                 <!-- Content-Header > Button to toggle the Quicklink visibility -->
                 <!-- ********************************************************** -->
-                <div [ngClass]="{'content-header-button': myQuicklinksVisible, 'content-header-button-inactive': !myQuicklinksVisible}" 
+                <div [ngClass]="{'content-header-button': myQuicklinksVisible, 'content-header-button-inactive': !myQuicklinksVisible}"
                     style="margin-right: 8px;" (click)="setMyQuicklinksVisible()">
                     Quicklinks
                 </div>
@@ -136,7 +136,7 @@
 
                     <div class="quicklink-header-container">
                         <span class="quicklink-header-title">My Quicklinks</span>
-                        
+
                         <input class="quicklink-header-searching" type="text" placeholder="Searching...">
                     </div>
 
@@ -147,7 +147,7 @@
                                 <img src="../../assets/menu_bright.svg" alt="">
                             </div>
 
-                            <div class="quicklink-item-title">    
+                            <div class="quicklink-item-title">
                                 {{quicklink}} {{i+1}}
                             </div>
 
@@ -155,7 +155,7 @@
                                 <img src="../../assets/more.svg" alt="">
                             </div>
                         </div>
-                        
+
                     </div>
 
                 </div>
@@ -166,7 +166,36 @@
 
                     <!-- MainContent-Header -->
                     <!-- ****************** -->
-                    <div class="main-content-header-wrapper">Main-Content-Header</div>
+                    <div class="main-content-header-wrapper">
+                        <div class="main-content-header-left">
+                            <div class="check-select-all">
+                                <input type="checkbox">
+                            </div>
+                            <div>
+                                <input type="text" placeholder="{{tiles.length}} Objekte durchsuchen...">
+                            </div>
+                        </div>
+
+                        <div class="main-content-header-right">
+                            <div class="content-header-button">
+                                Filters
+                            </div>
+                            <div class="content-header-button">
+                                Sorting
+                            </div>
+                            <div class="content-header-functions">
+                                <div class="content-header-button">
+                                    Button
+                                </div>
+                                <div class="content-header-button">
+                                    Button
+                                </div>
+                                <div class="content-header-button">
+                                    Button
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- MainContent-Tiles -->
                     <!-- ***************** -->
@@ -198,7 +227,7 @@
                         <div class="add-info-item" *ngIf="addInfo">
                             {{addInfo}}
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>

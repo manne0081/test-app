@@ -284,6 +284,36 @@
                     box-shadow: 0px 6px 4px -2px rgba(0, 0, 0, .20);
                     position: fixed;
                     width: calc(100% - 512px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .main-content-header-left {
+                        background-color: lime;
+                        display: flex;
+
+                        .content-header-button {
+                            margin-right: 8px;
+                        }
+                    }
+
+                    .main-content-header-right {
+                        background-color: orange;
+                        display: flex;
+
+                        .content-header-button  {
+                            margin-left: 8px;
+                            border-radius: 4px;
+                            border: 1px solid gray;
+                            padding: 6px 10px;
+                        }
+
+                        .content-header-functions {
+                            display: flex;
+                        }
+                    }
+
+
                 }
 
                 .main-content-bottom-actions {
@@ -541,7 +571,7 @@
 
                 .main-content-tiles-wrapper {
                     padding: 8px 16px;
-                    margin-top: 46px;
+                    margin-top: 60px;
                     margin-bottom: 42px;
 
                     .main-content-tile-background {
