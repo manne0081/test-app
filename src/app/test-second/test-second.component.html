@@ -125,10 +125,10 @@
             <!-- Content-Wrapper > Quicklinks / Main-Menu / Additional Informations -->
             <!-- There are different CSS-Classes for the Variants (full / without Quicklinks / without AddInfos / Tiles only) -->
             <!-- ************************************************************************************************************ -->
-            <div [ngClass]="{'content-wrapper-full': myQuicklinksVisible && additionalInformationVisible,
+            <div [ngClass]="{'content-wrapper-show-all': myQuicklinksVisible && additionalInformationVisible,
                              'content-wrapper-quicklinks-hidden': !myQuicklinksVisible && additionalInformationVisible,
                              'content-wrapper-add-info-hidden': myQuicklinksVisible && !additionalInformationVisible,
-                             'content-wrapper-content-only': !myQuicklinksVisible && !additionalInformationVisible}">
+                             'content-wrapper-tiles-only': !myQuicklinksVisible && !additionalInformationVisible}">
 
                 <!-- Quicklinks-Area -->
                 <!-- *************** -->
@@ -166,32 +166,36 @@
 
                     <!-- MainContent-Header -->
                     <!-- ****************** -->
-                    <div class="main-content-header-wrapper">
-                        <div class="main-content-header-left">
-                            <div class="check-select-all">
-                                <input type="checkbox">
-                            </div>
-                            <div>
-                                <input type="text" placeholder="{{tiles.length}} Objekte durchsuchen...">
-                            </div>
-                        </div>
 
-                        <div class="main-content-header-right">
-                            <div class="content-header-button">
-                                Filters
+                    <div class="main-content-header-container">
+                        <div class="main-content-header-wrapper">
+
+                            <div class="main-content-header-left">
+                                <div class="check-select-all">
+                                    <input type="checkbox">
+                                </div>
+                                <div>
+                                    <input type="text" placeholder="{{tiles.length}} Objekte durchsuchen...">
+                                </div>
                             </div>
-                            <div class="content-header-button">
-                                Sorting
-                            </div>
-                            <div class="content-header-functions">
+
+                            <div class="main-content-header-right">
                                 <div class="content-header-button">
-                                    Button
+                                    Filters
                                 </div>
                                 <div class="content-header-button">
-                                    Button
+                                    Sorting
                                 </div>
-                                <div class="content-header-button">
-                                    Button
+                                <div class="content-header-functions">
+                                    <div class="content-header-button">
+                                        Button
+                                    </div>
+                                    <div class="content-header-button">
+                                        Button
+                                    </div>
+                                    <div class="content-header-button">
+                                        Button
+                                    </div>
                                 </div>
                             </div>
                         </div>
