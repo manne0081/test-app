@@ -21,7 +21,6 @@ $content-width-quicklinks-hidden: calc(100% - $quicklinks-width);
 $content-width-add-infos-hidden: calc(100% - $add-infos-width);
 $content-width-only-tiles: calc(100%);
 
-
 $page-height: 100vh;
 $page-header-height: 48px;
 $menu-height: 40px;
@@ -324,7 +323,7 @@ $menu-height: 40px;
                         width: calc($content-width-show-all - 32px);
                     }
 
-                    .main-content-actions-container {
+                    .main-content-actions-wrapper {
                         width: calc($content-width-show-all - 32px);
                     }
                 }
@@ -361,7 +360,7 @@ $menu-height: 40px;
                         width: calc($content-width-quicklinks-hidden - 32px);
                     }
 
-                    .main-content-actions-container {
+                    .main-content-actions-wrapper {
                         width: calc($content-width-quicklinks-hidden - 32px);
                         border-radius: 8px 8px 0px 8px;
                     }
@@ -399,7 +398,7 @@ $menu-height: 40px;
                         width: calc($content-width-add-infos-hidden - 32px);
                     }
 
-                    .main-content-actions-container {
+                    .main-content-actions-wrapper {
                         width: calc($content-width-add-infos-hidden - 32px);
                     }
                 }
@@ -436,7 +435,7 @@ $menu-height: 40px;
                         width: calc($content-width-only-tiles - 32px);
                     }
 
-                    .main-content-actions-container {
+                    .main-content-actions-wrapper {
                         width: calc($content-width-only-tiles - 32px);
                         border-radius: 8px 8px 0px 8px;
                     }
@@ -600,7 +599,7 @@ $menu-height: 40px;
                     border: 1px solid rgb(220, 220, 220);
                     border-radius: 6px;
                     padding: 6px 10px;
-                    margin-left: 8px;
+                    margin-left: 20px;
 
                     input {
                         font-style: italic;
@@ -638,7 +637,7 @@ $menu-height: 40px;
                 }
             }
 
-            .main-content-actions-container {
+            .main-content-actions-wrapper {
                 background-color: lime;
                 background-color: white;
                 position: fixed;
@@ -649,6 +648,59 @@ $menu-height: 40px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+
+
+                .action-button-container {
+                    // background-color: lime;
+                    background-color: rgba(0, 0, 0, .12);
+                    border-radius: 4px;
+                    border: 1px solid rgba(0, 0, 0, .16);
+                    padding: 6px 10px;
+                    color: rgba(0, 0, 0, .40);
+                    display: flex;
+                    align-items: center;
+
+                    .action-button-icon {
+                        // background-color: orange;
+                        margin-right: 8px;
+                        display: flex;
+                        align-items: center;
+
+                        img {
+                            width: 20px;
+                        }
+
+                        .button-icon-delete {
+                            // background-color: red;
+                            width: 24px;
+                        }
+                    }
+
+                    .action-button-value {
+
+                    }
+
+                    
+                }
+                
+                .action-button-container:hover {
+                    background-color: rgba(0, 0, 0, .20);
+                    color: rgba(0, 0, 0, .80);
+                    cursor: pointer;
+                    border: 1px solid rgba(0, 0, 0, .24);
+                }
+
+                .action-button-container.left {
+                    // background-color: orange;
+                    margin-right: 8px;
+                }
+
+                .action-button-container.right {
+                    // background-color: yellowgreen;
+                    margin-left: 8px;
+                }
+                
+                
             }
 
             // Additional Informations
