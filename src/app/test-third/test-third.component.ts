@@ -30,14 +30,14 @@ export class TestThirdComponent {
 
 	addInfo: String = "";
 
-	myQuicklinksVisible:boolean = true;	
-	additionalInformationVisible:boolean = true;
+	quicklinksVisible:boolean = true;	
+	addInfoVisible:boolean = true;
 
     constructor() { }
 
     ngOnInit(): void {
-		this.myQuicklinksVisible = true;
-		this.additionalInformationVisible = true;
+		this.quicklinksVisible = true;
+		this.addInfoVisible = true;
 
 		console.log("test-second > ngOnInit");
     }
@@ -46,30 +46,30 @@ export class TestThirdComponent {
 	}
 
 	setMyQuicklinksVisible() {
-		if (this.myQuicklinksVisible) {
-			this.myQuicklinksVisible = false;
+		if (this.quicklinksVisible) {
+			this.quicklinksVisible = false;
 			console.log("test-second > setQuicklinks = false");
-			console.log(this.myQuicklinksVisible);
-			console.log(this.additionalInformationVisible);
+			console.log(this.quicklinksVisible);
+			console.log(this.addInfoVisible);
 		} else {
-			this.myQuicklinksVisible = true;
+			this.quicklinksVisible = true;
 			console.log("test-second > setQuicklinks = true");
-			console.log(this.myQuicklinksVisible);
-			console.log(this.additionalInformationVisible);
+			console.log(this.quicklinksVisible);
+			console.log(this.addInfoVisible);
 		}
 	}
 
 	setAdditionalInformationVisible() {
-		if (this.additionalInformationVisible) {
-			this.additionalInformationVisible = false;
+		if (this.addInfoVisible) {
+			this.addInfoVisible = false;
 			console.log("test-second > setAdditionalInformationVisible = false");
-			console.log(this.additionalInformationVisible);
-			console.log(this.myQuicklinksVisible);
+			console.log(this.addInfoVisible);
+			console.log(this.quicklinksVisible);
 		} else {
-			this.additionalInformationVisible = true;
+			this.addInfoVisible = true;
 			console.log("test-second > setAdditionalInformationVisible = true");
-			console.log(this.additionalInformationVisible);
-			console.log(this.myQuicklinksVisible);
+			console.log(this.addInfoVisible);
+			console.log(this.quicklinksVisible);
 		}
 	}
 

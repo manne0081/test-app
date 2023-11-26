@@ -94,8 +94,56 @@
     <!-- CONTENT -->
     <!-- ******* -->
     <div class="content-container">
-        <div class="test">
-            
+        <div class="content-structure">
+
+            <div class="content-header-container">
+
+                <div class="content-header-wrapper">
+                    
+                    <div class="button" [ngClass]="{'button-active': quicklinksVisible, 'button-default': quicklinksVisible}" (click)="setMyQuicklinksVisible()">                         
+                        Quicklinks
+                    </div>
+
+                    <div class="content-header-title">
+                        Entity Title
+                    </div>
+
+                    <div class="button active">
+                        Additional Informations
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="content-wrapper">
+
+                <div>
+                    Quicklinks
+                </div>
+
+                <div class="tiles-structure">
+
+                    <div class="tiles-header">
+                        Header <br>
+                        Acitve Filters
+                    </div>
+
+                    <div class="tiles-wrapper">
+                        Tiles
+                    </div>
+
+                    <div class="tiles-actions">
+                        Actions
+                    </div>
+
+                </div>
+
+                <div>
+                    Add Infos
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
