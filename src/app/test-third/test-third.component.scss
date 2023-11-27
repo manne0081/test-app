@@ -32,7 +32,6 @@ $content-width-only-tiles: calc(100%);
 
 
 
-
 // Element-Styling
 .button {
     border: 1px solid rgba(0, 0, 0, .14);
@@ -42,13 +41,8 @@ $content-width-only-tiles: calc(100%);
     color: rgba(0, 0, 0, .6)
 }
 
-.button:hover {
-    background-color: rgba(0, 0, 0, .04);
-    cursor: pointer;
-}
-
 .button-default:hover {
-    background-color: rgba(0, 0, 0, .04);
+    background-color: rgba(0, 0, 0, .08);
     cursor: pointer;
 }
 
@@ -59,7 +53,10 @@ $content-width-only-tiles: calc(100%);
 
 .button-active:hover {
     background-color: $highlight-color-60;
+    cursor: pointer;
 }
+
+
 
 // Page-Styling
 // ############
@@ -71,7 +68,6 @@ $content-width-only-tiles: calc(100%);
 	width: $page-width;
 	height: $page-height;
 	position: fixed;
-
 
     // HEADER
     // ******
@@ -213,7 +209,6 @@ $content-width-only-tiles: calc(100%);
         }
     }
 
-
     // MENU
     // ****
     .menu-container {
@@ -241,7 +236,6 @@ $content-width-only-tiles: calc(100%);
                 font-size: 1.2em;
                 font-weight: bold;
             }
-
         }
 
         .menu-item-container:hover {
@@ -267,7 +261,6 @@ $content-width-only-tiles: calc(100%);
         }
     }
 
-
     // CONTENT
     // *******
     .content-container {
@@ -281,11 +274,12 @@ $content-width-only-tiles: calc(100%);
             width: 100%;
             height: 100%;
             border-radius: 8px;
-
             display: grid;
             grid-template-rows: $content-header-height auto;
         }
 
+        // Content Header
+        // **************
         .content-header-container {
             background-color: white;
             border-bottom: 1px solid $highlight-color-40;
@@ -308,11 +302,30 @@ $content-width-only-tiles: calc(100%);
             color: $highlight-color-1;
         }
 
-        .content-wrapper {
+        // Content > Quicklinks / Tiles / Additional-Informations
+        // ******************************************************
+        .content-wrapper-all {
             background-color: white;
             display: grid;
             grid-template-columns: $quicklinks-width auto $add-infos-width;
+        }
 
+        .content-wrapper-quicklinks-hidden {
+            background-color: white;
+            display: grid;
+            grid-template-columns: auto $add-infos-width;
+        }
+
+        .content-wrapper-addInfo-hidden {
+            background-color: white;
+            display: grid;
+            grid-template-columns: $quicklinks-width auto;
+        }
+
+        .content-wrapper-only-tiles {
+            background-color: white;
+            display: grid;
+            grid-template-columns: auto;
         }
 
         .tiles-structure {
@@ -332,6 +345,10 @@ $content-width-only-tiles: calc(100%);
 
         .tiles-actions {
 
+        }
+
+        .addInfo-container {
+            background-color: orange;
         }
     }
 }

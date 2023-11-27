@@ -3,15 +3,21 @@
     <!-- HEADER -->
     <!-- ****** -->
     <div class="header-container">
+
+        <!-- General-Searching-Box -->
         <div class="searching-container">
             <div class="searching-background">
                 <img src="../../assets/calendar2.svg" alt="">
                 <span>Searching...</span>
             </div>
         </div>
+
+        <!-- Logo -->
         <div class="logo">
             <img src="../../assets/logo-design-49570.png" alt="">
         </div>
+
+        <!-- Header-Functions -->
         <div class="function-wrapper">
 
             <!-- TimeTracking -->
@@ -37,7 +43,6 @@
                   <a routerLink="/partner">Logout</a>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -87,7 +92,6 @@
                 Menuname 3
             </div>
         </div>
-
     </div>
 
 
@@ -99,8 +103,8 @@
             <div class="content-header-container">
 
                 <div class="content-header-wrapper">
-                    
-                    <div class="button" [ngClass]="{'button-active': quicklinksVisible, 'button-default': quicklinksVisible}" (click)="setMyQuicklinksVisible()">                         
+
+                    <div class="button" [ngClass]="{'button-default': !quicklinksVisible, 'button-active': quicklinksVisible}" (click)="setMyQuicklinksVisible()">
                         Quicklinks
                     </div>
 
@@ -108,20 +112,25 @@
                         Entity Title
                     </div>
 
-                    <div class="button active">
+                    <div class="button" [ngClass]="{'button-default': !addInfoVisible, 'button-active': addInfoVisible}" (click)="setAddInfoVisible()">
                         Additional Informations
                     </div>
-
                 </div>
-
             </div>
 
-            <div class="content-wrapper">
+            <!-- Different Classes wether quicklinks or addInfo should be visible or not -->
+            <!-- *********************************************************************** -->
+            <div [ngClass]="{'content-wrapper-all': quicklinksVisible && addInfoVisible, 'content-wrapper-quicklinks-hidden': !quicklinksVisible && addInfoVisible,
+                             'content-wrapper-addInfo-hidden': quicklinksVisible && !addInfoVisible, 'content-wrapper-only-tiles': !quicklinksVisible && !addInfoVisible}">
 
-                <div>
+                <!-- Quicklinks -->
+                <!-- ---------- -->
+                <div *ngIf="quicklinksVisible">
                     Quicklinks
                 </div>
 
+                <!-- Tiles -->
+                <!-- ----- -->
                 <div class="tiles-structure">
 
                     <div class="tiles-header">
@@ -139,7 +148,9 @@
 
                 </div>
 
-                <div>
+                <!-- Additional Informations -->
+                <!-- ----------------------- -->
+                <div *ngIf="addInfoVisible" class="addInfo-container">
                     Add Infos
                 </div>
 

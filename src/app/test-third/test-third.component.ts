@@ -8,15 +8,15 @@ import { Component } from '@angular/core';
 
 export class TestThirdComponent {
   quicklinks: String[] = [
-		'First-Quicklink',	
-		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',		
-		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',		
-		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',		
-		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',		
-		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',		
-		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',		
+		'First-Quicklink',
 		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',
-		'Last-Quicklink',		
+		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',
+		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',
+		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',
+		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',
+		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',
+		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',
+		'Last-Quicklink',
 	];
 
 	tiles: String[] = [
@@ -24,13 +24,13 @@ export class TestThirdComponent {
 		'Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile',
 		'Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile',
 		'Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile',
-		'Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile',		
+		'Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile',
 		'Last-Tile',
 	];
 
 	addInfo: String = "";
 
-	quicklinksVisible:boolean = true;	
+	quicklinksVisible:boolean = true;
 	addInfoVisible:boolean = true;
 
     constructor() { }
@@ -42,7 +42,7 @@ export class TestThirdComponent {
 		console.log("test-second > ngOnInit");
     }
 
-	logout() {		
+	logout() {
 	}
 
 	setMyQuicklinksVisible() {
@@ -59,7 +59,7 @@ export class TestThirdComponent {
 		}
 	}
 
-	setAdditionalInformationVisible() {
+	setAddInfoVisible() {
 		if (this.addInfoVisible) {
 			this.addInfoVisible = false;
 			console.log("test-second > setAdditionalInformationVisible = false");
