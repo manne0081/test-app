@@ -32,6 +32,7 @@ export class TestThirdComponent {
 
 	quicklinksVisible:boolean = true;
 	addInfoVisible:boolean = true;
+    activeFiltersVisible:boolean = false;
 
     constructor() { }
 
@@ -72,6 +73,14 @@ export class TestThirdComponent {
 			console.log(this.quicklinksVisible);
 		}
 	}
+
+    setActiveFiltersVisible() {
+        if (this.activeFiltersVisible) {
+            this.activeFiltersVisible = false;
+        } else {
+            this.activeFiltersVisible = true;
+        }
+    }
 
 	setAddInfo(test: String) {
 		this.addInfo = test;

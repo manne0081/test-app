@@ -125,7 +125,7 @@
 
                 <!-- Quicklinks -->
                 <!-- ---------- -->
-                <div *ngIf="quicklinksVisible">
+                <div *ngIf="quicklinksVisible" class="quicklinks-container">
                     Quicklinks
                 </div>
 
@@ -133,9 +133,30 @@
                 <!-- ----- -->
                 <div class="tiles-structure">
 
-                    <div class="tiles-header">
-                        Header <br>
-                        Acitve Filters
+                    <div class="tiles-header-container">
+                        <div class="tiles-header-filters-container">
+                            <!-- <div class="tiles-header-filters-wrapper"> -->
+                                <div>
+                                    searching
+                                </div>
+                                <div>
+                                    <div class="button" (click)="setActiveFiltersVisible()">
+                                        Show Active Filters
+                                    </div>
+                                </div>
+                            <!-- </div> -->
+                        </div>
+
+                        <div *ngIf="activeFiltersVisible" class="tiles-header-active-filters-container">
+                            <!-- <div class="tiles-header-active-filters-wrapper"> -->
+                                <div>
+                                    Acitve Filters
+                                </div>
+                                <div>
+                                    Add Quicklink
+                                </div>
+                            <!-- </div> -->
+                        </div>
                     </div>
 
                     <div class="tiles-wrapper">
