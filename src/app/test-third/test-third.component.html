@@ -126,45 +126,68 @@
                 <!-- Quicklinks -->
                 <!-- ---------- -->
                 <div *ngIf="quicklinksVisible" class="quicklinks-container">
-                    Quicklinks
+                    <div class="quicklinks-header">
+                        <div class="quicklinks-item" *ngFor="let quicklink of quicklinks">
+                            Quicklinks
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Tiles -->
                 <!-- ----- -->
                 <div class="tiles-structure">
 
+                    <!-- Tiles-Header -->
+                    <!-- ------------ -->
                     <div class="tiles-header-container">
                         <div class="tiles-header-filters-container">
-                            <!-- <div class="tiles-header-filters-wrapper"> -->
-                                <div>
-                                    searching
+                            <div class="tiles-header-searching-container">
+                                searching
+                            </div>
+                            <div class="tiles-header-functions-container">
+                                <div class="button" style="margin-right: 0px;" (click)="setActiveFiltersVisible()">
+                                    Set Active Filters
                                 </div>
-                                <div>
-                                    <div class="button" (click)="setActiveFiltersVisible()">
-                                        Show Active Filters
-                                    </div>
+                                <div class="button" style="margin-right: 0px;">
+                                    No Function
                                 </div>
-                            <!-- </div> -->
+                            </div>
                         </div>
 
                         <div *ngIf="activeFiltersVisible" class="tiles-header-active-filters-container">
-                            <!-- <div class="tiles-header-active-filters-wrapper"> -->
-                                <div>
-                                    Acitve Filters
-                                </div>
-                                <div>
-                                    Add Quicklink
-                                </div>
-                            <!-- </div> -->
+                            <div>
+                                Acitve Filters
+                            </div>
+                            <div class="button" style="color: rgb(109, 184, 109); font-size: .8em; margin-right: 0px;">
+                                No Function
+                            </div>
                         </div>
                     </div>
 
+                    <!-- Tiles -->
+                    <!-- ----- -->
                     <div class="tiles-wrapper">
-                        Tiles
+                        <div class="tile-container" *ngFor="let tile of tiles">
+                            Tiles
+                        </div>
                     </div>
 
-                    <div class="tiles-actions">
-                        Actions
+                    <!-- Tiles-Actions -->
+                    <!-- ------------- -->
+                    <div class="tiles-actions-container">
+
+                        <div class="tiles-actions-left-wrapper">
+                            <div class="button" style="margin-left: 0px;">No Function</div>
+                        </div>
+
+                        <div class="tiles-actions-center-wrapper">
+                            <div class="button">No Function</div>
+                        </div>
+
+                        <div class="tiles-actions-right-wrapper">
+                            <div class="button" style="margin-right: 0px;">No Function</div>
+                        </div>
+
                     </div>
 
                 </div>
