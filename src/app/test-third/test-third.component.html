@@ -128,7 +128,7 @@
                 <div *ngIf="quicklinksVisible" class="quicklinks-container">
                     <div class="quicklinks-header">
                         <div class="quicklinks-item" *ngFor="let quicklink of quicklinks">
-                            Quicklinks
+                            {{quicklink}}
                         </div>
                     </div>
                 </div>
@@ -168,7 +168,7 @@
                     <!-- ----- -->
                     <div class="tiles-wrapper">
                         <div class="tile-container" *ngFor="let tile of tiles">
-                            Tiles
+                            {{tile}}
                         </div>
                     </div>
 
@@ -195,7 +195,11 @@
                 <!-- Additional Informations -->
                 <!-- ----------------------- -->
                 <div *ngIf="addInfoVisible" class="addInfo-container">
-                    Add Infos
+                    <div class="addInfo-header">
+                        <div class="addInfo-item" *ngFor="let item of quicklinks">
+                            AddInfo-Item
+                        </div>
+                    </div>
                 </div>
 
             </div>

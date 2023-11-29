@@ -286,6 +286,7 @@ $content-width-only-tiles: calc(100%);
         .quicklinks-container {
             // background-color: lime;
             overflow-y: scroll;
+            padding: 12px;
         }
 
         // Content Header
@@ -343,7 +344,7 @@ $content-width-only-tiles: calc(100%);
             // background-color: lime;
             display: grid;
             grid-template-rows: auto 1fr auto;
-            overflow-y: scroll;
+            // overflow-y: scroll;
         }
 
         .tiles-header-container {
@@ -351,6 +352,7 @@ $content-width-only-tiles: calc(100%);
             padding: 12px 12px;
             box-shadow: 0px 6px 4px -2px rgba(0, 0, 0, .20);
             border-radius: 0px 0px 12px 12px;
+            border-right: 1px solid rgba(0,0,0,0.3);
             z-index: 1;
 
             .tiles-header-filters-container {
@@ -382,8 +384,12 @@ $content-width-only-tiles: calc(100%);
 
         .tiles-wrapper {
             background-color: $content-background;
-            height: 100%;
-            padding: 12px;
+            height: calc(100% + 24px);
+            // padding: 12px;
+
+            margin: -12px 0px -12px 0px;
+            overflow-y: scroll;
+            padding: 24px 12px 24px 12px;
         }
 
         .tiles-actions-container {
@@ -391,9 +397,10 @@ $content-width-only-tiles: calc(100%);
             padding: 12px 12px;
             box-shadow: 0px -6px 4px -2px rgba(0, 0, 0, .20);
             border-radius: 12px 12px 0px 0px;
-            z-index: 1;
+            border-right: 1px solid rgba(0,0,0,0.3);
             display: grid;
             grid-template-columns: auto auto auto;
+            z-index: 1;
 
             .tiles-actions-left-wrapper {
                 // background-color: lime;
@@ -421,6 +428,7 @@ $content-width-only-tiles: calc(100%);
         .addInfo-container {
             // background-color: orange;
             overflow-y: scroll;
+            padding: 12px;
         }
     }
 }
@@ -430,32 +438,31 @@ $content-width-only-tiles: calc(100%);
 // The Scroll-Bar Code
 // *******************
 ::-webkit-scrollbar {
+    // background-color: lime;
 	width: $scrollbar-width;
 	// height: 10px;
 	// border-radius: 0 8px 8px 0;
   }
 
  ::-webkit-scrollbar-track {
-	background: white;
-	background: #2c5067;
-	background: rgba(44, 80, 103, .8);
+	background: lime;
 	background: #d6d6d6;
-    border-left: 1px solid rgba(0,0,0,0.2);
+    // border-left: 1px solid rgba(0,0,0,0.2);
     border-right: 1px solid rgba(0,0,0,0.2);
 	// border-radius: 0 8px 8px 0;
  }
 
  ::-webkit-scrollbar-thumb {
-	background: #2c5067;
-	background: #c0cdd4;
+	background: lime;
     background: rgba(44, 80, 103, .4);
-    border-left: 1px solid rgba(0,0,0,0.1);
+    // border-left: 1px solid rgba(0,0,0,0.1);
     border-right: 1px solid rgba(0,0,0,0.1);
-	// border-radius: 0 8px 8px 0;
+	border-radius: 2px 1px 1px 2px;
+	// border-radius: 8px 1px 1px 8px;
  }
 
  ::-webkit-scrollbar-thumb:hover {
-   	background: #b9b9b9;
+    background: rgba(44, 80, 103, .6);
     // border-radius: 0 8px 8px 0;
  }
 

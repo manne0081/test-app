@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class TestThirdComponent {
-  quicklinks: String[] = [
+    quicklinks: String[] = [
 		'First-Quicklink',
 		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',
 		'Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink','Quicklink',
@@ -21,6 +21,7 @@ export class TestThirdComponent {
 
 	tiles: String[] = [
 		'First-Tile',
+		'Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile',
 		'Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile',
 		'Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile',
 		'Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile','Tile',
