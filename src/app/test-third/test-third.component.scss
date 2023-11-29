@@ -18,10 +18,10 @@ $menu-height: 40px;
 $content-header-height: 48px;
 
 $gap-size: 12px;
-$scrollbar-width: 8px;
+$scrollbar-width: 6px;
 
-$quicklinks-width: 240px;
-$add-infos-width: 240px;
+$quicklinks-width: 260px;
+$add-infos-width: 260px;
 $quicklinks-header-width: calc($quicklinks-width - $scrollbar-width);
 $add-infos-header-width: calc($add-infos-width - $scrollbar-width);
 
@@ -458,7 +458,7 @@ $content-width-only-tiles: calc(100%);
     // border-left: 1px solid rgba(0,0,0,0.1);
     border-right: 1px solid rgba(0,0,0,0.1);
 	border-radius: 2px 1px 1px 2px;
-	// border-radius: 8px 1px 1px 8px;
+	border-radius: 4px 4px 4px 4px;
  }
 
  ::-webkit-scrollbar-thumb:hover {
