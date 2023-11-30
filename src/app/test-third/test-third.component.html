@@ -100,18 +100,25 @@
     <div class="content-container">
         <div class="content-structure">
 
+            <!-- Content-Header > Toggle Quicklink- and AddInfo visibility / Menuname -->
+            <!-- -------------------------------------------------------------------- -->
             <div class="content-header-container">
-
                 <div class="content-header-wrapper">
 
+                    <!-- Button toggle Quicklinks -->
+                    <!-- ------------------------ -->
                     <div class="button" [ngClass]="{'button-default': !quicklinksVisible, 'button-active': quicklinksVisible}" (click)="setMyQuicklinksVisible()">
                         Quicklinks
                     </div>
 
+                    <!-- Menuname -->
+                    <!-- -------- -->
                     <div class="content-header-title">
-                        Entity Title
+                        Menuname
                     </div>
 
+                    <!-- Button toggle AddInfos -->
+                    <!-- ------------------------ -->
                     <div class="button" [ngClass]="{'button-default': !addInfoVisible, 'button-active': addInfoVisible}" (click)="setAddInfoVisible()">
                         Additional Informations
                     </div>
@@ -126,11 +133,42 @@
                 <!-- Quicklinks -->
                 <!-- ---------- -->
                 <div *ngIf="quicklinksVisible" class="quicklinks-container">
-                    <div class="quicklinks-header">
-                        <div class="quicklinks-item" *ngFor="let quicklink of quicklinks">
-                            {{quicklink}}
+
+                    <!-- Quicklink - Header -->
+                    <!-- ------------------ -->
+                    <div class="quicklinks-header-container">
+                        <div class="quicklinks-header-title">
+                            My Quicklinks
+                        </div>
+                        <div class="quicklinks-searching-container">
+                            <div class="quicklinks-searching-text">
+                                searching...
+                            </div>
                         </div>
                     </div>
+                    
+                    <!-- Quicklink - Items -->
+                    <!-- ----------------- -->
+                    <div class="quicklinks-items-wrapper">                        
+                        <div class="quicklink-item-container" *ngFor="let quicklink of quicklinks">
+
+                                <div class="quicklink-item-drag-container"> 
+                                    <!-- D -->
+                                    <img src="../../assets/menu_bright.svg" alt="">
+                                </div>
+
+                                <div class="quicklink-item-text">
+                                    {{quicklink}}
+                                </div>
+
+                                <div class="quicklink-item-more-container">
+                                    <!-- M -->
+                                    <!-- <img src="../../assets/more.svg" alt=""> -->
+                                    <img src="../../assets/more-vert.svg" alt="">
+                                </div>
+
+                        </div>
+                    </div>                    
                 </div>
 
                 <!-- Tiles -->
@@ -141,11 +179,14 @@
                     <!-- ------------ -->
                     <div class="tiles-header-container">
                         <div class="tiles-header-filters-container">
+
+                            <!-- Tile-Header > Searching and Functions -->
+                            <!-- ------------------------------------- -->
                             <div class="tiles-header-searching-container">
                                 searching
                             </div>
                             <div class="tiles-header-functions-container">
-                                <div class="button" style="margin-right: 0px;" (click)="setActiveFiltersVisible()">
+                                <div class="button" style="margin-right: 0px;" (click)="setActiveFiltersVisible()" [ngClass]="{'button-default': !activeFiltersVisible, 'button-active': activeFiltersVisible}">
                                     Set Active Filters
                                 </div>
                                 <div class="button" style="margin-right: 0px;">
@@ -154,9 +195,11 @@
                             </div>
                         </div>
 
+                        <!-- Tiles-Header > Active Filters -->
+                        <!-- ----------------------------- -->
                         <div *ngIf="activeFiltersVisible" class="tiles-header-active-filters-container">
                             <div>
-                                Acitve Filters
+                                acitve filters
                             </div>
                             <div class="button" style="color: rgb(109, 184, 109); font-size: .8em; margin-right: 0px;">
                                 No Function
@@ -196,8 +239,17 @@
                 <!-- ----------------------- -->
                 <div *ngIf="addInfoVisible" class="addInfo-container">
                     <div class="addInfo-header">
-                        <div class="addInfo-item" *ngFor="let item of quicklinks">
-                            AddInfo-Item
+
+                        <div class="addInfo-header-container">
+                            <div class="addInfo-header-title">
+                                Additional Information
+                            </div>
+                        </div>
+
+                        <div class="addInfo-item-wrapper">
+                            <div class="addInfo-item" *ngFor="let item of quicklinks">
+                                AddInfo-Item
+                            </div>
                         </div>
                     </div>
                 </div>
