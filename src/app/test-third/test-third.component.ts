@@ -86,4 +86,12 @@ export class TestThirdComponent {
 	setAddInfo(test: String) {
 		this.addInfo = test;
 	}
+
+    quicklinkMoreSelected(quicklink: any, i: number):void {
+        window.alert(quicklink + " " + (i + 1) + " > 3P-Menu selected!");
+    }
+
+    openObject(object:any, i: number):void {
+        window.alert(object + " " + (i + 1) + " > open!");
+    }
 }

@@ -150,7 +150,7 @@
                     <!-- Quicklink - Items -->
                     <!-- ----------------- -->
                     <div class="quicklinks-items-wrapper">                        
-                        <div class="quicklink-item-container" *ngFor="let quicklink of quicklinks">
+                        <div class="quicklink-item-container" *ngFor="let quicklink of quicklinks, index as i">
 
                                 <div class="quicklink-item-drag-container"> 
                                     <!-- D -->
@@ -158,10 +158,10 @@
                                 </div>
 
                                 <div class="quicklink-item-text">
-                                    {{quicklink}}
+                                    {{quicklink}} {{i + 1}}
                                 </div>
 
-                                <div class="quicklink-item-more-container">
+                                <div class="quicklink-item-more-container" (click)="quicklinkMoreSelected(quicklink, i)">
                                     <!-- M -->
                                     <!-- <img src="../../assets/more.svg" alt=""> -->
                                     <img src="../../assets/more-vert.svg" alt="">
@@ -210,8 +210,26 @@
                     <!-- Tiles -->
                     <!-- ----- -->
                     <div class="tiles-wrapper">
-                        <div class="tile-container" *ngFor="let tile of tiles">
-                            {{tile}}
+                        <div class="tile-container" *ngFor="let tile of tiles, index as i">
+                            <div class="tile-wrapper">
+
+                                <div class="select-item-container">
+                                    <input type="checkbox">
+                                </div>
+                                
+                                <div class="tile-content-left-container">
+                                    {{tile}} {{i + 1}}
+                                </div>
+
+                                <div class="tile-content-right-container">
+                                    Status
+                                </div>
+
+                                <div class="open-item-container" (click)="openObject(tile, i)">
+                                    <img src="../../assets/chevron-right.svg" alt="">
+                                </div>
+
+                            </div>
                         </div>
                     </div>
 
