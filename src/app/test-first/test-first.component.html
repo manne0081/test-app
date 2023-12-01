@@ -14,7 +14,7 @@
             <img src="../../assets/logo-design-49570.png" alt="">
         </div>
         <div class="function-wrapper">
-            
+
             <!-- TimeTracking -->
             <!-- ------------ -->
             <div class="dropdown">
@@ -42,17 +42,17 @@
         </div>
     </div>
 
-    
+
     <!-- MENU-STRUCTURE -->
     <!-- ************** -->
     <div class="menu-structure">
 
         <!-- MENU-ITEM-DASHBOARD -->
         <!-- ******************* -->
-        <div class="menu-item" routerLink="/test2">
+        <div class="menu-item">
             <div class="triangle-left"></div>
                 <div class="menu-background">
-                    {{'dashboard'|uppercase}}
+                    {{'menuname 1'|uppercase}}
                 </div>
             <div class="triangle-right"></div>
         </div>
@@ -62,15 +62,15 @@
         <div class="menu-item">
             <div class="triangle-left"></div>
                 <div class="menu-background">
-                    {{'hr'|uppercase}}
+                    {{'menuname 2'|uppercase}}
                 </div>
             <div class="triangle-right"></div>
 
             <!-- MENU-OPTIONS > NO MORE OPTIONS -->
             <div class="submenu-wrapper">
-                
+
                 <div class="submenu-item">
-                    Employee
+                    {{'sub-menuname 1'|uppercase}}
                 </div>
 
             </div>
@@ -81,71 +81,52 @@
         <div class="menu-item active">
             <div class="triangle-left active"></div>
             <div class="menu-background active">
-                {{'sales'|uppercase}}
+                {{'menuname 3'|uppercase}}
                 </div>
             <div class="triangle-right active"></div>
 
             <!-- MENU-OPTIONS -->
             <div class="submenu-wrapper active">
-                
+
                 <div class="submenu-item active">
-                    Offers
+                    {{'sub-menuname 1'|uppercase}}
                 </div>
-                
+
                 <div class="submenu-item active">
-                    Invoices
-                </div>
-
-            </div>
-        </div>
-        
-        <!-- MENU-ITEM-PARTNERS -->
-        <!-- ****************** -->
-        <div class="menu-item">
-            <div class="triangle-lefte"></div>
-                <div class="menu-background">
-                    {{'partners'|uppercase}}
-                </div>
-            <div class="triangle-right"></div>
-
-            <!-- MENU-OPTIONS -->
-            <div class="submenu-wrapper">
-                
-                <div class="submenu-item">
-                    Customers
-                </div>
-
-                <div class="submenu-item">
-                    Suppliers
+                    {{'sub-menuname 2'|uppercase}}
                 </div>
 
             </div>
         </div>
 
-        <!-- MENU-ITEM-ADMINISTRATION -->
+        <!-- MENU-ITEM-Test -->
         <!-- ************************ -->
-        <div class="menu-item">
+        <div class="menu-item" routerLink="/test">
             <div class="triangle-left"></div>
             <div class="menu-background">
-                {{'administration'|uppercase}}
+                {{'test-1'|uppercase}}
                 </div>
             <div class="triangle-right"></div>
+        </div>
 
-            <!-- MENU-OPTIONS -->
-            <div class="submenu-wrapper">
-
-                <div class="submenu-item">
-                    Administration
+        <div class="menu-item" routerLink="/test2">
+            <div class="triangle-left"></div>
+            <div class="menu-background">
+                {{'test-2'|uppercase}}
                 </div>
-                <div class="submenu-item">
-                    Administration
-                </div>
+            <div class="triangle-right"></div>
+        </div>
 
-            </div>
+        <div class="menu-item" routerLink="/test3">
+            <div class="triangle-left"></div>
+            <div class="menu-background">
+                {{'test-3'|uppercase}}
+                </div>
+            <div class="triangle-right"></div>
         </div>
 
     </div>
-    
+
 
     <!-- CONTENT -->
     <!-- ******* -->
@@ -162,8 +143,8 @@
                 <div class="headline-wrapper">
                     <div class="headline">
                         My Quicklinks
-                    </div>                    
-                </div>               
+                    </div>
+                </div>
 
                 <!-- Quicklink-Items -->
                 <!-- --------------- -->
@@ -183,8 +164,8 @@
                 <!-- Main-Content-Header -->
                 <!-- ------------------- -->
                 <div class="main-content-header-container">
-                    <h1>Invoices</h1>                    
-                </div>                
+                    <h1>Invoices</h1>
+                </div>
 
                 <!-- Main-Content-Tiles -->
                 <!-- ------------------ -->
@@ -231,12 +212,12 @@
                         <p style="margin-top: 4px">2020 - 2023</p>
                         <p>terms and conditions</p>
                     </div>
-                
-                </div> 
-                
+
+                </div>
+
 
                 <!-- Main-Content-Actions -->
-                <!-- -------------------- -->                    
+                <!-- -------------------- -->
                 <div [ngClass]="{'main-content-actions-container-expanded': additionalActionsExpanded, 'main-content-actions-container': !additionalActionsExpanded}"
                         (mouseleave)="setAdditionalActionsExpanded(false)">
 
@@ -331,7 +312,7 @@
 
                             <div class="action-button-container more" (click)="setAdditionalActionsExpanded(true)">
                                 <div class="action-button-icon-only">
-                                    <img class="button-more" src="../../assets/more.svg" alt="">
+                                    <img class="button-more" src="../../assets/more-vert.svg" alt="">
                                 </div>
                             </div>
 
@@ -369,7 +350,7 @@
                     </div>
 
                 </div>
-                
+
 
             </div>
 

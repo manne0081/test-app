@@ -51,7 +51,7 @@
     <!-- ************** -->
     <div class="menu-container">
 
-        <div class="menu-item-container" style="padding-right: 8px; border-right: 1px solid #c0c0c0" routerLink="/test2">
+        <div class="menu-item-container" style="padding-right: 8px; border-right: 1px solid #c0c0c0">
             <div class="menu-item-icon">
                 <img class="menu-item" src="../../assets/grid.svg" alt="">
             </div>
@@ -75,21 +75,30 @@
             </div>
         </div>
 
-        <div class="menu-item-container">
+        <div class="menu-item-container" routerLink="/test">
             <div class="menu-item-icon">
                 <img class="menu-item" src="../../assets/compass.png" alt="">
             </div>
             <div class="menu-item-text">
-                Menuname 2
+                TEST-1
             </div>
         </div>
 
-        <div class="menu-item-container">
+        <div class="menu-item-container" routerLink="/test2">
             <div class="menu-item-icon">
                 <img class="menu-item" src="../../assets/compass.png" alt="">
             </div>
             <div class="menu-item-text">
-                Menuname 3
+                TEST-2
+            </div>
+        </div>
+
+        <div class="menu-item-container" routerLink="/test3">
+            <div class="menu-item-icon">
+                <img class="menu-item" src="../../assets/compass.png" alt="">
+            </div>
+            <div class="menu-item-text">
+                TEST-3
             </div>
         </div>
     </div>
@@ -146,29 +155,28 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Quicklink - Items -->
                     <!-- ----------------- -->
-                    <div class="quicklinks-items-wrapper">                        
+                    <div class="quicklinks-items-wrapper">
                         <div class="quicklink-item-container" *ngFor="let quicklink of quicklinks, index as i">
 
-                                <div class="quicklink-item-drag-container"> 
+                                <div class="quicklink-item-drag-container">
                                     <!-- D -->
                                     <img src="../../assets/menu_bright.svg" alt="">
                                 </div>
 
                                 <div class="quicklink-item-text">
-                                    {{quicklink}} {{i + 1}}
+                                    {{quicklink}}
                                 </div>
 
-                                <div class="quicklink-item-more-container" (click)="quicklinkMoreSelected(quicklink, i)">
+                                <div class="quicklink-item-more-container" (click)="quicklinkMoreSelected(quicklink)">
                                     <!-- M -->
-                                    <!-- <img src="../../assets/more.svg" alt=""> -->
                                     <img src="../../assets/more-vert.svg" alt="">
                                 </div>
 
                         </div>
-                    </div>                    
+                    </div>
                 </div>
 
                 <!-- Tiles -->
@@ -210,22 +218,22 @@
                     <!-- Tiles -->
                     <!-- ----- -->
                     <div class="tiles-wrapper">
-                        <div class="tile-container" *ngFor="let tile of tiles, index as i">
+                        <div class="tile-container" *ngFor="let employee of employees, index as i" (click)="setAddInfo(employee)">
                             <div class="tile-wrapper">
 
                                 <div class="select-item-container">
                                     <input type="checkbox">
                                 </div>
-                                
+
                                 <div class="tile-content-left-container">
-                                    {{tile}} {{i + 1}}
+                                    {{employee.firstName}}
                                 </div>
 
                                 <div class="tile-content-right-container">
-                                    Status
+                                    <!-- {{employee.birthday.toLocaleDateString()}} -->
                                 </div>
 
-                                <div class="open-item-container" (click)="openObject(tile, i)">
+                                <div class="open-item-container" (click)="openObject(employee)">
                                     <img src="../../assets/chevron-right.svg" alt="">
                                 </div>
 
@@ -265,8 +273,12 @@
                         </div>
 
                         <div class="addInfo-item-wrapper">
-                            <div class="addInfo-item" *ngFor="let item of quicklinks">
-                                AddInfo-Item
+                            <div class="addInfo-item">
+                                {{addInfo.firstName}} {{addInfo.lastName}}<br>
+                                <!-- {{addInfo.birthday.toLocaleDateString()}} -->
+                                <br><br>
+                                <!-- {{addInfo.addresses.primaryResidence.street}}<br>
+                                {{addInfo.addresses.primaryResidence.zip}} {{addInfo.addresses.primaryResidence.city}} -->
                             </div>
                         </div>
                     </div>
