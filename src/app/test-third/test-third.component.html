@@ -163,7 +163,7 @@
 
                                 <div class="quicklink-item-drag-container">
                                     <!-- D -->
-                                    <img src="../../assets/menu_bright.svg" alt="">
+                                    <img src="../../assets/one-finger-tap.svg" alt="">
                                 </div>
 
                                 <div class="quicklink-item-text">
@@ -190,8 +190,13 @@
 
                             <!-- Tile-Header > Searching and Functions -->
                             <!-- ------------------------------------- -->
+                            <div class="tiles-header-select-all-container">
+                                <input type="checkbox" [(ngModel)]="selectedAll" (change)="selectAll();">
+                            </div>
                             <div class="tiles-header-searching-container">
-                                searching
+                                <div class="tiles-header-searching-text">
+                                    searching...
+                                </div>
                             </div>
                             <div class="tiles-header-functions-container">
                                 <div class="button" style="margin-right: 0px;" (click)="setActiveFiltersVisible()" [ngClass]="{'button-default': !activeFiltersVisible, 'button-active': activeFiltersVisible}">
@@ -206,8 +211,26 @@
                         <!-- Tiles-Header > Active Filters -->
                         <!-- ----------------------------- -->
                         <div *ngIf="activeFiltersVisible" class="tiles-header-active-filters-container">
-                            <div>
-                                acitve filters
+                            <div class="active-filsters-wrapper">
+
+                                <div class="active-filter-container">
+                                    <div class="active-filter-name">
+                                        acitve filter
+                                    </div>
+                                    <div class="active-filter-close-container">
+                                        <img src="../../assets/cancel-circle.svg" alt="">
+                                    </div>
+                                </div>
+                                
+                                <div class="active-filter-container">
+                                    <div class="active-filter-name">
+                                        acitve filter
+                                    </div>
+                                    <div class="active-filter-close-container">
+                                        <img src="../../assets/cancel-circle.svg" alt="">
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="button" style="color: rgb(109, 184, 109); font-size: .8em; margin-right: 0px;">
                                 No Function
@@ -218,15 +241,17 @@
                     <!-- Tiles -->
                     <!-- ----- -->
                     <div class="tiles-wrapper">
-                        <div class="tile-container" *ngFor="let employee of employees, index as i" (click)="setAddInfo(employee)">
+                        <!-- <div class="tile-container" *ngFor="let employee of employees, index as i" (click)="setAddInfo(employee)"> -->
+                        <div class="tile-container" *ngFor="let employee of names, index as i" (click)="setAddInfo(employee)">
                             <div class="tile-wrapper">
 
                                 <div class="select-item-container">
-                                    <input type="checkbox">
+                                    <input type="checkbox" [(ngModel)]="employee.selected" (change)="checkIfAllSelected();">
                                 </div>
 
                                 <div class="tile-content-left-container">
-                                    {{employee.firstName}}
+                                    <!-- {{employee.firstName}} -->
+                                    {{employee.name}}
                                 </div>
 
                                 <div class="tile-content-right-container">
@@ -239,6 +264,7 @@
 
                             </div>
                         </div>
+
                     </div>
 
                     <!-- Tiles-Actions -->

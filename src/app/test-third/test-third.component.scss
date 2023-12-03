@@ -459,14 +459,34 @@ $content-width-only-tiles: calc(100%);
             z-index: 1;
 
             .tiles-header-filters-container {
+                // background-color: lime;
                 display: grid;
-                grid-template-columns: 1fr auto;
+                grid-template-columns: auto 1fr auto;
                 align-content: center;
+
+                .tiles-header-select-all-container {
+                    background-color: rgba(0, 0, 0, .12);
+                    display: flex;
+                    align-items: center;
+                    margin: 2px 8px 2px 2px;
+                    padding: 6px 5px 6px 4px;
+                    border-radius: 4px;
+                    border: 1px solid rgba(0, 0, 0, .14);
+                }
 
                 .tiles-header-searching-container {
                     // background-color: orange;
+                    background-color: rgba(0, 0, 0, .06);
                     display: flex;
                     align-items: center;
+                    border: 1px solid rgba(0, 0, 0, .08);
+                    border-radius: 4px;
+                    padding-left: 6px;
+
+                    .tiles-header-searching-text {
+                        color: rgb(189, 189, 189);
+                        font-style: italic;
+                    }
                 }
 
                 .tiles-header-functions-container {
@@ -482,6 +502,38 @@ $content-width-only-tiles: calc(100%);
                 grid-template-columns: 1fr auto;
                 margin-top: 8px;
 
+                .active-filsters-wrapper {
+                    // background-color: orange;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 34px;
+
+                    .active-filter-container {
+                        background-color: goldenrod;
+                        background-color: rgba(0, 0, 0, .04);
+                        padding: 2px 6px;
+                        border-radius: 12px;
+                        border: 1px solid rgba(0, 0, 0, .08);
+                        display: flex;
+                        align-items: center;
+                        margin-right: 6px;
+
+                        .active-filter-name {
+                            // background-color: lime;
+                        }
+
+                        .active-filter-close-container {
+                            // background-color: orange;
+                            display: flex;
+                            align-items: center;
+                            padding-left: 6px;
+
+                            img {
+                                width: 14px;
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -492,7 +544,7 @@ $content-width-only-tiles: calc(100%);
 
             margin: -12px 0px -12px 0px;
             overflow-y: scroll;
-            padding: 24px 12px 24px 12px;
+            padding: 26px 12px 20px 12px;
 
             .tile-container {
                 background-color: #f5f5f5;

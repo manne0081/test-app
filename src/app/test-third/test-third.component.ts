@@ -16,16 +16,45 @@ export class TestThirdComponent {
 	];
 
     employees: Employee[] = [];
+    
 	addInfo = {} as Employee;
 
 	quicklinksVisible:boolean = true;
 	addInfoVisible:boolean = true;
     activeFiltersVisible:boolean = false;
 
+    selectedAll: any;
+    names: any;
 
 
-
-    constructor() { }
+    constructor() {
+        this.names = [
+            { name: 'Prashobh', selected: false },
+            { name: 'Abraham', selected: false },
+            { name: 'Anil', selected: false },
+            { name: 'Sam', selected: false },
+            { name: 'Natasha', selected: false },
+            { name: 'Marry', selected: false },
+            { name: 'Zian', selected: false },
+            { name: 'karan', selected: false },
+            { name: 'Prashobh', selected: false },
+            { name: 'Abraham', selected: false },
+            { name: 'Anil', selected: false },
+            { name: 'Sam', selected: false },
+            { name: 'Natasha', selected: false },
+            { name: 'Marry', selected: false },
+            { name: 'Zian', selected: false },
+            { name: 'karan', selected: false },
+            { name: 'Prashobh', selected: false },
+            { name: 'Abraham', selected: false },
+            { name: 'Anil', selected: false },
+            { name: 'Sam', selected: false },
+            { name: 'Natasha', selected: false },
+            { name: 'Marry', selected: false },
+            { name: 'Zian', selected: false },
+            { name: 'karan', selected: false },
+        ];
+    }
 
     ngOnInit(): void {
 		this.quicklinksVisible = true;
@@ -36,7 +65,7 @@ export class TestThirdComponent {
 
 
         // Testdaten für 50 Mitarbeiter erstellen
-        for (let i = 1; i <= 25; i++) {
+        for (let i = 1; i <= 2; i++) {
 
             const employee: Employee = {
                 firstName: `Vorname ${i}`,
@@ -60,7 +89,8 @@ export class TestThirdComponent {
                     fon: '02604/45498877',
                     mobile: '0166/1770863',
                     email: 'rbleck@hoster.none',
-                }
+                },
+                
             };
 
             this.employees.push(employee);
@@ -116,12 +146,25 @@ export class TestThirdComponent {
         window.alert(quicklink + ": 3P-Menu selected!");
     }
 
-    openObject(object:any):void {
-        window.alert(object.firstName + ": Open object");
+    openObject(object: any):void {
+        // window.alert(object.firstName + ": Open object");
+        window.alert(object.name + ": Open object");
     }
 
 
 
+    selectAll() {
+        for (var i = 0; i < this.names.length; i++) {
+            this.names[i].selected = this.selectedAll;
+        }
+
+    }
+
+    checkIfAllSelected() {
+        this.selectedAll = this.names.every(function (item: any) {
+            return item.selected == true;
+        });
+    }
 
 
 
@@ -129,6 +172,5 @@ export class TestThirdComponent {
     randomDate(start: Date, end: Date): Date {
         return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
     }
-
 
 }
