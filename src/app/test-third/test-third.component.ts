@@ -16,7 +16,6 @@ export class TestThirdComponent {
 	];
 
     employees: Employee[] = [];
-    
 	addInfo = {} as Employee;
 
 	quicklinksVisible:boolean = true;
@@ -26,33 +25,18 @@ export class TestThirdComponent {
     selectedAll: any;
     names: any;
 
-
     constructor() {
         this.names = [
-            { name: 'Prashobh', selected: false },
-            { name: 'Abraham', selected: false },
-            { name: 'Anil', selected: false },
-            { name: 'Sam', selected: false },
-            { name: 'Natasha', selected: false },
-            { name: 'Marry', selected: false },
-            { name: 'Zian', selected: false },
-            { name: 'karan', selected: false },
-            { name: 'Prashobh', selected: false },
-            { name: 'Abraham', selected: false },
-            { name: 'Anil', selected: false },
-            { name: 'Sam', selected: false },
-            { name: 'Natasha', selected: false },
-            { name: 'Marry', selected: false },
-            { name: 'Zian', selected: false },
-            { name: 'karan', selected: false },
-            { name: 'Prashobh', selected: false },
-            { name: 'Abraham', selected: false },
-            { name: 'Anil', selected: false },
-            { name: 'Sam', selected: false },
-            { name: 'Natasha', selected: false },
-            { name: 'Marry', selected: false },
-            { name: 'Zian', selected: false },
-            { name: 'karan', selected: false },
+            { name: 'First Tile', selected: false },
+            { name: 'Prashobh', selected: false }, { name: 'Abraham', selected: false }, { name: 'karan', selected: false },
+            { name: 'Anil', selected: false }, { name: 'Sam', selected: false }, { name: 'Natasha', selected: false },
+            { name: 'Marry', selected: false }, { name: 'Zian', selected: false }, { name: 'karan', selected: false },
+            { name: 'Prashobh', selected: false }, { name: 'Abraham', selected: false }, { name: 'Anil', selected: false },
+            { name: 'Sam', selected: false }, { name: 'Natasha', selected: false }, { name: 'Marry', selected: false },
+            { name: 'Zian', selected: false }, { name: 'karan', selected: false }, { name: 'Prashobh', selected: false },
+            { name: 'Abraham', selected: false }, { name: 'Anil', selected: false }, { name: 'Sam', selected: false },
+            { name: 'Natasha', selected: false }, { name: 'Marry', selected: false }, { name: 'Zian', selected: false },
+            { name: 'Last Tile', selected: false },
         ];
     }
 
@@ -90,7 +74,7 @@ export class TestThirdComponent {
                     mobile: '0166/1770863',
                     email: 'rbleck@hoster.none',
                 },
-                
+
             };
 
             this.employees.push(employee);
