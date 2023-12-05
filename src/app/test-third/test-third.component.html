@@ -191,7 +191,7 @@
                             <!-- Tile-Header > Searching and Functions -->
                             <!-- ------------------------------------- -->
                             <div class="tiles-header-select-all-container">
-                                <input type="checkbox" [(ngModel)]="selectedAll" (change)="selectAll();">
+                                <input type="checkbox" [(ngModel)]="allSelected" (change)="selectAll();">
                             </div>
                             <div class="tiles-header-searching-container">
                                 <div class="tiles-header-searching-text">
@@ -221,7 +221,7 @@
                                         <img src="../../assets/cancel-circle.svg" alt="">
                                     </div>
                                 </div>
-                                
+
                                 <div class="active-filter-container">
                                     <div class="active-filter-name">
                                         acitve filter

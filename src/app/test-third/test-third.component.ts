@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Employee } from './test';
+import { Employee } from './test-third';
 
 @Component({
     selector: 'app-test-third',
@@ -22,10 +22,19 @@ export class TestThirdComponent {
 	addInfoVisible:boolean = true;
     activeFiltersVisible:boolean = false;
 
-    selectedAll: any;
+    allSelected: any;
     names: any;
 
     constructor() {
+
+    }
+
+    ngOnInit(): void {
+		this.quicklinksVisible = true;
+		this.addInfoVisible = true;
+
+		console.log("test-second > ngOnInit");
+
         this.names = [
             { name: 'First Tile', selected: false },
             { name: 'Prashobh', selected: false }, { name: 'Abraham', selected: false }, { name: 'karan', selected: false },
@@ -38,15 +47,6 @@ export class TestThirdComponent {
             { name: 'Natasha', selected: false }, { name: 'Marry', selected: false }, { name: 'Zian', selected: false },
             { name: 'Last Tile', selected: false },
         ];
-    }
-
-    ngOnInit(): void {
-		this.quicklinksVisible = true;
-		this.addInfoVisible = true;
-
-		console.log("test-second > ngOnInit");
-
-
 
         // Testdaten für 50 Mitarbeiter erstellen
         for (let i = 1; i <= 2; i++) {
@@ -139,13 +139,13 @@ export class TestThirdComponent {
 
     selectAll() {
         for (var i = 0; i < this.names.length; i++) {
-            this.names[i].selected = this.selectedAll;
+            this.names[i].selected = this.allSelected;
         }
 
     }
 
     checkIfAllSelected() {
-        this.selectedAll = this.names.every(function (item: any) {
+        this.allSelected = this.names.every(function (item: any) {
             return item.selected == true;
         });
     }
