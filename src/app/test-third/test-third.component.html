@@ -241,12 +241,13 @@
                     <!-- Tiles -->
                     <!-- ----- -->
                     <div class="tiles-wrapper">
-                        <!-- <div class="tile-container" *ngFor="let employee of employees, index as i" (click)="setAddInfo(employee)"> -->
                         <div class="tile-container" *ngFor="let employee of names, index as i" (click)="setAddInfo(employee)">
+                        <!-- <div class="tile-container" *ngFor="let employee of employees, index as i" (click)="setAddInfo(employee)"> -->
                             <div class="tile-wrapper">
 
                                 <div class="select-item-container">
                                     <input type="checkbox" [(ngModel)]="employee.selected" (change)="checkIfAllSelected();">
+                                    <!-- <input type="checkbox" (change)="checkIfAllSelected();"> -->
                                 </div>
 
                                 <div class="tile-content-left-container">

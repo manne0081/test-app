@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Employee } from './test-third';
+import { Employee } from './test-thirds';
 
 @Component({
     selector: 'app-test-third',
@@ -51,33 +51,31 @@ export class TestThirdComponent {
         // Testdaten für 50 Mitarbeiter erstellen
         for (let i = 1; i <= 2; i++) {
 
-            const employee: Employee = {
-                firstName: `Vorname ${i}`,
-                lastName: `Nachname ${i}`,
-                birthday: this.randomDate(new Date(1970, 0, 1), new Date(2000, 11, 31)),
-                addresses: {
-                    primaryResidence: {
-                        street: `Hauptstraße ${i}`,
-                        houseNumber: `${i * 2}`,
-                        zip: `PLZ ${i}`,
-                        city: `Ort ${i}`,
+            const employee: Employee[] = [
+                {id: 0,
+                    number: 'PT-001000',
+                    salutation: 'Herr',
+                    title: '',
+                    firstName: 'Robby',
+                    lastName: 'Bleck',
+                    birthday: new Date(1980, 10, 5),
+                    addresses: {
+                //         primaryResidence {
+                            street: 'Am Hartenberg',
+                //             houseNumber: '64 b',
+                //             postCode: '56377',
+                //             city: 'Seelbach',
+                //         }
                     },
-                    secondaryResidence: {
-                        street: `Zweitstraße ${i}`,
-                        houseNumber: `${i * 2}`,
-                        zip: `ZweitPLZ ${i}`,
-                        city: `ZweitOrt ${i}`,
-                    },
+                //     contacts: {
+                //         fon: '02604/45498877',
+                //         mobile: '0166/1770863',
+                //         email: 'rbleck@hoster.none',
+                //     },
                 },
-                contacts: {
-                    fon: '02604/45498877',
-                    mobile: '0166/1770863',
-                    email: 'rbleck@hoster.none',
-                },
+            ];
 
-            };
-
-            this.employees.push(employee);
+            // this.employees.push(employee);
         }
     }
 
