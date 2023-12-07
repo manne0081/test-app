@@ -241,22 +241,23 @@
                     <!-- Tiles -->
                     <!-- ----- -->
                     <div class="tiles-wrapper">
-                        <div class="tile-container" *ngFor="let employee of names, index as i" (click)="setAddInfo(employee)">
-                        <!-- <div class="tile-container" *ngFor="let employee of employees, index as i" (click)="setAddInfo(employee)"> -->
+                        <div class="tile-container" *ngFor="let employee of employees, index as i" (click)="setAddInfo(employee)">
                             <div class="tile-wrapper">
 
                                 <div class="select-item-container">
                                     <input type="checkbox" [(ngModel)]="employee.selected" (change)="checkIfAllSelected();">
-                                    <!-- <input type="checkbox" (change)="checkIfAllSelected();"> -->
                                 </div>
 
                                 <div class="tile-content-left-container">
-                                    <!-- {{employee.firstName}} -->
-                                    {{employee.name}}
+                                    {{employee.salutation}} {{employee.firstName}} {{employee.lastName}}
+                                    <br>
+                                    {{employee.addresses.primaryResidence.street}} {{employee.addresses.primaryResidence.houseNumber}} // {{employee.addresses.primaryResidence.zip}} {{employee.addresses.primaryResidence.city}}
+                                    <br>
+                                    {{employee.contacts.fon}}
                                 </div>
 
                                 <div class="tile-content-right-container">
-                                    <!-- {{employee.birthday.toLocaleDateString()}} -->
+                                    {{employee.birthday | date}}
                                 </div>
 
                                 <div class="open-item-container" (click)="openObject(employee)">
@@ -300,12 +301,10 @@
                         </div>
 
                         <div class="addInfo-item-wrapper">
-                            <div class="addInfo-item">
+                            <div class="addInfo-item" *ngIf="addInfoDetail">
                                 {{addInfo.firstName}} {{addInfo.lastName}}<br>
-                                <!-- {{addInfo.birthday.toLocaleDateString()}} -->
-                                <br><br>
-                                <!-- {{addInfo.addresses.primaryResidence.street}}<br>
-                                {{addInfo.addresses.primaryResidence.zip}} {{addInfo.addresses.primaryResidence.city}} -->
+                                {{addInfo.contacts.email}}
+                                {{addInfo.contacts.mobile}}
                             </div>
                         </div>
                     </div>

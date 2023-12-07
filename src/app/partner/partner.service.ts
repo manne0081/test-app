@@ -21,7 +21,7 @@ export class PartnerService {
 	}
 
     // Returns partner as observable
-	// --------------------------------------
+	// -----------------------------
 	getPartner(id: number): Observable<Partner> {
 		const partner = PARTNERS.find(h => h.id === id)!;
 		return of(partner);

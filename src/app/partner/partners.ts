@@ -3,7 +3,7 @@ export interface Partner {
     number: string;
 
     salutation: string;
-    titel: string;
+    title: string;
     firstName: string;
     lastName: string;
     birthday: Date;

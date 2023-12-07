@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Employee } from './test-thirds';
+import { TestThirdService } from './test-third.service';
 
 @Component({
     selector: 'app-test-third',
@@ -8,107 +9,58 @@ import { Employee } from './test-thirds';
 })
 
 export class TestThirdComponent {
+    quicklinksVisible:boolean = true;
+    addInfoVisible:boolean = true;
+    addInfoDetail:boolean = false;
+    activeFiltersVisible:boolean = false;
+
     quicklinks: String[] = [
 		'First-Quicklink',
 		'Home', 'Profil', 'Einstellungen', 'Suche', 'Nachrichten', 'Freunde', 'Aktivitäten', 'Benachrichtigungen', 'Hilfe', 'FAQ',
         'Konto', 'Feed', 'Galerie', 'Entdecken', 'Favoriten', 'Chats', 'Gruppen', 'Kalender', 'Statistiken', 'Upgrade', 'Logout',
 		'Last-Quicklink',
 	];
-
     employees: Employee[] = [];
+    employeesSelected: Employee[] = [];
 	addInfo = {} as Employee;
 
-	quicklinksVisible:boolean = true;
-	addInfoVisible:boolean = true;
-    activeFiltersVisible:boolean = false;
-
     allSelected: any;
-    names: any;
 
-    constructor() {
 
+    constructor(private employeeService: TestThirdService) {
     }
+
 
     ngOnInit(): void {
 		this.quicklinksVisible = true;
 		this.addInfoVisible = true;
-
-		console.log("test-second > ngOnInit");
-
-        this.names = [
-            { name: 'First Tile', selected: false },
-            { name: 'Prashobh', selected: false }, { name: 'Abraham', selected: false }, { name: 'karan', selected: false },
-            { name: 'Anil', selected: false }, { name: 'Sam', selected: false }, { name: 'Natasha', selected: false },
-            { name: 'Marry', selected: false }, { name: 'Zian', selected: false }, { name: 'karan', selected: false },
-            { name: 'Prashobh', selected: false }, { name: 'Abraham', selected: false }, { name: 'Anil', selected: false },
-            { name: 'Sam', selected: false }, { name: 'Natasha', selected: false }, { name: 'Marry', selected: false },
-            { name: 'Zian', selected: false }, { name: 'karan', selected: false }, { name: 'Prashobh', selected: false },
-            { name: 'Abraham', selected: false }, { name: 'Anil', selected: false }, { name: 'Sam', selected: false },
-            { name: 'Natasha', selected: false }, { name: 'Marry', selected: false }, { name: 'Zian', selected: false },
-            { name: 'Last Tile', selected: false },
-        ];
-
-        // Testdaten für 50 Mitarbeiter erstellen
-        for (let i = 1; i <= 2; i++) {
-
-            const employee: Employee[] = [
-                {id: 0,
-                    number: 'PT-001000',
-                    salutation: 'Herr',
-                    title: '',
-                    firstName: 'Robby',
-                    lastName: 'Bleck',
-                    birthday: new Date(1980, 10, 5),
-                    addresses: {
-                //         primaryResidence {
-                            street: 'Am Hartenberg',
-                //             houseNumber: '64 b',
-                //             postCode: '56377',
-                //             city: 'Seelbach',
-                //         }
-                    },
-                //     contacts: {
-                //         fon: '02604/45498877',
-                //         mobile: '0166/1770863',
-                //         email: 'rbleck@hoster.none',
-                //     },
-                },
-            ];
-
-            // this.employees.push(employee);
-        }
+		this.getEmployees();
     }
 
 
+    // GETTER / SETTER
+    // ***************
+    getEmployees(): void {
+        this.employeeService.getEmployees()
+            .subscribe(employees => this.employees = employees);
+    }
 
-	logout() {
-	}
 
+    // FRONTEND-Function
+    // *****************
 	setMyQuicklinksVisible() {
-		if (this.quicklinksVisible) {
-			this.quicklinksVisible = false;
-			// console.log("test-second > setQuicklinks = false");
-			// console.log(this.quicklinksVisible);
-			// console.log(this.addInfoVisible);
+        if (this.quicklinksVisible) {
+            this.quicklinksVisible = false;
 		} else {
-			this.quicklinksVisible = true;
-			// console.log("test-second > setQuicklinks = true");
-			// console.log(this.quicklinksVisible);
-			// console.log(this.addInfoVisible);
+            this.quicklinksVisible = true;
 		}
 	}
 
 	setAddInfoVisible() {
-		if (this.addInfoVisible) {
-			this.addInfoVisible = false;
-			// console.log("test-second > setAdditionalInformationVisible = false");
-			// console.log(this.addInfoVisible);
-			// console.log(this.quicklinksVisible);
+        if (this.addInfoVisible) {
+            this.addInfoVisible = false;
 		} else {
-			this.addInfoVisible = true;
-			// console.log("test-second > setAdditionalInformationVisible = true");
-			// console.log(this.addInfoVisible);
-			// console.log(this.quicklinksVisible);
+            this.addInfoVisible = true;
 		}
 	}
 
@@ -121,7 +73,8 @@ export class TestThirdComponent {
     }
 
 	setAddInfo(employee: Employee) {
-		this.addInfo = employee;
+        this.addInfoDetail = true;
+        this.addInfo = employee;
 	}
 
     quicklinkMoreSelected(quicklink: any):void {
@@ -133,17 +86,14 @@ export class TestThirdComponent {
         window.alert(object.name + ": Open object");
     }
 
-
-
     selectAll() {
-        for (var i = 0; i < this.names.length; i++) {
-            this.names[i].selected = this.allSelected;
+        for (var i = 0; i < this.employees.length; i++) {
+            this.employees[i].selected = this.allSelected;
         }
-
     }
 
     checkIfAllSelected() {
-        this.allSelected = this.names.every(function (item: any) {
+        this.allSelected = this.employees.every(function (item: any) {
             return item.selected == true;
         });
     }
@@ -155,4 +105,6 @@ export class TestThirdComponent {
         return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
     }
 
+    logout() {
+    }
 }
