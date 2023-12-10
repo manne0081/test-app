@@ -116,7 +116,7 @@
 
                     <!-- Button toggle Quicklinks -->
                     <!-- ------------------------ -->
-                    <div class="button" [ngClass]="{'button-default': !quicklinksVisible, 'button-active': quicklinksVisible}" (click)="setMyQuicklinksVisible()">
+                    <div class="button" [ngClass]="{'button-default': !quicklinksVisible, 'button-active': quicklinksVisible}" (click)="setQuicklinksVisible()">
                         Quicklinks
                     </div>
 
@@ -195,7 +195,8 @@
                             </div>
                             <div class="tiles-header-searching-container">
                                 <div class="tiles-header-searching-text">
-                                    searching...
+                                    <input type="text" [(ngModel)]="searchingValue" (keyup)="searchingEmployees()">
+                                    <!-- <input type="text" [(ngModel)]="searchingValue" (input)="filterItems()"> -->
                                 </div>
                             </div>
                             <div class="tiles-header-functions-container">
@@ -257,7 +258,7 @@
                                 </div>
 
                                 <div class="tile-content-right-container">
-                                    {{employee.birthday | date}}
+                                    {{employee.birthday | date:"dd. MMM. yyyy"}}
                                 </div>
 
                                 <div class="open-item-container" (click)="openObject(employee)">
@@ -302,6 +303,8 @@
 
                         <div class="addInfo-item-wrapper">
                             <div class="addInfo-item" *ngIf="addInfoDetail">
+                                ID:{{addInfo.id}}
+                                <br>
                                 {{addInfo.firstName}} {{addInfo.lastName}}<br>
                                 {{addInfo.contacts.email}}
                                 {{addInfo.contacts.mobile}}

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+
 import { Employee } from './test-thirds';
+import { EMPLOYEES } from './test-thirds-mock';
 import { TestThirdService } from './test-third.service';
 
 @Component({
@@ -8,47 +10,50 @@ import { TestThirdService } from './test-third.service';
     styleUrls: ['./test-third.component.scss']
 })
 
-export class TestThirdComponent {
-    quicklinksVisible:boolean = true;
-    addInfoVisible:boolean = true;
-    addInfoDetail:boolean = false;
-    activeFiltersVisible:boolean = false;
-
+export class TestThirdComponent {    
     quicklinks: String[] = [
 		'First-Quicklink',
-		'Home', 'Profil', 'Einstellungen', 'Suche', 'Nachrichten', 'Freunde', 'Aktivitäten', 'Benachrichtigungen', 'Hilfe', 'FAQ',
+		'Robby Bleck', 'Profil', 'Einstellungen', 'Suche', 'Nachrichten', 'Freunde', 'Aktivitäten', 'Benachrichtigungen', 'Hilfe', 'FAQ',
         'Konto', 'Feed', 'Galerie', 'Entdecken', 'Favoriten', 'Chats', 'Gruppen', 'Kalender', 'Statistiken', 'Upgrade', 'Logout',
 		'Last-Quicklink',
 	];
     employees: Employee[] = [];
-    employeesSelected: Employee[] = [];
+
+    quicklinksVisible:boolean = true;
+    addInfoVisible:boolean = true;
+    addInfoDetail:boolean = false;
+    activeFiltersVisible:boolean = false;
+    searchingValue: string = "";
+
 	addInfo = {} as Employee;
-
     allSelected: any;
-
 
     constructor(private employeeService: TestThirdService) {
     }
 
-
     ngOnInit(): void {
 		this.quicklinksVisible = true;
 		this.addInfoVisible = true;
-		this.getEmployees();
+		this.getAllEmployees();
     }
 
 
     // GETTER / SETTER
     // ***************
-    getEmployees(): void {
+    getAllEmployees(): void {
         this.employeeService.getEmployees()
             .subscribe(employees => this.employees = employees);
+    }
+
+    getEmployee(id: number): Employee {
+		const employee = EMPLOYEES.find(h => h.id === id)!;
+		return employee;
     }
 
 
     // FRONTEND-Function
     // *****************
-	setMyQuicklinksVisible() {
+	setQuicklinksVisible() {
         if (this.quicklinksVisible) {
             this.quicklinksVisible = false;
 		} else {
@@ -70,6 +75,8 @@ export class TestThirdComponent {
         } else {
             this.activeFiltersVisible = true;
         }
+
+        this.getFilteredEmployees();
     }
 
 	setAddInfo(employee: Employee) {
@@ -81,9 +88,8 @@ export class TestThirdComponent {
         window.alert(quicklink + ": 3P-Menu selected!");
     }
 
-    openObject(object: any):void {
-        // window.alert(object.firstName + ": Open object");
-        window.alert(object.name + ": Open object");
+    openObject(object: Employee):void {
+        window.alert(object.firstName + " " + object.lastName + ": Open object");
     }
 
     selectAll() {
@@ -99,12 +105,37 @@ export class TestThirdComponent {
     }
 
 
+    getFilteredEmployees(): void {
+        const found = this.employees.find((element) => element.id > 5);
+        const result1 = this.employees.find(({ firstName }) => firstName === "Robby" && "Anna");
+        const result2 = this.getEmployee(0);
+
+        const test3 = this.employees.filter(person => person.id <= 10);
+        const result3 = this.employees = test3;
+        console.log(this.employees);
+
+        if (this.activeFiltersVisible) {
+            this.employees = [result2];
+            // this.employees.push(result2);
+        } else {
+            this.getAllEmployees();
+        }
+
+    }
+
+    // Searching employees by searching-field at the tile-header
+    // *********************************************************
+    searchingEmployees(): void {
+        this.getAllEmployees();
+        const employeesBySearching = this.employees.filter(item => item.lastName.toLocaleLowerCase().includes(this.searchingValue));
+        this.employees = employeesBySearching;
+    }
 
     // Funktion zur Generierung eines zufälligen Datums in einem bestimmten Bereich
-    randomDate(start: Date, end: Date): Date {
-        return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-    }
+    // randomDate(start: Date, end: Date): Date {
+    //     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+    // }
 
-    logout() {
-    }
+    // logout() {
+    // }
 }

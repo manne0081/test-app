@@ -325,7 +325,7 @@ $content-width-only-tiles: calc(100%);
 
                 .quicklink-item-container {
                     background-color: lime;
-                    background-color: rgba(255, 255, 255, .16);
+                    background-color: rgba(255, 255, 255, .32);
                     padding: 8px 8px;
                     margin-bottom: 8px;
                     border-radius: 4px;
@@ -355,7 +355,7 @@ $content-width-only-tiles: calc(100%);
                 }
 
                 .quicklink-item-container:hover {
-                    background-color: rgba(255, 255, 255, .48);
+                    background-color: rgba(255, 255, 255, .78);
                     cursor: pointer;
 
                     .quicklink-item-drag-container:hover {
@@ -468,7 +468,7 @@ $content-width-only-tiles: calc(100%);
                     background-color: rgba(0, 0, 0, .12);
                     display: flex;
                     align-items: center;
-                    margin: 2px 8px 2px 2px;
+                    margin: 2px 14px 2px 4px;
                     padding: 6px 5px 6px 4px;
                     border-radius: 4px;
                     border: 1px solid rgba(0, 0, 0, .14);
@@ -486,6 +486,11 @@ $content-width-only-tiles: calc(100%);
                     .tiles-header-searching-text {
                         color: rgb(189, 189, 189);
                         font-style: italic;
+                        width: 100%;
+
+                        input {
+                            width: 100%;
+                        }
                     }
                 }
 
@@ -506,7 +511,7 @@ $content-width-only-tiles: calc(100%);
                     // background-color: orange;
                     display: flex;
                     align-items: center;
-                    padding-left: 34px;
+                    padding-left: 44px;
 
                     .active-filter-container {
                         background-color: goldenrod;
@@ -547,10 +552,11 @@ $content-width-only-tiles: calc(100%);
             padding: 26px 12px 20px 12px;
 
             .tile-container {
-                background-color: #f5f5f5;
+                background-color: rgba(255, 255, 255, .88);
+                border: 1px solid rgba(255, 255, 255, .88);
                 margin-bottom: 8px;
                 border-radius: 4px;
-                padding: 2px;
+                padding: 2px 3px;
 
                 .tile-wrapper {
                     // background-color: orange;
@@ -597,7 +603,8 @@ $content-width-only-tiles: calc(100%);
             }
 
             .tile-container:hover {
-                background-color: #fcfcfc;
+                background-color: rgba(255, 255, 255, .96);
+                border: 1px solid rgba(0, 0, 0, .24);
                 cursor: pointer;
             }
         }
