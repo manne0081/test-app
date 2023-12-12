@@ -10,7 +10,7 @@ import { TestThirdService } from './test-third.service';
     styleUrls: ['./test-third.component.scss']
 })
 
-export class TestThirdComponent {    
+export class TestThirdComponent {
     quicklinks: String[] = [
 		'First-Quicklink',
 		'Robby Bleck', 'Profil', 'Einstellungen', 'Suche', 'Nachrichten', 'Freunde', 'Aktivitäten', 'Benachrichtigungen', 'Hilfe', 'FAQ',
@@ -104,23 +104,17 @@ export class TestThirdComponent {
         });
     }
 
-
+    // Filtering employees
+    // *******************
     getFilteredEmployees(): void {
-        const found = this.employees.find((element) => element.id > 5);
-        const result1 = this.employees.find(({ firstName }) => firstName === "Robby" && "Anna");
-        const result2 = this.getEmployee(0);
-
-        const test3 = this.employees.filter(person => person.id <= 10);
-        const result3 = this.employees = test3;
-        console.log(this.employees);
+        const filter1 = this.employees.filter(person => person.id <= 5);
+        const filter2 = filter1.filter(person => person.lastName.toLowerCase().includes("sc"));
 
         if (this.activeFiltersVisible) {
-            this.employees = [result2];
-            // this.employees.push(result2);
+            this.employees = filter2;
         } else {
             this.getAllEmployees();
         }
-
     }
 
     // Searching employees by searching-field at the tile-header
@@ -130,6 +124,15 @@ export class TestThirdComponent {
         const employeesBySearching = this.employees.filter(item => item.lastName.toLocaleLowerCase().includes(this.searchingValue));
         this.employees = employeesBySearching;
     }
+
+
+
+    // testFunction
+    // ************
+    // test(): void {
+    //     const found = this.employees.find((element) => element.id > 5);
+    //     const result1 = this.employees.find(({ firstName }) => firstName === "Robby" && "Anna");
+    // }
 
     // Funktion zur Generierung eines zufälligen Datums in einem bestimmten Bereich
     // randomDate(start: Date, end: Date): Date {

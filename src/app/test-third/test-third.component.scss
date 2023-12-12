@@ -515,8 +515,8 @@ $content-width-only-tiles: calc(100%);
                     padding-left: 44px;
 
                     .active-filter-container {
-                        background-color: goldenrod;
-                        background-color: rgba(0, 0, 0, .04);
+                        background-color: $highlight-color-80;
+                        // background-color: rgba(0, 0, 0, .04);
                         padding: 2px 6px;
                         border-radius: 12px;
                         border: 1px solid rgba(0, 0, 0, .08);
@@ -526,6 +526,7 @@ $content-width-only-tiles: calc(100%);
 
                         .active-filter-name {
                             // background-color: lime;
+                            color: white;
                         }
 
                         .active-filter-close-container {
