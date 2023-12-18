@@ -174,8 +174,8 @@ export class TestThirdComponent {
             const index = this.activeFilter.findIndex(filter => filter.key === 'searchingValue');
             if (index == -1) {
                 this.searchingValue = "";
+                this.getAllEmployees();
             }
-                        
         }
 
         if (this.activeFilter.length == 0) {
@@ -254,7 +254,6 @@ export class TestThirdComponent {
         // }
         // console.log(sum(10, 20));
         
-        console.log(this.activeFilter);
         this.activeFiltersVisible = true;
         this.addActiveFilter("test", "ID<5")
 
