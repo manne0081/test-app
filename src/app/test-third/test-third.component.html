@@ -195,16 +195,16 @@
                             </div>
                             <div class="tiles-header-searching-container">
                                 <div class="tiles-header-searching-text">
-                                    <input type="text" [(ngModel)]="searchingValue" (keyup)="searchingEmployees()" placeholder="Searching by lastname...">
+                                    <input type="text" [(ngModel)]="searchingValue" (keyup)="searchingEmployees($event)" placeholder="Searching by lastname...">
                                     <!-- <input type="text" [(ngModel)]="searchingValue" (input)="filterItems()"> -->
                                 </div>
                             </div>
                             <div class="tiles-header-functions-container">
                                 <div class="button" style="margin-right: 0px;" (click)="setActiveFiltersVisible()" [ngClass]="{'button-default': !activeFiltersVisible, 'button-active': activeFiltersVisible}">
-                                    Set Active Filters
+                                    Filters
                                 </div>
-                                <div class="button" style="margin-right: 0px;">
-                                    No Function
+                                <div class="button" style="margin-right: 0px;" (click)="testFunction()">
+                                    testFunction
                                 </div>
                             </div>
                         </div>
@@ -214,28 +214,21 @@
                         <div *ngIf="activeFiltersVisible" class="tiles-header-active-filters-container">
                             <div class="active-filsters-wrapper">
 
-                                <div class="active-filter-container">
+                                <div class="active-filter-container" *ngFor="let item of activeFilter, index as i">
                                     <div class="active-filter-name">
-                                        ID <= 5
+                                        {{item.value}}
                                     </div>
-                                    <div class="active-filter-close-container">
-                                        <img src="../../assets/cancel-circle.svg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="active-filter-container">
-                                    <div class="active-filter-name">
-                                        Lastname = "Sc"
-                                    </div>
-                                    <div class="active-filter-close-container">
+                                    <div class="active-filter-close-container" (click)="closeFilter(i)">
                                         <img src="../../assets/cancel-circle.svg" alt="">
                                     </div>
                                 </div>
 
                             </div>
+
                             <div class="button" style="color: rgb(109, 184, 109); font-size: .8em; margin-right: 0px;">
                                 No Function
                             </div>
+
                         </div>
                     </div>
 

@@ -11,6 +11,7 @@ import { TestThirdService } from './test-third.service';
 })
 
 export class TestThirdComponent {
+
     quicklinks: String[] = [
 		'First-Quicklink',
 		'Robby Bleck', 'Profil', 'Einstellungen', 'Suche', 'Nachrichten', 'Freunde', 'Aktivitäten', 'Benachrichtigungen', 'Hilfe', 'FAQ',
@@ -18,6 +19,9 @@ export class TestThirdComponent {
 		'Last-Quicklink',
 	];
     employees: Employee[] = [];
+	addInfo = {} as Employee;
+    activeFilterAlt: string[] = [];
+    activeFilter: { key: string; value: string }[] = [];
 
     quicklinksVisible:boolean = true;
     addInfoVisible:boolean = true;
@@ -25,7 +29,6 @@ export class TestThirdComponent {
     activeFiltersVisible:boolean = false;
     searchingValue: string = "";
 
-	addInfo = {} as Employee;
     allSelected: any;
 
     constructor(private employeeService: TestThirdService) {
@@ -75,8 +78,6 @@ export class TestThirdComponent {
         } else {
             this.activeFiltersVisible = true;
         }
-
-        this.getFilteredEmployees();
     }
 
 	setAddInfo(employee: Employee) {
@@ -106,25 +107,83 @@ export class TestThirdComponent {
 
     // Filtering employees
     // *******************
-    getFilteredEmployees(): void {
-        const filter1 = this.employees.filter(person => person.id <= 5);
-        const filter2 = filter1.filter(person => person.lastName.toLowerCase().includes("sc"));
+    // getFilteredEmployees(): void {
+    //     const filter1 = this.employees.filter(person => person.id <= 5);
+    //     const filter2 = filter1.filter(person => person.lastName.toLowerCase().includes("sc"));
 
-        if (this.activeFiltersVisible) {
-            this.employees = filter2;
-        } else {
-            this.getAllEmployees();
-        }
-    }
+    //     if (this.activeFiltersVisible) {
+    //         this.employees = filter2;
+    //     } else {
+    //         this.getAllEmployees();
+    //     }
+    // }
 
     // Searching employees by searching-field at the tile-header
     // *********************************************************
-    searchingEmployees(): void {
+    searchingEmployees(event: KeyboardEvent): void {
+        let searchingKey = "searchingValue";
+        let searchingValue:string = this.searchingValue;
+        let searchingValueLength: number = this.searchingValue.length;        
+        let isSetFilter = this.activeFilter.findIndex(filter => filter.key === 'searchingValue');  // 0=true and -1=false
+        
+        // functionality for the active filter element / area
+        // **************************************************
+        if (isSetFilter == -1) {
+            // set filter
+            this.addActiveFilter(searchingKey, searchingValue);
+            // show active filter
+            this.activeFiltersVisible = true;            
+
+        } else {
+            // update filter
+            this.activeFilter[isSetFilter].value = this.searchingValue;
+
+            if (this.searchingValue == "") {
+                // find index of the element about the key
+                const index = this.activeFilter.findIndex(filter => filter.key === searchingKey);
+
+                // remove the filter element
+                if (index !== -1) {
+                    this.activeFilter.splice(index, 1);
+                }
+
+                // hide the active filters
+                if (this.activeFilter.length == 0) {
+                    this.activeFiltersVisible = false;
+                }
+            }
+        }
+
+        // set employees by searching-value
+        // ********************************
         this.getAllEmployees();
         const employeesBySearching = this.employees.filter(item => item.lastName.toLocaleLowerCase().includes(this.searchingValue));
-        this.employees = employeesBySearching;
+        this.employees = employeesBySearching;        
     }
 
+
+    addActiveFilter(filtername: string, searchingValue: string): void {
+        this.activeFilter.push({ key: filtername, value: searchingValue });
+    }
+
+
+    closeFilter(filterId: number): void {
+        if (filterId > -1) {
+            this.activeFilter.splice(filterId, 1);
+
+            const index = this.activeFilter.findIndex(filter => filter.key === 'searchingValue');
+            if (index == -1) {
+                this.searchingValue = "";
+            }
+                        
+        }
+
+        if (this.activeFilter.length == 0) {
+            this.activeFiltersVisible = false;
+            this.searchingValue = "";
+            this.getAllEmployees();
+        }
+    }
 
 
     // testFunction
@@ -141,4 +200,66 @@ export class TestThirdComponent {
 
     // logout() {
     // }
+
+
+
+
+
+
+    // app-test
+    testFunction():void {
+        // console.log("Test-Function:");
+
+        // for (let row = 1; row <= 5; row++) {
+        //     let line = "";
+        
+        //     for (let col = 1; col <= row; col++) {
+        //         if (row == col) {
+        //             line += row;
+        //         } else {
+        //             line += " ";
+        //         }
+        //     }
+        //     console.log(line); 
+        // }
+
+        // let i = 0;
+        // for (; i < 100; i++) ;
+        // console.log(i);
+
+        // let i = 0;
+        // for (; i <= 10; i+=2) ;
+        // console.log(i);
+
+        // let i = 0;
+        // for (; i < 10; i++) ;
+        // console.log(i++);
+
+        // let j = 0;
+        // for (; j < 10; j++) {
+        //     console.log(j);
+        // }
+
+        // let str = "readability";
+        // for (let i = 0; i < str.length; i++) {
+        //     let symbol = str[i];
+
+        //     if ("ab".includes(symbol)) {
+        //         console.log(symbol);
+        //     }
+        // }
+        
+        // let sum = (x: number, y: number): number => {
+        //     return x + y;
+        // }
+        // console.log(sum(10, 20));
+        
+        console.log(this.activeFilter);
+        this.activeFiltersVisible = true;
+        this.addActiveFilter("test", "ID<5")
+
+    }
+
+    
+
 }

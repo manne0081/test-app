@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
+// Test for PHP-Backend
+// ********************
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
 import { Employee } from './test-thirds';
 import { EMPLOYEES } from './test-thirds-mock';
 
@@ -10,7 +15,9 @@ import { EMPLOYEES } from './test-thirds-mock';
 
 export class TestThirdService {
 
-    constructor() { }
+    constructor(
+        private http: HttpClient
+    ) { }
 
     // Returns partners-array as observable
 	// ------------------------------------

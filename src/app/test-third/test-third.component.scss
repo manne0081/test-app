@@ -539,6 +539,11 @@ $content-width-only-tiles: calc(100%);
                                 width: 14px;
                             }
                         }
+
+                        .active-filter-close-container:hover {
+                            // background-color: rgba(255, 255, 255, .20);
+                            cursor: pointer;
+                        }
                     }
                 }
             }

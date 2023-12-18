@@ -436,4 +436,33 @@ export const EMPLOYEES: Employee[] = [
           email: "nico.hofmann@example.com"
         }
     },
+    {
+      id: 15,
+      number: "PT-001001",
+      salutation: "Frau",
+      title: "",
+      firstName: "Petra",
+      lastName: "Musterfrau",
+      birthday: new Date(1990, 5, 20),
+      selected: false,
+      addresses: {
+        primaryResidence: {
+          street: "Musterstraße",
+          houseNumber: "123",
+          zip: "98765",
+          city: "Musterstadt"
+        },
+        secondaryResidence: {
+          street: "Musterweg",
+          houseNumber: "456",
+          zip: "54321",
+          city: "Teststadt"
+        }
+      },
+      contacts: {
+        fon: "01234/567890",
+        mobile: "0176/98765432",
+        email: "max.mustermann@example.com"
+      }
+  },
 ];
