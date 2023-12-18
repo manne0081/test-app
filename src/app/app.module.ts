@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
@@ -35,6 +36,7 @@ import { TestThirdComponent } from './test-third/test-third.component';
         BrowserModule,
         AppRoutingModule,
         FormsModule,
+        HttpClientModule,
     ],
     providers: [
         CookieService,
