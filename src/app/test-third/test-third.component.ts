@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { initializeApp } from "firebase/app";
 
 import { Employee } from './test-thirds';
 import { EMPLOYEES } from './test-thirds-mock';
@@ -11,8 +12,7 @@ import { HttpClient } from '@angular/common/http';
     styleUrls: ['./test-third.component.scss']
 })
 
-export class TestThirdComponent {
-
+export class TestThirdComponent {      
     quicklinks: String[] = [
 		'First-Quicklink',
 		'Robby Bleck', 'Profil', 'Einstellungen', 'Suche', 'Nachrichten', 'Freunde', 'Aktivitäten', 'Benachrichtigungen', 'Hilfe', 'FAQ',
