@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Employee } from './test-thirds';
 import { EMPLOYEES } from './test-thirds-mock';
 import { TestThirdService } from './test-third.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-test-third',
@@ -31,7 +32,8 @@ export class TestThirdComponent {
 
     allSelected: any;
 
-    constructor(private employeeService: TestThirdService) {
+    constructor(private employeeService: TestThirdService,
+                private httpClient: HttpClient) {
     }
 
     ngOnInit(): void {
@@ -107,32 +109,35 @@ export class TestThirdComponent {
 
     // Filtering employees
     // *******************
-    // getFilteredEmployees(): void {
-    //     const filter1 = this.employees.filter(person => person.id <= 5);
-    //     const filter2 = filter1.filter(person => person.lastName.toLowerCase().includes("sc"));
+    getFilteredEmployees(): void {
+        const filter1 = this.employees.filter(person => person.id <= 5);
+        const filter2 = filter1.filter(person => person.lastName.toLowerCase().includes("sc"));
 
-    //     if (this.activeFiltersVisible) {
-    //         this.employees = filter2;
-    //     } else {
-    //         this.getAllEmployees();
-    //     }
-    // }
+        if (this.activeFiltersVisible) {
+            this.employees = filter2;
+        } else {
+            this.getAllEmployees();
+        }
+
+
+
+    }
 
     // Searching employees by searching-field at the tile-header
     // *********************************************************
     searchingEmployees(event: KeyboardEvent): void {
         let searchingKey = "searchingValue";
         let searchingValue:string = this.searchingValue;
-        let searchingValueLength: number = this.searchingValue.length;        
+        let searchingValueLength: number = this.searchingValue.length;
         let isSetFilter = this.activeFilter.findIndex(filter => filter.key === 'searchingValue');  // 0=true and -1=false
-        
+
         // functionality for the active filter element / area
         // **************************************************
         if (isSetFilter == -1) {
             // set filter
             this.addActiveFilter(searchingKey, searchingValue);
             // show active filter
-            this.activeFiltersVisible = true;            
+            this.activeFiltersVisible = true;
 
         } else {
             // update filter
@@ -158,7 +163,7 @@ export class TestThirdComponent {
         // ********************************
         this.getAllEmployees();
         const employeesBySearching = this.employees.filter(item => item.lastName.toLocaleLowerCase().includes(this.searchingValue));
-        this.employees = employeesBySearching;        
+        this.employees = employeesBySearching;
     }
 
 
@@ -208,57 +213,15 @@ export class TestThirdComponent {
 
     // app-test
     testFunction():void {
-        // console.log("Test-Function:");
 
-        // for (let row = 1; row <= 5; row++) {
-        //     let line = "";
-        
-        //     for (let col = 1; col <= row; col++) {
-        //         if (row == col) {
-        //             line += row;
-        //         } else {
-        //             line += " ";
-        //         }
-        //     }
-        //     console.log(line); 
-        // }
+        this.httpClient.post('https://test-app-4e2e9-default-rtdb.firebaseio.com/tests.json', 'test')
+            .subscribe(response => console.log(response));
 
-        // let i = 0;
-        // for (; i < 100; i++) ;
-        // console.log(i);
-
-        // let i = 0;
-        // for (; i <= 10; i+=2) ;
-        // console.log(i);
-
-        // let i = 0;
-        // for (; i < 10; i++) ;
-        // console.log(i++);
-
-        // let j = 0;
-        // for (; j < 10; j++) {
-        //     console.log(j);
-        // }
-
-        // let str = "readability";
-        // for (let i = 0; i < str.length; i++) {
-        //     let symbol = str[i];
-
-        //     if ("ab".includes(symbol)) {
-        //         console.log(symbol);
-        //     }
-        // }
-        
-        // let sum = (x: number, y: number): number => {
-        //     return x + y;
-        // }
-        // console.log(sum(10, 20));
-        
         this.activeFiltersVisible = true;
         this.addActiveFilter("test", "ID<5")
 
     }
 
-    
+
 
 }
