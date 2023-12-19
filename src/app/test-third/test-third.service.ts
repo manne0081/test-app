@@ -14,6 +14,7 @@ import { EMPLOYEES } from './test-thirds-mock';
 })
 
 export class TestThirdService {
+    private url = "http://localhost:3307/worktimebalance";
 
     constructor(
         private http: HttpClient

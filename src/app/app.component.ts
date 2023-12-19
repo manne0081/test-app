@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 
@@ -16,8 +16,9 @@ export class AppComponent implements OnInit{
 
     constructor(private cookieService: CookieService,
                 private router: Router,
-                private pageHeaderService: PageHeaderService,)
-    {}
+                private pageHeaderService: PageHeaderService,) {
+
+    }
 
     // note =>
     // tagmanager.google - Configuration from Cookies out of the code...

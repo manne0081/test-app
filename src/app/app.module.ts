@@ -3,12 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-
 import { HttpClientModule } from '@angular/common/http';
-import { initializeApp } from 'firebase/app';
 
 import { AppComponent } from './app.component';
-
 import { TestFirstComponent } from './test-first/test-first.component';
 import { HomeComponent } from './home/home.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
