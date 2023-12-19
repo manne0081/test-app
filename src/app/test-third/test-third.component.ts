@@ -215,6 +215,8 @@ export class TestThirdComponent {
 
         // this.httpClient.post('https://test-app-4e2e9-default-rtdb.firebaseio.com/tests.json', 'test')
         //     .subscribe(response => console.log(response));
+        // this.httpClient.post('https://test-app-4e2e9-default-rtdb.firebaseio.com/tests.json', 'test')
+        //     .subscribe(response => console.log(response));
 
         this.activeFiltersVisible = true;
         this.addActiveFilter("test", "ID<5")
