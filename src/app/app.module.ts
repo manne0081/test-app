@@ -35,7 +35,6 @@ import { TestThirdComponent } from './test-third/test-third.component';
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-
         HttpClientModule,
     ],
     providers: [

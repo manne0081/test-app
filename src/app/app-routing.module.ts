@@ -19,7 +19,7 @@ const routes: Routes = [
 
     { path: 'test', component: TestFirstComponent },
     { path: 'test2', component: TestSecondComponent },
-    { path: 'test3', component: TestThirdComponent },
+    { path: 'employee', component: TestThirdComponent },
     { path: '**', component: AppComponent },
 ];
 

@@ -549,7 +549,6 @@ $content-width-only-tiles: calc(100%);
         .tiles-wrapper {
             background-color: $content-background;
             height: calc(100% + 24px);
-            // padding: 12px;
 
             margin: -12px 0px -12px 0px;
             overflow-y: scroll;
@@ -608,7 +607,10 @@ $content-width-only-tiles: calc(100%);
 
             .tile-container:hover {
                 background-color: rgba(255, 255, 255, .96);
-                border: 1px solid rgba(0, 0, 0, .24);
+                background-color: rgb(241, 241, 241);
+                border: 1px solid rgb(226, 226, 226);
+                margin-left: 4px;
+                margin-right: -4px;
                 cursor: pointer;
             }
         }

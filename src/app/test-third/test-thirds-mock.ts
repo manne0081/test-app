@@ -3,7 +3,7 @@ import { Employee } from "./test-thirds";
 export const EMPLOYEES: Employee[] = [
     {
         id: 0,
-        number: 'PT-001000',
+        employeeCode: 'PT-001000',
         salutation: 'Herr',
         title: '',
         firstName: 'Robby',
@@ -32,7 +32,7 @@ export const EMPLOYEES: Employee[] = [
     },
     {
         id: 1,
-        number: "PT-001001",
+        employeeCode: "PT-001001",
         salutation: "Herr",
         title: "",
         firstName: "Max",
@@ -61,7 +61,7 @@ export const EMPLOYEES: Employee[] = [
     },
     {
         id: 2,
-        number: "PT-001002",
+        employeeCode: "PT-001002",
         salutation: "Frau",
         title: "Dr.",
         firstName: "Anna",
@@ -90,7 +90,7 @@ export const EMPLOYEES: Employee[] = [
     },
     {
         id: 3,
-        number: "PT-001003",
+        employeeCode: "PT-001003",
         salutation: "Herr",
         title: "Prof.",
         firstName: "Michael",
@@ -119,7 +119,7 @@ export const EMPLOYEES: Employee[] = [
     },
     {
         id: 4,
-        number: "PT-001004",
+        employeeCode: "PT-001004",
         salutation: "Frau",
         title: "",
         firstName: "Carolin",
@@ -148,7 +148,7 @@ export const EMPLOYEES: Employee[] = [
     },
     {
         id: 5,
-        number: "PT-001005",
+        employeeCode: "PT-001005",
         salutation: "Herr",
         title: "Dipl.-Ing.",
         firstName: "Markus",
@@ -177,7 +177,7 @@ export const EMPLOYEES: Employee[] = [
     },
     {
         id: 6,
-        number: "PT-001006",
+        employeeCode: "PT-001006",
         salutation: "Frau",
         title: "",
         firstName: "Sophie",
@@ -206,7 +206,7 @@ export const EMPLOYEES: Employee[] = [
     },
     {
         id: 7,
-        number: "PT-001007",
+        employeeCode: "PT-001007",
         salutation: "Herr",
         title: "Mag.",
         firstName: "Dominik",
@@ -235,7 +235,7 @@ export const EMPLOYEES: Employee[] = [
     },
     {
         id: 8,
-        number: "PT-001008",
+        employeeCode: "PT-001008",
         salutation: "Frau",
         title: "Prof. Dr.",
         firstName: "Isabella",
@@ -264,7 +264,7 @@ export const EMPLOYEES: Employee[] = [
     },
     {
         id: 9,
-        number: "PT-001009",
+        employeeCode: "PT-001009",
         salutation: "Herr",
         title: "",
         firstName: "Oliver",
@@ -293,7 +293,7 @@ export const EMPLOYEES: Employee[] = [
     },
     {
         id: 10,
-        number: "PT-001010",
+        employeeCode: "PT-001010",
         salutation: "Frau",
         title: "Ing.",
         firstName: "Eva",
@@ -322,7 +322,7 @@ export const EMPLOYEES: Employee[] = [
     },
     {
         id: 11,
-        number: "PT-001011",
+        employeeCode: "PT-001011",
         salutation: "Herr",
         title: "Dr.",
         firstName: "Felix",
@@ -351,7 +351,7 @@ export const EMPLOYEES: Employee[] = [
     },
     {
         id: 12,
-        number: "PT-001013",
+        employeeCode: "PT-001013",
         salutation: "Herr",
         title: "Dr.",
         firstName: "Sebastian",
@@ -380,7 +380,7 @@ export const EMPLOYEES: Employee[] = [
     },
     {
         id: 13,
-        number: "PT-001014",
+        employeeCode: "PT-001014",
         salutation: "Frau",
         title: "",
         firstName: "Julia",
@@ -409,7 +409,7 @@ export const EMPLOYEES: Employee[] = [
     },
     {
         id: 14,
-        number: "PT-001015",
+        employeeCode: "PT-001015",
         salutation: "Herr",
         title: "Ing.",
         firstName: "Nico",
@@ -438,7 +438,7 @@ export const EMPLOYEES: Employee[] = [
     },
     {
       id: 15,
-      number: "PT-001001",
+      employeeCode: "PT-001001",
       salutation: "Frau",
       title: "",
       firstName: "Petra",

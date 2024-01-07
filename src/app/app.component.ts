@@ -39,7 +39,7 @@ export class AppComponent implements OnInit{
 
         // Solange die cookies nicht funktionieren
         // todo
-        this.router.navigate(['test3']);
+        this.router.navigate(['employee']);
 
     }
 }

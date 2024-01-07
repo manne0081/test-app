@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, NgZone } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 
 import { Employee } from './test-thirds';
 import { EMPLOYEES } from './test-thirds-mock';
@@ -32,13 +33,22 @@ export class TestThirdComponent {
     allSelected: any;
 
     constructor(private employeeService: TestThirdService,
-                private httpClient: HttpClient) {
+                private http: HttpClient,
+                private ngZone: NgZone,
+                private cdRef: ChangeDetectorRef) {
     }
 
     ngOnInit(): void {
 		this.quicklinksVisible = true;
 		this.addInfoVisible = true;
-		this.getAllEmployees();
+
+		this.getAllEmployeesSql();
+        console.log(this.employees);
+
+        if (this.employees.length == 0) {
+            this.getAllEmployees();
+            console.log(this.employees);
+        }
     }
 
 
@@ -47,6 +57,17 @@ export class TestThirdComponent {
     getAllEmployees(): void {
         this.employeeService.getEmployees()
             .subscribe(employees => this.employees = employees);
+    }
+
+    public getAllEmployeesSql() {
+        this.employeeService.getAllEmployeesSql().subscribe(
+            (response: Employee[]) => {
+                this.ngZone.run(() => {
+                    this.employees = response;                    
+                });                
+                // console.log(this.employees);
+            },
+        );
     }
 
     getEmployee(id: number): Employee {
