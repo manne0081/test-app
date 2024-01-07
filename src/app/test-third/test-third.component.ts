@@ -12,7 +12,7 @@ import { TestThirdService } from './test-third.service';
     styleUrls: ['./test-third.component.scss']
 })
 
-export class TestThirdComponent { 
+export class TestThirdComponent {
     quicklinks: String[] = [
 		'First-Quicklink',
 		'Robby Bleck', 'Profil', 'Einstellungen', 'Suche', 'Nachrichten', 'Freunde', 'Aktivitäten', 'Benachrichtigungen', 'Hilfe', 'FAQ',
@@ -138,9 +138,6 @@ export class TestThirdComponent {
         } else {
             this.getAllEmployees();
         }
-
-
-
     }
 
     // Searching employees by searching-field at the tile-header
@@ -227,23 +224,9 @@ export class TestThirdComponent {
     // }
 
 
-
-
-
-
     // app-test
     testFunction():void {
-
-        // this.httpClient.post('https://test-app-4e2e9-default-rtdb.firebaseio.com/tests.json', 'test')
-        //     .subscribe(response => console.log(response));
-        // this.httpClient.post('https://test-app-4e2e9-default-rtdb.firebaseio.com/tests.json', 'test')
-        //     .subscribe(response => console.log(response));
-
         this.activeFiltersVisible = true;
         this.addActiveFilter("test", "ID<5")
-
     }
-
-
-
 }
