@@ -1,233 +1,139 @@
 // HEADER
 // ******
-.page-header-background {
-	background-color: white;
-	width: var(--header-width);
-	height: var(--header-height);
-	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
-	position: fixed;
-	z-index: 100;
+.header-container {
+    background-color: white;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    overflow: visible;
 
-	.page-header-wrapper {
-		height: 100%;
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-        justify-content: space-between;
+    .searching-container {
+        flex: 33%;
+        margin-left: 10px;
 
-        // Header-Left
-        // -----------
-        .page-header-left {
-            width: 33%;
-
-            // Burger-Button
-            // -------------
-            .burger-button-wrapper {
-                width: var(--primary-sizing-factor);
-                height: var(--primary-sizing-factor);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                .burger-button-background {
-                    // background-color: white;
-                    width: 32px;
-                    height: 32px;
-                    border-radius: 8px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    .burger-button {
-                        margin-top: 1px;
-                        img {
-                            height: 20px;
-                        }
-                    }
-                }
-
-                .burger-button-background:hover {
-                    background-color: rgba(0, 0, 0, 0.15);
-                }
-            }
-        }
-
-        // Header-Middle
-        // -------------
-        .page-header-center {
-            width: 34%;
-            display: flex;
-            justify-content: center;
-
-            // LOGO
-            // ----
-            .page-header-logo {
-
-                span {
-                    font-size: 1.4em;
-                    font-weight: bold;
-                }
-            }
-        }
-
-        // Header-Right
-        // ------------
-        .page-header-right {
-            width: 33%;
+        .searching-background {
+            background-color: rgb(240, 240, 240);
+            max-width: 350px;
+            height: 28px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            padding-right: 4px;
+            padding-left: 8px;
+            border: 1px solid rgb(220, 220, 220);
 
+            img {
+                width: 20px;
+                margin-top: 2px;
+                margin-right: 6px;
+            }
 
-            // Functions
-            // ---------
-            .header-function-button {
-                background-color: rgba(0, 0, 0, 0.1);
+            span {
+                padding-top: 2px;
+                color: rgb(158, 158, 158);
+                font-style: italic;
+            }
+
+        }
+    }
+
+    .logo {
+        flex: 34%;
+        text-align: center;
+
+        img {
+            height: 36px;
+        }
+    }
+
+    .function-wrapper {
+        flex: 33%;
+        margin-right: 10px;
+        text-align: right;
+        overflow: visible;
+
+        // Functions
+        // ---------
+        .header-function-button {
+            background-color: rgba(0, 0, 0, 0.1);
+            height: 32px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            border-radius: 6px;
+            margin-left: 6px;
+        }
+
+        // DropDowns
+        // ---------
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            overflow: visible;
+            margin-left: 8px;
+
+            .drop-button {
+                background-color: #dfdfdf;
+                color: white;
                 height: 32px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-                border: 1px solid rgba(0, 0, 0, 0.12);
-                border-radius: 6px;
-                margin-left: 6px;
-            }
-
-
-            // TimeTracking-Button
-            // -------------------
-            .time-tracking-dropdown {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                overflow-y: visible;
-                // z-index: 200;
-            }
-            .time-tracking-dropdown .dropdown-button {
-                background-color: rgba(255, 255, 255, 0.2);
-                border-radius: 4px 4px 4px 4px;
-                padding: 4px 8px;
-                font-size: 14px;
+                padding: 6px 12px;
+                font-size: 16px;
                 border: none;
-                // z-index: 200;
+                cursor: pointer;
+                border-radius: 4px;
+                overflow: visible;
+                border: 1px solid rgba(0, 0, 0, .14);
+
+                img {
+                    height: 20px;
+                }
             }
-            // TimeTracking-Content
-            // --------------------
-            .time-tracking-dropdown .dropdown-content {
-                border-radius: 4px 0px 4px 4px;
+
+            .drop-content {
+                background-color: #ececec;
+                border:1px solid rgba(0, 0, 0, .14);
                 display: none;
-                // display: block;
                 position: absolute;
-                position: fixed;
-                top: 36px;
-                top: 36px;
-                right: 4px;
-                right: 135px;
-                background-color: #f9f9f9;
-                border: 1px solid rgb(201, 201, 201);
-                border-radius: 6px;
-                min-width: 180px;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 200;
+                right: 0px;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 100;
+                border-radius: 4px;
+                min-width: 200px;
             }
-            .time-tracking-dropdown:hover .dropdown-content {
-                display: block;
-            }
-            .time-tracking-dropdown:hover .dropdown-button {
-                // background-color:  rgba(255, 255, 255, 0.5);
-                border-radius: 4px 4px 0px 0px;
-                cursor: pointer;
-            }
-            .time-tracking-dropdown .dropdown-content a {
-                background-color: var(--secondary-highlight-color);
-                background-color: lime;
+
+            .drop-content a {
                 color: black;
-                padding: 10px 12px;
+                padding: 12px 16px;
                 text-decoration: none;
                 display: block;
             }
-            .time-tracking-dropdown .dropdown-content a:hover {
-                background-color: #f1f1f1;
-                border-radius: 4px 0px 4px 4px;
-                cursor: pointer;
-            }
-            .time-tracking-dropdown .dropdown-content a.logout{
-                border-top: 1px solid #c6c6c6;
-            }
-            .time-tracking-dropdown .dropdown-content a.logout:hover{
-                border-top: 1px solid #c6c6c6;
-                border-radius: 0px 0px 4px 4px;
+
+            // Special for time tracking
+            // -------------------------
+            .drop-content.time-tracking {
+                padding: 12px 16px;
+                min-width: 400px;
+                min-height: 600px;
+                text-align: center;
             }
 
+            // Special for Profile-Button
+            // --------------------------
+            .drop-button.profile {
+                background-color: rgba(44, 81, 104, .8);
+            }
+        }
 
+        .drop-content a:hover {background-color: #e6e6e6;}
+        .dropdown:hover .drop-button {background-color: #c5c5c5;}
+        .dropdown:hover .drop-content {display: block;}
 
-
-
-
-            // Profile-Dropdown-Button
-            // -----------------------
-            .profile-dropdown {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                overflow-y: visible;
-            }
-            .profile-dropdown .dropdown-button {
-                background-color: rgba(255, 255, 255, 0.2);
-                border-radius: 4px 4px 4px 4px;
-                padding: 4px 8px;
-                font-size: 14px;
-                border: none;
-            }
-            // Profile-Dropdown-Content
-            // ------------------------
-            .profile-dropdown .dropdown-content {
-                border-radius: 4px 0px 4px 4px;
-                display: none;
-                position: fixed;
-                top: 36px;
-                right: 4px;
-                background-color: #f9f9f9;
-                border: 1px solid rgb(201, 201, 201);
-                border-radius: 6px;
-                min-width: 180px;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 200;
-            }
-            .profile-dropdown:hover .dropdown-content {
-                display: block;
-            }
-            .profile-dropdown:hover .dropdown-button {
-                // background-color:  rgba(255, 255, 255, 0.5);
-                border-radius: 4px 4px 0px 0px;
-                cursor: pointer;
-            }
-            .profile-dropdown .dropdown-content a {
-                background-color: var(--secondary-highlight-color);
-                color: black;
-                padding: 10px 12px;
-                text-decoration: none;
-                display: block;
-            }
-            .profile-dropdown .dropdown-content a:hover {
-                background-color: #f1f1f1;
-                border-radius: 4px 0px 4px 4px;
-                cursor: pointer;
-            }
-            .profile-dropdown .dropdown-content a.logout{
-                border-top: 1px solid #c6c6c6;
-            }
-            .profile-dropdown .dropdown-content a.logout:hover{
-                border-top: 1px solid #c6c6c6;
-                border-radius: 0px 0px 4px 4px;
-            }
-
-
-
+        // Special für Profile-Button
+        // --------------------------
+        .dropdown:hover .drop-button.profile {
+            background-color: rgba(44, 81, 104, .6)
         }
     }
 }

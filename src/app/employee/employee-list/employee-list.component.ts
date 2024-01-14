@@ -1,27 +1,24 @@
-import { ChangeDetectorRef, Component, NgZone } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { HttpErrorResponse } from '@angular/common/http';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, ChangeDetectorRef, NgZone } from '@angular/core';
+import { Observable, catchError, tap, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Location } from '@angular/common';
+import { environment } from 'src/environments/environments';
+import { Router } from '@angular/router';
 
-import { Employee } from './test-thirds';
-import { EMPLOYEES } from './test-thirds-mock';
-import { TestThirdService } from './test-third.service';
+import { Employee } from 'src/app/test-third/test-thirds';
+import { EmployeeService } from '../employee.service';
 
 @Component({
-    selector: 'app-test-third',
-    templateUrl: './test-third.component.html',
-    styleUrls: ['./test-third.component.scss']
+    selector: 'app-employee-list',
+    templateUrl: './employee-list.component.html',
+    styleUrls: ['./employee-list.component.scss']
 })
 
-export class TestThirdComponent {
-    quicklinks: String[] = [
-		'First-Quicklink',
-		'Robby Bleck', 'Profil', 'Einstellungen', 'Suche', 'Nachrichten', 'Freunde', 'Aktivitäten', 'Benachrichtigungen', 'Hilfe', 'FAQ',
-        'Konto', 'Feed', 'Galerie', 'Entdecken', 'Favoriten', 'Chats', 'Gruppen', 'Kalender', 'Statistiken', 'Upgrade', 'Logout',
-		'Last-Quicklink',
+export class EmployeeListComponent {
+	quicklinks: String[] = [
+		'First-Quicklink', 'Robby Bleck', 
 	];
-    employees: Employee[] = [];
+	employees: Employee[] = [];
 	addInfo = {} as Employee;
     activeFilterAlt: string[] = [];
     activeFilter: { key: string; value: string }[] = [];
@@ -34,16 +31,16 @@ export class TestThirdComponent {
 
     allSelected: any;
 
-    constructor(private employeeService: TestThirdService,
-                private http: HttpClient,
-                private ngZone: NgZone,
-                private cdRef: ChangeDetectorRef,
-                private router: Router,
-                private location: Location,
-                ) {
-    }
+	constructor(private employeeService: EmployeeService,
+		private http: HttpClient,
+		private ngZone: NgZone,
+		private cdRef: ChangeDetectorRef,
+		private router: Router,
+		private location: Location,
+		) {
+	}
 
-    ngOnInit(): void {
+	ngOnInit(): void {
 		this.quicklinksVisible = true;
 		this.addInfoVisible = true;
         let isLocalhost: boolean = true;
@@ -52,15 +49,10 @@ export class TestThirdComponent {
             isLocalhost = false;
         }
 
-        this.getEmployeesSql(isLocalhost);
+        this.getEmployees(isLocalhost);
     }
 
-    getEmployees(): void {
-        this.employeeService.getEmployees()
-            .subscribe(employees => this.employees = employees);
-    }
-
-    public getEmployeesSql(isLocalhost: boolean) {
+	public getEmployees(isLocalhost: boolean) {
         this.employeeService.getEmployeesSql(isLocalhost).subscribe(
             (response: Employee[]) => {
                 this.ngZone.run(() => {
@@ -72,15 +64,12 @@ export class TestThirdComponent {
     }
 
 
-    
-    getEmployee(id: number): Employee {
-		const employee = EMPLOYEES.find(h => h.id === id)!;
-		return employee;
-    }
 
 
 
-    // FRONTEND-Function
+
+
+	// FRONTEND-Function
     // *****************
 	setQuicklinksVisible() {
         if (this.quicklinksVisible) {
@@ -140,7 +129,7 @@ export class TestThirdComponent {
         if (this.activeFiltersVisible) {
             this.employees = filter2;
         } else {
-            this.getEmployees();
+            this.getEmployees(true);
         }
     }
 
@@ -182,7 +171,7 @@ export class TestThirdComponent {
 
         // set employees by searching-value
         // ********************************
-        this.getEmployees();
+        this.getEmployees(true);
         const employeesBySearching = this.employees.filter(item => item.lastName.toLocaleLowerCase().includes(this.searchingValue));
         this.employees = employeesBySearching;
     }
@@ -198,14 +187,14 @@ export class TestThirdComponent {
             const index = this.activeFilter.findIndex(filter => filter.key === 'searchingValue');
             if (index == -1) {
                 this.searchingValue = "";
-                this.getEmployees();
+                this.getEmployees(true);
             }
         }
 
         if (this.activeFilter.length == 0) {
             this.activeFiltersVisible = false;
             this.searchingValue = "";
-            this.getEmployees();
+            this.getEmployees(true);
         }
     }
 
@@ -216,4 +205,5 @@ export class TestThirdComponent {
         this.activeFiltersVisible = true;
         this.addActiveFilter("test", "ID<5")
     }
+
 }

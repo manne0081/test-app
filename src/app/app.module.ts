@@ -16,6 +16,8 @@ import { MainNavigationComponent } from './main-navigation/main-navigation.compo
 import { PartnerComponent } from './partner/partner.component';
 import { TestSecondComponent } from './test-second/test-second.component';
 import { TestThirdComponent } from './test-third/test-third.component';
+import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
 
 @NgModule({
     declarations: [
@@ -30,6 +32,8 @@ import { TestThirdComponent } from './test-third/test-third.component';
         PartnerComponent,
         TestSecondComponent,
         TestThirdComponent,
+        EmployeeListComponent,
+        EmployeeDetailComponent,
     ],
     imports: [
         BrowserModule,

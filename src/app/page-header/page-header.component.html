@@ -1,60 +1,37 @@
 <!-- HEADER -->
 <!-- ****** -->
-<div class="page-header-background">
-    <div class="page-header-wrapper">
+<div class="header-container">
 
-        <!-- Header-Left / Burger-Button -->
-        <!-- --------------------------- -->
-        <div class="page-header-left">
-            <div class="burger-button-wrapper">
-                <div class="burger-button-background">
-                    <div class="burger-button">
-                        <img src="../assets/earth.svg" alt="">
-                    </div>
-                </div>
+    <div class="searching-container">
+        <div class="searching-background">
+            <img src="../../assets/calendar2.svg" alt="">
+            <span>Searching...</span>
+        </div>
+    </div>
+
+    <div class="logo">
+        <img src="../../assets/logo-design-49570.png" alt="">
+    </div>
+
+    <div class="function-wrapper">
+
+        <div class="dropdown">
+            <button class="drop-button">
+                <img src="../../assets/bell.svg" alt="">
+            </button>
+            <div class="drop-content time-tracking">
+                Time-Tracking
             </div>
         </div>
 
-        <!-- Header-Middle / Logo -->
-        <!-- -------------------- -->
-        <div class="page-header-center">
-            <div class="page-header-logo">
-                <span>
-                    <a routerLink="/dashboard">LOGO</a>
-                </span>
+        <div class="dropdown" style="float:right;">
+            <button class="drop-button profile">
+                Maximilian Mustermann
+            </button>
+            <div class="drop-content">
+                <a>Settings</a>
+                <a routerLink="/partner">Logout</a>
             </div>
-        </div>
-
-        <!-- Header-Right / Functions -->
-        <!-- ------------------------ -->
-        <div class="page-header-right">
-
-            <!-- Button-Example -->
-            <!-- -------------- -->
-            <div class="header-function-button">
-                <div class="time-tracking-dropdown">
-                    <button class="dropdown-button">Test</button>
-                    <div class="dropdown-content">
-                        <a>(xxx)</a>
-                        <a>(xxx)</a>
-                        <a class="logout" (click)="logout()">Abmelden</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Profile-Button -->
-            <!-- -------------- -->
-            <div class="header-function-button">
-                <div class="profile-dropdown">
-                    <button class="dropdown-button">Max Mustermann</button>
-                    <div class="dropdown-content">
-                        <a>(xxx)</a>
-                        <a>(xxx)</a>
-                        <a class="logout" (click)="logout()">Abmelden</a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </div>

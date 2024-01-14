@@ -6,6 +6,9 @@ export interface Employee {
     firstName: string;
     lastName: string;
     birthday: Date;
+    // isDeveloper: boolean;
+
+
     selected: boolean;
     addresses: {
         primaryResidence: {

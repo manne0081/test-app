@@ -8,6 +8,7 @@ import { PartnerComponent } from './partner/partner.component';
 import { TestFirstComponent } from './test-first/test-first.component';
 import { TestSecondComponent } from './test-second/test-second.component';
 import { TestThirdComponent } from './test-third/test-third.component';
+import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 
 const routes: Routes = [
     { path: '',   redirectTo: 'home', pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
 
     { path: 'test', component: TestFirstComponent },
     { path: 'test2', component: TestSecondComponent },
-    { path: 'employee', component: TestThirdComponent },
+    { path: 'test3', component: TestThirdComponent },
+    { path: 'employee', title: "Employee Overview", component: EmployeeListComponent },
     { path: '**', component: AppComponent },
 ];
 

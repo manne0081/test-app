@@ -4,5 +4,6 @@
 
 export const environment = {
     production: false,
-    apiBaseUrl: 'http://localhost:8081'
+    apiBaseUrlLocal: 'http://localhost:8081',
+    apiBaseUrl: 'http://192.168.178.39:8081'
   };
