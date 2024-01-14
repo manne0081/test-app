@@ -1,44 +1,6 @@
 <div class="page-structure">
 
-    <!-- HEADER -->
-    <!-- ****** -->
-    <div class="header-container">
-
-        <div class="searching-container">
-            <div class="searching-background">
-                <img src="../../assets/calendar2.svg" alt="">
-                <span>Searching...</span>
-            </div>
-        </div>
-
-        <div class="logo">
-            <img src="../../assets/logo-design-49570.png" alt="">
-        </div>
-
-        <div class="function-wrapper">
-
-            <div class="dropdown">
-                <button class="drop-button">
-                    <img src="../../assets/bell.svg" alt="">
-                </button>
-                <div class="drop-content time-tracking">
-                    Time-Tracking
-                </div>
-            </div>
-
-            <div class="dropdown" style="float:right;">
-                <button class="drop-button profile">
-                    Maximilian Mustermann
-                </button>
-                <div class="drop-content">
-                  <a>Settings</a>
-                  <a routerLink="/partner">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- <app-page-header></app-page-header> -->
+    <app-page-header></app-page-header>
 
 
 
@@ -147,8 +109,6 @@
                 <!-- ---------- -->
                 <div *ngIf="quicklinksVisible" class="quicklinks-container">
 
-                    <!-- Quicklink - Header -->
-                    <!-- ------------------ -->
                     <div class="quicklinks-header-container">
                         <div class="quicklinks-header-title">
                             My Quicklinks
@@ -160,13 +120,10 @@
                         </div>
                     </div>
 
-                    <!-- Quicklink - Items -->
-                    <!-- ----------------- -->
                     <div class="quicklinks-items-wrapper">
                         <div class="quicklink-item-container" *ngFor="let quicklink of quicklinks, index as i">
 
                                 <div class="quicklink-item-drag-container">
-                                    <!-- D -->
                                     <img src="../../assets/one-finger-tap.svg" alt="">
                                 </div>
 
@@ -175,13 +132,14 @@
                                 </div>
 
                                 <div class="quicklink-item-more-container" (click)="quicklinkMoreSelected(quicklink)">
-                                    <!-- M -->
                                     <img src="../../assets/more-vert.svg" alt="">
                                 </div>
 
                         </div>
                     </div>
                 </div>
+
+                <!-- <app-quicklinks></app-quicklinks> -->
 
                 <!-- Tiles -->
                 <!-- ----- -->
@@ -300,8 +258,8 @@
                                 ID:{{addInfo.id}}
                                 <br>
                                 {{addInfo.firstName}} {{addInfo.lastName}}<br>
-                                {{addInfo.contacts.email}}
-                                {{addInfo.contacts.mobile}}
+                                <!-- {{addInfo.contacts.email}}
+                                {{addInfo.contacts.mobile}} -->
                             </div>
                         </div>
                     </div>

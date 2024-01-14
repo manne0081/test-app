@@ -1,21 +1,39 @@
 <!-- Quicklinks -->
 <!-- ---------- -->
-<div class="quicklinks-wrapper">
-    <div class="quicklink-headline-background">
-        <div class="quicklink-headline">
-            <h1>
-                My Quicklinks
-            </h1>
-        </div>
+<div *ngIf="quicklinksVisible" class="quicklinks-container">
 
-        <div class="quicklink-searching">
-            Searching...
+    <!-- Quicklink - Header -->
+    <!-- ------------------ -->
+    <div class="quicklinks-header-container">
+        <div class="quicklinks-header-title">
+            My Quicklinks
+        </div>
+        <div class="quicklinks-searching-container">
+            <div class="quicklinks-searching-text">
+                searching...
+            </div>
         </div>
     </div>
 
-    <div class="quicklink-item-wrapper">
-        <div class="quicklink-item" *ngFor="let quicklink of quicklinks; let i = index">
-            {{quicklink.name}} {{i + 1}}
+    <!-- Quicklink - Items -->
+    <!-- ----------------- -->
+    <div class="quicklinks-items-wrapper">
+        <div class="quicklink-item-container" *ngFor="let quicklink of quicklinks, index as i">
+
+                <div class="quicklink-item-drag-container">
+                    <!-- D -->
+                    <img src="../../assets/one-finger-tap.svg" alt="">
+                </div>
+
+                <div class="quicklink-item-text">
+                    {{quicklink}}
+                </div>
+
+                <div class="quicklink-item-more-container" (click)="quicklinkMoreSelected(quicklink)">
+                    <!-- M -->
+                    <img src="../../assets/more-vert.svg" alt="">
+                </div>
+
         </div>
     </div>
 </div>

@@ -40,4 +40,11 @@ export class QuicklinksComponent {
         {name:'quicklink'},
         {name:'quicklink'},
     ];
+
+    quicklinksVisible:boolean = true;
+
+    quicklinkMoreSelected(quicklink: any):void {
+        window.alert(quicklink + ": 3P-Menu selected!");
+    }
+
 }

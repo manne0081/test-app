@@ -1,86 +1,173 @@
-// QUICKLINKS
-// ----------
-.quicklinks-wrapper {
-    background-color: white;
-    width: var(--quicklinks-width);
-    height: 100%;
-    box-shadow: 6px 0px 4px -4px rgba(0,0,0,0.2);
-    padding-left: var(--navigation-width);
-    position: fixed;
+// STYLING-VARIABLES
+// #################
+
+// COLORING
+// ********
+$highlight-color-1: #2c5067;        //rgb(43, 81, 105);
+$highlight-color-40: rgba(44, 80, 103, .4);
+$highlight-color-60: rgba(44, 80, 103, .6);
+$highlight-color-80: rgba(44, 80, 103, .8);
+$content-background: #d6d6d6;
+
+// SIZING
+// ******
+$page-width: 100vw;
+$page-height: 100vh;
+$page-header-height: 48px;
+$menu-height: 40px;
+$content-header-height: 48px;
+
+$gap-size: 12px;
+$scrollbar-width: 6px;
+
+$quicklinks-width: 260px;
+$add-infos-width: 260px;
+$quicklinks-header-width: calc($quicklinks-width - $scrollbar-width);
+$add-infos-header-width: calc($add-infos-width - $scrollbar-width);
+
+$content-width-show-all: calc(100% - $quicklinks-width - $add-infos-width);
+$content-width-quicklinks-hidden: calc(100% - $quicklinks-width);
+$content-width-add-infos-hidden: calc(100% - $add-infos-width);
+$content-width-only-tiles: calc(100%);
+
+
+// The Scroll-Bar Code
+// *******************
+::-webkit-scrollbar {
+    // background-color: lime;
+	width: $scrollbar-width;
+	// height: 10px;
+	// border-radius: 0 8px 8px 0;
+}
+
+::-webkit-scrollbar-track {
+    background: lime;
+    background: #d6d6d6;
+    // border-left: 1px solid rgba(0,0,0,0.2);
+    border-right: 1px solid rgba(0,0,0,0.2);
+    // border-radius: 0 8px 8px 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: lime;
+    background: rgba(44, 80, 103, .4);
+    // border-left: 1px solid rgba(0,0,0,0.1);
+    border-right: 1px solid rgba(0,0,0,0.1);
+    border-radius: 2px 1px 1px 2px;
+    border-radius: 4px 4px 4px 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(44, 80, 103, .6);
+    // border-radius: 0 8px 8px 0;
+}
+
+
+.quicklinks-container {
+    // background-color: lime;
     overflow-y: scroll;
 
-    .quicklink-headline-background {
-        background-color: white;
-        width: calc(var(--quicklinks-width) - var(--navigation-width) - 32px);
-        height: 68px;
-        margin: 0px 12px;
-        padding: 12px 4px;
-        box-shadow: 0px 6px 4px -3px rgba(0,0,0,0.2);
+    // Quicklink - Header
+    // ******************
+    .quicklinks-header-container {
+        background-color: lime;
+        background-color: $content-background;
         position: fixed;
-        z-index: 99;
+        width: $quicklinks-header-width;
+        padding: 12px;
+        box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, .16);
 
-        .quicklink-headline {
-            margin-bottom: 6px;
+        .quicklinks-header-title {
+            color:rgba(0, 0, 0, .5);
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
 
-            h1 {
-                font-size: 1.1em;
+        .quicklinks-searching-container {
+            padding: 4px 8px;
+            color:rgba(0, 0, 0, .5);
+            border: 1px solid rgba(0, 0, 0, .14);
+            border-radius: 4px;
+        }
+
+        .quicklinks-searching-text {
+            font-size: .9em;
+            font-style: italic;
+            color:rgba(0, 0, 0, .5);
+        }
+    }
+
+    // Quicklink - Items
+    // -----------------
+    .quicklinks-items-wrapper {
+        margin-top: 76px;
+        padding: 16px 16px 8px 16px;
+
+        .quicklink-item-container {
+            background-color: lime;
+            background-color: rgba(255, 255, 255, .32);
+            padding: 8px 8px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+
+            .quicklink-item-drag-container {
+                // background-color: lime;
+                height: 20px;
+                margin-right: 8px;
+                display: flex;
+                align-items: center;
+
+                img {
+                    height: 16px;
+                }
+            }
+
+            .quicklink-item-text {
+                // background-color: darkmagenta;
+                color:rgba(0, 0, 0, .4);
+            }
+
+            .quicklink-item-more-container {
+                display: none;
             }
         }
 
-        .quicklink-searching {
-            background-color: rgb(235, 235, 235);
-            padding: 4px 6px;
-            border-radius: 4px;
-            color: rgb(156, 156, 156);
-            font-style: italic;
-            font-size: 0.9em;
-        }
-    }
-
-    .quicklink-item-wrapper {
-        width: calc(var(--quicklinks-width) - var(--navigation-width) - 40px);
-        margin: 0px 16px;
-        position: absolute;
-        top: 80px;
-
-        .quicklink-item {
-            background-color: rgb(235, 235, 235);
-            width: 100%;
-            height: 24px;
-            border: 1px solid rgb(245, 245, 245);
-            border-radius: 4px;
-            margin-bottom: 4px;
-            display: flex;
-            align-items: center;
-            padding: 4px 6px;
-        }
-
-        .quicklink-item:hover {
-            background-color: rgba(0, 0, 0, 0.15);
+        .quicklink-item-container:hover {
+            background-color: rgba(255, 255, 255, .78);
             cursor: pointer;
-        }
 
-        .quicklink-item:last-child {
-            margin-bottom: 48px;
+            .quicklink-item-drag-container:hover {
+                // background-color: seagreen;
+                display: flex;
+                align-items: center;
+            }
+
+            .quicklink-item-text {
+                // background-color: darkmagenta;
+                color:rgba(0, 0, 0, .6);
+            }
+
+            .quicklink-item-more-container {
+                // background-color: lime;
+                width: 28px;
+                height: 28px;
+                margin: -4px;
+                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                img {
+                    height: 16px;
+                }
+            }
+
+            .quicklink-item-more-container:hover {
+                background-color: rgba(0, 0, 0, .06);
+                border-radius: 4px;
+            }
         }
     }
 }
-
-
-
-
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-    width: 10px;
-}
-
-*::-webkit-scrollbar-track {
-    background: var(--scrolbar-bg-color);
-}
-
-*::-webkit-scrollbar-thumb {
-    background-color: var(--scrolbar-color);
-    border-radius: 20px;
-    border: 3px solid white;
-}
-
