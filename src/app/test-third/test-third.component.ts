@@ -7,6 +7,7 @@ import { Location } from '@angular/common';
 import { Employee } from './test-thirds';
 import { EMPLOYEES } from './test-thirds-mock';
 import { TestThirdService } from './test-third.service';
+import { AppService } from '../app.service';
 
 @Component({
     selector: 'app-test-third',
@@ -34,7 +35,8 @@ export class TestThirdComponent {
 
     allSelected: any;
 
-    constructor(private employeeService: TestThirdService,
+    constructor(private AppService: AppService,
+                private employeeService: TestThirdService,
                 private http: HttpClient,
                 private ngZone: NgZone,
                 private cdRef: ChangeDetectorRef,
@@ -46,11 +48,7 @@ export class TestThirdComponent {
     ngOnInit(): void {
 		this.quicklinksVisible = true;
 		this.addInfoVisible = true;
-        let isLocalhost: boolean = true;
-
-        if(window.location.hostname != "localhost") {
-            isLocalhost = false;
-        }
+        let isLocalhost: boolean = this.AppService.getIsLocal();
 
         this.getEmployeesSql(isLocalhost);
     }
@@ -65,14 +63,14 @@ export class TestThirdComponent {
             (response: Employee[]) => {
                 this.ngZone.run(() => {
                     this.employees = response;
-                });                
+                });
                 // console.log(this.employees);
             },
         );
     }
 
 
-    
+
     getEmployee(id: number): Employee {
 		const employee = EMPLOYEES.find(h => h.id === id)!;
 		return employee;
@@ -209,7 +207,7 @@ export class TestThirdComponent {
         }
     }
 
-    
+
 
     // app-test
     testFunction():void {
