@@ -8,8 +8,8 @@ export interface Employee {
     birthday: Date;
     isDeveloper: boolean;
 
-
     selected: boolean;
+
     addresses: {
         primaryResidence: {
             street: string;

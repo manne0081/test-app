@@ -21,7 +21,7 @@ const routes: Routes = [
     { path: 'test', component: TestFirstComponent },
     { path: 'test2', component: TestSecondComponent },
     { path: 'test3', component: TestThirdComponent },
-    { path: 'employee', title: "Employee Overview", component: EmployeeListComponent },
+    { path: 'employees', title: "Employee Overview", component: EmployeeListComponent },
     { path: '**', component: AppComponent },
 ];
 

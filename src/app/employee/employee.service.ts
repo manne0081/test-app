@@ -13,7 +13,7 @@ import { AppService } from '../app.service';
 export class EmployeeService {
     local: boolean = this.AppService.getIsLocal();
 
-    private apiServerUrlLocal = environment.apiBaseUrlLocal;
+    // private apiServerUrlLocal = environment.apiBaseUrlLocal;
     private apiServerUrl = environment.apiBaseUrl;
 
 	messages: string[] = [];
@@ -23,13 +23,20 @@ export class EmployeeService {
         private http: HttpClient,
     ) { }
 
-	getEmployeesSql(isLocalhost: boolean): Observable<Employee[]> {
-        if(isLocalhost) {
-            return this.http.get<Employee[]>(`${this.apiServerUrlLocal}/employee/all`)
-                .pipe(
-                    tap(_ => this.log('fetched heroes')),
-                    catchError(this.handleError<Employee[]>('getEmployeesSql', []))
-                );
+	getEmployeesSql(): Observable<Employee[]> {
+
+        console.log(this.AppService.getLocalHost());
+        console.log(this.AppService.getIsLocal());
+
+        if(this.AppService.getIsLocal()) {
+
+            return of(this.AppService.getEmployees());
+
+            // return this.http.get<Employee[]>(`${this.apiServerUrlLocal}/employee/all`)
+            //     .pipe(
+            //         tap(_ => this.log('fetched heroes')),
+            //         catchError(this.handleError<Employee[]>('getEmployeesSql', []))
+            //     );
         } else {
             return this.http.get<Employee[]>(`${this.apiServerUrl}/employee/all`)
                 .pipe(

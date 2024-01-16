@@ -28,6 +28,7 @@ export class AppComponent implements OnInit{
     // tagmanager.google - Configuration from Cookies out of the code...
     // -----------------------------------------------------------------
     ngOnInit(): void {
+        this.appService.setLocalHost();
         this.appService.setIsLocalhost();
 
         this.cookieValue = this.cookieService.get('pmTool-login');
@@ -44,7 +45,7 @@ export class AppComponent implements OnInit{
 
         // Solange die cookies nicht funktionieren
         // todo
-        this.router.navigate(['employee']);
+        this.router.navigate(['employees']);
     }
 
 

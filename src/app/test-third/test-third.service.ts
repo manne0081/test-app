@@ -14,7 +14,7 @@ export class TestThirdService {
 
     local: boolean = true;
 
-    private apiServerUrlLocal = environment.apiBaseUrlLocal;
+    // private apiServerUrlLocal = environment.apiBaseUrlLocal;
     private apiServerUrl = environment.apiBaseUrl;
 
     messages: string[] = [];
@@ -37,7 +37,7 @@ export class TestThirdService {
 
     getEmployeesSql(isLocalhost: boolean): Observable<Employee[]> {
         if(isLocalhost) {
-            return this.http.get<Employee[]>(`${this.apiServerUrlLocal}/employee/all`)
+            return this.http.get<Employee[]>(`${this.apiServerUrl}/employee/all`)
                 .pipe(
                     tap(_ => this.log('fetched heroes')),
                     catchError(this.handleError<Employee[]>('getEmployeesSql', []))
@@ -51,7 +51,7 @@ export class TestThirdService {
         }
     }
 
-    
+
 
     private log(message: string) {
 		this.add('HeroService: ${message}');
@@ -61,7 +61,7 @@ export class TestThirdService {
     add(message: string) {
 		this.messages.push(message);
 	}
-	
+
 
 
     // Returns partners-array as observable
@@ -69,7 +69,7 @@ export class TestThirdService {
     getEmployees(): Observable<Employee[]> {
         const employees = of(EMPLOYEES);
         return employees;
-    }    
+    }
 
     // Returns partner as observable
 	// -----------------------------
@@ -77,7 +77,7 @@ export class TestThirdService {
         const employee = EMPLOYEES.find(h => h.id === id)!;
         return of(employee);
     }
-    
+
     // TEST - Filters all employees
     // ----------------------------
     public filterEmployees(filterCriteria: string): Observable<Employee[]> {
@@ -98,13 +98,13 @@ export class TestThirdService {
      */
     private handleError<T>(operation = 'operation', result?: T) {
         return (error: any): Observable<T> => {
-    
+
         // TODO: send the error to remote logging infrastructure
         console.error(error); // log to console instead
-    
+
         // TODO: better job of transforming error for user consumption
         //this.log(`${operation} failed: ${error.message}`);
-    
+
         // Let the app keep running by returning an empty result.
         return of(result as T);
         };

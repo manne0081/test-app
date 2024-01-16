@@ -16,7 +16,7 @@ import { EmployeeService } from '../employee.service';
 
 export class EmployeeListComponent {
 	quicklinks: String[] = [
-		'First-Quicklink', 'Robby Bleck', 
+		'First-Quicklink', 'Robby Bleck',
 	];
 	employees: Employee[] = [];
 	addInfo = {} as Employee;
@@ -32,12 +32,10 @@ export class EmployeeListComponent {
     allSelected: any;
 
 	constructor(private employeeService: EmployeeService,
-		private http: HttpClient,
-		private ngZone: NgZone,
-		private cdRef: ChangeDetectorRef,
-		private router: Router,
-		private location: Location,
-		) {
+                private ngZone: NgZone,
+                private cdRef: ChangeDetectorRef,
+                private router: Router,
+		        ) {
 	}
 
 	ngOnInit(): void {
@@ -49,16 +47,15 @@ export class EmployeeListComponent {
             isLocalhost = false;
         }
 
-        this.getEmployees(isLocalhost);
+        this.getEmployees();
     }
 
-	public getEmployees(isLocalhost: boolean) {
-        this.employeeService.getEmployeesSql(isLocalhost).subscribe(
+	public getEmployees() {
+        this.employeeService.getEmployeesSql().subscribe(
             (response: Employee[]) => {
                 this.ngZone.run(() => {
                     this.employees = response;
-                });                
-                // console.log(this.employees);
+                });
             },
         );
     }
@@ -129,7 +126,7 @@ export class EmployeeListComponent {
         if (this.activeFiltersVisible) {
             this.employees = filter2;
         } else {
-            this.getEmployees(true);
+            this.getEmployees();
         }
     }
 
@@ -171,7 +168,7 @@ export class EmployeeListComponent {
 
         // set employees by searching-value
         // ********************************
-        this.getEmployees(true);
+        this.getEmployees();
         const employeesBySearching = this.employees.filter(item => item.lastName.toLocaleLowerCase().includes(this.searchingValue));
         this.employees = employeesBySearching;
     }
@@ -187,18 +184,18 @@ export class EmployeeListComponent {
             const index = this.activeFilter.findIndex(filter => filter.key === 'searchingValue');
             if (index == -1) {
                 this.searchingValue = "";
-                this.getEmployees(true);
+                this.getEmployees();
             }
         }
 
         if (this.activeFilter.length == 0) {
             this.activeFiltersVisible = false;
             this.searchingValue = "";
-            this.getEmployees(true);
+            this.getEmployees();
         }
     }
 
-    
+
 
     // app-test
     testFunction():void {
