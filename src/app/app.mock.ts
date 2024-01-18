@@ -370,7 +370,7 @@ export class Mockdata {
         },
         {
             id: 12,
-            employeeCode: "PT-001013",
+            employeeCode: "PT-001012",
             salutation: "Herr",
             title: "Dr.",
             firstName: "Sebastian",
@@ -400,7 +400,7 @@ export class Mockdata {
         },
         {
             id: 13,
-            employeeCode: "PT-001014",
+            employeeCode: "PT-001013",
             salutation: "Frau",
             title: "",
             firstName: "Julia",
@@ -430,7 +430,7 @@ export class Mockdata {
         },
         {
             id: 14,
-            employeeCode: "PT-001015",
+            employeeCode: "PT-001014",
             salutation: "Herr",
             title: "Ing.",
             firstName: "Nico",
@@ -459,16 +459,16 @@ export class Mockdata {
             }
         },
         {
-          id: 15,
-          employeeCode: "PT-001001",
-          salutation: "Frau",
-          title: "",
-          firstName: "Petra",
-          lastName: "Musterfrau",
-          birthday: new Date(1990, 5, 20),
-          selected: false,
-          isDeveloper: true,
-          addresses: {
+            id: 15,
+            employeeCode: "PT-001015",
+            salutation: "Frau",
+            title: "",
+            firstName: "Petra",
+            lastName: "Musterfrau",
+            birthday: new Date(1990, 5, 20),
+            selected: false,
+            isDeveloper: true,
+            addresses: {
                 primaryResidence: {
                 street: "Musterstraße",
                 houseNumber: "123",
@@ -481,13 +481,163 @@ export class Mockdata {
                 zip: "54321",
                 city: "Teststadt"
                 }
-          },
+            },
             contacts: {
                 fon: "01234/567890",
                 mobile: "0176/98765432",
                 email: "max.mustermann@example.com"
             }
-        }
+        },
+        {
+            id: 16,
+            employeeCode: "PT-001016",
+            salutation: "Frau",
+            title: "",
+            firstName: "Petra",
+            lastName: "Beispiel",
+            birthday: new Date(1990, 5, 20),
+            selected: false,
+            isDeveloper: true,
+            addresses: {
+                primaryResidence: {
+                    street: "Musterstraße",
+                    houseNumber: "123",
+                    zip: "98765",
+                    city: "Musterstadt",
+                },
+                secondaryResidence: {
+                    street: "Musterweg",
+                    houseNumber: "456",
+                    zip: "54321",
+                    city: "Teststadt",
+                },
+            },
+            contacts: {
+                fon: "01234/567890",
+                mobile: "0176/98765432",
+                email: "petra.beispiel@example.com",
+            },
+        },
+        {
+            id: 17,
+            employeeCode: "PT-001017",
+            salutation: "Frau",
+            title: "",
+            firstName: "Julia",
+            lastName: "Bergmann",
+            birthday: new Date(1993, 9, 28),
+            selected: false,
+            isDeveloper: false,
+            addresses: {
+                primaryResidence: {
+                    street: "Bergweg",
+                    houseNumber: "11",
+                    zip: "98765",
+                    city: "Bergstadt"
+                },
+                secondaryResidence: {
+                    street: "Talstraße",
+                    houseNumber: "44",
+                    zip: "54321",
+                    city: "Talstadt"
+                }
+            },
+            contacts: {
+                fon: "09999/76543210",
+                mobile: "0169/32109876",
+                email: "julia.bergmann@example.com"
+            }
+        },
+        {
+            id: 18,
+            employeeCode: "PT-001018",
+            salutation: "Herr",
+            title: "Ing.",
+            firstName: "Nico",
+            lastName: "Hofmann",
+            birthday: new Date(1987, 3, 7),
+            selected: false,
+            isDeveloper: true,
+            addresses: {
+                primaryResidence: {
+                    street: "Ingenieurstraße",
+                    houseNumber: "9",
+                    zip: "87654",
+                    city: "Technostadt"
+                },
+                secondaryResidence: {
+                    street: "Technikweg",
+                    houseNumber: "33",
+                    zip: "34567",
+                    city: "Entwicklungsstadt"
+                }
+            },
+            contacts: {
+                fon: "03333/87654321",
+                mobile: "0172/98765432",
+                email: "nico.hofmann@example.com"
+            }
+        },
+        {
+            id: 19,
+            employeeCode: "PT-001019",
+            salutation: "Frau",
+            title: "",
+            firstName: "Petra",
+            lastName: "Musterfrau",
+            birthday: new Date(1990, 5, 20),
+            selected: false,
+            isDeveloper: true,
+            addresses: {
+                primaryResidence: {
+                street: "Musterstraße",
+                houseNumber: "123",
+                zip: "98765",
+                city: "Musterstadt"
+                },
+                secondaryResidence: {
+                street: "Musterweg",
+                houseNumber: "456",
+                zip: "54321",
+                city: "Teststadt"
+                }
+            },
+            contacts: {
+                fon: "01234/567890",
+                mobile: "0176/98765432",
+                email: "max.mustermann@example.com"
+            }
+        },
+        {
+            id: 20,
+            employeeCode: "PT-001020",
+            salutation: "Frau",
+            title: "",
+            firstName: "Martina",
+            lastName: "Test",
+            birthday: new Date(1990, 5, 20),
+            selected: false,
+            isDeveloper: true,
+            addresses: {
+                primaryResidence: {
+                    street: "Musterstraße",
+                    houseNumber: "123",
+                    zip: "98765",
+                    city: "Musterstadt",
+                },
+                secondaryResidence: {
+                    street: "Musterweg",
+                    houseNumber: "456",
+                    zip: "54321",
+                    city: "Teststadt",
+                },
+            },
+            contacts: {
+                fon: "01234/567890",
+                mobile: "0176/98765432",
+                email: "martina.test@example.com",
+            },
+        },
     ];
 
     getEmployees(): Employee[] {

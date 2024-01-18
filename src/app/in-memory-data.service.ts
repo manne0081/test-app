@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Employee } from './test-third/test-thirds';
+import { Employee } from './employee/employee';
 
 
 @Injectable({
     providedIn: 'root'
 })
 export class InMemoryDataService implements InMemoryDataService {
-    
+
     constructor() { }
 
 	createDb() {

@@ -51,7 +51,7 @@ export class EmployeeListComponent {
     }
 
 	public getEmployees() {
-        this.employeeService.getEmployeesSql().subscribe(
+        this.employeeService.getEmployees().subscribe(
             (response: Employee[]) => {
                 this.ngZone.run(() => {
                     this.employees = response;

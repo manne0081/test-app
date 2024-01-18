@@ -74,7 +74,7 @@ $content-width-only-tiles: calc(100%);
 	height: $page-height;
 	position: fixed;
 
-    
+
 
     // MENU
     // ****
@@ -83,7 +83,7 @@ $content-width-only-tiles: calc(100%);
         box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, .4);
         display: flex;
         align-items: center;
-        overflow: hidden;
+        overflow: visible;
 
         .menu-item-container {
             height: 100%;
@@ -132,7 +132,7 @@ $content-width-only-tiles: calc(100%);
         background-color: rgba(44, 80, 103, .9);
         z-index: -1;
         padding: $gap-size;
-        overflow-y: hidden;
+        overflow: hidden;
 
         .content-structure {
             background-color: $content-background;
@@ -283,7 +283,6 @@ $content-width-only-tiles: calc(100%);
         .content-wrapper-all {
             display: grid;
             grid-template-columns: $quicklinks-width auto $add-infos-width;
-
         }
 
         .content-wrapper-quicklinks-hidden {
@@ -469,14 +468,21 @@ $content-width-only-tiles: calc(100%);
                 }
             }
 
+            .tile-container-active {
+                background-color: rgba(255, 255, 255, .72);
+                border: 1px solid rgb(226, 226, 226);
+                margin-left: 2px;
+                margin-right: -2px;
+            }
+
             .tile-container:hover {
-                background-color: rgba(255, 255, 255, .96);
-                // background-color: rgb(241, 241, 241);
+                background-color: rgba(255, 255, 255, .72);
                 border: 1px solid rgb(226, 226, 226);
                 margin-left: 2px;
                 margin-right: -2px;
                 cursor: pointer;
             }
+
         }
 
         .tiles-actions-container {

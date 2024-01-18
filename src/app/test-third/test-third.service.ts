@@ -15,7 +15,8 @@ export class TestThirdService {
     local: boolean = true;
 
     // private apiServerUrlLocal = environment.apiBaseUrlLocal;
-    private apiServerUrl = environment.apiBaseUrl;
+    private apiServerUrl = environment.apiUrlLocal;
+    private serverUrl = environment.localBackendUrl;
 
     messages: string[] = [];
 
