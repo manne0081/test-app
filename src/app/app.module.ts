@@ -18,6 +18,7 @@ import { TestSecondComponent } from './test-second/test-second.component';
 import { TestThirdComponent } from './test-third/test-third.component';
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 
 @NgModule({
     declarations: [
@@ -34,6 +35,7 @@ import { EmployeeDetailComponent } from './employee/employee-detail/employee-det
         TestThirdComponent,
         EmployeeListComponent,
         EmployeeDetailComponent,
+        MainMenuComponent,
     ],
     imports: [
         BrowserModule,
