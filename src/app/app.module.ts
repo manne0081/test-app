@@ -19,6 +19,8 @@ import { TestThirdComponent } from './test-third/test-third.component';
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { ClientListComponent } from './client/client-list/client-list.component';
+import { ClientDetailComponent } from './client/client-detail/client-detail.component';
 
 @NgModule({
     declarations: [
@@ -36,6 +38,8 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
         EmployeeListComponent,
         EmployeeDetailComponent,
         MainMenuComponent,
+        ClientListComponent,
+        ClientDetailComponent,
     ],
     imports: [
         BrowserModule,
