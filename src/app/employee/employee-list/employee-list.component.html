@@ -1,275 +1,194 @@
-<div class="page-structure">
+<!-- CONTENT -->
+<!-- ******* -->
 
-    <!-- HEADER-STRUCTURE -->
-    <!-- **************** -->
-    <app-page-header style="overflow: visible"></app-page-header>
+<div class="content-structure">
 
+    <!-- Content-Header > Toggle Quicklink- and AddInfo visibility / Menuname -->
+    <!-- -------------------------------------------------------------------- -->
+    <div class="content-header-container">
+        <div class="content-header-wrapper">
 
-    <!-- MENU-STRUCTURE -->
-    <!-- ************** -->
-    <app-main-menu style="overflow: visible"></app-main-menu>
-
-    <!-- <div class="menu-container">
-
-        <div class="menu-item-container" style="padding-right: 8px; border-right: 1px solid #c0c0c0">
-            <div class="menu-item-icon">
-                <img class="menu-item" src="../../assets/grid.svg" alt="">
-            </div>
-        </div>
-
-        <div class="menu-item-container">
-            <div class="menu-item-icon">
-                <img class="menu-item" src="../../assets/compass.png" alt="">
-            </div>
-            <div class="menu-item-text">
-                Favorites
-            </div>
-        </div>
-
-        <div class="menu-item-container">
-            <div class="menu-item-icon">
-                <img class="menu-item" src="../../assets/compass.png" alt="">
-            </div>
-            <div class="menu-item-text">
-                Menuname 1
-            </div>
-        </div>
-
-        <div class="menu-item-container" routerLink="/test">
-            <div class="menu-item-icon">
-                <img class="menu-item" src="../../assets/compass.png" alt="">
-            </div>
-            <div class="menu-item-text">
-                TEST-1
-            </div>
-        </div>
-
-        <div class="menu-item-container" routerLink="/test2">
-            <div class="menu-item-icon">
-                <img class="menu-item" src="../../assets/compass.png" alt="">
-            </div>
-            <div class="menu-item-text">
-                TEST-2
-            </div>
-        </div>
-
-        <div class="menu-item-container" routerLink="/test3">
-            <div class="menu-item-icon">
-                <img class="menu-item" src="../../assets/compass.png" alt="">
-            </div>
-            <div class="menu-item-text">
-                TEST-3
-            </div>
-        </div>
-
-        <div class="menu-item-container active" routerLink="/employee">
-            <div class="menu-item-icon">
-                <img class="menu-item" src="../../assets/compass.png" alt="">
-            </div>
-            <div class="menu-item-text">
-                Employee
-            </div>
-        </div>
-    </div> -->
-
-
-    <!-- CONTENT -->
-    <!-- ******* -->
-    <div class="content-container">
-        <div class="content-structure">
-
-            <!-- Content-Header > Toggle Quicklink- and AddInfo visibility / Menuname -->
-            <!-- -------------------------------------------------------------------- -->
-            <div class="content-header-container">
-                <div class="content-header-wrapper">
-
-                    <!-- Button toggle Quicklinks -->
-                    <!-- ------------------------ -->
-                    <div class="button" [ngClass]="{'button-default': !quicklinksVisible, 'button-active': quicklinksVisible}" (click)="setQuicklinksVisible()">
-                        Quicklinks
-                    </div>
-
-                    <!-- Menuname -->
-                    <!-- -------- -->
-                    <div class="content-header-title">
-                        Menuname 1 | Submenuname 5
-                    </div>
-
-                    <!-- Button toggle AddInfos -->
-                    <!-- ------------------------ -->
-                    <div class="button" [ngClass]="{'button-default': !addInfoVisible, 'button-active': addInfoVisible}" (click)="setAddInfoVisible()">
-                        Additional Informations
-                    </div>
-                </div>
+            <!-- Button toggle Quicklinks -->
+            <!-- ------------------------ -->
+            <div class="button" [ngClass]="{'button-default': !quicklinksVisible, 'button-active': quicklinksVisible}" (click)="setQuicklinksVisible()">
+                Quicklinks
             </div>
 
-            <!-- Different Classes wether quicklinks or addInfo should be visible or not -->
-            <!-- *********************************************************************** -->
-            <div [ngClass]="{'content-wrapper-all': quicklinksVisible && addInfoVisible, 'content-wrapper-quicklinks-hidden': !quicklinksVisible && addInfoVisible,
-                             'content-wrapper-addInfo-hidden': quicklinksVisible && !addInfoVisible, 'content-wrapper-only-tiles': !quicklinksVisible && !addInfoVisible}">
+            <!-- Menuname -->
+            <!-- -------- -->
+            <div class="content-header-title">
+                Menuname 1 | Submenuname 5
+            </div>
 
-                <!-- Quicklinks -->
-                <!-- ---------- -->
-                <div *ngIf="quicklinksVisible" class="quicklinks-container">
-
-                    <div class="quicklinks-header-container">
-                        <div class="quicklinks-header-title">
-                            My Quicklinks
-                        </div>
-                        <div class="quicklinks-searching-container">
-                            <div class="quicklinks-searching-text">
-                                searching...
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="quicklinks-items-wrapper">
-                        <div class="quicklink-item-container" *ngFor="let quicklink of quicklinks, index as i">
-
-                                <div class="quicklink-item-drag-container">
-                                    <img src="../../assets/one-finger-tap.svg" alt="">
-                                </div>
-
-                                <div class="quicklink-item-text">
-                                    {{quicklink}}
-                                </div>
-
-                                <div class="quicklink-item-more-container" (click)="quicklinkMoreSelected(quicklink)">
-                                    <img src="../../assets/more-vert.svg" alt="">
-                                </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <app-quicklinks></app-quicklinks> -->
-
-                <!-- Tiles -->
-                <!-- ----- -->
-                <div class="tiles-structure">
-
-                    <!-- Tiles-Header -->
-                    <!-- ------------ -->
-                    <div class="tiles-header-container">
-                        <div class="tiles-header-filters-container">
-
-                            <!-- Tile-Header > Searching and Functions -->
-                            <!-- ------------------------------------- -->
-                            <div class="tiles-header-select-all-container">
-                                <input type="checkbox" [(ngModel)]="allSelected" (change)="selectAll();">
-                            </div>
-                            <div class="tiles-header-searching-container">
-                                <div class="tiles-header-searching-text">
-                                    <input type="text" [(ngModel)]="searchingValue" (keyup)="searchingEmployees($event)" placeholder="Searching by lastname...">
-                                    <!-- <input type="text" [(ngModel)]="searchingValue" (input)="filterItems()"> -->
-                                </div>
-                            </div>
-                            <div class="tiles-header-functions-container">
-                                <div class="button" style="margin-right: 0px;" (click)="setActiveFiltersVisible()" [ngClass]="{'button-default': !activeFiltersVisible, 'button-active': activeFiltersVisible}">
-                                    Filters
-                                </div>
-                                <div class="button" style="margin-right: 0px;" (click)="testFunction()">
-                                    testFunction
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Tiles-Header > Active Filters -->
-                        <!-- ----------------------------- -->
-                        <div *ngIf="activeFiltersVisible" class="tiles-header-active-filters-container">
-                            <div class="active-filsters-wrapper">
-
-                                <div class="active-filter-container" *ngFor="let item of activeFilter, index as i">
-                                    <div class="active-filter-name">
-                                        {{item.value}}
-                                    </div>
-                                    <div class="active-filter-close-container" (click)="closeFilter(i)">
-                                        <img src="../../assets/cancel-circle.svg" alt="">
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="button" style="color: rgb(109, 184, 109); font-size: .8em; margin-right: 0px;">
-                                No Function
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Tiles -->
-                    <!-- ----- -->
-                    <div class="tiles-wrapper">
-                        <div class="tile-container" *ngFor="let employee of employees" (click)="setAddInfo(employee)">
-                            <div class="tile-wrapper">
-
-                                <div class="select-item-container">
-                                    <input type="checkbox" [(ngModel)]="employee.selected" (change)="checkIfAllSelected();">
-                                </div>
-
-                                <div class="tile-content-left-container">
-                                    <span style="margin-left: 4px;">{{employee.employeeCode}} {{employee.salutation}} {{employee.firstName}} {{employee.lastName}}</span>
-                                    <!-- {{ employee | json }} -->
-                                </div>
-
-                                <div class="tile-content-right-container">
-                                    {{employee.birthday | date:"dd. MMM. yyyy"}}
-                                </div>
-
-                                <div class="open-item-container" (click)="openObject(employee)">
-                                    <img src="../../assets/chevron-right.svg" alt="">
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Tiles-Actions -->
-                    <!-- ------------- -->
-                    <div class="tiles-actions-container">
-
-                        <div class="tiles-actions-left-wrapper">
-                            <div class="button" style="margin-left: 0px;">No Function</div>
-                        </div>
-
-                        <div class="tiles-actions-center-wrapper">
-                            <div class="button">No Function</div>
-                        </div>
-
-                        <div class="tiles-actions-right-wrapper">
-                            <div class="button" style="margin-right: 0px;">No Function</div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Additional Informations -->
-                <!-- ----------------------- -->
-                <div *ngIf="addInfoVisible" class="addInfo-container">
-                    <div class="addInfo-header">
-
-                        <div class="addInfo-header-container">
-                            <div class="addInfo-header-title">
-                                Additional Information
-                            </div>
-                        </div>
-
-                        <div class="addInfo-item-wrapper">
-                            <div class="addInfo-item" *ngIf="addInfoDetail">
-                                ID:{{addInfo.id}}
-                                <br>
-                                {{addInfo.firstName}} {{addInfo.lastName}}<br>
-                                <!-- {{addInfo.contacts.email}}
-                                {{addInfo.contacts.mobile}} -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <!-- Button toggle AddInfos -->
+            <!-- ------------------------ -->
+            <div class="button" [ngClass]="{'button-default': !addInfoVisible, 'button-active': addInfoVisible}" (click)="setAddInfoVisible()">
+                Additional Informations
             </div>
         </div>
     </div>
 
+    <!-- Different Classes wether quicklinks or addInfo should be visible or not -->
+    <!-- *********************************************************************** -->
+    <div [ngClass]="{'content-wrapper-all': quicklinksVisible && addInfoVisible, 'content-wrapper-quicklinks-hidden': !quicklinksVisible && addInfoVisible,
+                        'content-wrapper-addInfo-hidden': quicklinksVisible && !addInfoVisible, 'content-wrapper-only-tiles': !quicklinksVisible && !addInfoVisible}">
+
+        <!-- Quicklinks -->
+        <!-- ---------- -->
+        <div *ngIf="quicklinksVisible" class="quicklinks-container">
+
+            <div class="quicklinks-header-container">
+                <div class="quicklinks-header-title">
+                    My Quicklinks
+                </div>
+                <div class="quicklinks-searching-container">
+                    <div class="quicklinks-searching-text">
+                        searching...
+                    </div>
+                </div>
+            </div>
+
+            <div class="quicklinks-items-wrapper">
+                <div class="quicklink-item-container" *ngFor="let quicklink of quicklinks, index as i">
+
+                        <div class="quicklink-item-drag-container">
+                            <img src="../../assets/one-finger-tap.svg" alt="">
+                        </div>
+
+                        <div class="quicklink-item-text">
+                            {{quicklink}}
+                        </div>
+
+                        <div class="quicklink-item-more-container" (click)="quicklinkMoreSelected(quicklink)">
+                            <img src="../../assets/more-vert.svg" alt="">
+                        </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- <app-quicklinks></app-quicklinks> -->
+
+        <!-- Tiles -->
+        <!-- ----- -->
+        <div class="tiles-structure">
+
+            <!-- Tiles-Header -->
+            <!-- ------------ -->
+            <div class="tiles-header-container">
+                <div class="tiles-header-filters-container">
+
+                    <!-- Tile-Header > Searching and Functions -->
+                    <!-- ------------------------------------- -->
+                    <div class="tiles-header-select-all-container">
+                        <input type="checkbox" [(ngModel)]="allSelected" (change)="selectAll();">
+                    </div>
+                    <div class="tiles-header-searching-container">
+                        <div class="tiles-header-searching-text">
+                            <input type="text" [(ngModel)]="searchingValue" (keyup)="searchingEmployees($event)" placeholder="Searching by lastname...">
+                            <!-- <input type="text" [(ngModel)]="searchingValue" (input)="filterItems()"> -->
+                        </div>
+                    </div>
+                    <div class="tiles-header-functions-container">
+                        <div class="button" style="margin-right: 0px;" (click)="setActiveFiltersVisible()" [ngClass]="{'button-default': !activeFiltersVisible, 'button-active': activeFiltersVisible}">
+                            Filters
+                        </div>
+                        <div class="button" style="margin-right: 0px;" (click)="testFunction()">
+                            testFunction
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tiles-Header > Active Filters -->
+                <!-- ----------------------------- -->
+                <div *ngIf="activeFiltersVisible" class="tiles-header-active-filters-container">
+                    <div class="active-filsters-wrapper">
+
+                        <div class="active-filter-container" *ngFor="let item of activeFilter, index as i">
+                            <div class="active-filter-name">
+                                {{item.value}}
+                            </div>
+                            <div class="active-filter-close-container" (click)="closeFilter(i)">
+                                <img src="../../assets/cancel-circle.svg" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="button" style="color: rgb(109, 184, 109); font-size: .8em; margin-right: 0px;">
+                        No Function
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Tiles -->
+            <!-- ----- -->
+            <div class="tiles-wrapper">
+                <div class="tile-container" *ngFor="let employee of employees" (click)="setAddInfo(employee)" [ngClass]="{'selected': employee === selectedEmployee}">
+                    <div class="tile-wrapper">
+
+                        <div class="select-item-container">
+                            <input type="checkbox" [(ngModel)]="employee.selected" (change)="checkIfAllSelected();">
+                        </div>
+
+                        <div class="tile-content-left-container">
+                            <span style="margin-left: 4px;">{{employee.employeeCode}} {{employee.salutation}} {{employee.firstName}} {{employee.lastName}}</span>
+                            <!-- {{ employee | json }} -->
+                        </div>
+
+                        <div class="tile-content-right-container">
+                            {{employee.birthday | date:"dd. MMM. yyyy"}}
+                        </div>
+
+                        <div class="open-item-container" (click)="openObject(employee)">
+                            <img src="../../assets/chevron-right.svg" alt="">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Tiles-Actions -->
+            <!-- ------------- -->
+            <div class="tiles-actions-container">
+
+                <div class="tiles-actions-left-wrapper">
+                    <div class="button" style="margin-left: 0px;">No Function</div>
+                </div>
+
+                <div class="tiles-actions-center-wrapper">
+                    <div class="button">No Function</div>
+                </div>
+
+                <div class="tiles-actions-right-wrapper">
+                    <div class="button" style="margin-right: 0px;">No Function</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Additional Informations -->
+        <!-- ----------------------- -->
+        <div *ngIf="addInfoVisible" class="addInfo-container">
+            <div class="addInfo-header">
+
+                <div class="addInfo-header-container">
+                    <div class="addInfo-header-title">
+                        Additional Information
+                    </div>
+                </div>
+
+                <div class="addInfo-item-wrapper">
+                    <div class="addInfo-item" *ngIf="addInfoDetail">
+                        ID:{{addInfo.id}}
+                        <br>
+                        {{addInfo.firstName}} {{addInfo.lastName}}<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

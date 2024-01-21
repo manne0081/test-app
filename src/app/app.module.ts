@@ -21,6 +21,7 @@ import { EmployeeDetailComponent } from './employee/employee-detail/employee-det
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { ClientListComponent } from './client/client-list/client-list.component';
 import { ClientDetailComponent } from './client/client-detail/client-detail.component';
+import { PrivateComponent } from './private/private.component';
 
 @NgModule({
     declarations: [
@@ -40,6 +41,7 @@ import { ClientDetailComponent } from './client/client-detail/client-detail.comp
         MainMenuComponent,
         ClientListComponent,
         ClientDetailComponent,
+        PrivateComponent,
     ],
     imports: [
         BrowserModule,

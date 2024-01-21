@@ -32,14 +32,3 @@ $content-width-only-tiles: calc(100%);
 
 
 
-// Page-Styling
-// ############
-
-.page-structure {
-    background-color: white;
-    display: grid;
-    grid-template-rows: $page-header-height $menu-height auto;
-	width: $page-width;
-	height: $page-height;
-	position: fixed;
-}

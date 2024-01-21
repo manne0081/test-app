@@ -4,6 +4,9 @@
 // COLORING
 // ********
 $highlight-color-1: #2c5067;        //rgb(43, 81, 105);
+$highlight-color-04: rgba(44, 80, 103, .04);
+$highlight-color-08: rgba(44, 80, 103, .08);
+$highlight-color-20: rgba(44, 80, 103, .2);
 $highlight-color-40: rgba(44, 80, 103, .4);
 $highlight-color-60: rgba(44, 80, 103, .6);
 $highlight-color-80: rgba(44, 80, 103, .8);
@@ -63,445 +66,432 @@ $content-width-only-tiles: calc(100%);
 
 
 
-// Page-Styling
-// ############
-
-.page-structure {
-    background-color: white;
+.content-structure {
+    background-color: $content-background;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
     display: grid;
-    grid-template-rows: $page-header-height $menu-height auto;
-	width: $page-width;
-	height: $page-height;
-	position: fixed;
+    grid-template-rows: $content-header-height auto;
+    overflow: hidden;
+}
 
+.quicklinks-container {
+    // background-color: lime;
+    overflow-y: scroll;
 
+    // Quicklink - Header
+    // ******************
+    .quicklinks-header-container {
+        background-color: lime;
+        background-color: $content-background;
+        position: fixed;
+        width: $quicklinks-header-width;
+        padding: 12px;
+        box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, .16);
 
-
-    // CONTENT
-    // *******
-    .content-container {
-        background-color: rgba(44, 80, 103, .9);
-        z-index: -1;
-        padding: $gap-size;
-        overflow: hidden;
-
-        .content-structure {
-            background-color: $content-background;
-            width: 100%;
-            height: 100%;
-            border-radius: 8px;
-            display: grid;
-            grid-template-rows: $content-header-height auto;
-            overflow: hidden;
+        .quicklinks-header-title {
+            color:rgba(0, 0, 0, .5);
+            font-size: 1.1em;
+            margin-bottom: 8px;
         }
 
-        .quicklinks-container {
-            // background-color: lime;
-            overflow-y: scroll;
-
-            // Quicklink - Header
-            // ******************
-            .quicklinks-header-container {
-                background-color: lime;
-                background-color: $content-background;
-                position: fixed;
-                width: $quicklinks-header-width;
-                padding: 12px;
-                box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, .16);
-
-                .quicklinks-header-title {
-                    color:rgba(0, 0, 0, .5);
-                    font-size: 1.1em;
-                    margin-bottom: 8px;
-                }
-
-                .quicklinks-searching-container {
-                    padding: 4px 8px;
-                    color:rgba(0, 0, 0, .5);
-                    border: 1px solid rgba(0, 0, 0, .14);
-                    border-radius: 4px;
-                }
-
-                .quicklinks-searching-text {
-                    font-size: .9em;
-                    font-style: italic;
-                    color:rgba(0, 0, 0, .5);
-                }
-            }
-
-            // Quicklink - Items
-            // -----------------
-            .quicklinks-items-wrapper {
-                margin-top: 76px;
-                padding: 16px 16px 8px 16px;
-
-                .quicklink-item-container {
-                    background-color: lime;
-                    background-color: rgba(255, 255, 255, .32);
-                    padding: 8px 8px;
-                    margin-bottom: 8px;
-                    border-radius: 4px;
-                    display: grid;
-                    grid-template-columns: auto 1fr auto;
-
-                    .quicklink-item-drag-container {
-                        // background-color: lime;
-                        height: 20px;
-                        margin-right: 8px;
-                        display: flex;
-                        align-items: center;
-
-                        img {
-                            height: 16px;
-                        }
-                    }
-
-                    .quicklink-item-text {
-                        // background-color: darkmagenta;
-                        color:rgba(0, 0, 0, .4);
-                    }
-
-                    .quicklink-item-more-container {
-                        display: none;
-                    }
-                }
-
-                .quicklink-item-container:hover {
-                    background-color: rgba(255, 255, 255, .78);
-                    cursor: pointer;
-
-                    .quicklink-item-drag-container:hover {
-                        // background-color: seagreen;
-                        display: flex;
-                        align-items: center;
-                    }
-
-                    .quicklink-item-text {
-                        // background-color: darkmagenta;
-                        color:rgba(0, 0, 0, .6);
-                    }
-
-                    .quicklink-item-more-container {
-                        // background-color: lime;
-                        width: 28px;
-                        height: 28px;
-                        margin: -4px;
-                        display: block;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-around;
-
-                        img {
-                            height: 16px;
-                        }
-                    }
-
-                    .quicklink-item-more-container:hover {
-                        background-color: rgba(0, 0, 0, .06);
-                        border-radius: 4px;
-                    }
-                }
-            }
+        .quicklinks-searching-container {
+            padding: 4px 8px;
+            color:rgba(0, 0, 0, .5);
+            border: 1px solid rgba(0, 0, 0, .14);
+            border-radius: 4px;
         }
 
-        // Content Header
-        // **************
-        .content-header-container {
-            background-color: white;
-            border-bottom: 1px solid $highlight-color-40;
-            display: flex;
-            align-items: center;
+        .quicklinks-searching-text {
+            font-size: .9em;
+            font-style: italic;
+            color:rgba(0, 0, 0, .5);
         }
+    }
 
-        .content-header-wrapper {
-            // background-color: lime;
-            width: 100%;
+    // Quicklink - Items
+    // -----------------
+    .quicklinks-items-wrapper {
+        margin-top: 76px;
+        padding: 16px 16px 8px 16px;
+
+        .quicklink-item-container {
+            background-color: lime;
+            background-color: rgba(255, 255, 255, .32);
+            padding: 8px 8px;
+            margin-bottom: 8px;
+            border-radius: 4px;
             display: grid;
             grid-template-columns: auto 1fr auto;
-        }
 
-        .content-header-title {
-            display: flex;
-            align-items: center;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: $highlight-color-1;
-        }
-
-
-        // Content > Quicklinks / Tiles / Additional-Informations
-        // ******************************************************
-        .content-wrapper-all {
-            display: grid;
-            grid-template-columns: $quicklinks-width auto $add-infos-width;
-        }
-
-        .content-wrapper-quicklinks-hidden {
-            display: grid;
-            grid-template-columns: auto $add-infos-width;
-        }
-
-        .content-wrapper-addInfo-hidden {
-            display: grid;
-            grid-template-columns: $quicklinks-width auto;
-        }
-
-        .content-wrapper-only-tiles {
-            display: grid;
-            grid-template-columns: auto;
-        }
-
-
-        // Content - Tiles
-        // ***************
-        .tiles-structure {
-            // background-color: lime;
-            display: grid;
-            grid-template-rows: auto 1fr auto;
-            // overflow-y: scroll;
-        }
-
-        .tiles-header-container {
-            background-color: white;
-            padding: 12px 12px;
-            box-shadow: 0px 6px 4px -2px rgba(0, 0, 0, .20);
-            border-radius: 0px 0px 12px 12px;
-            border-right: 1px solid rgba(0,0,0,0.3);
-            z-index: 1;
-
-            .tiles-header-filters-container {
+            .quicklink-item-drag-container {
                 // background-color: lime;
-                display: grid;
-                grid-template-columns: auto 1fr auto;
-                align-content: center;
-
-                .tiles-header-select-all-container {
-                    background-color: rgba(0, 0, 0, .12);
-                    display: flex;
-                    align-items: center;
-                    margin: 2px 14px 2px 4px;
-                    padding: 6px 5px 6px 4px;
-                    border-radius: 4px;
-                    border: 1px solid rgba(0, 0, 0, .14);
-                }
-
-                .tiles-header-searching-container {
-                    // background-color: orange;
-                    background-color: rgba(0, 0, 0, .06);
-                    display: flex;
-                    align-items: center;
-                    border: 1px solid rgba(0, 0, 0, .08);
-                    border-radius: 4px;
-                    padding-left: 6px;
-
-                    .tiles-header-searching-text {
-                        color: rgb(189, 189, 189);
-                        font-style: italic;
-                        width: 100%;
-
-                        input {
-                            width: 100%;
-                            font-style: italic;
-                        }
-                    }
-                }
-
-                .tiles-header-functions-container {
-                    // background-color: lime;
-                    display: flex;
-                    align-items: center;
-                }
-            }
-
-            .tiles-header-active-filters-container {
-                // background-color: lime;
-                display: grid;
-                grid-template-columns: 1fr auto;
-                margin-top: 8px;
-
-                .active-filsters-wrapper {
-                    // background-color: orange;
-                    display: flex;
-                    align-items: center;
-                    padding-left: 44px;
-
-                    .active-filter-container {
-                        background-color: $highlight-color-80;
-                        // background-color: rgba(0, 0, 0, .04);
-                        padding: 2px 6px;
-                        border-radius: 12px;
-                        border: 1px solid rgba(0, 0, 0, .08);
-                        display: flex;
-                        align-items: center;
-                        margin-right: 6px;
-
-                        .active-filter-name {
-                            // background-color: lime;
-                            color: white;
-                        }
-
-                        .active-filter-close-container {
-                            // background-color: orange;
-                            display: flex;
-                            align-items: center;
-                            padding-left: 6px;
-
-                            img {
-                                width: 14px;
-                            }
-                        }
-
-                        .active-filter-close-container:hover {
-                            // background-color: rgba(255, 255, 255, .20);
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
-        }
-
-        .tiles-wrapper {
-            background-color: $content-background;
-            height: calc(100% + 24px);
-
-            margin: -12px 0px -12px 0px;
-            overflow-y: scroll;
-            padding: 26px 12px 20px 12px;
-
-            .tile-container {
-                background-color: rgba(255, 255, 255, .88);
-                border: 1px solid rgba(255, 255, 255, .88);
-                margin-bottom: 8px;
-                border-radius: 4px;
-                padding: 2px 3px;
-
-                .tile-wrapper {
-                    // background-color: orange;
-                    display: grid;
-                    grid-template-columns: auto 1fr 1fr auto;
-
-                    .select-item-container {
-                        background-color: rgba(0, 0, 0, .12);
-                        padding: 6px;
-                        margin-right: 8px;
-                        border-radius: 4px;
-                        display: flex;
-                        align-items: center;
-                    }
-
-                    .tile-content-left-container {
-                        display: flex;
-                        align-items: center;
-
-                    }
-
-                    .tile-content-right-container {
-                        display: flex;
-                        align-items: center;
-                        justify-content: flex-end;
-                    }
-
-                    .open-item-container {
-                        background-color: lime;
-                        background-color: rgba(0, 0, 0, .06);
-                        padding: 6px 6px 6px 8px;
-                        margin-left: 8px;
-                        border-radius: 4px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-around;
-                    }
-
-                    .open-item-container:hover {
-                        background-color: rgba(0, 0, 0, .16);
-                        cursor: pointer;
-                    }
-                }
-            }
-
-            .tile-container-active {
-                background-color: rgba(255, 255, 255, .72);
-                border: 1px solid rgb(226, 226, 226);
-                margin-left: 2px;
-                margin-right: -2px;
-            }
-
-            .tile-container:hover {
-                background-color: rgba(255, 255, 255, .72);
-                border: 1px solid rgb(226, 226, 226);
-                margin-left: 2px;
-                margin-right: -2px;
-                cursor: pointer;
-            }
-
-        }
-
-        .tiles-actions-container {
-            background-color: white;
-            padding: 12px 12px;
-            box-shadow: 0px -6px 4px -2px rgba(0, 0, 0, .20);
-            border-radius: 12px 12px 0px 0px;
-            border-right: 1px solid rgba(0,0,0,0.3);
-            display: grid;
-            grid-template-columns: auto auto auto;
-            z-index: 1;
-
-            .tiles-actions-left-wrapper {
-                // background-color: lime;
+                height: 20px;
+                margin-right: 8px;
                 display: flex;
                 align-items: center;
-                justify-content: flex-start;
+
+                img {
+                    height: 16px;
+                }
             }
 
-            .tiles-actions-center-wrapper {
-                // background-color: orange;
+            .quicklink-item-text {
+                // background-color: darkmagenta;
+                color:rgba(0, 0, 0, .4);
+            }
+
+            .quicklink-item-more-container {
+                display: none;
+            }
+        }
+
+        .quicklink-item-container:hover {
+            background-color: rgba(255, 255, 255, .78);
+            cursor: pointer;
+
+            .quicklink-item-drag-container:hover {
+                // background-color: seagreen;
+                display: flex;
+                align-items: center;
+            }
+
+            .quicklink-item-text {
+                // background-color: darkmagenta;
+                color:rgba(0, 0, 0, .6);
+            }
+
+            .quicklink-item-more-container {
+                // background-color: lime;
+                width: 28px;
+                height: 28px;
+                margin: -4px;
+                display: block;
                 display: flex;
                 align-items: center;
                 justify-content: space-around;
+
+                img {
+                    height: 16px;
+                }
             }
 
-            .tiles-actions-right-wrapper {
-                // background-color: lime;
+            .quicklink-item-more-container:hover {
+                background-color: rgba(0, 0, 0, .06);
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+// Content Header
+// **************
+.content-header-container {
+    background-color: white;
+    border-bottom: 1px solid $highlight-color-40;
+    display: flex;
+    align-items: center;
+}
+
+.content-header-wrapper {
+    // background-color: lime;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
+
+.content-header-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: $highlight-color-1;
+}
+
+
+// Content > Quicklinks / Tiles / Additional-Informations
+// ******************************************************
+.content-wrapper-all {
+    display: grid;
+    grid-template-columns: $quicklinks-width auto $add-infos-width;
+}
+
+.content-wrapper-quicklinks-hidden {
+    display: grid;
+    grid-template-columns: auto $add-infos-width;
+}
+
+.content-wrapper-addInfo-hidden {
+    display: grid;
+    grid-template-columns: $quicklinks-width auto;
+}
+
+.content-wrapper-only-tiles {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+
+// Content - Tiles
+// ***************
+.tiles-structure {
+    // background-color: lime;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    // overflow-y: scroll;
+}
+
+.tiles-header-container {
+    background-color: white;
+    padding: 12px 12px;
+    box-shadow: 0px 6px 4px -2px rgba(0, 0, 0, .20);
+    border-radius: 0px 0px 12px 12px;
+    border-right: 1px solid rgba(0,0,0,0.3);
+    z-index: 1;
+
+    .tiles-header-filters-container {
+        // background-color: lime;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-content: center;
+
+        .tiles-header-select-all-container {
+            background-color: rgba(0, 0, 0, .12);
+            display: flex;
+            align-items: center;
+            margin: 2px 14px 2px 4px;
+            padding: 6px 5px 6px 4px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, .14);
+        }
+
+        .tiles-header-searching-container {
+            // background-color: orange;
+            background-color: rgba(0, 0, 0, .06);
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(0, 0, 0, .08);
+            border-radius: 4px;
+            padding-left: 6px;
+
+            .tiles-header-searching-text {
+                color: rgb(189, 189, 189);
+                font-style: italic;
+                width: 100%;
+
+                input {
+                    width: 100%;
+                    font-style: italic;
+                }
+            }
+        }
+
+        .tiles-header-functions-container {
+            // background-color: lime;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .tiles-header-active-filters-container {
+        // background-color: lime;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        margin-top: 8px;
+
+        .active-filsters-wrapper {
+            // background-color: orange;
+            display: flex;
+            align-items: center;
+            padding-left: 44px;
+
+            .active-filter-container {
+                background-color: $highlight-color-80;
+                // background-color: rgba(0, 0, 0, .04);
+                padding: 2px 6px;
+                border-radius: 12px;
+                border: 1px solid rgba(0, 0, 0, .08);
+                display: flex;
+                align-items: center;
+                margin-right: 6px;
+
+                .active-filter-name {
+                    // background-color: lime;
+                    color: white;
+                }
+
+                .active-filter-close-container {
+                    // background-color: orange;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 6px;
+
+                    img {
+                        width: 14px;
+                    }
+                }
+
+                .active-filter-close-container:hover {
+                    // background-color: rgba(255, 255, 255, .20);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.tiles-wrapper {
+    background-color: $content-background;
+    height: calc(100% + 24px);
+
+    margin: -12px 0px -12px 0px;
+    overflow-y: scroll;
+    padding: 26px 12px 20px 12px;
+
+    .tile-container {
+        background-color: rgba(255, 255, 255, .88);
+        border: 1px solid rgba(255, 255, 255, .88);
+        margin-bottom: 8px;
+        border-radius: 4px;
+        padding: 2px 2px;
+
+
+
+        .tile-wrapper {
+            // background-color: orange;
+            display: grid;
+            grid-template-columns: auto 1fr 1fr auto;
+
+            .select-item-container {
+                background-color: rgba(0, 0, 0, .12);
+                padding: 6px;
+                margin-right: 8px;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+            }
+
+            .tile-content-left-container {
+                display: flex;
+                align-items: center;
+
+            }
+
+            .tile-content-right-container {
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
             }
 
-        }
-
-        .addInfo-container {
-            // background-color: orange;
-            overflow-y: scroll;
-
-            .addInfo-header-container {
+            .open-item-container {
                 background-color: lime;
-                background-color: $content-background;
-                position: fixed;
-                width: $add-infos-header-width;
-                padding: 12px;
-                box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, .16);
-
-                .addInfo-header-title {
-                    color:rgba(0, 0, 0, .5);
-                    font-size: 1.1em;
-                }
+                background-color: rgba(0, 0, 0, .06);
+                padding: 6px 6px 6px 8px;
+                margin-left: 8px;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
             }
 
-            .addInfo-item-wrapper {
-                margin-top: 42px;
-                padding: 12px;
-
-                .addInfo-item {
-                    background-color: white;
-                    padding: 2px 6px;
-                    border: 1px solid rgba(0, 0, 0, .24);
-                    border-radius: 6px;
-                    font-size: .85em;
-                }
+            .open-item-container:hover {
+                background-color: rgba(0, 0, 0, .16);
+                cursor: pointer;
             }
-
         }
     }
+
+    .selected {
+        background-color: $highlight-color-08;
+        border: 1px solid $highlight-color-20;
+        margin-left: 2px;
+        margin-right: -2px;
+    }
+
+    // TODO
+    .tile-container-active {
+        background-color: rgba(255, 255, 255, .68);
+        background-color: lime;
+        border: 1px solid rgb(226, 226, 226);
+        margin-left: 2px;
+        margin-right: -2px;
+    }
+
+    .tile-container:not(.selected):hover {
+        background-color: rgba(255, 255, 255, .68);
+        border: 1px solid rgb(226, 226, 226);
+        margin-left: 2px;
+        margin-right: -2px;
+        cursor: pointer;
+    }
+
+}
+
+.tiles-actions-container {
+    background-color: white;
+    padding: 12px 12px;
+    box-shadow: 0px -6px 4px -2px rgba(0, 0, 0, .20);
+    border-radius: 12px 12px 0px 0px;
+    border-right: 1px solid rgba(0,0,0,0.3);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    z-index: 1;
+
+    .tiles-actions-left-wrapper {
+        // background-color: lime;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .tiles-actions-center-wrapper {
+        // background-color: orange;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .tiles-actions-right-wrapper {
+        // background-color: lime;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+}
+
+.addInfo-container {
+    // background-color: orange;
+    overflow-y: scroll;
+
+    .addInfo-header-container {
+        background-color: lime;
+        background-color: $content-background;
+        position: fixed;
+        width: $add-infos-header-width;
+        padding: 12px;
+        box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, .16);
+
+        .addInfo-header-title {
+            color:rgba(0, 0, 0, .5);
+            font-size: 1.1em;
+        }
+    }
+
+    .addInfo-item-wrapper {
+        margin-top: 42px;
+        padding: 12px;
+
+        .addInfo-item {
+            background-color: white;
+            padding: 2px 6px;
+            border: 1px solid rgba(0, 0, 0, .24);
+            border-radius: 6px;
+            font-size: .85em;
+        }
+    }
+
 }
 
 

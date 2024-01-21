@@ -29,6 +29,7 @@ export class EmployeeListComponent {
     activeFiltersVisible:boolean = false;
     searchingValue: string = "";
 
+    selectedEmployee: any;
     allSelected: any;
 
 	constructor(private employeeService: EmployeeService,
@@ -95,6 +96,8 @@ export class EmployeeListComponent {
 	setAddInfo(employee: Employee) {
         this.addInfoDetail = true;
         this.addInfo = employee;
+
+        this.selectedEmployee = employee;
 	}
 
     quicklinkMoreSelected(quicklink: any):void {
