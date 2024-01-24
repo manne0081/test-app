@@ -1,0 +1,70 @@
+<!-- Page -->
+<div class="page-structure">
+
+    <!-- Header -->
+    <div class="page-header-container">
+
+        <div class="header-wrapper-left">
+            <img src="../../assets/logo-design-49570.png" alt="">
+
+            <div class="button" style="margin-left: 12px;">
+                <img src="../../assets/arrow_down.png" alt="">
+            </div>
+
+            <div class="menu-wrapper">
+                <div class="menu-item">
+                    <img src="../../assets/grid.svg" alt="">
+                </div>
+
+                <div class="menu-item">
+                    <img src="../../assets/compass.png" alt="">
+                </div>
+
+                <div class="menu-item-button">
+                    <div class="menu-item-wrapper">
+                        Item
+                    </div>
+                </div>
+
+                <div class="menu-item-button">
+                    <div class="menu-item-wrapper">
+                        Item
+                    </div>
+                </div>
+
+                <div class="menu-item-button">
+                    <div class="menu-item-wrapper">
+                        Item
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="header-wrapper-right">
+
+            <div class="button add">
+                <img src="../../assets/add.png" alt="">
+            </div>
+
+            <div class="button">
+                <img src="../../assets/schedule.svg" alt="">
+            </div>
+
+            <div class="button" *ngIf="isUserAdmin">
+                <img src="../../assets/gear.png" alt="">
+            </div>
+
+            <div class="button profile" (click)="testSetUserIsAdmin()">
+                <img src="../../assets/person-icon.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="page-content-container">
+
+        Content
+    </div>
+</div>
+

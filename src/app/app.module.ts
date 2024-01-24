@@ -22,6 +22,7 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { ClientListComponent } from './client/client-list/client-list.component';
 import { ClientDetailComponent } from './client/client-detail/client-detail.component';
 import { PrivateComponent } from './private/private.component';
+import { TestFourthComponent } from './test-fourth/test-fourth.component';
 
 @NgModule({
     declarations: [
@@ -42,6 +43,7 @@ import { PrivateComponent } from './private/private.component';
         ClientListComponent,
         ClientDetailComponent,
         PrivateComponent,
+        TestFourthComponent,
     ],
     imports: [
         BrowserModule,

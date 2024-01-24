@@ -11,12 +11,15 @@ import { TestThirdComponent } from './test-third/test-third.component';
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 import { ClientListComponent } from './client/client-list/client-list.component';
 import { PrivateComponent } from './private/private.component';
+import { TestFourthComponent } from './test-fourth/test-fourth.component';
 
 const routes: Routes = [
     { path: '',   redirectTo: 'home', pathMatch: 'full' },
 
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
+
+    { path: 'test4', component: TestFourthComponent },
 
     { path: 'private', component: PrivateComponent,
         children: [
