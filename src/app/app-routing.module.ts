@@ -19,8 +19,6 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
 
-    { path: 'test4', component: TestFourthComponent },
-
     { path: 'private', component: PrivateComponent,
         children: [
             { path: 'dashboard', component: DashboardComponent },
@@ -29,11 +27,14 @@ const routes: Routes = [
         ]
     },
 
+    { path: 'test', component: TestFirstComponent },
+    { path: 'test2', component: TestSecondComponent },
+    { path: 'test3', component: TestThirdComponent },
+    { path: 'test4', component: TestFourthComponent },
+
     // { path: 'dashboard', component: DashboardComponent },
     // { path: 'partner', component: PartnerComponent },
 
-    // { path: 'test', component: TestFirstComponent },
-    // { path: 'test2', component: TestSecondComponent },
     // { path: 'test3', component: TestThirdComponent },
     // { path: 'employees', title: "Employee Overview", component: EmployeeListComponent },
     // { path: 'clients', title: "Client Overview", component: ClientListComponent },

@@ -1,0 +1,126 @@
+$highlight-color-dark: #2c5067;
+$highlight-color-mid: #527083;
+$highlight-color-light: #7a9db8;
+$highlight-color-lightest: #b6d5ec;
+
+
+.page-structure {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 40px auto;
+    background-color: $highlight-color-mid;
+
+    .page-header-container {
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 12px;
+
+        .header-wrapper-left {
+            display: flex;
+            flex-direction: row;
+
+            .button {
+                background-color: #e4e4e4;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                height: 28px;
+                width: 28px;
+                margin-left: 6px;
+                border-radius: 6px;
+
+                img {
+                    width: 12px;
+                    height: auto;
+                }
+
+            }
+
+            .button:hover {
+                background-color: $highlight-color-light;
+                cursor: pointer;
+            }
+
+            img {
+                height: 24px;
+            }
+
+            .menu-wrapper {
+                // background-color: lime;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-left: 8px;
+
+                .menu-item {
+                    width: 28px;
+                    height: 28px;
+                    margin-right: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                }
+
+            }
+        }
+
+        .header-wrapper-right {
+            display: flex;
+            flex-direction: row;
+
+            .button {
+                background-color: #e4e4e4;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                height: 28px;
+                width: 28px;
+                margin-left: 6px;
+                border-radius: 6px;
+            }
+
+            .button:hover {
+                background-color: $highlight-color-light;
+                cursor: pointer;
+            }
+
+            img {
+                height: 20px;
+            }
+
+            .button.add {
+                background-color: #74d478;
+            }
+
+            .button.add:hover {
+                background-color: #4db150;
+                cursor: pointer;
+            }
+
+            .button.profile {
+                background-color: $highlight-color-light;
+                border-radius: 14px;
+
+                img {
+                    height: 24px;
+                }
+            }
+
+            .button.profile:hover {
+                background-color: $highlight-color-mid;
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    .page-content-container {
+        margin: 12px;
+        background-color: white;
+        border-radius: 8px;
+
+    }
+}
