@@ -8,6 +8,7 @@ img {
     width: auto;
 }
 
+
 // Complete Page Structure
 // ***********************
 .page-structure {
@@ -60,7 +61,7 @@ img {
 
             .test3 {
                 background-color: rgb(245, 245, 245);
-                border: 1px solid rgb(235, 235, 235);
+                border: 1px solid rgb(240, 240, 240);
                 padding: 6px 6px;
                 border-radius: 6px;
                 min-width: 26px;
@@ -68,12 +69,13 @@ img {
                 align-items: center;
                 justify-content: space-around;
 
-                img {
-                    margin-right: 4px;
-                    height: 14px;
+                .menu-icon {
+                    position: relative;
+                    top: -1px;
                 }
 
-                span {
+                span.menu-name {
+                    margin-left: 4px;
                     font-size: .85em;
                     color: #5e5e5e;
                 }
@@ -109,14 +111,14 @@ img {
                 background-color: $highlight-color-mid;
                 border-radius: 8px 8px 0 0;
                 position: relative;
-                top: 6px;
+                top: 5px;
             }
 
             .test3 {
                 background-color: transparent;
                 border: none;
                 position: relative;
-                top: -6px;
+                top: -5px;
 
                 span {
                     color: white;
@@ -137,7 +139,25 @@ img {
             }
         }
 
+        .test4 {
+            background-color: rgb(245, 245, 245);
+            border: 1px solid rgb(240, 240, 240);
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
 
+        .test4:hover {
+            background-color: $highlight-color-mid;
+            cursor: pointer;
+
+            span {
+                color: white;
+            }
+        }
 
 
 
