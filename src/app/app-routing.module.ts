@@ -35,7 +35,7 @@ const routes: Routes = [
     { path: 'partner', component: PartnerComponent },
     // { path: 'dashboard', component: DashboardComponent },
 
-    // { path: 'test3', component: TestThirdComponent },
+    { path: 'test3', component: TestThirdComponent },
     // { path: 'employees', title: "Employee Overview", component: EmployeeListComponent },
     // { path: 'clients', title: "Client Overview", component: ClientListComponent },
 

@@ -94,11 +94,6 @@ img {
                 align-items: center;
                 justify-content: space-around;
 
-                // .span {
-                //     position: relative;
-                //     top: -1px;
-                // }
-
                 span.menu-name {
                     margin-left: 4px;
                     font-size: .85em;
@@ -108,7 +103,6 @@ img {
 
             .test3:hover {
                 background-color: $color-primary-1;
-                // border: 1px solid rgb(104, 138, 160);
                 cursor: pointer;
 
                 span {

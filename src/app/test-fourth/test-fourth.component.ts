@@ -31,7 +31,6 @@ export class TestFourthComponent implements OnInit{
 
 
 
-
     testSetUserIsAdmin(): void {
         this.isUserAdmin = !this.isUserAdmin;
     }
@@ -40,7 +39,6 @@ export class TestFourthComponent implements OnInit{
 
     setCssClassToItem(route: string): void {
 		if (route.substring(0,10) == "/dashboard") {
-			// console.log("navigationComponent -> url == " + route.substring(0,10));
             this.activeUrl = "/dashboard";
             this.contentValue = this.activeUrl + " works!"
 			this.classItemSearching = "test1 pre-active";
@@ -48,7 +46,6 @@ export class TestFourthComponent implements OnInit{
 			this.classItemWorkspace = "test1 post-active";
 		}
 		if (route.substring(0,10) == "/workspace") {
-			// console.log("navigationComponent -> url == " + route.substring(0,8));
             this.activeUrl = "/workspace";
             this.contentValue = this.activeUrl + " works!"
 			this.classItemDashboard = "test1 pre-active";
@@ -56,7 +53,6 @@ export class TestFourthComponent implements OnInit{
 			this.classItemContact = "test1 post-active";
 		}
         if (route.substring(0,8) == "/contact") {
-			// console.log("navigationComponent -> url == " + route.substring(0,8));
             this.activeUrl = "/contact";
             this.contentValue = this.activeUrl + " works!"
 			this.classItemWorkspace = "test1 pre-active";
@@ -64,7 +60,6 @@ export class TestFourthComponent implements OnInit{
 			this.classItemOperation = "test1 post-active";
 		}
         if (route.substring(0,10) == "/operation") {
-			// console.log("navigationComponent -> url == " + route.substring(0,8));
             this.activeUrl = "/operation";
             this.contentValue = this.activeUrl + " works!"
 			this.classItemContact = "test1 pre-active";
@@ -72,8 +67,4 @@ export class TestFourthComponent implements OnInit{
 			this.classItemOrderProcessing = "test1 post-active";
 		}
 	}
-
-
-
-
 }
