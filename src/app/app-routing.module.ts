@@ -27,13 +27,13 @@ const routes: Routes = [
         ]
     },
 
-    { path: 'test', component: TestFirstComponent },
-    { path: 'test2', component: TestSecondComponent },
-    { path: 'test3', component: TestThirdComponent },
-    { path: 'test4', component: TestFourthComponent },
+    { path: 'dashboard', component: TestFourthComponent },
+    { path: 'workspace', component: TestFourthComponent },
+    { path: 'contact', component: TestFourthComponent },
+    { path: 'operation', component: TestFourthComponent },
 
+    { path: 'partner', component: PartnerComponent },
     // { path: 'dashboard', component: DashboardComponent },
-    // { path: 'partner', component: PartnerComponent },
 
     // { path: 'test3', component: TestThirdComponent },
     // { path: 'employees', title: "Employee Overview", component: EmployeeListComponent },

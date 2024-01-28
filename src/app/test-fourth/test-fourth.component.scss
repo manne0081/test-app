@@ -1,7 +1,32 @@
 $highlight-color-dark: #2c5067;
+$komplementaer-color-dark: #d3af98;
 $highlight-color-mid: #527083;
+$komplementaer-color-mid: #e6c4af;
 $highlight-color-light: #7392a5;
+$komplementaer-color-light: #f3d5c2;
 $highlight-color-lighter: #7a9db8;
+$highlight-color-lighter: #fae4d7;
+
+/* CSS - Cascading Style Sheet */
+/* Palette color codes */
+/* Palette URL: http://paletton.com/#uid=23v0u0kjuke3pvF2UlQeY8lztq0 */
+
+/* Main Primary color */
+/* ################## */
+$color-primary-0 : #2C5067;
+$color-primary-1: #919BA1;
+$color-primary-2: #666C6F;
+$color-primary-3: #18232A;
+$color-primary-4: #075384;
+
+/* Main Complement color */
+/* ##################### */
+$color-complement-0: #A1763F;
+$color-complement-1: #FCF0E2;
+$color-complement-2: #AEA79E;
+$color-complement-3: #423523;
+$color-complement-4: #CF7400;
+
 
 img {
     height: 20px;
@@ -26,7 +51,7 @@ img {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        box-shadow: 0 4px 4px -2px #0006;
+        // box-shadow: 0 4px 4px -2px #0006;
 
         .page-header-wrapper {
             // background-color: lime;
@@ -69,10 +94,10 @@ img {
                 align-items: center;
                 justify-content: space-around;
 
-                .menu-icon {
-                    position: relative;
-                    top: -1px;
-                }
+                // .span {
+                //     position: relative;
+                //     top: -1px;
+                // }
 
                 span.menu-name {
                     margin-left: 4px;
@@ -82,8 +107,8 @@ img {
             }
 
             .test3:hover {
-                background-color: $highlight-color-light;
-                border: 1px solid rgb(104, 138, 160);
+                background-color: $color-primary-1;
+                // border: 1px solid rgb(104, 138, 160);
                 cursor: pointer;
 
                 span {
@@ -140,8 +165,9 @@ img {
         }
 
         .test4 {
-            background-color: rgb(245, 245, 245);
-            border: 1px solid rgb(240, 240, 240);
+            background-color: $komplementaer-color-light;
+            background-color: $color-complement-2;
+            border: 1px solid $komplementaer-color-light;
             width: 32px;
             height: 32px;
             border-radius: 16px;
@@ -152,6 +178,7 @@ img {
 
         .test4:hover {
             background-color: $highlight-color-mid;
+            border: 1px solid $highlight-color-mid;
             cursor: pointer;
 
             span {

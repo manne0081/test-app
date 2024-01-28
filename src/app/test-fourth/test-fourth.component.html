@@ -20,7 +20,7 @@
 
                 <!-- Searching -->
                 <!-- ######### -->
-                <div class="test1">
+                <div class="test1" [ngClass]="classItemSearching">
                     <div class="test2">
                         <div class="test3">
 
@@ -30,9 +30,21 @@
                     </div>
                 </div>
 
+                <!-- Dashboard -->
+                <!-- ######### -->
+                <div class="test1" [ngClass]="classItemDashboard" routerLink="/dashboard">
+                    <div class="test2">
+                        <div class="test3">
 
-                <!-- Menu-Items -->
-                <div class="test1">
+                            <span class="icon-grid"></span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workspace -->
+                <!-- ######### -->
+                <div class="test1" [ngClass]="classItemWorkspace" routerLink="/workspace" >
                     <div class="test2">
                         <div class="test3">
 
@@ -46,7 +58,7 @@
                     </div>
                 </div>
 
-                <div class="test1 pre-active">
+                <div class="test1" [ngClass]="classItemContact" routerLink="/contact">
                     <div class="test2">
                         <div class="test3">
 
@@ -59,7 +71,7 @@
                     </div>
                 </div>
 
-                <div class="test1 active">
+                <div class="test1" [ngClass]="classItemOperation" routerLink="/operation">
                     <div class="test2">
                         <div class="test3">
 
@@ -73,7 +85,7 @@
                     </div>
                 </div>
 
-                <div class="test1 post-active">
+                <div class="test1" [ngClass]="classItemOrderProcessing">
                     <div class="test2">
                         <div class="test3">
 
@@ -175,7 +187,7 @@
             <div class="page-header-wrapper right">
 
                 <div class="test4">
-                    <span class="icon-user" style="font-size: 1.8em; position: relative; top: -1px;"></span>
+                    <span class="icon-user" style="font-size: 3em; margin: -5px 0 0 -9px;"></span>
                 </div>
 
             </div>
@@ -186,9 +198,8 @@
     <!-- Content -->
     <!-- ******* -->
     <div class="page-content-container">
-        Content
 
-
+        {{contentValue}}
 
     </div>
 </div>
