@@ -86,7 +86,7 @@ img {
 
             .test3 {
                 background-color: rgb(245, 245, 245);
-                border: 1px solid rgb(240, 240, 240);
+                // border: 1px solid rgb(240, 240, 240);
                 padding: 6px 6px;
                 border-radius: 6px;
                 min-width: 26px;
@@ -94,10 +94,14 @@ img {
                 align-items: center;
                 justify-content: space-around;
 
+                span {
+                    color: #5e5e5e;
+
+                }
+
                 span.menu-name {
                     margin-left: 4px;
                     font-size: .85em;
-                    color: #5e5e5e;
                 }
             }
 
