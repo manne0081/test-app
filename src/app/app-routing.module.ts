@@ -27,14 +27,18 @@ const routes: Routes = [
         ]
     },
 
-    { path: 'dashboard', component: TestFourthComponent },
-    { path: 'workspace', component: TestFourthComponent },
-    { path: 'contact', component: TestFourthComponent },
-    { path: 'operation', component: TestFourthComponent },
+    { path: 'dashboard', component: TestFourthComponent },              // Dashboard
+    { path: 'workspace', component: TestFourthComponent },              // Workspace
+    { path: 'contacts', component: TestFourthComponent },               // Kontakte
+    { path: 'operations', component: TestFourthComponent },             // Vorgänge & Belege
+    { path: 'orderProcessing', component: TestFourthComponent },        // Auftragsabwicklung
+    { path: 'accounting', component: TestFourthComponent },             // Rechnungswesen
+    { path: 'productManagement', component: TestFourthComponent },      //Produktverwaltung
+    { path: 'contracting', component: TestFourthComponent },            //Vertragswesen
+    { path: 'toolsAssets', component: TestFourthComponent },            //Tools & Assets//Statistik & Reporting
+    { path: 'statisticsReporting', component: TestFourthComponent },    //Statistik & Reporting
 
     { path: 'partner', component: PartnerComponent },
-    // { path: 'dashboard', component: DashboardComponent },
-
     { path: 'test3', component: TestThirdComponent },
     // { path: 'employees', title: "Employee Overview", component: EmployeeListComponent },
     // { path: 'clients', title: "Client Overview", component: ClientListComponent },

@@ -14,7 +14,7 @@ $highlight-color-lighter: #fae4d7;
 /* Main Primary color */
 /* ################## */
 $color-primary-0 : #2C5067;
-$color-primary-1: #919BA1;
+$color-primary-1: #89949b;
 $color-primary-2: #666C6F;
 $color-primary-3: #18232A;
 $color-primary-4: #075384;
@@ -85,8 +85,8 @@ img {
             }
 
             .test3 {
-                background-color: rgb(245, 245, 245);
-                // border: 1px solid rgb(240, 240, 240);
+                background-color: rgb(230, 230, 230);
+                border: 1px solid rgb(220, 220, 220);
                 padding: 6px 6px;
                 border-radius: 6px;
                 min-width: 26px;
