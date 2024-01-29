@@ -22,6 +22,7 @@ export class TestFourthComponent implements OnInit{
 	classItemContracting: string = 'navigation-item';
 	classItemToolsAssets: string = 'navigation-item';
 	classItemStatisticsReporting: string = 'navigation-item';
+	classItemDropdownTest: string = 'navigation-item';
 	classItemPlacehoder: string = 'navigation-item';
 
     contentValue:string = "";
@@ -112,7 +113,14 @@ export class TestFourthComponent implements OnInit{
             this.contentValue = this.activeUrl + " works!"
 			this.classItemToolsAssets = "test1 pre-active";
 			this.classItemStatisticsReporting = "test1 active";
-			this.classItemPlacehoder = "test1 post-active";
+			this.classItemDropdownTest = "test1 post-active";
 		}
+        // if (route.substring(0,20) == "/statisticsReporting") {
+        //     this.activeUrl = "/statisticsReporting";
+        //     this.contentValue = this.activeUrl + " works!"
+		// 	this.classItemToolsAssets = "test1 pre-active";
+		// 	this.classItemStatisticsReporting = "test1 active";
+		// 	this.classItemPlacehoder = "test1 post-active";
+		// }
 	}
 }
