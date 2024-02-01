@@ -126,30 +126,64 @@ img {
 
 
         // MENU - DROPDOWN-TEST
+        .header-dropdown-bg-3 {
+            padding-right: 6px;
+        }
+
         .header-dropdown-button {
             background-color: rgb(235, 235, 235);
             border: 1px solid rgb(220, 220, 220);
             border-radius: 6px;
             padding: 4px 6px;
+            // display: inline-block;
+            position: relative;
+            transition: background-color .4s; /* Hinzugefügter Übergangseffekt */
         }
 
-        .header-dropdown-content {
-            background-color: lightpink;
-            padding: 4px 8px;
+        .header-dropdown-content-wrapper {
+            background-color: transparent;
+            border: none;
+            padding-top: 4px;
             border-radius: 8px;
-            min-width: 200px;
+            min-width: 300px;
+            position: absolute;
+            z-index: 100;
             display: none;
+
+            .header-dropdown-content {
+                background-color: $color-complement-1;
+                border: 1px solid $color-primary-1;
+                border-radius: 8px;
+                padding: 8px 12px;
+            }
         }
 
         .header-dropdown-button:hover {
             background-color: $color-primary-1;
-            cursor: pointer;
+            padding: 4px 6px;
             color: white;
+            cursor: pointer;
         }
 
-        .header-dropdown-bg-3:hover .header-dropdown-content {
+        .header-dropdown-bg-3:hover .header-dropdown-content-wrapper {
             display: block;
         }
+
+        .header-dropdown-bg-3:hover .header-dropdown-button {
+            background-color: $color-primary-1;
+            color: white;
+            cursor: pointer;
+        }
+
+        .header-dropdown-content-wrapper {
+            cursor: pointer;
+        }
+
+
+
+
+
+
 
 
 
@@ -267,52 +301,8 @@ img {
                 color: white;
             }
         }
+
     }
-
-
-
-    // Dropdown-Test
-    // #############
-    // .test7 {
-    //     background-color: blue;
-    //     overflow: visible;
-
-    //     .menu-dropdown {
-    //         background-color: yellow;
-    //         position: relative;
-    //         display: inline-block;
-    //         overflow: visible;
-
-    //         .menu-drop-button {
-    //             background-color: orange;
-    //         }
-
-    //         .menu-drop-frame {
-    //             background-color: green;
-    //             display: none;
-    //             position: absolute;
-    //             padding-top: 12px;
-
-    //             .menu-drop-content {
-    //                 background-color: $color-complement-1;
-    //                 border: 1px solid $color-primary-1;
-    //                 border-radius: 4px;
-    //                 padding: 6px 8px;
-    //                 min-width: 200px;
-    //                 z-index: 100;
-    //             }
-    //         }
-    //     }
-
-    //     .menu-dropdown:hover{
-    //         cursor: pointer;
-    //     }
-
-    //     .menu-dropdown:hover .menu-drop-frame{
-    //         background-color: transparent;
-    //         display: block;
-    //     }
-    // }
 
 
 
