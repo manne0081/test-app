@@ -8,19 +8,19 @@
 
             <!-- Header-Left -->
             <!-- *********** -->
-            <div class="page-header-wrapper left">
+            <div class="page-header-wrapper wrapper-left">
+
 
                 <!-- LOGO -->
                 <!-- #### -->
-                <div class="page-header-button-container" style="margin-right: 8px;">
+                <div class="header-logo">
                     <img src="../../assets/icons/logo-design-49570.png" alt="">
                 </div>
 
 
-
                 <!-- Searching -->
                 <!-- ######### -->
-                <div class="test1" [ngClass]="classItemSearching">
+                <!-- <div class="test1" [ngClass]="classItemSearching">
                     <div class="test2">
                         <div class="test3">
 
@@ -28,11 +28,11 @@
 
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Dashboard -->
                 <!-- ######### -->
-                <div class="test1" [ngClass]="classItemDashboard" routerLink="/dashboard">
+                <!-- <div class="test1" [ngClass]="classItemDashboard" routerLink="/dashboard">
                     <div class="test2">
                         <div class="test3">
 
@@ -40,168 +40,53 @@
 
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <!-- Workspace -->
-                <!-- ######### -->
-                <div class="test1" [ngClass]="classItemWorkspace" routerLink="/workspace" >
-                    <div class="test2">
-                        <div class="test3">
 
-                            <span class="icon-pencilwrench"></span>
-
-                            <span class="menu-name">
-                                Workspace
-                            </span>
-
+                <!-- Dropdown - Test-2 -->
+                <!-- ################# -->
+                <div class="header-button-bg-1 pre-active" style="margin-left: 0px;">
+                    <div class="header-button-bg-2" style="padding-left: 0;">
+                        <div class="header-button-bg-3">
+                            Button 1
                         </div>
                     </div>
                 </div>
 
-                <!-- Contacts > Kontakte -->
-                <!-- ################### -->
-                <div class="test1" [ngClass]="classItemContacts" routerLink="/contacts">
-                    <div class="test2">
-                        <div class="test3">
-
-                            <span class="icon-user-group"></span>
-
-                            <span class="menu-name">
-                                Kontakte
-                            </span>
+                <div class="header-button-bg-1 active">
+                    <div class="header-button-bg-2">
+                        <div class="header-button-bg-3">
+                            Button 2
                         </div>
                     </div>
                 </div>
 
-                <!-- Operations > Vorgänge & Belege -->
-                <!-- ############################## -->
-                <div class="test1" [ngClass]="classItemOperations" routerLink="/operations">
-                    <div class="test2">
-                        <div class="test3">
-
-                            <span class="icon-handshake-o"></span>
-
-                            <span class="menu-name">
-                                Vorgänge & Belege
-                            </span>
-
+                <div class="header-button-bg-1 post-active">
+                    <div class="header-button-bg-2">
+                        <div class="header-button-bg-3">
+                            Button 3
                         </div>
                     </div>
                 </div>
 
-                <!-- Order Processing > Auftragsabwicklung -->
-                <!-- ##################################### -->
-                <div class="test1" [ngClass]="classItemOrderProcessing" routerLink="/orderProcessing">
-                    <div class="test2">
-                        <div class="test3">
-
-                            <span class="icon-paperplane"></span>
-
-                            <span class="menu-name">
-                                Auftragsabwicklung
-                            </span>
-
+                <div class="header-button-bg-1">
+                    <div class="header-button-bg-2">
+                        <div class="header-dropdown-bg-3">
+                            <div class="header-dropdown-button">
+                                Dropdown-Button 1
+                            </div>
+                            <div class="header-dropdown-content">
+                                Dropdown-Content
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Accounting > Rechnungswesen -->
-                <!-- ########################### -->
-                <div class="test1" [ngClass]="classItemAccounting" routerLink="/accounting">
-                    <div class="test2">
-                        <div class="test3">
 
-                            <span class="icon-coins"></span>
-
-                            <span class="menu-name">
-                                Rechnungswesen
-                            </span>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Management > Produktverwaltung -->
-                <!-- ###################################### -->
-                <div class="test1" [ngClass]="classItemProductManagement" routerLink="/productManagement">
-                    <div class="test2">
-                        <div class="test3">
-
-                            <span class="icon-cubes"></span>
-
-                            <span class="menu-name">
-                                Produktverwaltung
-                            </span>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contracting > Vertragswesen -->
-                <!-- ########################### -->
-                <div class="test1" [ngClass]="classItemContracting" routerLink="/contracting">
-                    <div class="test2">
-                        <div class="test3">
-
-                            <span class="icon-medal"></span>
-
-                            <span class="menu-name">
-                                Vertragswesen
-                            </span>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tools & Assets > Tools & Assets -->
-                <!-- ############################### -->
-                <div class="test1" [ngClass]="classItemToolsAssets" routerLink="/toolsAssets">
-                    <div class="test2">
-                        <div class="test3">
-
-                            <span class="icon-tools"></span>
-
-                            <span class="menu-name">
-                                Tools & Assets
-                            </span>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Statistics & Reporting > Statistik & Reporting -->
-                <!-- ############################################## -->
-                <div class="test1" [ngClass]="classItemStatisticsReporting" routerLink="/statisticsReporting">
-                    <div class="test2">
-                        <div class="test3">
-
-                            <span class="icon-bar-graph"></span>
-
-                            <span class="menu-name">
-                                Statistik & Reporting
-                            </span>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Placeholder and Link to Test-Page 3 / Dont delete this element, only clear -->
-                <!-- ########################################################################## -->
-                <div class="test1" [ngClass]="classItemPlacehoder" routerLink="/test3">
-                    <div class="test2">
-                        <div class="test3">
-                            <span class="icon-grid"></span>
-
-                            <span class="menu-name">
-                                TEST-3
-                            </span>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Dropdown - Test -->
                 <!-- ############### -->
-                <div class="test7">
+                <!-- <div class="test7">
                     <div class="menu-dropdown">
                         <div class="menu-drop-button">
                             <span class="icon-at"></span>
@@ -215,27 +100,23 @@
                                 Dropdown-Content
                             </div>
                         </div>
+
                     </div>
-                </div>
-
-
-
+                </div> -->
 
 
 
             </div>
 
-
             <!-- Header-Right -->
             <!-- ************ -->
-            <div class="page-header-wrapper right">
+            <div class="page-header-wrapper wrapper-right">
 
                 <div class="test4">
                     <span class="icon-user" style="font-size: 3em; margin: -5px 0 0 -9px;"></span>
                 </div>
 
             </div>
-
 
     </div>
 
