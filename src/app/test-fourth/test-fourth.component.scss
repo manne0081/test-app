@@ -99,6 +99,10 @@ img {
 
         .header-button-bg-1.active {
             border-radius: 8px 8px 0 0;
+
+            .header-button-bg-2 {
+                margin-top: 1px;
+            }
         }
 
         .header-button-bg-1.pre-active .header-button-bg-2 {
@@ -141,15 +145,15 @@ img {
             border: 1px solid rgb(220, 220, 220);
             border-radius: 6px;
             padding: 4px 6px;
-            // display: inline-block;
             position: relative;
             transition: background-color .2s;
+            transition: border .1s;
         }
 
         .header-dropdown-content-wrapper {
             background-color: transparent;
             border: none;
-            padding-top: 4px;
+            padding-top: 2px;
             border-radius: 8px;
             min-width: 300px;
             position: absolute;
@@ -157,10 +161,32 @@ img {
             display: none;
 
             .header-dropdown-content {
-                background-color: $color-complement-1;
-                border: 1px solid $color-primary-1;
+                background-color: $color-primary-2;
+                border: 1px solid $color-primary-0;
                 border-radius: 8px;
-                padding: 8px 12px;
+                padding: 12px 12px;
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                gap: 8px;
+
+                .sub-menu-button-container {
+                    background-color: $color-complement-2;
+                    border: 1px solid $color-primary-2;
+                    border-radius: 6px;
+                    min-width: 80px;
+                    min-height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    color: white;
+                }
+
+                .sub-menu-button-container:hover {
+                    background-color: $color-complement-3;
+                    border: 1px solid $color-complement-2;
+                    cursor: pointer;
+                }
+
             }
         }
 
@@ -168,7 +194,11 @@ img {
             background-color: $color-primary-1;
             padding: 4px 6px;
             color: white;
-            cursor: pointer;
+            cursor: default;
+
+            span {
+                color: white;
+            }
         }
 
         .header-dropdown-bg-3:hover .header-dropdown-content-wrapper {
@@ -179,12 +209,12 @@ img {
             background-color: $color-primary-1;
             border: 1px solid $color-primary-2;
             color: white;
-            cursor: pointer;
+
+            span {
+                color: white;
+            }
         }
 
-        .header-dropdown-content-wrapper {
-            cursor: pointer;
-        }
 
 
 
