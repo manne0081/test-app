@@ -40,6 +40,7 @@ const routes: Routes = [
 
     { path: 'partner', component: PartnerComponent },
     { path: 'test3', component: TestThirdComponent },
+    { path: 'test4', component: TestFourthComponent },
     // { path: 'employees', title: "Employee Overview", component: EmployeeListComponent },
     // { path: 'clients', title: "Client Overview", component: ClientListComponent },
 
