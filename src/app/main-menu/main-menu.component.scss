@@ -61,7 +61,8 @@ $content-background: #d6d6d6;
                 border-radius: 4px;
 
                 span.favorite {
-                    color: #aaa200;
+                    color: #fff982;
+                    text-shadow: 0 0 3px white, 0 0 5px rgb(134, 126, 13);
                 }
             }
 
@@ -75,6 +76,7 @@ $content-background: #d6d6d6;
 
                 span.favorite {
                     color: #fff982;
+
                 }
             }
 
@@ -96,26 +98,27 @@ $content-background: #d6d6d6;
 
                     .drop-content-wrapper {
                         background-color: white;
+                        background-color: #d3d3d3;
                         border: 1px solid #a4b8c5;
                         border-radius: 4px;
-                        padding: 6px 8px;
+                        padding: 8px 12px;
                         display: grid;
                         grid-template-columns: auto auto auto;
                         gap: 8px;
 
                         .drop-item-container {
-                            background-color: #cadae4;
-                            border: 1px solid #90a5b3;
+                            background-color: white;
+                            border: 1px solid #acbeca;
                             border-radius: 6px;
-                            padding: 6px 12px;
+                            padding: 16px 20px;
                             min-width: max-content;
                             min-height: max-content;
                             cursor: pointer;
                         }
 
                         .drop-item-container:hover {
-                            background-color: #a7b9c5;
-                            border: 1px solid #748896;
+                            background-color: rgb(250, 250, 250);
+                            border: 1px solid #acbeca;
 
                         }
                     }
