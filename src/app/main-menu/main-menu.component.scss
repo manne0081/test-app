@@ -60,6 +60,8 @@ $content-background: #d6d6d6;
                 padding: 0 6px;
                 border-radius: 4px;
 
+                transition: background-color .4s, border .4s, color .4s;
+
                 span.favorite {
                     color: #fff982;
                     text-shadow: 0 0 3px white, 0 0 5px rgb(134, 126, 13);
@@ -114,6 +116,7 @@ $content-background: #d6d6d6;
                             min-width: max-content;
                             min-height: max-content;
                             cursor: pointer;
+                            transition: background-color .4s, border .4s, color .4s;
                         }
 
                         .drop-item-container:hover {
