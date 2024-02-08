@@ -57,14 +57,14 @@ $content-background: #d6d6d6;
                 background-color: rgba(44, 80, 103, 0.2);
                 border: 1px solid rgba(44, 80, 103, 0.12);
                 height: 28px;
-                padding: 0 6px;
+                padding: 0 8px;
                 border-radius: 4px;
 
                 transition: background-color .4s, border .4s, color .4s;
 
                 span.favorite {
                     color: #fff982;
-                    text-shadow: 0 0 3px white, 0 0 5px rgb(134, 126, 13);
+                    text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);
                 }
             }
 
@@ -95,7 +95,7 @@ $content-background: #d6d6d6;
                     background-color: transparent;
                     position: absolute;
                     padding-top: 3px;
-                    // display: none;
+                    display: none;
 
                     .drop-content-wrapper {
                         background-color: white;
@@ -196,14 +196,17 @@ $content-background: #d6d6d6;
 
             button {
                 background-color: transparent;
-                border: none;
-                margin: 0 3px;
+                margin: 0 0px;
                 position: relative;
                 top: -6px;
 
                 span{
                     color: white;
                 }
+            }
+
+            button.icon {
+                margin: 0 0;
             }
 
             button:hover {

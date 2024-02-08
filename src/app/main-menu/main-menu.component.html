@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <div class="header-item-container-1">
+            <div class="header-item-container-1" [ngClass]="classFavorite">
                 <div class="header-item-container-2">
                     <button class="icon">
                         <span class="icon-star favorite" style="font-size: 1.5em; position: relative; top: 1px;"></span>
@@ -26,25 +26,28 @@
                 </div>
             </div>
 
-            <div class="header-item-container-1 pre-active">
+            <!-- Dashboard -->
+            <div class="header-item-container-1" [ngClass]="classDashboard">
                 <div class="header-item-container-2">
-                    <button class="icon">
+                    <button class="icon" (click)="setItemClass('/dashboard')">
                         <span class="icon-grid" style="font-size: 1.3em; position: relative; top: 1px;"></span>
                     </button>
                 </div>
             </div>
 
-            <div class="header-item-container-1 active">
+            <!-- Workspace -->
+            <div class="header-item-container-1" [ngClass]="classWorkspace">
                 <div class="header-item-container-2">
-                    <button>
+                    <button (click)="setItemClass('/workspace')">
                         <span>Workspace</span>
                     </button>
                 </div>
             </div>
 
-            <div class="header-item-container-1 post-active">
+            <!-- Button -->
+            <div class="header-item-container-1" [ngClass]="classContact">
                 <div class="header-item-container-2">
-                    <button>
+                    <button (click)="setItemClass('/contact')">
                         <span>
                             Button
                         </span>
@@ -52,6 +55,7 @@
                 </div>
             </div>
 
+            <!-- Button -->
             <div class="header-item-container-1">
                 <div class="header-item-container-2">
                     <button>
@@ -62,6 +66,7 @@
                 </div>
             </div>
 
+            <!-- Dropdown -->
             <div class="header-item-container-1">
                 <div class="header-item-container-2">
                     <div class="dropdown">
@@ -86,6 +91,7 @@
                 </div>
             </div>
 
+            <!-- Button -->
             <div class="header-item-container-1">
                 <div class="header-item-container-2">
                     <button>
@@ -96,6 +102,7 @@
                 </div>
             </div>
 
+            <!-- Dropdown -->
             <div class="header-item-container-1">
                 <div class="header-item-container-2">
                     <div class="dropdown">
