@@ -15,42 +15,43 @@ $content-background: #d6d6d6;
 // *********
 .menu-container {
     background-color: white;
-    box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, .4);
     height: 100%;
-
+    overflow: visible;
 
     .menu-wrapper {
-        // background-color: lime;
         height: 100%;
         display: grid;
         grid-template-columns: auto auto;
+        overflow: visible;
     }
 
     .menu-wrapper.left {
-        // background-color: blue;
         display: flex;
     }
 
     .menu-wrapper.right {
-        // background-color: red;
         justify-self: right;
         display: flex;
     }
 
+    // HEADER-LEFT > MENU ITEMS
+    // ************************
     .header-item-container-1 {
         background-color: #527083;
         height: 100%;
         width: max-content;
         display: flex;
         align-items: center;
+        overflow: visible;
 
         .header-item-container-2 {
             background-color: white;
-            // background-color: lightgreen;
             height: 100%;
             padding: 0 3px;
             display: flex;
             align-items: center;
+            position: relative;
+            overflow: visible;
 
             button {
                 background-color: rgba(44, 80, 103, 0.2);
@@ -64,13 +65,9 @@ $content-background: #d6d6d6;
                 }
             }
 
-            button.icon-item {
-                width: 28px;
-                padding: 0;
-            }
-
-            button:hover {
+            button:hover:not(.drop-button) {
                 background-color: #7a9db8;
+                cursor: pointer;
 
                 span {
                     color: white;
@@ -80,9 +77,66 @@ $content-background: #d6d6d6;
                     color: #fff982;
                 }
             }
+
+            button.icon {
+                width: 28px;
+                padding: 0;
+            }
+
+            .dropdown {
+                position: relative;
+                overflow: visible;
+                z-index: 10;
+
+                .drop-content-container {
+                    background-color: transparent;
+                    position: absolute;
+                    padding-top: 3px;
+                    display: none;
+
+                    .drop-content-wrapper {
+                        background-color: white;
+                        border: 1px solid #a4b8c5;
+                        border-radius: 4px;
+                        padding: 6px 8px;
+                        display: grid;
+                        grid-template-columns: auto auto auto;
+                        gap: 8px;
+
+                        .drop-item-container {
+                            background-color: #cadae4;
+                            border: 1px solid #90a5b3;
+                            border-radius: 6px;
+                            padding: 6px 8px;
+                            width: min-content;
+                            cursor: pointer;
+                        }
+
+                        .drop-item-container:hover {
+                            background-color: #a7b9c5;
+                            border: 1px solid #748896;
+
+                        }
+                    }
+                }
+            }
+
+            .dropdown:hover .drop-content-container {
+                display: block;
+            }
+
+            .dropdown:hover .drop-button {
+                background-color: #7a9db8;
+
+                span {
+                    color: white;
+                }
+            }
         }
     }
 
+    // HEADER-LEFT > SPECIAL ITEM LOGO
+    // *******************************
     .header-item-container-1.logo {
         background-color: white;
         height: 100%;
@@ -94,6 +148,8 @@ $content-background: #d6d6d6;
         }
     }
 
+    // HEADER-LEFT > SPECIAL ITEM BEHAVIOR (ACTIVE ITEM / PRE-ACTIVE / POST-ACTIVE)
+    // ****************************************************************************
     .header-item-container-1.pre-active {
 
         .header-item-container-2 {
@@ -120,6 +176,24 @@ $content-background: #d6d6d6;
                 span{
                     color: white;
                 }
+            }
+
+            button:hover {
+                background-color: transparent;
+                cursor: default;
+            }
+
+            .dropdown {
+                // background-color: lime;
+
+                .drop-content-container {
+                    background-color: transparent;
+                    margin-top: -6px;
+                }
+            }
+
+            .dropdown:hover .drop-button {
+                background-color: transparent;
             }
         }
     }
