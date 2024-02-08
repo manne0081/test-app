@@ -53,30 +53,45 @@ $content-background: #d6d6d6;
             align-items: center;
 
             button {
+                background-color: rgba(44, 80, 103, 0.2);
+                border: 1px solid rgba(44, 80, 103, 0.12);
                 height: 28px;
                 padding: 0 6px;
-                border: 1px solid #cccccc;
                 border-radius: 6px;
+
+                span.favorite {
+                    color: #aaa200;
+                }
+            }
+
+            button.icon-item {
+                width: 28px;
+                padding: 0;
             }
 
             button:hover {
                 background-color: #7a9db8;
-                color: white;
+
+                span {
+                    color: white;
+                }
+
+                span.favorite {
+                    color: #fff982;
+                }
             }
-
-
         }
-
-
-
-
     }
 
     .header-item-container-1.logo {
-        background-color: yellow;
+        background-color: white;
         height: 100%;
         width: max-content;
         padding: 0 12px;
+
+        img {
+            height: 32px;
+        }
     }
 
     .header-item-container-1.pre-active {
@@ -89,7 +104,7 @@ $content-background: #d6d6d6;
 
     .header-item-container-1.active {
         margin-top: 6px;
-        border-radius: 8px 8px 0 0;
+        border-radius: 6px 6px 0 0;
 
         .header-item-container-2 {
             background-color: transparent;
@@ -101,7 +116,10 @@ $content-background: #d6d6d6;
                 margin: 0 3px;
                 position: relative;
                 top: -6px;
-                color: white;
+
+                span{
+                    color: white;
+                }
             }
         }
     }
@@ -113,6 +131,4 @@ $content-background: #d6d6d6;
             padding-left: 6px;
         }
     }
-
-
 }
