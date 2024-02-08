@@ -36,6 +36,12 @@ $color-complement-4: #CF7400;
     height: 100vh;
     overflow: visible;
 
+    // Page Header
+    // ************
+    .page-header-container {
+        background-color: #2c5067;
+    }
+
     // Page Content
     // ************
        .page-content-container {
