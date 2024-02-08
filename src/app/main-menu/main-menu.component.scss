@@ -57,7 +57,7 @@ $content-background: #d6d6d6;
                 border: 1px solid rgba(44, 80, 103, 0.12);
                 height: 28px;
                 padding: 0 6px;
-                border-radius: 6px;
+                border-radius: 4px;
 
                 span.favorite {
                     color: #aaa200;
@@ -97,14 +97,14 @@ $content-background: #d6d6d6;
     .header-item-container-1.pre-active {
 
         .header-item-container-2 {
-            border-radius: 0 0 8px 0;
+            border-radius: 0 0 6px 0;
             padding-right: 6px;
         }
     }
 
     .header-item-container-1.active {
         margin-top: 6px;
-        border-radius: 6px 6px 0 0;
+        border-radius: 4px 4px 0 0;
 
         .header-item-container-2 {
             background-color: transparent;
@@ -127,7 +127,7 @@ $content-background: #d6d6d6;
     .header-item-container-1.post-active {
 
         .header-item-container-2 {
-            border-radius: 0 0 0 8px;
+            border-radius: 0 0 0 6px;
             padding-left: 6px;
         }
     }
