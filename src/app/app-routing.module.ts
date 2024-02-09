@@ -27,6 +27,8 @@ const routes: Routes = [
         ]
     },
 
+    // RELAXX - Navigation
+    // *******************
     { path: 'dashboard', component: TestFourthComponent },              // Dashboard
     { path: 'workspace', component: TestFourthComponent },              // Workspace
     { path: 'contacts', component: TestFourthComponent },               // Kontakte
@@ -37,6 +39,7 @@ const routes: Routes = [
     { path: 'contracting', component: TestFourthComponent },            //Vertragswesen
     { path: 'toolsAssets', component: TestFourthComponent },            //Tools & Assets//Statistik & Reporting
     { path: 'statisticsReporting', component: TestFourthComponent },    //Statistik & Reporting
+    // *******************
 
     { path: 'partner', component: PartnerComponent },
     { path: 'test3', component: TestThirdComponent },

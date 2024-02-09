@@ -6,10 +6,12 @@
         <!-- *********** -->
         <div class="menu-wrapper left">
 
+            <!-- Logo -->
             <div class="header-item-container-1 logo">
                 <img src="../../assets/logo-design-49570.png" alt="">
             </div>
 
+            <!-- Searching -->
             <div class="header-item-container-1">
                 <div class="header-item-container-2" style="padding-left: 0px">
                     <button class="icon">
@@ -18,6 +20,7 @@
                 </div>
             </div>
 
+            <!-- Favorites -->
             <div class="header-item-container-1" [ngClass]="classFavorite">
                 <div class="header-item-container-2">
                     <button class="icon">
@@ -29,8 +32,9 @@
             <!-- Dashboard -->
             <div class="header-item-container-1" [ngClass]="classDashboard">
                 <div class="header-item-container-2">
-                    <button class="icon" (click)="setItemClass('/dashboard')">
-                        <span class="icon-grid" style="font-size: 1.3em; position: relative; top: 1px;"></span>
+                    <button (click)="setItemClass('/dashboard')">
+                        <span class="icon-grid menu-icon" style="position: relative; top: 1px;"></span>
+                        <span>Dashboard</span>
                     </button>
                 </div>
             </div>
@@ -38,95 +42,27 @@
             <!-- Workspace -->
             <div class="header-item-container-1" [ngClass]="classWorkspace">
                 <div class="header-item-container-2">
-                    <button (click)="setItemClass('/workspace')">
-                        <span>Workspace</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Button -->
-            <div class="header-item-container-1" [ngClass]="classContact">
-                <div class="header-item-container-2">
-                    <button (click)="setItemClass('/contact')">
-                        <span>
-                            Button
-                        </span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Button -->
-            <div class="header-item-container-1">
-                <div class="header-item-container-2">
-                    <button>
-                        <span>
-                            Button
-                        </span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Dropdown -->
-            <div class="header-item-container-1">
-                <div class="header-item-container-2">
                     <div class="dropdown">
                         <button class="drop-button">
-                            <span>
-                                Dropdown
-                            </span>
+                            <span class="icon-pencilwrench menu-icon"></span>
+                            <span>Workspace</span>
                         </button>
                         <div class="drop-content-container">
                             <div class="drop-content-wrapper">
-                                <div class="drop-item-container">
-                                    <span class="sub-menu-label">Dropdown-Item</span>
+                                <div class="drop-item-container" (click)="setItemClass('/workspace')">
+                                    <span class="sub-menu-label">Aufgaben</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container">
-                                    <span class="sub-menu-label">Dropdown-Item</span>
+                                <div class="drop-item-container" (click)="setItemClass('/workspace')">
+                                    <span class="sub-menu-label">Planner</span>
                                     <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Button -->
-            <div class="header-item-container-1">
-                <div class="header-item-container-2">
-                    <button>
-                        <span>
-                            Button
-                        </span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Dropdown -->
-            <div class="header-item-container-1">
-                <div class="header-item-container-2">
-                    <div class="dropdown">
-                        <button class="drop-button">
-                            <span>
-                                Dropdown
-                            </span>
-                        </button>
-                        <div class="drop-content-container">
-                            <div class="drop-content-wrapper">
-                                <div class="drop-item-container">
-                                    <span class="sub-menu-label">Dropdown-Item</span>
+                                <div class="drop-item-container" (click)="setItemClass('/workspace')">
+                                    <span class="sub-menu-label">Kampagnen</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container">
-                                    <span class="sub-menu-label">Dropdown-Item</span>
-                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
-                                </div>
-                                <div class="drop-item-container">
-                                    <span class="sub-menu-label">Dropdown-Item</span>
-                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
-                                </div>
-                                <div class="drop-item-container" routerLink="/test3">
-                                    <span class="sub-menu-label">Test-3</span>
+                                <div class="drop-item-container" (click)="setItemClass('/workspace')">
+                                    <span class="sub-menu-label">E-Mail</span>
                                     <span class="icon-star"></span>
                                 </div>
                             </div>
@@ -135,7 +71,263 @@
                 </div>
             </div>
 
+            <!-- Contacts -->
+            <div class="header-item-container-1" [ngClass]="classContacts">
+                <div class="header-item-container-2">
+                    <div class="dropdown">
+                        <button class="drop-button">
+                            <span class="icon-group menu-icon"></span>
+                            <span>Kontakte</span>
+                        </button>
+                        <div class="drop-content-container">
+                            <div class="drop-content-wrapper">
+                                <div class="drop-item-container" (click)="setItemClass('/contacts')">
+                                    <span class="sub-menu-label">Unternehmen</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/contacts')">
+                                    <span class="sub-menu-label">Lieferanten</span>
+                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/contacts')">
+                                    <span class="sub-menu-label">Ansprechpartner</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/contacts')">
+                                    <span class="sub-menu-label">Benutzer</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Operations -->
+            <div class="header-item-container-1" [ngClass]="classOperations">
+                <div class="header-item-container-2">
+                    <div class="dropdown">
+                        <button class="drop-button">
+                            <span class="icon-handshake-o menu-icon"></span>
+                            <span>Vorgänge & Belege</span>
+                        </button>
+                        <div class="drop-content-container">
+                            <div class="drop-content-wrapper">
+                                <div class="drop-item-container" (click)="setItemClass('/operations')">
+                                    <span class="sub-menu-label">Verkaufsvorgänge</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/operations')">
+                                    <span class="sub-menu-label">Angebote</span>
+                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/operations')">
+                                    <span class="sub-menu-label">Aufträge</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/operations')">
+                                    <span class="sub-menu-label">Rechnungen</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Processing -->
+            <div class="header-item-container-1" [ngClass]="classOrderProcessing">
+                <div class="header-item-container-2">
+                    <div class="dropdown">
+                        <button class="drop-button">
+                            <span class="icon-paperplane menu-icon"></span>
+                            <span>Auftragsabwicklung</span>
+                        </button>
+                        <div class="drop-content-container">
+                            <div class="drop-content-wrapper">
+                                <div class="drop-item-container" (click)="setItemClass('/orderProcessing')">
+                                    <span class="sub-menu-label">Multipostings</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/orderProcessing')">
+                                    <span class="sub-menu-label">Postings</span>
+                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/orderProcessing')">
+                                    <span class="sub-menu-label">Stellenanzeigen</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/orderProcessing')">
+                                    <span class="sub-menu-label">Print</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accounting -->
+            <div class="header-item-container-1" [ngClass]="classAccounting">
+                <div class="header-item-container-2">
+                    <div class="dropdown">
+                        <button class="drop-button">
+                            <span class="icon-coins menu-icon"></span>
+                            <span>Rechnungswesen</span>
+                        </button>
+                        <div class="drop-content-container">
+                            <div class="drop-content-wrapper">
+                                <div class="drop-item-container" (click)="setItemClass('/accounting')">
+                                    <span class="sub-menu-label">Ausgangsrechnungen</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/accounting')">
+                                    <span class="sub-menu-label">Rechnungspositionen</span>
+                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/accounting')">
+                                    <span class="sub-menu-label">Auftragspositionen</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/accounting')">
+                                    <span class="sub-menu-label">Belegs-PDFs</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/accounting')">
+                                    <span class="sub-menu-label">Eingangsrechnungen</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Management -->
+            <div class="header-item-container-1" [ngClass]="classProductManagement">
+                <div class="header-item-container-2">
+                    <div class="dropdown">
+                        <button class="drop-button">
+                            <span class="icon-cubes menu-icon"></span>
+                            <span>Produktverwaltung</span>
+                        </button>
+                        <div class="drop-content-container">
+                            <div class="drop-content-wrapper">
+                                <div class="drop-item-container" (click)="setItemClass('/productManagement')">
+                                    <span class="sub-menu-label">Produkte</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/productManagement')">
+                                    <span class="sub-menu-label">Produktvariante</span>
+                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/productManagement')">
+                                    <span class="sub-menu-label">Produktgruppen</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/productManagement')">
+                                    <span class="sub-menu-label">PGV-Gruppen</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/productManagement')">
+                                    <span class="sub-menu-label">Positionsvorlagen</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contracting -->
+            <div class="header-item-container-1" [ngClass]="classContracting">
+                <div class="header-item-container-2">
+                    <div class="dropdown">
+                        <button class="drop-button">
+                            <span class="icon-medal menu-icon"></span>
+                            <span>Vertragswesen</span>
+                        </button>
+                        <div class="drop-content-container">
+                            <div class="drop-content-wrapper">
+                                <div class="drop-item-container" (click)="setItemClass('/contracting')">
+                                    <span class="sub-menu-label">Kundenverträge</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/contracting')">
+                                    <span class="sub-menu-label">Lieferantenverträge</span>
+                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/contracting')">
+                                    <span class="sub-menu-label">Partner-Konfiguration</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools & Assets -->
+            <div class="header-item-container-1" [ngClass]="classToolsAssets">
+                <div class="header-item-container-2">
+                    <div class="dropdown">
+                        <button class="drop-button">
+                            <span class="icon-tools menu-icon"></span>
+                            <span>Tools & Assets</span>
+                        </button>
+                        <div class="drop-content-container">
+                            <div class="drop-content-wrapper">
+                                <div class="drop-item-container" (click)="setItemClass('/toolsAssets')">
+                                    <span class="sub-menu-label">Kundenverträge</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/toolsAssets')">
+                                    <span class="sub-menu-label">Lieferantenverträge</span>
+                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/toolsAssets')">
+                                    <span class="sub-menu-label">Partner-Konfiguration</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics & Reporting -->
+            <div class="header-item-container-1" [ngClass]="classStatisticsReporting">
+                <div class="header-item-container-2">
+                    <div class="dropdown">
+                        <button class="drop-button">
+                            <span class="icon-bar-graph-2 menu-icon"></span>
+                            <span>Statistik & Reporting</span>
+                        </button>
+                        <div class="drop-content-container">
+                            <div class="drop-content-wrapper">
+                                <div class="drop-item-container" (click)="setItemClass('/statisticsReporting')">
+                                    <span class="sub-menu-label">Umsatzstatistik</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/statisticsReporting')">
+                                    <span class="sub-menu-label">Teamstatistik</span>
+                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/statisticsReporting')">
+                                    <span class="sub-menu-label">KPI-Report</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placeholder -->
+            <div class="header-item-container-1" [ngClass]="classPlaceholder">
+                <div class="header-item-container-2">
+                </div>
+            </div>
         </div>
 
 
