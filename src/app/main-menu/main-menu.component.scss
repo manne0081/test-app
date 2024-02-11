@@ -32,6 +32,8 @@ $content-background: #d6d6d6;
     .menu-wrapper.right {
         justify-self: right;
         display: flex;
+        align-items: center;
+        margin-right: 12px;
     }
 
     // HEADER-LEFT > MENU ITEMS
@@ -79,10 +81,6 @@ $content-background: #d6d6d6;
 
                 span {
                     color: white;
-                }
-
-                span.favorite {
-                    color: #fff982;
                 }
             }
 
@@ -166,6 +164,10 @@ $content-background: #d6d6d6;
 
                 span {
                     color: white;
+                }
+
+                span.favorite {
+                    color: #fff982;
                 }
             }
         }

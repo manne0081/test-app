@@ -21,6 +21,17 @@ export class MainMenuComponent implements OnInit {
     classStatisticsReporting: string ="";
     classPlaceholder: string ="";
 
+    favorites: [string, boolean, string][] = [
+        ["test1", true, '/workspace'],
+        ["test2", true, '/contacts'],
+        ["test3", true, '/contracting'],
+    ];
+
+    favorites2: { name: string, link: string, url: string } [] = [
+        { name: "test1", link: "/workspace", url: "/test3" },
+        { name: "test2", link: "/contacts", url: "test4" },
+    ]
+
     constructor (private router: Router) {
     }
 

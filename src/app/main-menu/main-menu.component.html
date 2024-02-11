@@ -21,11 +21,45 @@
             </div>
 
             <!-- Favorites -->
-            <div class="header-item-container-1" [ngClass]="classFavorite">
+            <!-- <div class="header-item-container-1" [ngClass]="classFavorite">
                 <div class="header-item-container-2">
                     <button class="icon">
                         <span class="icon-star favorite" style="font-size: 1.5em; position: relative; top: 1px;"></span>
                     </button>
+                </div>
+            </div> -->
+
+            <!-- Fav.... -->
+            <div class="header-item-container-1" [ngClass]="classFavorite">
+                <div class="header-item-container-2">
+                    <div class="dropdown">
+                        <button class="icon drop-button">
+                            <span class="icon-star favorite" style="font-size: 1.5em; position: relative; top: 1px;"></span>
+                        </button>
+                        <div class="drop-content-container">
+                            <div class="drop-content-wrapper">
+
+                                <!-- <div class="drop-item-container" (click)="setItemClass('/contracting')">
+                                    <span class="sub-menu-label">Kundenverträge</span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/contracting')">
+                                    <span class="sub-menu-label">Lieferantenverträge</span>
+                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                </div>
+                                <div class="drop-item-container" (click)="setItemClass('/contracting')">
+                                    <span class="sub-menu-label">Partner-Konfiguration</span>
+                                    <span class="icon-star"></span>
+                                </div> -->
+
+                                <div class="drop-item-container" *ngFor="let item of favorites2, index as i" routerLink="{{item.url}}" (click)="setItemClass(item.link)">
+                                    <span class="sub-menu-label">{{item.name}}</span>
+                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -242,7 +276,7 @@
             <!-- Contracting -->
             <div class="header-item-container-1" [ngClass]="classContracting">
                 <div class="header-item-container-2">
-                    <div class="dropdown">
+                    <div class="dropdown right">
                         <button class="drop-button">
                             <span class="icon-medal menu-icon" style="position: relative; top: 1px;"></span>
                             <span>Vertragswesen</span>
@@ -339,7 +373,7 @@
         <!-- HEADER RIGHT -->
         <!-- ************ -->
         <div class="menu-wrapper right">
-            right
+            WIP
         </div>
 
     </div>
