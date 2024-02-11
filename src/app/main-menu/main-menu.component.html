@@ -52,7 +52,7 @@
                                     <span class="icon-star"></span>
                                 </div> -->
 
-                                <div class="drop-item-container" *ngFor="let item of favorites2, index as i" routerLink="{{item.url}}" (click)="setItemClass(item.link)">
+                                <div class="drop-item-container" *ngFor="let item of favorites, index as i" routerLink="{{item.url}}" (click)="setItemClass(item.link)">
                                     <span class="sub-menu-label">{{item.name}}</span>
                                     <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
                                 </div>

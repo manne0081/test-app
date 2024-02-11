@@ -1,21 +1,59 @@
+<!-- Page -->
+<!-- **** -->
 <div class="page-structure">
 
-    <!-- HEADER-STRUCTURE -->
-    <!-- **************** -->
-    <app-page-header></app-page-header>
+    <!-- Header -->
+    <!-- ****** -->
+    <div class="page-header-container" style="overflow: visible;">
 
-
-    <!-- MENU-STRUCTURE -->
-    <!-- ************** -->
-    <app-main-menu></app-main-menu>
-
-
-    <!-- CONTENT -->
-    <!-- ******* -->
-    <div class="content-container">
-
-            <router-outlet></router-outlet>
+        <app-main-menu></app-main-menu>
 
     </div>
 
+    <!-- Content -->
+    <!-- ******* -->
+    <div class="page-content-container">
+
+        <div class="content-title-container">
+            <span>content-title</span>
+        </div>
+
+        <div class="content-container">
+
+            <div class="quicklinks-container">
+
+                <div class="quicklink-header">
+                    <span>My Quicklinks</span><br>
+                    <input type="text" placeholder="Searching...">
+                </div>
+
+                <div class="quicklink-items">
+                    <div class="quicklink-item-container" *ngFor="let item of quicklinks; index as i">
+                        <div>
+                            <span class="icon-one-finger-tap drag"></span>
+                            <span class="quicklink-value">{{i}} {{item}}</span>
+                        </div>
+                        <div>
+                            <span class="icon-more-vert more-icon"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="main-content-container">
+                <div class="content-header">Content-Header</div>
+                <div class="content-items">Content</div>
+                <div class="content-actions">Actions</div>
+            </div>
+
+            <div class="add-info-container">
+                <div class="add-info-header">AddInfo-Header</div>
+                <div class="add-info-items">Additional Infos</div>
+            </div>
+
+        </div>
+
+    </div>
 </div>
+

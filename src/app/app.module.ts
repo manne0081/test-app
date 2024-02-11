@@ -24,6 +24,7 @@ import { ClientListComponent } from './client/client-list/client-list.component'
 import { ClientDetailComponent } from './client/client-detail/client-detail.component';
 import { PrivateComponent } from './private/private.component';
 import { TestFourthComponent } from './test-fourth/test-fourth.component';
+import { TestContent1Component } from './test-content1/test-content1.component';
 
 @NgModule({
     declarations: [
@@ -45,6 +46,7 @@ import { TestFourthComponent } from './test-fourth/test-fourth.component';
         ClientDetailComponent,
         PrivateComponent,
         TestFourthComponent,
+        TestContent1Component,
     ],
     imports: [
         BrowserModule,
