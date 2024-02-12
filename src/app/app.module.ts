@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -61,6 +62,7 @@ import { SupplierListComponent } from './private/contact/supplier-list/supplier-
         AppRoutingModule,
         FormsModule,
         HttpClientModule,
+        DragDropModule,
     ],
     providers: [
         CookieService,
