@@ -127,14 +127,19 @@ $content-background: #d6d6d6;
 
                             .sub-menu-label {
                                 margin-right: 36px;
-                                padding-top: 3px;
+                                padding-top: 6px;
                             }
 
                             [class*="icon"] {
+                                background-color: transparent;
+                                border: 1px solid white;
+                                border-radius: 4px;
+                                padding: 2px;
                                 font-size: 1.4em;
                                 color: rgb(200, 200, 200);
-                                margin-top: -1px;
-                                margin-bottom: 1px;
+                                margin-top: 0px;
+                                margin-bottom: 0px;
+                                transition: background-color .4s, border .4s, color .4s;
                             }
 
                             .is-favorite {
@@ -151,6 +156,18 @@ $content-background: #d6d6d6;
 
                             span {
                                 color: white;
+                            }
+
+                            [class*="icon"] {
+                                background-color: transparent;
+                                border: 1px solid #7a9db8;
+                                border-radius: 4px;
+                            }
+
+                            [class*="icon"]:hover {
+                                background-color: #aec8db;
+                                border: 1px solid #698aa3;
+                                border-radius: 4px;
                             }
 
                             .is-favorite {
