@@ -33,7 +33,7 @@
                                 <ng-container *ngFor="let item of menuItems, index as i">
                                     <div *ngIf="item.favorite" class="drop-item-container" routerLink="{{item.url}}" (click)="setItemClass(item.class)">
                                         <span class="sub-menu-label">{{item.name}}</span>
-                                        <span class="icon-star is-favorite"></span>
+                                        <span class="icon-star is-favorite" (click)="toggleFavorite(item)"></span>
                                     </div>
                                 </ng-container>
 
@@ -64,15 +64,12 @@
                         <div class="drop-content-container">
                             <div class="drop-content-wrapper">
 
-                                <div class="drop-item-container" (click)="setItemClass('/private/workspace')" routerLink="/private/task">
-                                    <span class="sub-menu-label">Aufgaben</span>
-                                    <span class="icon-star is-favorite"></span>
-                                </div>
-
-                                <div class="drop-item-container" (click)="setItemClass('/private/workspace')" routerLink="/private/campagne">
-                                    <span class="sub-menu-label">Kampagnen</span>
-                                    <span class="icon-star"></span>
-                                </div>
+                                <ng-container *ngFor="let item of menuItems, index as i">
+                                    <div *ngIf="item.class == '/private/workspace'" class="drop-item-container" (click)="setItemClass('/private/workspace')" routerLink="/private/task">
+                                        <span class="sub-menu-label">{{item.name}}</span>
+                                        <span class="icon-star" [ngClass]="{'is-favorite':item.favorite}" (click)="toggleFavorite(item)"></span>
+                                    </div>
+                                </ng-container>
 
                             </div>
                         </div>
@@ -91,15 +88,12 @@
                         <div class="drop-content-container">
                             <div class="drop-content-wrapper">
 
-                                <div class="drop-item-container" (click)="setItemClass('/private/contact')" routerLink="/private/company">
-                                    <span class="sub-menu-label">Unternehmen</span>
-                                    <span class="icon-star is-favorite"></span>
-                                </div>
-
-                                <div class="drop-item-container" (click)="setItemClass('/private/contact')" routerLink="/private/supplier">
-                                    <span class="sub-menu-label">Lieferanten</span>
-                                    <span class="icon-star is-favorite"></span>
-                                </div>
+                                <ng-container *ngFor="let item of menuItems, index as i">
+                                    <div *ngIf="item.class == '/private/contact'" class="drop-item-container" (click)="setItemClass('/private/contact')" routerLink="/private/company">
+                                        <span class="sub-menu-label">{{item.name}}</span>
+                                        <span class="icon-star" [ngClass]="{'is-favorite':item.favorite}" (click)="toggleFavorite(item)"></span>
+                                    </div>
+                                </ng-container>
 
                             </div>
                         </div>

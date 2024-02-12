@@ -40,7 +40,6 @@ export class MainMenuComponent implements OnInit {
     }
 
     setItemClass(url: string): void {
-
         if (url == "/private/dashboard") {
             this.classFavorite = "pre-active";
             this.classDashboard = "active";
@@ -181,6 +180,10 @@ export class MainMenuComponent implements OnInit {
             this.classStatisticsReporting = "active";
             this.classPlaceholder = "post-active";
         };
+    }
+
+    toggleFavorite(item: any) {
+        item.favorite = !item.favorite;
     }
 
 }
