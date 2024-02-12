@@ -14,9 +14,11 @@
             <!-- Searching -->
             <div class="header-item-container-1">
                 <div class="header-item-container-2" style="padding-left: 0px">
+
                     <button class="icon">
                         <span class="icon-search" style="font-size: 1.2em"></span>
                     </button>
+
                 </div>
             </div>
 
@@ -24,21 +26,22 @@
             <div class="header-item-container-1" [ngClass]="classFavorite">
                 <div class="header-item-container-2">
                     <div class="dropdown">
+
                         <button class="icon drop-button">
                             <span class="icon-star favorite" style="font-size: 1.5em; position: relative; top: 1px;"></span>
                         </button>
+
                         <div class="drop-content-container">
                             <div class="drop-content-wrapper">
-
                                 <ng-container *ngFor="let item of menuItems, index as i">
                                     <div *ngIf="item.favorite" class="drop-item-container" routerLink="{{item.url}}" (click)="setItemClass(item.class)">
                                         <span class="sub-menu-label">{{item.name}}</span>
                                         <span class="icon-star is-favorite" (click)="toggleFavorite(item); $event.stopPropagation();"></span>
                                     </div>
                                 </ng-container>
-
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -46,10 +49,12 @@
             <!-- Dashboard -->
             <div class="header-item-container-1" [ngClass]="classDashboard" routerLink="/private/dashboard">
                 <div class="header-item-container-2">
+
                     <button (click)="setItemClass('/private/dashboard')">
                         <span class="icon-grid menu-icon" style="position: relative; top: 1px;"></span>
                         <span>Dashboard</span>
                     </button>
+
                 </div>
             </div>
 
@@ -57,22 +62,23 @@
             <div class="header-item-container-1" [ngClass]="classWorkspace">
                 <div class="header-item-container-2">
                     <div class="dropdown">
+
                         <button class="drop-button">
                             <span class="icon-pencilwrench menu-icon" style="position: relative; top: 1px;"></span>
                             <span>Workspace</span>
                         </button>
+
                         <div class="drop-content-container">
                             <div class="drop-content-wrapper">
-
                                 <ng-container *ngFor="let item of menuItems, index as i">
                                     <div *ngIf="item.class == '/private/workspace'" class="drop-item-container" (click)="setItemClass(item.class)" [routerLink]="item.url">
                                         <span class="sub-menu-label">{{item.name}}</span>
                                         <span class="icon-star" [ngClass]="{'is-favorite':item.favorite}" (click)="toggleFavorite(item); $event.stopPropagation();"></span>
                                     </div>
                                 </ng-container>
-
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -81,22 +87,23 @@
             <div class="header-item-container-1" [ngClass]="classContacts">
                 <div class="header-item-container-2">
                     <div class="dropdown">
+
                         <button class="drop-button">
                             <span class="icon-group menu-icon"></span>
                             <span>Kontakte</span>
                         </button>
+
                         <div class="drop-content-container">
                             <div class="drop-content-wrapper">
-
                                 <ng-container *ngFor="let item of menuItems, index as i">
                                     <div *ngIf="item.class == '/private/contact'" class="drop-item-container" (click)="setItemClass(item.class)" [routerLink]="item.url">
                                         <span class="sub-menu-label">{{item.name}}</span>
                                         <span class="icon-star" [ngClass]="{'is-favorite':item.favorite}" (click)="toggleFavorite(item); $event.stopPropagation();"></span>
                                     </div>
                                 </ng-container>
-
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -108,30 +115,14 @@
             <div class="header-item-container-1" [ngClass]="classOperations">
                 <div class="header-item-container-2">
                     <div class="dropdown">
+
                         <button class="drop-button">
                             <span class="icon-handshake-o menu-icon"></span>
                             <span>Vorgänge & Belege</span>
                         </button>
-                        <!-- <div class="drop-content-container">
-                            <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/private/operations')">
-                                    <span class="sub-menu-label">Verkaufsvorgänge</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/operations')">
-                                    <span class="sub-menu-label">Angebote</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/operations')">
-                                    <span class="sub-menu-label">Aufträge</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/operations')">
-                                    <span class="sub-menu-label">Rechnungen</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                            </div>
-                        </div> -->
+
+
+
                     </div>
                 </div>
             </div>
@@ -140,30 +131,13 @@
             <div class="header-item-container-1" [ngClass]="classOrderProcessing">
                 <div class="header-item-container-2">
                     <div class="dropdown">
+
                         <button class="drop-button">
                             <span class="icon-paperplane menu-icon"></span>
                             <span>Auftragsabwicklung</span>
                         </button>
-                        <!-- <div class="drop-content-container">
-                            <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/private/orderProcessing')">
-                                    <span class="sub-menu-label">Multipostings</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/orderProcessing')">
-                                    <span class="sub-menu-label">Postings</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/orderProcessing')">
-                                    <span class="sub-menu-label">Stellenanzeigen</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/orderProcessing')">
-                                    <span class="sub-menu-label">Print</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                            </div>
-                        </div> -->
+
+
                     </div>
                 </div>
             </div>
@@ -172,34 +146,13 @@
             <div class="header-item-container-1" [ngClass]="classAccounting">
                 <div class="header-item-container-2">
                     <div class="dropdown">
+
                         <button class="drop-button">
                             <span class="icon-coins menu-icon"></span>
                             <span>Rechnungswesen</span>
                         </button>
-                        <!-- <div class="drop-content-container">
-                            <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/private/accounting')">
-                                    <span class="sub-menu-label">Ausgangsrechnungen</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/accounting')">
-                                    <span class="sub-menu-label">Rechnungspositionen</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/accounting')">
-                                    <span class="sub-menu-label">Auftragspositionen</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/accounting')">
-                                    <span class="sub-menu-label">Belegs-PDFs</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/accounting')">
-                                    <span class="sub-menu-label">Eingangsrechnungen</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                            </div>
-                        </div> -->
+
+
                     </div>
                 </div>
             </div>
@@ -208,34 +161,13 @@
             <div class="header-item-container-1" [ngClass]="classProductManagement">
                 <div class="header-item-container-2">
                     <div class="dropdown">
+
                         <button class="drop-button">
                             <span class="icon-cubes menu-icon" style="position: relative; top: 1px;"></span>
                             <span>Produktverwaltung</span>
                         </button>
-                        <!-- <div class="drop-content-container">
-                            <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/private/productManagement')">
-                                    <span class="sub-menu-label">Produkte</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/productManagement')">
-                                    <span class="sub-menu-label">Produktvariante</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/productManagement')">
-                                    <span class="sub-menu-label">Produktgruppen</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/productManagement')">
-                                    <span class="sub-menu-label">PGV-Gruppen</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/productManagement')">
-                                    <span class="sub-menu-label">Positionsvorlagen</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                            </div>
-                        </div> -->
+
+
                     </div>
                 </div>
             </div>
@@ -244,26 +176,13 @@
             <div class="header-item-container-1" [ngClass]="classContracting">
                 <div class="header-item-container-2">
                     <div class="dropdown right">
+
                         <button class="drop-button">
                             <span class="icon-medal menu-icon" style="position: relative; top: 1px;"></span>
                             <span>Vertragswesen</span>
                         </button>
-                        <!-- <div class="drop-content-container">
-                            <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/private/contracting')">
-                                    <span class="sub-menu-label">Kundenverträge</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/contracting')">
-                                    <span class="sub-menu-label">Lieferantenverträge</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/contracting')">
-                                    <span class="sub-menu-label">Partner-Konfiguration</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                            </div>
-                        </div> -->
+
+
                     </div>
                 </div>
             </div>
@@ -272,26 +191,13 @@
             <div class="header-item-container-1" [ngClass]="classToolsAssets">
                 <div class="header-item-container-2">
                     <div class="dropdown right">
+
                         <button class="drop-button">
                             <span class="icon-tools menu-icon"></span>
                             <span>Tools & Assets</span>
                         </button>
-                        <!-- <div class="drop-content-container">
-                            <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/private/toolsAssets')">
-                                    <span class="sub-menu-label">Kundenverträge</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/toolsAssets')">
-                                    <span class="sub-menu-label">Lieferantenverträge</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/toolsAssets')">
-                                    <span class="sub-menu-label">Partner-Konfiguration</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                            </div>
-                        </div> -->
+
+
                     </div>
                 </div>
             </div>
@@ -300,26 +206,13 @@
             <div class="header-item-container-1" [ngClass]="classStatisticsReporting">
                 <div class="header-item-container-2">
                     <div class="dropdown right">
+
                         <button class="drop-button">
                             <span class="icon-bar-graph-2 menu-icon"></span>
                             <span>Statistik & Reporting</span>
                         </button>
-                        <!-- <div class="drop-content-container">
-                            <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/private/statisticsReporting')">
-                                    <span class="sub-menu-label">Umsatzstatistik</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/statisticsReporting')">
-                                    <span class="sub-menu-label">Teamstatistik</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/private/statisticsReporting')">
-                                    <span class="sub-menu-label">KPI-Report</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                            </div>
-                        </div> -->
+
+
                     </div>
                 </div>
             </div>
