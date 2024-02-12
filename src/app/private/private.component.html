@@ -10,8 +10,8 @@
 
     </div>
 
-    <!-- Content -->
-    <!-- ******* -->
+    <!-- CONTENT-CONTAINER -->
+    <!-- ***************** -->
     <div class="page-content-container">
 
         <div class="content-title-container">
@@ -20,9 +20,11 @@
 
         <div class="content-container">
 
+            <!-- QUICKLINKS -->
+            <!-- ********** -->
             <div class="quicklinks-container">
 
-                <div class="quicklink-header">
+                <!-- <div class="quicklink-header">
                     <span>My Quicklinks</span><br>
                     <input type="text" placeholder="Searching...">
                 </div>
@@ -37,16 +39,36 @@
                             <span class="icon-more-vert more-icon"></span>
                         </div>
                     </div>
+                </div> -->
+
+                <app-quicklinks></app-quicklinks>
+
+            </div>
+
+            <!-- Content -->
+            <!-- ******* -->
+            <div class="main-content-container">
+
+                <div class="content-header">
+                    Content-Header
                 </div>
 
+                <div class="content-items">
+
+                    <router-outlet></router-outlet>
+
+                </div>
+
+                <div class="content-actions">
+                    Actions
+                </div>
+
+
+
             </div>
 
-            <div class="main-content-container">
-                <div class="content-header">Content-Header</div>
-                <div class="content-items">Content</div>
-                <div class="content-actions">Actions</div>
-            </div>
-
+            <!-- ADDITIONAL INFORMATION -->
+            <!-- ********************** -->
             <div class="add-info-container">
                 <div class="add-info-header">AddInfo-Header</div>
                 <div class="add-info-items">Additional Infos</div>

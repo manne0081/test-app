@@ -80,3 +80,8 @@ input {
     color: rgb(109, 109, 109);
 }
 
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgb(165, 165, 165);
+    font-style: italic;
+    z-index: 10;
+}

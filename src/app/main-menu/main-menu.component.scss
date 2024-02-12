@@ -73,6 +73,8 @@ $content-background: #d6d6d6;
                     color: #fff982;
                     text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);
                 }
+
+
             }
 
             button:hover:not(.drop-button) {
@@ -134,6 +136,11 @@ $content-background: #d6d6d6;
                                 margin-top: -1px;
                                 margin-bottom: 1px;
                             }
+
+                            .is-favorite {
+                                color: #fff982;
+                                text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);
+                            }
                         }
 
                         .drop-item-container:hover {
@@ -144,6 +151,10 @@ $content-background: #d6d6d6;
 
                             span {
                                 color: white;
+                            }
+
+                            .is-favorite {
+                                color: #fff982;
                             }
                         }
                     }

@@ -12,6 +12,11 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 import { ClientListComponent } from './client/client-list/client-list.component';
 import { PrivateComponent } from './private/private.component';
 import { TestFourthComponent } from './test-fourth/test-fourth.component';
+import { TestContent1Component } from './test-content1/test-content1.component';
+import { TaskListComponent } from './private/workspace/task-list/task-list.component';
+import { CampagneListComponent } from './private/workspace/campagne-list/campagne-list.component';
+import { CompanyListComponent } from './private/contact/company-list/company-list.component';
+import { SupplierListComponent } from './private/contact/supplier-list/supplier-list.component';
 
 const routes: Routes = [
     { path: '',   redirectTo: 'home', pathMatch: 'full' },
@@ -22,23 +27,27 @@ const routes: Routes = [
     { path: 'private', component: PrivateComponent,
         children: [
             { path: 'dashboard', component: DashboardComponent },
-            { path: 'employees', component: EmployeeListComponent },
-            { path: 'clients', component: ClientListComponent },
+            { path: 'task', component: TaskListComponent },
+            { path: 'campagne', component: CampagneListComponent },
+            { path: 'company', component: CompanyListComponent },
+            { path: 'supplier', component: SupplierListComponent },
+
+
         ]
     },
 
     // RELAXX - Navigation
     // *******************
-    { path: 'dashboard', component: TestFourthComponent },              // Dashboard
-    { path: 'workspace', component: TestFourthComponent },              // Workspace
-    { path: 'contacts', component: TestFourthComponent },               // Kontakte
-    { path: 'operations', component: TestFourthComponent },             // Vorgänge & Belege
-    { path: 'orderProcessing', component: TestFourthComponent },        // Auftragsabwicklung
-    { path: 'accounting', component: TestFourthComponent },             // Rechnungswesen
-    { path: 'productManagement', component: TestFourthComponent },      //Produktverwaltung
-    { path: 'contracting', component: TestFourthComponent },            //Vertragswesen
-    { path: 'toolsAssets', component: TestFourthComponent },            //Tools & Assets//Statistik & Reporting
-    { path: 'statisticsReporting', component: TestFourthComponent },    //Statistik & Reporting
+    // { path: 'dashboard', component: TestFourthComponent },              // Dashboard
+    // { path: 'workspace', component: TestFourthComponent },              // Workspace
+    // { path: 'contacts', component: TestFourthComponent },               // Kontakte
+    // { path: 'operations', component: TestFourthComponent },             // Vorgänge & Belege
+    // { path: 'orderProcessing', component: TestFourthComponent },        // Auftragsabwicklung
+    // { path: 'accounting', component: TestFourthComponent },             // Rechnungswesen
+    // { path: 'productManagement', component: TestFourthComponent },      //Produktverwaltung
+    // { path: 'contracting', component: TestFourthComponent },            //Vertragswesen
+    // { path: 'toolsAssets', component: TestFourthComponent },            //Tools & Assets//Statistik & Reporting
+    // { path: 'statisticsReporting', component: TestFourthComponent },    //Statistik & Reporting
     // *******************
 
     { path: 'partner', component: PartnerComponent },

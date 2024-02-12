@@ -25,6 +25,10 @@ import { ClientDetailComponent } from './client/client-detail/client-detail.comp
 import { PrivateComponent } from './private/private.component';
 import { TestFourthComponent } from './test-fourth/test-fourth.component';
 import { TestContent1Component } from './test-content1/test-content1.component';
+import { TaskListComponent } from './private/workspace/task-list/task-list.component';
+import { CampagneListComponent } from './private/workspace/campagne-list/campagne-list.component';
+import { CompanyListComponent } from './private/contact/company-list/company-list.component';
+import { SupplierListComponent } from './private/contact/supplier-list/supplier-list.component';
 
 @NgModule({
     declarations: [
@@ -47,6 +51,10 @@ import { TestContent1Component } from './test-content1/test-content1.component';
         PrivateComponent,
         TestFourthComponent,
         TestContent1Component,
+        TaskListComponent,
+        CampagneListComponent,
+        CompanyListComponent,
+        SupplierListComponent,
     ],
     imports: [
         BrowserModule,

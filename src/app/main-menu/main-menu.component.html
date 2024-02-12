@@ -20,16 +20,7 @@
                 </div>
             </div>
 
-            <!-- Favorites -->
-            <!-- <div class="header-item-container-1" [ngClass]="classFavorite">
-                <div class="header-item-container-2">
-                    <button class="icon">
-                        <span class="icon-star favorite" style="font-size: 1.5em; position: relative; top: 1px;"></span>
-                    </button>
-                </div>
-            </div> -->
-
-            <!-- Fav.... -->
+            <!-- Favorite -->
             <div class="header-item-container-1" [ngClass]="classFavorite">
                 <div class="header-item-container-2">
                     <div class="dropdown">
@@ -39,23 +30,12 @@
                         <div class="drop-content-container">
                             <div class="drop-content-wrapper">
 
-                                <!-- <div class="drop-item-container" (click)="setItemClass('/contracting')">
-                                    <span class="sub-menu-label">Kundenverträge</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/contracting')">
-                                    <span class="sub-menu-label">Lieferantenverträge</span>
-                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/contracting')">
-                                    <span class="sub-menu-label">Partner-Konfiguration</span>
-                                    <span class="icon-star"></span>
-                                </div> -->
-
-                                <div class="drop-item-container" *ngFor="let item of favorites, index as i" routerLink="{{item.url}}" (click)="setItemClass(item.link)">
-                                    <span class="sub-menu-label">{{item.name}}</span>
-                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
-                                </div>
+                                <ng-container *ngFor="let item of menuItems, index as i">
+                                    <div *ngIf="item.favorite" class="drop-item-container" routerLink="{{item.url}}" (click)="setItemClass(item.class)">
+                                        <span class="sub-menu-label">{{item.name}}</span>
+                                        <span class="icon-star is-favorite"></span>
+                                    </div>
+                                </ng-container>
 
                             </div>
                         </div>
@@ -64,9 +44,9 @@
             </div>
 
             <!-- Dashboard -->
-            <div class="header-item-container-1" [ngClass]="classDashboard">
+            <div class="header-item-container-1" [ngClass]="classDashboard" routerLink="/private/dashboard">
                 <div class="header-item-container-2">
-                    <button (click)="setItemClass('/dashboard')">
+                    <button (click)="setItemClass('/private/dashboard')">
                         <span class="icon-grid menu-icon" style="position: relative; top: 1px;"></span>
                         <span>Dashboard</span>
                     </button>
@@ -83,22 +63,17 @@
                         </button>
                         <div class="drop-content-container">
                             <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/workspace')">
+
+                                <div class="drop-item-container" (click)="setItemClass('/private/workspace')" routerLink="/private/task">
                                     <span class="sub-menu-label">Aufgaben</span>
-                                    <span class="icon-star"></span>
+                                    <span class="icon-star is-favorite"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/workspace')">
-                                    <span class="sub-menu-label">Planner</span>
-                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/workspace')">
+
+                                <div class="drop-item-container" (click)="setItemClass('/private/workspace')" routerLink="/private/campagne">
                                     <span class="sub-menu-label">Kampagnen</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/workspace')">
-                                    <span class="sub-menu-label">E-Mail</span>
-                                    <span class="icon-star"></span>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -115,22 +90,17 @@
                         </button>
                         <div class="drop-content-container">
                             <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/contacts')">
+
+                                <div class="drop-item-container" (click)="setItemClass('/private/contact')" routerLink="/private/company">
                                     <span class="sub-menu-label">Unternehmen</span>
-                                    <span class="icon-star"></span>
+                                    <span class="icon-star is-favorite"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/contacts')">
+
+                                <div class="drop-item-container" (click)="setItemClass('/private/contact')" routerLink="/private/supplier">
                                     <span class="sub-menu-label">Lieferanten</span>
-                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                    <span class="icon-star is-favorite"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/contacts')">
-                                    <span class="sub-menu-label">Ansprechpartner</span>
-                                    <span class="icon-star"></span>
-                                </div>
-                                <div class="drop-item-container" (click)="setItemClass('/contacts')">
-                                    <span class="sub-menu-label">Benutzer</span>
-                                    <span class="icon-star"></span>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -145,26 +115,26 @@
                             <span class="icon-handshake-o menu-icon"></span>
                             <span>Vorgänge & Belege</span>
                         </button>
-                        <div class="drop-content-container">
+                        <!-- <div class="drop-content-container">
                             <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/operations')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/operations')">
                                     <span class="sub-menu-label">Verkaufsvorgänge</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/operations')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/operations')">
                                     <span class="sub-menu-label">Angebote</span>
-                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                    <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/operations')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/operations')">
                                     <span class="sub-menu-label">Aufträge</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/operations')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/operations')">
                                     <span class="sub-menu-label">Rechnungen</span>
                                     <span class="icon-star"></span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -177,26 +147,26 @@
                             <span class="icon-paperplane menu-icon"></span>
                             <span>Auftragsabwicklung</span>
                         </button>
-                        <div class="drop-content-container">
+                        <!-- <div class="drop-content-container">
                             <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/orderProcessing')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/orderProcessing')">
                                     <span class="sub-menu-label">Multipostings</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/orderProcessing')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/orderProcessing')">
                                     <span class="sub-menu-label">Postings</span>
-                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                    <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/orderProcessing')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/orderProcessing')">
                                     <span class="sub-menu-label">Stellenanzeigen</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/orderProcessing')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/orderProcessing')">
                                     <span class="sub-menu-label">Print</span>
                                     <span class="icon-star"></span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -209,30 +179,30 @@
                             <span class="icon-coins menu-icon"></span>
                             <span>Rechnungswesen</span>
                         </button>
-                        <div class="drop-content-container">
+                        <!-- <div class="drop-content-container">
                             <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/accounting')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/accounting')">
                                     <span class="sub-menu-label">Ausgangsrechnungen</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/accounting')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/accounting')">
                                     <span class="sub-menu-label">Rechnungspositionen</span>
-                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                    <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/accounting')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/accounting')">
                                     <span class="sub-menu-label">Auftragspositionen</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/accounting')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/accounting')">
                                     <span class="sub-menu-label">Belegs-PDFs</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/accounting')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/accounting')">
                                     <span class="sub-menu-label">Eingangsrechnungen</span>
                                     <span class="icon-star"></span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -245,30 +215,30 @@
                             <span class="icon-cubes menu-icon" style="position: relative; top: 1px;"></span>
                             <span>Produktverwaltung</span>
                         </button>
-                        <div class="drop-content-container">
+                        <!-- <div class="drop-content-container">
                             <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/productManagement')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/productManagement')">
                                     <span class="sub-menu-label">Produkte</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/productManagement')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/productManagement')">
                                     <span class="sub-menu-label">Produktvariante</span>
-                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                    <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/productManagement')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/productManagement')">
                                     <span class="sub-menu-label">Produktgruppen</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/productManagement')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/productManagement')">
                                     <span class="sub-menu-label">PGV-Gruppen</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/productManagement')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/productManagement')">
                                     <span class="sub-menu-label">Positionsvorlagen</span>
                                     <span class="icon-star"></span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -281,22 +251,22 @@
                             <span class="icon-medal menu-icon" style="position: relative; top: 1px;"></span>
                             <span>Vertragswesen</span>
                         </button>
-                        <div class="drop-content-container">
+                        <!-- <div class="drop-content-container">
                             <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/contracting')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/contracting')">
                                     <span class="sub-menu-label">Kundenverträge</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/contracting')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/contracting')">
                                     <span class="sub-menu-label">Lieferantenverträge</span>
-                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                    <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/contracting')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/contracting')">
                                     <span class="sub-menu-label">Partner-Konfiguration</span>
                                     <span class="icon-star"></span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -309,22 +279,22 @@
                             <span class="icon-tools menu-icon"></span>
                             <span>Tools & Assets</span>
                         </button>
-                        <div class="drop-content-container">
+                        <!-- <div class="drop-content-container">
                             <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/toolsAssets')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/toolsAssets')">
                                     <span class="sub-menu-label">Kundenverträge</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/toolsAssets')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/toolsAssets')">
                                     <span class="sub-menu-label">Lieferantenverträge</span>
-                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                    <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/toolsAssets')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/toolsAssets')">
                                     <span class="sub-menu-label">Partner-Konfiguration</span>
                                     <span class="icon-star"></span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -337,22 +307,22 @@
                             <span class="icon-bar-graph-2 menu-icon"></span>
                             <span>Statistik & Reporting</span>
                         </button>
-                        <div class="drop-content-container">
+                        <!-- <div class="drop-content-container">
                             <div class="drop-content-wrapper">
-                                <div class="drop-item-container" (click)="setItemClass('/statisticsReporting')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/statisticsReporting')">
                                     <span class="sub-menu-label">Umsatzstatistik</span>
                                     <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/statisticsReporting')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/statisticsReporting')">
                                     <span class="sub-menu-label">Teamstatistik</span>
-                                    <span class="icon-star" style="color: #fff982; text-shadow: 0 0 3px rgb(153, 145, 26), 0 0 5px rgb(105, 99, 12);"></span>
+                                    <span class="icon-star"></span>
                                 </div>
-                                <div class="drop-item-container" (click)="setItemClass('/statisticsReporting')">
+                                <div class="drop-item-container" (click)="setItemClass('/private/statisticsReporting')">
                                     <span class="sub-menu-label">KPI-Report</span>
                                     <span class="icon-star"></span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

@@ -1,39 +1,16 @@
-<!-- Quicklinks -->
-<!-- ---------- -->
-<div *ngIf="quicklinksVisible" class="quicklinks-container">
+<div class="quicklink-header">
+    <span>My Quicklinks</span><br>
+    <input type="text" placeholder="Searching...">
+</div>
 
-    <!-- Quicklink - Header -->
-    <!-- ------------------ -->
-    <div class="quicklinks-header-container">
-        <div class="quicklinks-header-title">
-            My Quicklinks
+<div class="quicklink-items">
+    <div class="quicklink-item-container" *ngFor="let item of quicklinks; index as i">
+        <div>
+            <span class="icon-one-finger-tap drag"></span>
+            <span class="quicklink-value">{{i}} {{item}}</span>
         </div>
-        <div class="quicklinks-searching-container">
-            <div class="quicklinks-searching-text">
-                searching...
-            </div>
-        </div>
-    </div>
-
-    <!-- Quicklink - Items -->
-    <!-- ----------------- -->
-    <div class="quicklinks-items-wrapper">
-        <div class="quicklink-item-container" *ngFor="let quicklink of quicklinks, index as i">
-
-                <div class="quicklink-item-drag-container">
-                    <!-- D -->
-                    <img src="../../assets/one-finger-tap.svg" alt="">
-                </div>
-
-                <div class="quicklink-item-text">
-                    {{quicklink}}
-                </div>
-
-                <div class="quicklink-item-more-container" (click)="quicklinkMoreSelected(quicklink)">
-                    <!-- M -->
-                    <img src="../../assets/more-vert.svg" alt="">
-                </div>
-
+        <div>
+            <span class="icon-more-vert more-icon"></span>
         </div>
     </div>
 </div>

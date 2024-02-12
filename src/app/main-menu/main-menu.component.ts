@@ -21,21 +21,27 @@ export class MainMenuComponent implements OnInit {
     classStatisticsReporting: string ="";
     classPlaceholder: string ="";
 
-    favorites: { name: string, link: string, url: string } [] = [
-        { name: "test1", link: "/workspace", url: "/test3" },
-        { name: "test2", link: "/contacts", url: "test4" },
-    ]
+    menuItems: { name: string, class: string, url: string, favorite: boolean } [] = [
+        { name: "Dashboard", class: "/private/dashboard", url: "/private/dashbaord", favorite: false },
+        { name: "Aufgaben", class: "/private/workspace", url: "/private/task", favorite: true },
+        { name: "Kampagnen", class: "/private/workspace", url: "/private/campange", favorite: false },
+        { name: "Unternehmen", class: "/private/contact", url: "/private/company", favorite: true },
+        { name: "Lieferanten", class: "/private/contact", url: "/private/supplier", favorite: true },
+
+    ];
+
+
 
     constructor (private router: Router) {
     }
 
     ngOnInit(): void {
-        this.setItemClass("/dashboard");
+        this.setItemClass("/private/dashboard");
     }
 
     setItemClass(url: string): void {
-        console.log("url: " + url);
-        if (url == "/dashboard") {
+
+        if (url == "/private/dashboard") {
             this.classFavorite = "pre-active";
             this.classDashboard = "active";
             this.classWorkspace = "post-active";
@@ -49,7 +55,7 @@ export class MainMenuComponent implements OnInit {
             this.classStatisticsReporting = "";
             this.classPlaceholder = "";
         };
-        if (url == "/workspace") {
+        if (url == "/private/workspace") {
             this.classFavorite = "";
             this.classDashboard = "pre-active";
             this.classWorkspace = "active";
@@ -63,7 +69,7 @@ export class MainMenuComponent implements OnInit {
             this.classStatisticsReporting = "";
             this.classPlaceholder = "";
         };
-        if (url == "/contacts") {
+        if (url == "/private/contact") {
             this.classFavorite = "";
             this.classDashboard = "";
             this.classWorkspace = "pre-active"
@@ -77,7 +83,7 @@ export class MainMenuComponent implements OnInit {
             this.classStatisticsReporting = "";
             this.classPlaceholder = "";
         };
-        if (url == "/operations") {
+        if (url == "/private/operations") {
             this.classFavorite = "";
             this.classDashboard = "";
             this.classWorkspace = ""
@@ -91,7 +97,7 @@ export class MainMenuComponent implements OnInit {
             this.classStatisticsReporting = "";
             this.classPlaceholder = "";
         };
-        if (url == "/orderProcessing") {
+        if (url == "/private/orderProcessing") {
             this.classFavorite = "";
             this.classDashboard = "";
             this.classWorkspace = ""
@@ -105,7 +111,7 @@ export class MainMenuComponent implements OnInit {
             this.classStatisticsReporting = "";
             this.classPlaceholder = "";
         };
-        if (url == "/accounting") {
+        if (url == "/private/accounting") {
             this.classFavorite = "";
             this.classDashboard = "";
             this.classWorkspace = ""
@@ -119,7 +125,7 @@ export class MainMenuComponent implements OnInit {
             this.classStatisticsReporting = "";
             this.classPlaceholder = "";
         };
-        if (url == "/productManagement") {
+        if (url == "/private/productManagement") {
             this.classFavorite = "";
             this.classDashboard = "";
             this.classWorkspace = ""
@@ -133,7 +139,7 @@ export class MainMenuComponent implements OnInit {
             this.classStatisticsReporting = "";
             this.classPlaceholder = "";
         };
-        if (url == "/contracting") {
+        if (url == "/private/contracting") {
             this.classFavorite = "";
             this.classDashboard = "";
             this.classWorkspace = ""
@@ -147,7 +153,7 @@ export class MainMenuComponent implements OnInit {
             this.classStatisticsReporting = "";
             this.classPlaceholder = "";
         };
-        if (url == "/toolsAssets") {
+        if (url == "/private/toolsAssets") {
             this.classFavorite = "";
             this.classDashboard = "";
             this.classWorkspace = ""
@@ -161,7 +167,7 @@ export class MainMenuComponent implements OnInit {
             this.classStatisticsReporting = "post-active";
             this.classPlaceholder = "";
         };
-        if (url == "/statisticsReporting") {
+        if (url == "/private/statisticsReporting") {
             this.classFavorite = "";
             this.classDashboard = "";
             this.classWorkspace = ""
@@ -176,4 +182,5 @@ export class MainMenuComponent implements OnInit {
             this.classPlaceholder = "post-active";
         };
     }
+
 }
