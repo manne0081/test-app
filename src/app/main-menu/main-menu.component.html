@@ -33,7 +33,7 @@
                                 <ng-container *ngFor="let item of menuItems, index as i">
                                     <div *ngIf="item.favorite" class="drop-item-container" routerLink="{{item.url}}" (click)="setItemClass(item.class)">
                                         <span class="sub-menu-label">{{item.name}}</span>
-                                        <span class="icon-star is-favorite" (click)="toggleFavorite(item)"></span>
+                                        <span class="icon-star is-favorite" (click)="toggleFavorite(item); $event.stopPropagation();"></span>
                                     </div>
                                 </ng-container>
 
@@ -65,9 +65,9 @@
                             <div class="drop-content-wrapper">
 
                                 <ng-container *ngFor="let item of menuItems, index as i">
-                                    <div *ngIf="item.class == '/private/workspace'" class="drop-item-container" (click)="setItemClass('/private/workspace')" routerLink="/private/task">
+                                    <div *ngIf="item.class == '/private/workspace'" class="drop-item-container" (click)="setItemClass(item.class)" [routerLink]="item.url">
                                         <span class="sub-menu-label">{{item.name}}</span>
-                                        <span class="icon-star" [ngClass]="{'is-favorite':item.favorite}" (click)="toggleFavorite(item)"></span>
+                                        <span class="icon-star" [ngClass]="{'is-favorite':item.favorite}" (click)="toggleFavorite(item); $event.stopPropagation();"></span>
                                     </div>
                                 </ng-container>
 
@@ -89,9 +89,9 @@
                             <div class="drop-content-wrapper">
 
                                 <ng-container *ngFor="let item of menuItems, index as i">
-                                    <div *ngIf="item.class == '/private/contact'" class="drop-item-container" (click)="setItemClass('/private/contact')" routerLink="/private/company">
+                                    <div *ngIf="item.class == '/private/contact'" class="drop-item-container" (click)="setItemClass(item.class)" [routerLink]="item.url">
                                         <span class="sub-menu-label">{{item.name}}</span>
-                                        <span class="icon-star" [ngClass]="{'is-favorite':item.favorite}" (click)="toggleFavorite(item)"></span>
+                                        <span class="icon-star" [ngClass]="{'is-favorite':item.favorite}" (click)="toggleFavorite(item); $event.stopPropagation();"></span>
                                     </div>
                                 </ng-container>
 

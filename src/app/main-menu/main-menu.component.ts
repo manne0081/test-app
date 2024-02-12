@@ -24,13 +24,11 @@ export class MainMenuComponent implements OnInit {
     menuItems: { name: string, class: string, url: string, favorite: boolean } [] = [
         { name: "Dashboard", class: "/private/dashboard", url: "/private/dashbaord", favorite: false },
         { name: "Aufgaben", class: "/private/workspace", url: "/private/task", favorite: true },
-        { name: "Kampagnen", class: "/private/workspace", url: "/private/campange", favorite: false },
+        { name: "Kampagnen", class: "/private/workspace", url: "/private/campagne", favorite: false },
         { name: "Unternehmen", class: "/private/contact", url: "/private/company", favorite: true },
-        { name: "Lieferanten", class: "/private/contact", url: "/private/supplier", favorite: true },
+        { name: "Lieferanten", class: "/private/contact", url: "/private/supplier", favorite: false },
 
     ];
-
-
 
     constructor (private router: Router) {
     }
