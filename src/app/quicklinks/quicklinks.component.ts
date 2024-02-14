@@ -60,4 +60,5 @@ export class QuicklinksComponent {
         window.alert("Context " + item + " clicked!");
     }
 
+
 }

@@ -1,1 +1,20 @@
 <p>dashboard works!</p>
+<br>
+<br>
+<h2>What works!?</h2>
+
+<h3>- Menu / Dashboard, Workspace, Kontakte and the Favorites works!</h3>
+<h3>- Quicklinks / DRAG AND DROP works!</h3>
+
+<br>
+
+<h4>- DRAG and DROP - Testing for Quicklinks</h4>
+
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+
+    <div class="example-box" *ngFor="let movie of movies, index as i" cdkDrag>
+        {{movie}}
+    </div>
+
+</div>
+

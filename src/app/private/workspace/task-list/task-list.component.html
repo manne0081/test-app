@@ -1,28 +1,2 @@
 <p>task-list works!</p>
-<br>
-<br>
-<h2>DRAG AND DROP -> TESTING FOR QUICKLINKS</h2>
-<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
 
-    <div class="example-box" *ngFor="let movie of movies, index as i" cdkDrag
-        (cdkDragStarted)="startDrag(i)"
-        (cdkDragReleased)="endDrag()"
-        [ngClass]="{'rotated' : i}">
-        {{movie}}
-    </div>
-
-    <!-- Funktioniert fast -->
-    <!-- <div class="example-box" *ngFor="let movie of movies, index as i" cdkDrag
-        (cdkDragStarted)="startDrag(i)"
-        (cdkDragReleased)="endDrag()"
-        [style.transform]="dragTransform">
-        {{movie}}
-    </div> -->
-
-
-
-
-
-
-
-</div>
