@@ -34,30 +34,11 @@
     padding: 8px 8px;
 
     .quicklink-item-container {
-        // background-color: yellow;
-        background-color: rgba(255, 255, 255, .6);
-        border-bottom: solid 1px #ccc;
-        border-radius: 4px;
-        box-shadow: 0px 2px 2px -2px rgba(0, 0, 0, .20);
-        color: rgba(0, 0, 0, 0.87);
-        height: 30px;
-        // padding: 4px 6px;
-        // display: flex;
-        // align-items: center;
-        display: grid;
-        grid-template-columns: 30px auto 30px;
-        align-items: center;
         cursor: pointer;
-
-        span {
-            // background-color: lime;
-            color: #aaaaaa;
-        }
 
         .quicklink-drag {
             // background-color: lime;
             border-radius: 4px;
-            color: #b3b3b3;
             width: 20px;
             height: 20px;
             margin-left: 4px;
@@ -66,25 +47,34 @@
             display: flex;
             align-items: center;
             justify-content: space-around;
+
+            span {
+                color: #aaa;
+            }
         }
 
         .quicklink-value {
             // background-color: orange;
+
+            span {
+                // color: lime;
+                color: #aaa;
+            }
         }
 
         .quicklink-more {
             // background-color: lime;
             border-radius: 4px;
-            color: #b3b3b3;
             width: 20px;
             height: 20px;
-            // margin-right: 4px;
-            margin-top: -1px;
             display: flex;
             align-items: center;
             justify-content: space-around;
-
             display: none;
+
+            span {
+                color: #aaa;
+            }
         }
     }
 
@@ -92,29 +82,36 @@
         background-color: #fff;
         // cursor: pointer;
 
-        span {
-            // background-color: lime;
-            color: #5e5e5e;
-        }
-
         .quicklink-drag {
-            color: #b3b3b3;
+            span {
+                color: #5e5e5e;
+            }
         }
 
         .quicklink-value {
-            // color: #b3b3b3;
+            span {
+                color: #5e5e5e;
+            }
         }
 
         .quicklink-more {
             border: 1px solid rgba(255, 255, 255, .6);
-            padding: 1px 0 0 1px;
+            padding: 0 0 0 1px;
             display: inline;
+
+            span {
+                color: #5e5e5e;
+            }
         }
 
         .quicklink-more:hover {
             background-color: rgba(44, 80, 103, .2);
             border: 1px solid rgba(44, 80, 103, .1);
             display: inline;
+
+            span {
+                // color: #5e5e5e;
+            }
         }
     }
 }
@@ -127,33 +124,36 @@
     // background: lime;
     width: 500px;
     max-width: 100%;
-    // border: solid 1px #bdbdbd;
     min-height: 60px;
     display: block;
-    // border-radius: 4px;
     overflow: hidden;
 }
 
 .example-box {
-    // background: rgba(255, 255, 255, .6);
-    // border-bottom: solid 1px #ccc;
-    // color: rgba(0, 0, 0, 0.87);
-    // display: flex;
-    // flex-direction: row;
-    // align-items: center;
-    // box-sizing: border-box;
-    // cursor: move;
-    // font-size: 14px;
+    background-color: rgba(255, 255, 255, .6);
+    // background-color: yellow;
+    border-bottom: solid 1px #ccc;
+    border-radius: 4px;
+    box-shadow: 0px 2px 2px -2px rgba(0, 0, 0, .20);
+    height: 30px;
+
+    display: grid;
+    grid-template-columns: 30px auto 30px;
+    align-items: center;
+
+    .quicklink-drag {
+        margin-left: 4px;
+    }
 
     .quicklink-more {
         display: none;
     }
 
-    transition: transform 0.2s ease-out;
+    // transition: transform 0.2s ease-out;
 }
 
 .cdk-drag-preview {
-    background-color: white;
+    background-color: rgba(255, 255, 255, .84);
     border: 1px dashed rgba(44, 80, 103, .6);
     border-radius: 4px;
     display: grid;
@@ -165,8 +165,13 @@
                 0 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 
+.quicklink-item-container.cdk-drag-preview .quicklink-drag {
+    pointer-events: auto;
+    cursor: grabbing;
+}
+
 .cdk-drag-placeholder {
-    background-color: #365263;
+    background-color: #4c6574;
     opacity: .25;
     color: white;
 }
