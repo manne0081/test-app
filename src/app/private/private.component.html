@@ -15,31 +15,32 @@
     <div class="page-content-container">
 
         <div class="content-title-container">
-            <span>content-title</span>
+
+            <!-- Button toggle Quicklinks -->
+            <!-- ------------------------ -->
+            <button class="content-title-quicklinks" [ngClass]="{'active' : quicklinksVisible}" (click)="toggleQuicklinkVisibility()">Quicklinks</button>
+
+            <!-- Menuname -->
+            <!-- -------- -->
+            <span class="content-title-value">WIP</span>
+
+            <!-- Button toggle AddInfos -->
+            <!-- ---------------------- -->
+            <button class="content-title-addinfo" [ngClass]="{'active' : addInfoVisible}" (click)="toggleAddInfoVisibility()">Add Info</button>
+
         </div>
 
-        <div class="content-container">
+        <!-- Different Classes wether quicklinks or addInfo should be visible or not -->
+        <!-- *********************************************************************** -->
+        <div [ngClass]="{'content-container-full' : quicklinksVisible && addInfoVisible,
+                            'content-container-without-quicklinks' : !quicklinksVisible && addInfoVisible,
+                            'content-container-without-addinfo' : quicklinksVisible && !addInfoVisible,
+                            'content-container-tiles-only' : !quicklinksVisible && !addInfoVisible
+                        }">
 
             <!-- QUICKLINKS -->
             <!-- ********** -->
-            <div class="quicklinks-container">
-
-                <!-- <div class="quicklink-header">
-                    <span>My Quicklinks</span><br>
-                    <input type="text" placeholder="Searching...">
-                </div>
-
-                <div class="quicklink-items">
-                    <div class="quicklink-item-container" *ngFor="let item of quicklinks; index as i">
-                        <div>
-                            <span class="icon-one-finger-tap drag"></span>
-                            <span class="quicklink-value">{{i}} {{item}}</span>
-                        </div>
-                        <div>
-                            <span class="icon-more-vert more-icon"></span>
-                        </div>
-                    </div>
-                </div> -->
+            <div class="quicklinks-container" *ngIf="quicklinksVisible">
 
                 <app-quicklinks></app-quicklinks>
 
@@ -54,24 +55,23 @@
                 </div>
 
                 <div class="content-items">
-
                     <router-outlet></router-outlet>
-
                 </div>
 
                 <div class="content-actions">
                     Actions
                 </div>
 
-
-
             </div>
 
+            <!-- TODO -->
             <!-- ADDITIONAL INFORMATION -->
             <!-- ********************** -->
-            <div class="add-info-container">
+            <div class="add-info-container" *ngIf="addInfoVisible">
+
                 <div class="add-info-header">AddInfo-Header</div>
                 <div class="add-info-items">Additional Infos</div>
+
             </div>
 
         </div>

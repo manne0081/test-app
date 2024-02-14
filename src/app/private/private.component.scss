@@ -53,237 +53,132 @@ $color-complement-4: #CF7400;
 
         .content-title-container {
             border-bottom: 1px solid #b9b9b9;
+            align-items: center;
+            margin-top: -1px;
+            padding: 0 10px;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+
+            button {
+                border: 1px solid rgba(44, 80, 103, .4);
+                border-radius: 4px;
+                padding: 2px 6px;
+                font-size: .9em;
+            }
+
+            button.active {
+                background-color: rgba(44, 80, 103, .3);
+                border: 1px solid rgba(44, 80, 103, .2);
+                padding: 2px 6px;
+           }
+
+            button:hover {
+                background-color: rgba(44, 80, 103, .6);
+                color: white;
+            }
+
+            // TODO
+            .content-title-quicklinks {
+                margin: 0 10px 0 0;
+            }
+
+            .content-title-value {
+                color: #2c5067;
+                font-size: 1.4em;
+                font-weight: bold;
+                margin-top: 1px;
+            }
+
+            .content-title-addinfo {
+                margin: 0 0 0 10px;
+            }
         }
 
-        .content-container {
+        // Page-Content-Container-Width > With Quicklinks, Content and AddInfo
+        // *******************************************************************
+        .content-container-full {
             background-color: #d6d6d6;
             display: grid;
             grid-template-columns: 250px auto 250px;
+        }
 
-            .quicklinks-container {
-                // background-color: lime;
-                border-right: 1px solid rgb(180, 180, 180);
-                // display: grid;
-                // grid-template-rows: 76px auto;
-                // display: flex;
-                // flex-direction: column;
-                // position: relative;
-                overflow-y: scroll;
+        .content-container-without-quicklinks {
+            background-color: #d6d6d6;
+            display: grid;
+            grid-template-columns: auto 250px;
+        }
 
-                .quicklink-header {
-                    background-color: #d6d6d6;
-                    box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, .20);
-                    width: 244px;
-                    height: 76px;
-                    padding: 8px 14px;
-                    border-radius: 0 0 4px 4px;
-                    position: fixed;
-                    z-index: 1;
+        .content-container-without-addinfo {
+            background-color: #d6d6d6;
+            display: grid;
+            grid-template-columns: 250px auto;
+        }
 
-                    span {
-                        // background-color: lime;
-                        color: #707070;
-                        padding-left: 4px;
-                        font-size: 1.1em;
-                    }
+        .content-container-tiles-only {
+            background-color: #d6d6d6;
+            display: grid;
+            grid-template-columns: auto;
+        }
 
-                    input {
-                        background-color: rgb(225, 225, 225);
-                        margin-top: 8px;
-                        border: 1px solid #b9b9b9;
-                        border-radius: 4px;
-                        padding: 4px 6px;
-                        font-size: .9em;
-                    }
-                }
 
-                .quicklink-items {
-                    // background-color: lime;
-                    margin-top: 76px;
-                    padding: 8px 8px;
-                    // overflow-y: scroll;
+        .quicklinks-container {
+            border-right: 1px solid rgb(180, 180, 180);
+            overflow-y: scroll;
+        }
 
-                    .quicklink-item-container {
-                        // background-color: yellow;
-                        height: 30px;
-                        border-radius: 4px;
-                        box-shadow: 0px 2px 2px -2px rgba(0, 0, 0, .20);
-                        padding: 4px 6px;
-                        color: #929292;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
+        .main-content-container {
+            // background-color: orange;
+            display: grid;
+            grid-template-rows: 48px auto 48px;
+            overflow-y: scroll;
 
-                        span {
-                            // background-color: lime;
-                            color: rgb(167, 167, 167);
-                        }
-
-                        span.drag {
-                            color: #b3b3b3;
-                        }
-
-                        span.more-icon {
-                            display: none;
-                        }
-
-                        span.quicklink-value {
-                            // background-color: orange;
-                            margin-left: 6px;
-                        }
-                    }
-
-                    .quicklink-item-container:hover {
-                        background-color: #eeeeee;
-                        cursor: pointer;
-
-                        span {
-                            color: #5e5e5e;
-                        }
-
-                        span.more-icon {
-                            display: inline;
-                        }
-                    }
-                }
+            .content-header {
+                background-color: white;
+                box-shadow: 0px 6px 4px -2px rgba(0, 0, 0, .20);
+                border-radius: 0 0 12px 12px;
+                padding: 4px 8px;
             }
 
-            .main-content-container {
-                // background-color: orange;
-                display: grid;
-                grid-template-rows: 48px auto 48px;
-                overflow-y: scroll;
+            .content-items {
+                padding: 8px 8px;
 
-                .content-header {
-                    background-color: white;
-                    box-shadow: 0px 6px 4px -2px rgba(0, 0, 0, .20);
-                    border-radius: 0 0 12px 12px;
-                    padding: 4px 8px;
-                }
-
-                .content-items {
-                    padding: 8px 8px;
-
-                }
-
-                .content-actions {
-                    background-color: white;
-                    box-shadow: 0px -6px 4px -2px rgba(0, 0, 0, .20);
-                    border-radius: 12px 12px 0 0;
-                    padding: 4px 8px;
-                }
             }
 
-            .add-info-container {
-                // background-color: lime;
-                border-left: 1px solid rgb(180, 180, 180);
-                display: grid;
-                grid-template-rows: 40px auto;
-                overflow-y: scroll;
-
-                .add-info-header {
-                    // background-color: yellow;
-                    box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, .20);
-                    padding: 4px 8px;
-                    z-index: 1;
-                }
-
-                .add-info-items {
-                    padding: 8px 8px;
-
-                }
+            .content-actions {
+                background-color: white;
+                box-shadow: 0px -6px 4px -2px rgba(0, 0, 0, .20);
+                border-radius: 12px 12px 0 0;
+                padding: 4px 8px;
             }
         }
+
+        .add-info-container {
+            // background-color: lime;
+            border-left: 1px solid rgb(180, 180, 180);
+            display: grid;
+            grid-template-rows: 40px auto;
+            overflow-y: scroll;
+
+            .add-info-header {
+                // background-color: yellow;
+                box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, .20);
+                padding: 4px 8px;
+                z-index: 1;
+            }
+
+            .add-info-items {
+                padding: 8px 8px;
+
+            }
+        }
+
+
+
+
+
+
+
     }
 }
 
-
-
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    rgb(165, 165, 165);
-    font-style: italic;
-    z-index: 10;
-}
-
-
-// The Scroll-Bar Code
-// *******************
-* {
-// scrollbar-width: thin;
-// scrollbar-color: var(--scrolbar-color) var(--scrolbar-bg-color);
-// scrollbar-color: var(--scrolbar-color) #d6d6d6;
-}
-
-/* width */
-::-webkit-scrollbar {
-    width: 4px;
-    z-index: 1;
-}
-
-::-webkit-scrollbar-button {
-    // background-color: blue;
-    // width: 20px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background-color: lime;
-    background-color: rgba(44, 80, 103, .2);
-    box-shadow: inset 0 0 4px #d6d6d6;
-    border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #95a0a1;
-    background: rgba(44, 80, 103, .3);
-    border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #2c5067;
-    background: rgba(44, 80, 103, .6);
-}
-
-/*
-::-webkit-scrollbar the scrollbar.
-::-webkit-scrollbar-button the buttons on the scrollbar (arrows pointing upwards and downwards).
-::-webkit-scrollbar-thumb the draggable scrolling handle.
-::-webkit-scrollbar-track the track (progress bar) of the scrollbar.
-::-webkit-scrollbar-track-piece the track (progress bar) NOT covered by the handle.
-::-webkit-scrollbar-corner the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.
-::-webkit-resizer the draggable resizing handle that appears at the bottom corner of some elements.
-*/
-
-/*
-::-webkit-scrollbar {
-    // background-color: lime;
-	width: 6px;
-	// height: 10px;
-	// border-radius: 0 8px 8px 0;
-  }
-
- ::-webkit-scrollbar-track {
-	background: lime;
-	background: #d6d6d6;
-    // border-left: 1px solid rgba(0,0,0,0.2);
-    border-right: 1px solid rgba(0,0,0,0.2);
-	// border-radius: 0 8px 8px 0;
- }
-
- ::-webkit-scrollbar-thumb {
-	background: lime;
-    background: rgba(44, 80, 103, .4);
-    // border-left: 1px solid rgba(0,0,0,0.1);
-    border-right: 1px solid rgba(0,0,0,0.1);
-	border-radius: 2px 1px 1px 2px;
-	border-radius: 4px 4px 4px 4px;
- }
-
- ::-webkit-scrollbar-thumb:hover {
-    background: rgba(44, 80, 103, .6);
-    // border-radius: 0 8px 8px 0;
- }
-*/
 

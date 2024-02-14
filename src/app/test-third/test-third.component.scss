@@ -419,7 +419,6 @@ $content-width-only-tiles: calc(100%);
         .content-wrapper-all {
             display: grid;
             grid-template-columns: $quicklinks-width auto $add-infos-width;
-
         }
 
         .content-wrapper-quicklinks-hidden {
