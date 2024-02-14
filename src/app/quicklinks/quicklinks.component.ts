@@ -52,15 +52,12 @@ export class QuicklinksComponent {
         moveItemInArray(this.quicklinks, event.previousIndex, event.currentIndex);
     }
 
-    startDrag(index: number) {
-        console.log("startDrag() called for index:", index);
-        // this.dragTransform = 'rotate(5deg)';
-        // this.isRotated = {};
-        // this.isRotated[index] = true;
+    openQuicklink(item: any): void {
+        window.alert(item + " clicked!");
     }
 
-    endDrag() {
-        // this.isRotated = {};
+    openContext(item: any): void {
+        window.alert("Context " + item + " clicked!");
     }
 
 }

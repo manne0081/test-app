@@ -1,24 +1,26 @@
 <div class="quicklink-header">
+
     <span>My Quicklinks</span><br>
     <input type="text" placeholder="Searching...">
-</div>
 
+</div>
 
 <div class="quicklink-items-wrapper example-list" cdkDropList
     (cdkDropListDropped)="drop($event)">
 
     <div class="quicklink-item-container example-box"
-        *ngFor="let item of quicklinks; index as i" cdkDrag
-        (cdkDragStarted)="startDrag(i)"
-        (cdkDragReleased)="endDrag()">
+        *ngFor="let item of quicklinks; index as i" cdkDrag>
 
-        <div>
-            <span class="icon-one-finger-tap drag"></span>
-            <span class="quicklink-value">{{item}}</span>
+        <div class="quicklink-drag" cdkDragHandle>
+            <span class="icon-one-finger-tap"></span>
         </div>
 
-        <div>
-            <span class="icon-more-vert more-icon"></span>
+        <div class="quicklink-value" (click)="openQuicklink(item)">
+            <span>{{item}}</span>
+        </div>
+
+        <div class="quicklink-more" (click)="openContext(item)">
+            <span class="icon-more-vert"></span>
         </div>
 
     </div>
