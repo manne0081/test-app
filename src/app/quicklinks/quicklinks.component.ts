@@ -8,6 +8,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 })
 
 export class QuicklinksComponent {
+    quicklinksVisible:boolean = true;
     quicklinks: string[] = [
         "First Quicklink",
         "Lampe",
@@ -40,13 +41,8 @@ export class QuicklinksComponent {
         "Kopfhörer",
         "Last Quicklink",
     ];
-    quicklinksVisible:boolean = true;
 
     constructor() {}
-
-    quicklinkMoreSelected(quicklink: any):void {
-        window.alert(quicklink + ": 3P-Menu selected!");
-    }
 
     drop(event: CdkDragDrop<string[]>) {
         moveItemInArray(this.quicklinks, event.previousIndex, event.currentIndex);
@@ -59,6 +55,4 @@ export class QuicklinksComponent {
     openContext(item: any): void {
         window.alert("Context " + item + " clicked!");
     }
-
-
 }
