@@ -24,37 +24,62 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
 
+    // RELAXX - Private Navigation
+    // ***************************
     { path: 'private', component: PrivateComponent,
         children: [
+            // dashboard
+            // ---------
             { path: 'dashboard', component: DashboardComponent },
-            { path: 'task', component: TaskListComponent },
-            { path: 'campagne', component: CampagneListComponent },
-            { path: 'company', component: CompanyListComponent },
-            { path: 'supplier', component: SupplierListComponent },
 
+            // workspace (as Workspace)
+            // ------------------------
+            { path: 'task', component: TaskListComponent },                 // (as Aufgaben)
+            { path: 'planner', component: TaskListComponent },              // (as Planner)
+            { path: 'campagne', component: CampagneListComponent },         // (as Kampagnen)
+            { path: 'email', component: TaskListComponent },                // (as E-Mail)
 
+            // contact (as Kontakte)
+            // ---------------------
+            { path: 'company', component: CompanyListComponent },           // (as Unternehmen)
+            { path: 'supplier', component: SupplierListComponent },         // (as Lieferanten)
+            { path: 'x', component: CompanyListComponent },         // (as Ansprechpartner)
+            { path: 'x', component: CompanyListComponent },         // (as Benutzer)
+            { path: 'x', component: CompanyListComponent },         // (as Modulberechtigungen)
+            { path: 'x', component: CompanyListComponent },         // (as Unternehmenswikis)
+            { path: 'x', component: CompanyListComponent },         // (as Debitor Daten)
+            { path: 'x', component: CompanyListComponent },         // (as Adressen)
+
+            // operations (as Vorgänge & Belege)
+            // ---------------------------------
+
+            // orderProcessing (as Auftragsabwicklung)
+            // ---------------------------------------
+
+            // accounting (as Rechnungswesen)
+            // ------------------------------
+
+            // productManagement (as Produktverwaltung)
+            // ----------------------------------------
+
+            // Vertragswesen (as contracting)
+            // ------------------------------
+
+            // toolsAssets (as Tools & Assets)
+            // -------------------------------
+
+            // statisticsReporting (as Statistik & Reporting)
+            // ----------------------------------------------
         ]
     },
 
-    // RELAXX - Navigation
-    // *******************
-    // { path: 'dashboard', component: TestFourthComponent },              // Dashboard
-    // { path: 'workspace', component: TestFourthComponent },              // Workspace
-    // { path: 'contacts', component: TestFourthComponent },               // Kontakte
-    // { path: 'operations', component: TestFourthComponent },             // Vorgänge & Belege
-    // { path: 'orderProcessing', component: TestFourthComponent },        // Auftragsabwicklung
-    // { path: 'accounting', component: TestFourthComponent },             // Rechnungswesen
-    // { path: 'productManagement', component: TestFourthComponent },      //Produktverwaltung
-    // { path: 'contracting', component: TestFourthComponent },            //Vertragswesen
-    // { path: 'toolsAssets', component: TestFourthComponent },            //Tools & Assets//Statistik & Reporting
-    // { path: 'statisticsReporting', component: TestFourthComponent },    //Statistik & Reporting
-    // *******************
-
+    // Navigation TEST-PAGES
+    // *********************
     { path: 'partner', component: PartnerComponent },
     { path: 'test3', component: TestThirdComponent },
     { path: 'test4', component: TestFourthComponent },
-    // { path: 'employees', title: "Employee Overview", component: EmployeeListComponent },
-    // { path: 'clients', title: "Client Overview", component: ClientListComponent },
+    { path: 'employees', title: "Employee Overview", component: EmployeeListComponent },
+    { path: 'clients', title: "Client Overview", component: ClientListComponent },
 
     { path: '**', component: AppComponent },
 ];
