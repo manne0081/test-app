@@ -19,6 +19,8 @@
                         <span class="icon-search" style="font-size: 1.2em"></span>
                     </button>
 
+                    <!-- todo -->
+
                 </div>
             </div>
 
@@ -34,10 +36,16 @@
                         <div class="drop-content-container">
                             <div class="drop-content-wrapper">
                                 <ng-container *ngFor="let item of menuItems, index as i">
-                                    <div *ngIf="item.favorite" class="drop-item-container" routerLink="{{item.url}}" (click)="setItemClass(item.class)">
+
+                                    <div *ngIf="item.favorite" class="drop-item-container"
+                                        (click)="setItemClass(item.class)"
+                                        (click)="onSelectionChange(item.name)"
+                                        routerLink="{{item.url}}"
+                                    >
                                         <span class="sub-menu-label">{{item.name}}</span>
                                         <span class="icon-star is-favorite" (click)="toggleFavorite(item); $event.stopPropagation();"></span>
                                     </div>
+
                                 </ng-container>
                             </div>
                         </div>
@@ -50,7 +58,7 @@
             <div class="header-item-container-1" [ngClass]="classDashboard" routerLink="/private/dashboard">
                 <div class="header-item-container-2">
 
-                    <button (click)="setItemClass('/private/dashboard')">
+                    <button (click)="setItemClass('/private/dashboard')" (click)="onSelectionChange('Dashboard')">
                         <span class="icon-grid menu-icon" style="position: relative; top: 1px;"></span>
                         <span>Dashboard</span>
                     </button>
@@ -71,10 +79,16 @@
                         <div class="drop-content-container">
                             <div class="drop-content-wrapper">
                                 <ng-container *ngFor="let item of menuItems, index as i">
-                                    <div *ngIf="item.class == '/private/workspace'" class="drop-item-container" (click)="setItemClass(item.class)" [routerLink]="item.url">
+
+                                    <div *ngIf="item.class == '/private/workspace'" class="drop-item-container"
+                                        (click)="setItemClass(item.class)"
+                                        (click)="onSelectionChange(item.name)"
+                                        [routerLink]="item.url"
+                                    >
                                         <span class="sub-menu-label">{{item.name}}</span>
                                         <span class="icon-star" [ngClass]="{'is-favorite':item.favorite}" (click)="toggleFavorite(item); $event.stopPropagation();"></span>
                                     </div>
+
                                 </ng-container>
                             </div>
                         </div>
@@ -96,10 +110,16 @@
                         <div class="drop-content-container">
                             <div class="drop-content-wrapper">
                                 <ng-container *ngFor="let item of menuItems, index as i">
-                                    <div *ngIf="item.class == '/private/contact'" class="drop-item-container" (click)="setItemClass(item.class)" [routerLink]="item.url">
+
+                                    <div *ngIf="item.class == '/private/contact'" class="drop-item-container"
+                                        (click)="setItemClass(item.class)"
+                                        (click)="onSelectionChange(item.name)"
+                                        [routerLink]="item.url"
+                                    >
                                         <span class="sub-menu-label">{{item.name}}</span>
                                         <span class="icon-star" [ngClass]="{'is-favorite':item.favorite}" (click)="toggleFavorite(item); $event.stopPropagation();"></span>
                                     </div>
+
                                 </ng-container>
                             </div>
                         </div>
@@ -110,6 +130,8 @@
 
             <!-- Menu-Items / Favorite behavior fixed until here -->
             <!-- ############################################### -->
+
+            <!-- todo -->
 
             <!-- Operations -->
             <div class="header-item-container-1" [ngClass]="classOperations">

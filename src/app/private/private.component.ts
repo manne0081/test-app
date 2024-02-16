@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 
 export class PrivateComponent implements OnInit {
+    selectedValueFromMainMenu: string = '';
     quicklinksVisible?: boolean;
     addInfoVisible?: boolean;
 
@@ -17,6 +18,10 @@ export class PrivateComponent implements OnInit {
     ngOnInit(): void {
         this.toggleQuicklinkVisibility();
         this.toggleAddInfoVisibility();
+    }
+
+    onMainMenuSelectionChanged(selectedValue: string) {
+        this.selectedValueFromMainMenu = selectedValue;
     }
 
     toggleQuicklinkVisibility(): void {

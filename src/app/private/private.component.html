@@ -6,7 +6,7 @@
     <!-- ****** -->
     <div class="page-header-container" style="overflow: visible;">
 
-        <app-main-menu></app-main-menu>
+        <app-main-menu (selectionChanged)="onMainMenuSelectionChanged($event)"></app-main-menu>
 
     </div>
 
@@ -24,7 +24,7 @@
             <!-- -------- -->
             <!-- TODO -->
             <!-- Wie komme ich jetzt in der private-component an die Info, welcher Menüpunkt gewählt wurde? -->
-            <span class="content-title-value">WIP</span>
+            <span class="content-title-value">{{selectedValueFromMainMenu}}</span>
 
             <!-- Button toggle AddInfos -->
             <!-- ---------------------- -->

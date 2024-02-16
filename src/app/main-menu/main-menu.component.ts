@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 
 export class MainMenuComponent implements OnInit {
+    @Output() selectionChanged: EventEmitter<string> = new EventEmitter<string>();
+
     classFavorite: string ="";
     classDashboard: string ="";
     classWorkspace: string ="";
@@ -27,7 +29,6 @@ export class MainMenuComponent implements OnInit {
         { name: "Kampagnen", class: "/private/workspace", url: "/private/campagne", favorite: false },
         { name: "Unternehmen", class: "/private/contact", url: "/private/company", favorite: true },
         { name: "Lieferanten", class: "/private/contact", url: "/private/supplier", favorite: false },
-
     ];
 
     constructor (private router: Router) {
@@ -35,6 +36,11 @@ export class MainMenuComponent implements OnInit {
 
     ngOnInit(): void {
         this.setItemClass("/private/dashboard");
+        this.onSelectionChange('Dashboard');
+    }
+
+    onSelectionChange(selectedValue: string): void {
+        this.selectionChanged.emit(selectedValue);
     }
 
     setItemClass(url: string): void {
