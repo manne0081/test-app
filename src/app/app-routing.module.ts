@@ -70,27 +70,40 @@ const routes: Routes = [
             // accounting (as Rechnungswesen)
             // ------------------------------
             { path: 'invoice-out', component: CompanyListComponent },           // (as Ausgangsrechungen)
-
+            { path: 'inv-position-group', component: CompanyListComponent },    // (as Rechnungspositionsgruppen)
+            { path: 'order-position', component: CompanyListComponent },        // (as Auftragspositionen)
+            { path: 'documents-pdf', component: CompanyListComponent },         // (as Belegs-PDFs)
+            { path: 'invoice-in', component: CompanyListComponent },            // (as Eingangsrechnungen)
 
             // productManagement (as Produktverwaltung)
             // ----------------------------------------
             { path: 'product', component: CompanyListComponent },               // (as Produkte)
-
+            { path: 'product-variant', component: CompanyListComponent },       // (as Produktvarianten)
+            { path: 'product-group', component: CompanyListComponent },         // (as Produktgruppen)
+            { path: 'product-group-variant', component: CompanyListComponent }, // (as PGV-Gruppen)
+            { path: 'position-template', component: CompanyListComponent },     // (as Positionsvorlagen)
+            { path: 'trans-path', component: CompanyListComponent },            // (as Übertragungswege)
+            { path: 'additional-data', component: CompanyListComponent },       // (as Zusatzangaben)
 
             // Vertragswesen (as contracting)
             // ------------------------------
             { path: 'customer-contract', component: CompanyListComponent },     // (as Kundenverträge)
-
+            { path: 'supplier-contract', component: CompanyListComponent },     // (as Lieferantenverträge)
+            { path: 'partner-config', component: CompanyListComponent },        // (as Partner-Konfiguration)
 
             // toolsAssets (as Tools & Assets)
             // -------------------------------
             { path: 'smart-template', component: CompanyListComponent },        // (as Smart-Template)
-
+            { path: 'job-form', component: CompanyListComponent },              // (as Bewerbungsformulare)
+            { path: 'interface', component: CompanyListComponent },             // (as Schnittstellen)
+            { path: 'global-font', component: CompanyListComponent },           // (as Global-Fonts)
 
             // statisticsReporting (as Statistik & Reporting)
             // ----------------------------------------------
             { path: 'sales-statistic', component: CompanyListComponent },       // (as Umsatzstatistik)
-
+            { path: 'team-statistic', component: CompanyListComponent },        // (as Teamstatistik)
+            { path: 'kpi-report', component: CompanyListComponent },            // (as KPI-Report)
+            { path: 'click-report', component: CompanyListComponent },          // (as Klick-Report)
         ]
     },
 
