@@ -24,11 +24,69 @@ export class MainMenuComponent implements OnInit {
     classPlaceholder: string ="";
 
     menuItems: { name: string, class: string, url: string, favorite: boolean } [] = [
+        // Dashboard
+        // *********
         { name: "Dashboard", class: "/private/dashboard", url: "/private/dashbaord", favorite: false },
+
+        // Workspace
+        // *********
         { name: "Aufgaben", class: "/private/workspace", url: "/private/task", favorite: true },
+        { name: "Planner", class: "/private/workspace", url: "/private/planner", favorite: false },
         { name: "Kampagnen", class: "/private/workspace", url: "/private/campagne", favorite: false },
+        { name: "E-Mail", class: "/private/workspace", url: "/private/email", favorite: false },
+
+        // Contact (as Kontakte)
+        // *********************
         { name: "Unternehmen", class: "/private/contact", url: "/private/company", favorite: true },
         { name: "Lieferanten", class: "/private/contact", url: "/private/supplier", favorite: false },
+        { name: "Ansprechpartner", class: "/private/contact", url: "/private/contact", favorite: false },
+        { name: "Benutzer", class: "/private/contact", url: "/private/user", favorite: false },
+        { name: "Modulberechtigungen", class: "/private/contact", url: "/private/module-auth", favorite: false },
+        { name: "Unternehmenswiki", class: "/private/contact", url: "/private/company-wiki", favorite: false },
+        { name: "Debitor Daten", class: "/private/contact", url: "/private/debitor-data", favorite: false },
+        { name: "Adressen", class: "/private/contact", url: "/private/address", favorite: false },
+
+        // operations (as Vorgänge & Belege)
+        // *********************************
+        { name: "Verkaufsvorgänge", class: "/private/operations", url: "/private/sales-transaction", favorite: true },
+        { name: "Angebote", class: "/private/operations", url: "/private/offer", favorite: true },
+        { name: "Aufträge", class: "/private/operations", url: "/private/order", favorite: true },
+        { name: "Rechnungen", class: "/private/operations", url: "/private/invoice", favorite: true },
+        { name: "Teilaufträge", class: "/private/operations", url: "/private/partial-order", favorite: true },
+        { name: "Alle Belege", class: "/private/operations", url: "/private/document", favorite: true },
+
+        // orderProcessing (as Auftragsabwicklung)
+        // ***************************************
+        { name: "Multipostings", class: "/private/orderProcessing", url: "/private/multiposting", favorite: false },
+        { name: "Postings", class: "/private/orderProcessing", url: "/private/posting", favorite: false },
+        { name: "Stellenanzeigen", class: "/private/orderProcessing", url: "/private/advertisements", favorite: false },
+        { name: "Print", class: "/private/orderProcessing", url: "/private/print", favorite: false },
+        { name: "Dienstleistungen & Sonstiges", class: "/private/orderProcessing", url: "/private/service", favorite: false },
+
+        // accounting (as Rechnungswesen)
+        // ******************************
+        { name: "Ausgangsrechungen", class: "/private/accounting", url: "/private/invoice-out", favorite: false },
+
+
+        // productManagement (as Produktverwaltung)
+        // ****************************************
+        { name: "Produkte", class: "/private/productManagement", url: "/private/product", favorite: false },
+
+
+        // Vertragswesen (as contracting)
+        // ******************************
+        { name: "Kundenverträge", class: "/private/contracting", url: "/private/customer-contract", favorite: false },
+
+
+        // toolsAssets (as Tools & Assets)
+        // *******************************
+        { name: "Smart-Template", class: "/private/toolsAssets", url: "/private/smart-template", favorite: false },
+
+
+        // statisticsReporting (as Statistik & Reporting)
+        // **********************************************
+        { name: "Umsatzstatistik", class: "/private/statisticsReporting", url: "/private/sales-statistic", favorite: false },
+
     ];
 
     constructor (private router: Router) {

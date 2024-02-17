@@ -28,48 +28,69 @@ const routes: Routes = [
     // ***************************
     { path: 'private', component: PrivateComponent,
         children: [
-            // dashboard
-            // ---------
+            // dashboard (as Dashboard)
+            // ------------------------
             { path: 'dashboard', component: DashboardComponent },
 
             // workspace (as Workspace)
             // ------------------------
-            { path: 'task', component: TaskListComponent },                 // (as Aufgaben)
-            { path: 'planner', component: TaskListComponent },              // (as Planner)
-            { path: 'campagne', component: CampagneListComponent },         // (as Kampagnen)
-            { path: 'email', component: TaskListComponent },                // (as E-Mail)
+            { path: 'task', component: TaskListComponent },                     // (as Aufgaben)
+            { path: 'planner', component: TaskListComponent },                  // (as Planner)
+            { path: 'campagne', component: CampagneListComponent },             // (as Kampagnen)
+            { path: 'email', component: TaskListComponent },                    // (as E-Mail)
 
             // contact (as Kontakte)
             // ---------------------
-            { path: 'company', component: CompanyListComponent },           // (as Unternehmen)
-            { path: 'supplier', component: SupplierListComponent },         // (as Lieferanten)
-            { path: 'x', component: CompanyListComponent },         // (as Ansprechpartner)
-            { path: 'x', component: CompanyListComponent },         // (as Benutzer)
-            { path: 'x', component: CompanyListComponent },         // (as Modulberechtigungen)
-            { path: 'x', component: CompanyListComponent },         // (as Unternehmenswikis)
-            { path: 'x', component: CompanyListComponent },         // (as Debitor Daten)
-            { path: 'x', component: CompanyListComponent },         // (as Adressen)
+            { path: 'company', component: CompanyListComponent },               // (as Unternehmen)
+            { path: 'supplier', component: SupplierListComponent },             // (as Lieferanten)
+            { path: 'contact', component: CompanyListComponent },               // (as Ansprechpartner)
+            { path: 'user', component: CompanyListComponent },                  // (as Benutzer)
+            { path: 'module-auth', component: CompanyListComponent },           // (as Modulberechtigungen)
+            { path: 'company-wiki', component: CompanyListComponent },          // (as Unternehmenswikis)
+            { path: 'debitor-data', component: CompanyListComponent },          // (as Debitor Daten)
+            { path: 'address', component: CompanyListComponent },               // (as Adressen)
 
             // operations (as Vorgänge & Belege)
             // ---------------------------------
+            { path: 'sales-transaction', component: CompanyListComponent },     // (as Adressen)
+            { path: 'offer', component: CompanyListComponent },                 // (as Angebote)
+            { path: 'order', component: CompanyListComponent },                 // (as Aufträge)
+            { path: 'invoice', component: CompanyListComponent },               // (as Rechnungen)
+            { path: 'partial-order', component: CompanyListComponent },         // (as Rechnungen)
+            { path: 'document', component: CompanyListComponent },              // (as Alle Belege)
 
             // orderProcessing (as Auftragsabwicklung)
             // ---------------------------------------
+            { path: 'multiposting', component: CompanyListComponent },          // (as Multipostings)
+            { path: 'posting', component: CompanyListComponent },               // (as Postings)
+            { path: 'advertisements', component: CompanyListComponent },        // (as Stellenanzeigen)
+            { path: 'print', component: CompanyListComponent },                 // (as Print)
+            { path: 'service', component: CompanyListComponent },               // (as Dienstleistungen & Sonstiges)
 
             // accounting (as Rechnungswesen)
             // ------------------------------
+            { path: 'invoice-out', component: CompanyListComponent },           // (as Ausgangsrechungen)
+
 
             // productManagement (as Produktverwaltung)
             // ----------------------------------------
+            { path: 'product', component: CompanyListComponent },               // (as Produkte)
+
 
             // Vertragswesen (as contracting)
             // ------------------------------
+            { path: 'customer-contract', component: CompanyListComponent },     // (as Kundenverträge)
+
 
             // toolsAssets (as Tools & Assets)
             // -------------------------------
+            { path: 'smart-template', component: CompanyListComponent },        // (as Smart-Template)
+
 
             // statisticsReporting (as Statistik & Reporting)
             // ----------------------------------------------
+            { path: 'sales-statistic', component: CompanyListComponent },       // (as Umsatzstatistik)
+
         ]
     },
 
