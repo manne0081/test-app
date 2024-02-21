@@ -7,9 +7,7 @@ export interface Employee {
     lastName: string;
     birthday: Date;
     isDeveloper: boolean;
-
     selected: boolean;
-
     addresses: {
         primaryResidence: {
             street: string;
@@ -29,5 +27,4 @@ export interface Employee {
         mobile: string;
         email: string;
     };
-
 }

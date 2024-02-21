@@ -1,6 +1,8 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { MainMenu } from './main-menu';
+
 @Component({
     selector: 'app-main-menu',
     templateUrl: './main-menu.component.html',
@@ -101,7 +103,6 @@ export class MainMenuComponent implements OnInit {
         { name: "KPI-Report", class: "/private/statisticsReporting", url: "/private/kpi-report", favorite: false },
         { name: "Klick-Report", class: "/private/statisticsReporting", url: "/private/click-report", favorite: false },
     ];
-
 
     constructor (private router: Router) {
     }
