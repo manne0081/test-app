@@ -1,6 +1,8 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { MainMenu } from './main-menu';
+
 @Component({
     selector: 'app-main-menu',
     templateUrl: './main-menu.component.html',
@@ -110,13 +112,17 @@ export class MainMenuComponent implements OnInit {
         this.onSelectionChange('Dashboard');
     }
 
-    /*  Send the current selected menu-item to the parant (private) component
-        @param: selectedValue > Current Menu-Item
+
+    /*  Sends the name of the current selected menu-item to the parant (private) component to show the menu-name at the content title
+        @param: selectedValue > Name of the current menu-item
     */
     onSelectionChange(selectedValue: string): void {
         this.selectionChanged.emit(selectedValue);
     }
 
+    /*  Changes the CSS-Classes from the active / pre-active / post-active menu-item
+        @param: url > gets the current url from the button when it is clicked
+    */
     setItemClass(url: string): void {
         if (url == "/private/dashboard") {
             this.classFavorite = "pre-active";
@@ -260,6 +266,9 @@ export class MainMenuComponent implements OnInit {
         };
     }
 
+    /*  toggles the favorite-icon at the menu-items
+        @param: item
+    */
     toggleFavorite(item: any) {
         item.favorite = !item.favorite;
     }

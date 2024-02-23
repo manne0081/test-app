@@ -9,6 +9,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 export class QuicklinksComponent {
     quicklinksVisible:boolean = true;
+
     quicklinks: string[] = [
         "First Quicklink",
         "Lampe",

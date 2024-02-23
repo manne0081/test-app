@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -17,6 +18,8 @@ import { TaskListComponent } from './private/workspace/task-list/task-list.compo
 import { CampagneListComponent } from './private/workspace/campagne-list/campagne-list.component';
 import { CompanyListComponent } from './private/contact/company-list/company-list.component';
 import { SupplierListComponent } from './private/contact/supplier-list/supplier-list.component';
+import { OrderListComponent } from './private/operations/order-list/order-list.component';
+import { InvoiceListComponent } from './private/operations/invoice-list/invoice-list.component';
 
 const routes: Routes = [
     { path: '',   redirectTo: 'home', pathMatch: 'full' },
@@ -54,9 +57,9 @@ const routes: Routes = [
             // ---------------------------------
             { path: 'sales-transaction', component: CompanyListComponent },     // (as Adressen)
             { path: 'offer', component: CompanyListComponent },                 // (as Angebote)
-            { path: 'order', component: CompanyListComponent },                 // (as Aufträge)
-            { path: 'invoice', component: CompanyListComponent },               // (as Rechnungen)
-            { path: 'partial-order', component: CompanyListComponent },         // (as Rechnungen)
+            { path: 'order', component: OrderListComponent },                   // (as Aufträge)
+            { path: 'invoice', component: InvoiceListComponent },               // (as Rechnungen)
+            { path: 'partial-order', component: CompanyListComponent },         // (as Teilaufträge)
             { path: 'document', component: CompanyListComponent },              // (as Alle Belege)
 
             // orderProcessing (as Auftragsabwicklung)

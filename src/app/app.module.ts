@@ -30,6 +30,8 @@ import { TaskListComponent } from './private/workspace/task-list/task-list.compo
 import { CampagneListComponent } from './private/workspace/campagne-list/campagne-list.component';
 import { CompanyListComponent } from './private/contact/company-list/company-list.component';
 import { SupplierListComponent } from './private/contact/supplier-list/supplier-list.component';
+import { InvoiceListComponent } from './private/operations/invoice-list/invoice-list.component';
+import { OrderListComponent } from './private/operations/order-list/order-list.component';
 
 @NgModule({
     declarations: [
@@ -56,6 +58,8 @@ import { SupplierListComponent } from './private/contact/supplier-list/supplier-
         CampagneListComponent,
         CompanyListComponent,
         SupplierListComponent,
+        InvoiceListComponent,
+        OrderListComponent,
     ],
     imports: [
         BrowserModule,
