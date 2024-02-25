@@ -38,27 +38,7 @@
 
                                 <!-- todo -->
                                 <!-- Die letzten X geöffneten url's anzeigen. Art und Weise und wie viele ist noch unklar -->
-                                <!-- <div style="padding: 16px;">
-                                    <span >
-                                        WIP - zuletzt geöffneten Menüpunkte
-                                    </span>
-                                </div>
 
-                                <hr> -->
-
-                                <!-- <span style="background-color: white;
-                                             padding: 16px;
-                                             display: inline-block;
-                                             width: 100%;
-                                             position: sticky;
-                                             top: 0;
-                                             z-index: 10;
-                                             /* box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, .20); */
-                                             /* box-shadow: 0px 10px 11px 3px rgba(0, 0, 0, .2); */
-                                             /* box-shadow: 0px 2px 2px 2px lime; */
-                                             ">
-                                    My Favorites
-                                </span> -->
 
                                 <ng-container *ngFor="let item of menuItems, index as i">
 
@@ -370,14 +350,45 @@
                 </div>
             </div>
 
-            <!-- Placeholder -->
+            <!-- TEST -->
             <div class="header-item-container-1" [ngClass]="classPlaceholder">
+                <div class="header-item-container-2">
+                    <div class="dropdown right">
+
+                        <button class="drop-button">
+                            <span class="icon-bar-graph-2 menu-icon"></span>
+                            <span>TEST</span>
+                        </button>
+
+                        <div class="drop-content-container">
+                            <div class="drop-content-wrapper">
+                                <ng-container *ngFor="let item of menuItems, index as i">
+
+                                    <div *ngIf="item.class == '/private/statisticsReporting'" class="drop-item-container"
+                                        (click)="setItemClass(item.class)"
+                                        (click)="onSelectionChange(item.name)"
+                                        [routerLink]="item.url"
+                                    >
+                                        <span class="sub-menu-label">{{item.name}}</span>
+                                        <span class="icon-star" [ngClass]="{'is-favorite':item.favorite}" (click)="toggleFavorite(item); $event.stopPropagation();"></span>
+                                    </div>
+
+                                </ng-container>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placeholder -->
+            <!-- <div class="header-item-container-1" [ngClass]="classPlaceholder">
                 <div class="header-item-container-2">
                     <button class="drop-button">
                         <span routerLink="/test3" style="cursor: pointer;">TEST-3</span>
                     </button>
                 </div>
-            </div>
+            </div> -->
 
         </div>
 

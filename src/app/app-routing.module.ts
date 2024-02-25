@@ -72,7 +72,7 @@ const routes: Routes = [
 
             // accounting (as Rechnungswesen)
             // ------------------------------
-            { path: 'invoice-out', component: CompanyListComponent },           // (as Ausgangsrechungen)
+            { path: 'invoice-out', component: InvoiceListComponent },           // (as Ausgangsrechungen)
             { path: 'inv-position-group', component: CompanyListComponent },    // (as Rechnungspositionsgruppen)
             { path: 'order-position', component: CompanyListComponent },        // (as Auftragspositionen)
             { path: 'documents-pdf', component: CompanyListComponent },         // (as Belegs-PDFs)
