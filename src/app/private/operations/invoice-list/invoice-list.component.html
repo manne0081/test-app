@@ -1,11 +1,7 @@
 <div class="tiles-wrapper">
 
-    <div class="tile-container">
-        <p>invoice-list works!</p>
-    </div>
-
-    <div class="tile-container">
-        <p>invoice-list works!</p>
+    <div class="tile-container" *ngFor="let item of items">
+        <p>{{item}}</p>
     </div>
 
 </div>

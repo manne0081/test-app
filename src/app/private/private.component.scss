@@ -40,6 +40,7 @@ $color-complement-4: #CF7400;
     // ************
     .page-header-container {
         background-color: #2c5067;
+        z-index: 100;
     }
 
     // Page Content
@@ -131,18 +132,21 @@ $color-complement-4: #CF7400;
             // background-color: orange;
             display: grid;
             grid-template-rows: 48px auto 48px;
-            overflow-y: scroll;
+            // overflow-y: scroll;
 
             .content-header {
                 background-color: white;
                 box-shadow: 0px 6px 4px -2px rgba(0, 0, 0, .20);
                 border-radius: 0 0 12px 12px;
                 padding: 4px 8px;
+                z-index: 10;
             }
 
             .content-items {
+                margin: -48px 0;
                 padding: 8px 8px;
-
+                padding: 56px 8px;
+                overflow-y: scroll;
             }
 
             .content-actions {
@@ -150,6 +154,7 @@ $color-complement-4: #CF7400;
                 box-shadow: 0px -6px 4px -2px rgba(0, 0, 0, .20);
                 border-radius: 12px 12px 0 0;
                 padding: 4px 8px;
+                z-index: 1;
             }
         }
 
