@@ -102,6 +102,13 @@ export class MainMenuComponent implements OnInit {
         { name: "Teamstatistik", class: "/private/statisticsReporting", url: "/private/team-statistic", favorite: true },
         { name: "KPI-Report", class: "/private/statisticsReporting", url: "/private/kpi-report", favorite: false },
         { name: "Klick-Report", class: "/private/statisticsReporting", url: "/private/click-report", favorite: false },
+
+        // TEST
+        // ****
+        { name: "TEST-1", class: "/private/statisticsReporting", url: "/private/sales-statistic", favorite: false },
+        { name: "TEST-2", class: "/private/statisticsReporting", url: "/private/team-statistic", favorite: false },
+        { name: "TEST-3", class: "/private/statisticsReporting", url: "/private/kpi-report", favorite: false },
+        { name: "TEST-4", class: "/private/statisticsReporting", url: "/private/click-report", favorite: false },
     ];
 
     constructor (private router: Router) {

@@ -47,8 +47,6 @@ export class AppComponent implements OnInit{
         // todo
         // this.router.navigate(['private/employees']);
         this.router.navigate(['private/dashboard']);
+        // this.router.navigate(['private/invoice']);
     }
-
-
-
 }

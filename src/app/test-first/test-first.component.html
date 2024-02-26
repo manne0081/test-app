@@ -1,377 +1,47 @@
-<div class="grid-page-structure">
+<!-- <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
 
+<mat-menu #animals="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+  <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+</mat-menu>
 
-    <!-- HEADER -->
-    <!-- ****** -->
-    <div class="header-structure">
-        <div class="searching-container">
-            <div class="searching-background">
-                <img src="../../assets/calendar2.svg" alt="">
-                <span>Searching...</span>
-            </div>
-        </div>
-        <div class="logo">
-            <img src="../../assets/logo-design-49570.png" alt="">
-        </div>
-        <div class="function-wrapper">
+<mat-menu #vertebrates="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+  <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
+  <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+  <button mat-menu-item>Birds</button>
+  <button mat-menu-item>Mammals</button>
+</mat-menu>
 
-            <!-- TimeTracking -->
-            <!-- ------------ -->
-            <div class="dropdown">
-                <button class="drop-button">
-                    <img src="../../assets/bell.svg" alt="">
-                </button>
-                <div class="drop-content time-tracking">
-                    Time-Tracking
-                </div>
-            </div>
+<mat-menu #invertebrates="matMenu">
+  <button mat-menu-item>Insects</button>
+  <button mat-menu-item>Molluscs</button>
+  <button mat-menu-item>Crustaceans</button>
+  <button mat-menu-item>Corals</button>
+  <button mat-menu-item>Arachnids</button>
+  <button mat-menu-item>Velvet worms</button>
+  <button mat-menu-item>Horseshoe crabs</button>
+</mat-menu>
 
-            <!-- Profile-Button -->
-            <!-- -------------- -->
-            <div class="dropdown" style="float:right;">
-                <button class="drop-button profile">
-                    Maximilian Mustermann
-                </button>
-                <div class="drop-content">
-                  <a>Settings</a>
-                  <a routerLink="/partner">Logout</a>
-                </div>
-            </div>
+<mat-menu #fish="matMenu">
+  <button mat-menu-item>Baikal oilfish</button>
+  <button mat-menu-item>Bala shark</button>
+  <button mat-menu-item>Ballan wrasse</button>
+  <button mat-menu-item>Bamboo shark</button>
+  <button mat-menu-item>Banded killifish</button>
+</mat-menu>
 
-        </div>
-    </div>
+<mat-menu #amphibians="matMenu">
+  <button mat-menu-item>Sonoran desert toad</button>
+  <button mat-menu-item>Western toad</button>
+  <button mat-menu-item>Arroyo toad</button>
+  <button mat-menu-item>Yosemite toad</button>
+</mat-menu>
 
-
-    <!-- MENU-STRUCTURE -->
-    <!-- ************** -->
-    <div class="menu-structure">
-
-        <!-- MENU-ITEM-DASHBOARD -->
-        <!-- ******************* -->
-        <div class="menu-item">
-            <div class="triangle-left"></div>
-                <div class="menu-background">
-                    {{'menuname 1'|uppercase}}
-                </div>
-            <div class="triangle-right"></div>
-        </div>
-
-        <!-- MENU-ITEM-HR -->
-        <!-- ************ -->
-        <div class="menu-item">
-            <div class="triangle-left"></div>
-                <div class="menu-background">
-                    {{'menuname 2'|uppercase}}
-                </div>
-            <div class="triangle-right"></div>
-
-            <!-- MENU-OPTIONS > NO MORE OPTIONS -->
-            <div class="submenu-wrapper">
-
-                <div class="submenu-item">
-                    {{'sub-menuname 1'|uppercase}}
-                </div>
-
-            </div>
-        </div>
-
-        <!-- MENU-ITEM-SALES -->
-        <!-- *************** -->
-        <div class="menu-item active">
-            <div class="triangle-left active"></div>
-            <div class="menu-background active">
-                {{'menuname 3'|uppercase}}
-                </div>
-            <div class="triangle-right active"></div>
-
-            <!-- MENU-OPTIONS -->
-            <div class="submenu-wrapper active">
-
-                <div class="submenu-item active">
-                    {{'sub-menuname 1'|uppercase}}
-                </div>
-
-                <div class="submenu-item active">
-                    {{'sub-menuname 2'|uppercase}}
-                </div>
-
-            </div>
-        </div>
-
-        <!-- MENU-ITEM-Test -->
-        <!-- ************************ -->
-        <div class="menu-item" routerLink="/test">
-            <div class="triangle-left"></div>
-            <div class="menu-background">
-                {{'test-1'|uppercase}}
-                </div>
-            <div class="triangle-right"></div>
-        </div>
-
-        <div class="menu-item" routerLink="/test2">
-            <div class="triangle-left"></div>
-            <div class="menu-background">
-                {{'test-2'|uppercase}}
-                </div>
-            <div class="triangle-right"></div>
-        </div>
-
-        <div class="menu-item" routerLink="/test3">
-            <div class="triangle-left"></div>
-            <div class="menu-background">
-                {{'test-3'|uppercase}}
-                </div>
-            <div class="triangle-right"></div>
-        </div>
-
-        <div class="menu-item" routerLink="/employee">
-            <div class="triangle-left"></div>
-            <div class="menu-background">
-                {{'employee'|uppercase}}
-                </div>
-            <div class="triangle-right"></div>
-        </div>
-
-    </div>
-
-
-    <!-- CONTENT -->
-    <!-- ******* -->
-    <div class="content-structure">
-        <!-- <div class="content-background"> -->
-        <div [ngClass]="{'content-background': myQuicklinksVisible, 'content-background-tiles-only': !myQuicklinksVisible}">
-
-            <!-- Quicklinks -->
-            <!-- ---------- -->
-            <div class="quicklink-container" *ngIf="myQuicklinksVisible">
-
-                <!-- Quicklink-Header -->
-                <!-- ---------------- -->
-                <div class="headline-wrapper">
-                    <div class="headline">
-                        My Quicklinks
-                    </div>
-                </div>
-
-                <!-- Quicklink-Items -->
-                <!-- --------------- -->
-                <div class="quicklink-wrapper">
-
-                    <div class="quicklink-item" *ngFor="let quicklink of quicklinks; index as i">
-                        {{quicklink}} {{i+1}}
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Main-Content -->
-            <!-- ------------ -->
-            <div class="main-content-wrapper">
-
-                <!-- Main-Content-Header -->
-                <!-- ------------------- -->
-                <div class="main-content-header-container">
-                    <h1>Invoices</h1>
-                </div>
-
-                <!-- Main-Content-Tiles -->
-                <!-- ------------------ -->
-                <div class="content-tile-wrapper">
-                    <div class="content-tile-container"
-                        *ngFor="let tile of tiles; index as i"
-                        (click)="setAddInfo(tile + ' ' + (i + 1))">
-
-                        <div class="tile-container-selector">
-                            <input type="checkbox">
-                        </div>
-
-                        <div class="tile-container-content">
-                            {{tile}} {{i+1}}
-                        </div>
-
-                        <div class="tile-container-opener">
-                            <img src="../../assets/chevron.svg" alt="">
-                        </div>
-
-                    </div>
-
-                    <!-- Main-Content-Pagination -->
-                    <!-- ----------------------- -->
-                    <div class="main-content-pagination">
-                        <div class="center">
-                            <div class="pagination">
-                            <a>&laquo;</a>
-                            <a class="active">1</a>
-                            <a>2</a>
-                            <a>3</a>
-                            <a>4</a>
-                            <a>5</a>
-                            <a>6</a>
-                            <a>&raquo;</a>
-                            </div>
-                          </div>
-                    </div>
-
-                    <!-- Main-Content-Version -->
-                    <!-- -------------------- -->
-                    <div class="main-content-version">
-                        <p>Project v1.0.0</p>
-                        <p style="margin-top: 4px">2020 - 2023</p>
-                        <p>terms and conditions</p>
-                    </div>
-
-                </div>
-
-
-                <!-- Main-Content-Actions -->
-                <!-- -------------------- -->
-                <div [ngClass]="{'main-content-actions-container-expanded': additionalActionsExpanded, 'main-content-actions-container': !additionalActionsExpanded}"
-                        (mouseleave)="setAdditionalActionsExpanded(false)">
-
-                    <!-- Main-Actions -->
-                    <!-- ------------ -->
-                    <div class="main-actions">
-                        <div class="actions-wrapper-left">
-
-                            <div class="action-button-container save" (click)="setMyQuicklinksVisible(true)">
-                                <div class="action-button-icon">
-                                    <img src="../../assets/calendar2.svg" alt="">
-                                </div>
-                                <div class="action-button-label">
-                                    Save
-                                </div>
-                            </div>
-
-                            <div class="action-button-container">
-                                <div class="action-button-icon">
-                                    <img src="../../assets/calendar2.svg" alt="">
-                                </div>
-                                <div class="action-button-label">
-                                    Action
-                                </div>
-                            </div>
-
-                            <div class="action-button-container">
-                                <div class="action-button-icon">
-                                    <img src="../../assets/calendar2.svg" alt="">
-                                </div>
-                                <div class="action-button-label">
-                                    Action
-                                </div>
-                            </div>
-
-                            <div class="action-button-container">
-                                <div class="action-button-icon">
-                                    <img src="../../assets/calendar2.svg" alt="">
-                                </div>
-                                <div class="action-button-label">
-                                    Action
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="actions-wrapper-center">
-                            <div class="action-button-container">
-                                <div class="action-button-icon">
-                                    <img src="../../assets/calendar2.svg" alt="">
-                                </div>
-                                <div class="action-button-label">
-                                    Action
-                                </div>
-                            </div>
-                            <div class="action-button-container">
-                                <div class="action-button-icon">
-                                    <img src="../../assets/calendar2.svg" alt="">
-                                </div>
-                                <div class="action-button-label">
-                                    Action
-                                </div>
-                            </div>
-                            <div class="action-button-container">
-                                <div class="action-button-icon">
-                                    <img src="../../assets/calendar2.svg" alt="">
-                                </div>
-                                <div class="action-button-label">
-                                    Action
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="actions-wrapper-right">
-
-                            <div class="action-button-container">
-                                <div class="action-button-icon">
-                                    <img src="../../assets/calendar2.svg" alt="">
-                                </div>
-                                <div class="action-button-label">
-                                    Action
-                                </div>
-                            </div>
-
-                            <div class="action-button-container delete" (click)="setMyQuicklinksVisible(false)">
-                                <div class="action-button-icon">
-                                    <img src="../../assets/calendar2.svg" alt="">
-                                </div>
-                                <div class="action-button-label">
-                                    Delete
-                                </div>
-                            </div>
-
-                            <div class="action-button-container more" (click)="setAdditionalActionsExpanded(true)">
-                                <div class="action-button-icon-only">
-                                    <img class="button-more" src="../../assets/more-vert.svg" alt="">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Additional-Actions -->
-                    <!-- ------------------ -->
-                    <div [ngClass]="{'additional-actions-expanded': additionalActionsExpanded, 'additional-actions': !additionalActionsExpanded}">
-                        <div class="additional-actions-container">
-                            <div class="additional-actions-button" (click)="setAdditionalActionsExpanded(false)">
-                                Additional Action 1
-                            </div>
-                            <div class="additional-actions-button" (click)="setAdditionalActionsExpanded(false)">
-                                Additional Action 2
-                            </div>
-                            <div class="additional-actions-button" (click)="setAdditionalActionsExpanded(false)">
-                                Additional Action 3
-                            </div>
-                            <div class="additional-actions-button" (click)="setAdditionalActionsExpanded(false)">
-                                Additional Action 4
-                            </div>
-                            <div class="additional-actions-button" (click)="setAdditionalActionsExpanded(false)">
-                                Additional Action 5
-                            </div>
-                            <div class="additional-actions-button" (click)="setAdditionalActionsExpanded(false)">
-                                Additional Action 6
-                            </div>
-                            <div class="additional-actions-button" (click)="setAdditionalActionsExpanded(false)">
-                                Additional Action 7
-                            </div>
-                        </div>
-                        <hr style="margin-top: 12px">
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-            <!-- Additional Informations -->
-            <!-- ----------------------- -->
-            <div class="addinfo-wrapper" *ngIf="additionalInformationVisible">
-                <div style="background-color: rgba(0, 0, 0, .08); border-radius: 4px; padding: 4px 12px;
-                            font-weight: bold; border: 1px solid rgba(0, 0, 0, .12);"
-                *ngIf="addInfo">
-                    {{addInfo}}
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</div>
+<mat-menu #reptiles="matMenu">
+  <button mat-menu-item>Banded Day Gecko</button>
+  <button mat-menu-item>Banded Gila Monster</button>
+  <button mat-menu-item>Black Tree Monitor</button>
+  <button mat-menu-item>Blue Spiny Lizard</button>
+  <button mat-menu-item disabled>Velociraptor</button>
+</mat-menu> -->
