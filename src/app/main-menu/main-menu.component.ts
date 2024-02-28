@@ -105,10 +105,10 @@ export class MainMenuComponent implements OnInit {
 
         // TEST
         // ****
-        { name: "TEST-1", class: "/private/statisticsReporting", url: "/private/sales-statistic", favorite: false },
-        { name: "TEST-2", class: "/private/statisticsReporting", url: "/private/team-statistic", favorite: false },
-        { name: "TEST-3", class: "/private/statisticsReporting", url: "/private/kpi-report", favorite: false },
-        { name: "TEST-4", class: "/private/statisticsReporting", url: "/private/click-report", favorite: false },
+        { name: "TEST-1", class: "/private/placeholder", url: "/test-1", favorite: false },
+        { name: "TEST-2", class: "/private/placeholder", url: "/test-2", favorite: false },
+        { name: "TEST-3", class: "/private/placeholder", url: "/test3", favorite: false },
+        { name: "TEST-4", class: "/private/placeholder", url: "/private/test-4", favorite: false },
     ];
 
     constructor (private router: Router) {
