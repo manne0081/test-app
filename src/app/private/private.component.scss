@@ -123,7 +123,6 @@ $color-complement-4: #CF7400;
             grid-template-columns: auto;
         }
 
-
         .quicklinks-container {
             border-right: 1px solid rgb(180, 180, 180);
             overflow-y: scroll;
@@ -131,10 +130,9 @@ $color-complement-4: #CF7400;
 
         .main-content-container {
             background-color: orange;
-            background-image: url(../../assets/images/background_2.jpg);
+            background-image: url(../../assets/images/background_3.jpg);
             display: grid;
             grid-template-rows: 48px auto 48px;
-            // overflow-y: scroll;
 
             .content-header {
                 background-color: white;
