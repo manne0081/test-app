@@ -6,7 +6,7 @@
 </div>
 
 <div class="quicklink-items-wrapper example-list" cdkDropList
-    (cdkDropListDropped)="drop($event)">
+    (cdkDropListDropped)="moveDropdown($event)">
 
     <div class="quicklink-item-container example-box"
         *ngFor="let item of quicklinks; index as i" cdkDrag>

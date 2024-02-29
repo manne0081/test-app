@@ -45,7 +45,7 @@ export class QuicklinksComponent {
 
     constructor() {}
 
-    drop(event: CdkDragDrop<string[]>) {
+    moveDropdown(event: CdkDragDrop<string[]>) {
         moveItemInArray(this.quicklinks, event.previousIndex, event.currentIndex);
     }
 
