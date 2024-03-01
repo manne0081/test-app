@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-invoice-list',
-  templateUrl: './invoice-list.component.html',
-  styleUrls: ['./invoice-list.component.scss']
+    selector: 'app-invoice-list',
+    templateUrl: './invoice-list.component.html',
+    styleUrls: ['./invoice-list.component.scss']
 })
 
 export class InvoiceListComponent {
@@ -23,5 +23,6 @@ export class InvoiceListComponent {
         "test 13",
         "test 14",
         "test 15",
+        "test 16",
     ];
 }
